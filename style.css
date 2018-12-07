@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  cursor: default;
+}
+
+body {
+  background-color: rgb(36, 38, 40);
+}
+
+#navbar {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  height: 80px;
+
+  background-color: rgb(59, 135, 118);
+}
+
+#body-grid-container {
+  position: relative;
+  top: 120px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 80px;
+
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+#main-recipe-header {
+  grid-column: span 4;
+  justify-self: center;
+
+  font-family: sans-serif;
+  font-size: 38px;
+  color: white;
+}
+
+.tile {
+  grid-column: span 1;
+
+  height: 240px;
+
+  border: 1px solid rgb(76, 211, 182);
+  background-color: rgb(0, 0, 0);
+  background-position: center;
+  background-size: cover;
+
+  /* overflow: hidden; */
+  cursor: pointer;
+}
+
+/* #tile-0 {
+  background-image: url("https://res.cloudinary.com/dtwyohvli/image/upload/v1544117892/recipe-book/fajitas.jpg");
+}
+
+#tile-1 {
+  background-image: url("https://res.cloudinary.com/dtwyohvli/image/upload/v1544118007/recipe-book/chili-con-carne.jpg");
+} */
+
+.tile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: -30px;
+
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: white;
+  /* text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; */
+}
+
+
+
+
+
+/* -------------------------- MEDIA QUERY <= 1100 -------------------------- */
+@media screen and (max-width: 1100px) {
+  #body-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #main-recipe-header {
+    grid-column: span 3;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 850 -------------------------- */
+@media screen and (max-width: 850px) {
+  #body-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #main-recipe-header {
+    grid-column: span 2;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 550 -------------------------- */
+@media screen and (max-width: 550px) {
+  #body-grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #main-recipe-header {
+    grid-column: span 1;
+  }
+}
