@@ -1,6 +1,15 @@
 $(document).ready(function() {
 
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
+  var $catAll = $("#cat-all");
+  var $catBeef = $("#cat-beef");
+  var $catPork = $("#cat-pork");
+  var $catPoultry = $("#cat-poultry");
+  var $catSeafood = $("#cat-seafood");
+  var $catVeg = $("#cat-veg");
+
+  var currentCatActive = "all";
+
   var $tile0 = $("#tile-0");
   var $tileHeader0 = $("#tile-header-0");
 
@@ -14,7 +23,36 @@ $(document).ready(function() {
   var $tileHeader3 = $("#tile-header-3");
 
 
-/* ---------------------------- Event Handlers ---------------------------- */
+/* ------------------------- FUNCTION DECLARATIONS ------------------------- */
+function categoryActive() {
+  if(currentCatActive === "all") {
+    $catAll.addClass("category-active");
+
+    $catBeef.removeClass("category-active");
+  }
+
+  else if(currentCatActive === "beef") {
+    $catBeef.addClass("category-active");
+
+    $catAll.removeClass("category-active");
+  }
+}
+
+
+/* ---------------------------- EVENT HANDLERS ---------------------------- */
+  $catAll.on("click", function() {
+    currentCatActive = "all";
+
+    categoryActive();
+  });
+
+  $catBeef.on("click", function() {
+    currentCatActive = "beef";
+
+    categoryActive();
+  });
+
+
   $tile0.css("background-image", "url(" + "'" + recipeListMaster[0].img + "'" + ")");
   $tileHeader0.html(recipeListMaster[0].name);
 
@@ -26,5 +64,5 @@ $(document).ready(function() {
 
   $tile3.css("background-image", "url(" + "'" + recipeListMaster[3].img + "'" + ")");
   $tileHeader3.html(recipeListMaster[3].name);
-  
+
 });
