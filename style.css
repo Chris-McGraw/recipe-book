@@ -16,14 +16,14 @@ body {
   top: 0;
 
   width: 100%;
-  height: 80px;
+  height: 70px;
 
   background-color: rgb(59, 135, 118);
 }
 
 #body-grid-container {
   position: relative;
-  top: 120px;
+  top: 110px;
 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -87,7 +87,7 @@ body {
 
 
 
-/* -------------------------- MEDIA QUERY <= 1100 -------------------------- */
+/* -------------------------- MEDIA QUERY <= 1000 -------------------------- */
 @media screen and (max-width: 1000px) {
   #body-grid-container {
     grid-template-columns: repeat(4, 1fr);
@@ -100,7 +100,7 @@ body {
 
 
 
-/* -------------------------- MEDIA QUERY <= 850 -------------------------- */
+/* -------------------------- MEDIA QUERY <= 800 -------------------------- */
 @media screen and (max-width: 800px) {
   #body-grid-container {
     grid-template-columns: repeat(3, 1fr);
@@ -113,7 +113,7 @@ body {
 
 
 
-/* -------------------------- MEDIA QUERY <= 550 -------------------------- */
+/* -------------------------- MEDIA QUERY <= 600 -------------------------- */
 @media screen and (max-width: 600px) {
   #body-grid-container {
     grid-template-columns: repeat(2, 1fr);
@@ -121,5 +121,18 @@ body {
 
   #main-recipe-header {
     grid-column: span 2;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 400 -------------------------- */
+@media screen and (max-width: 400px) {
+  #body-grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #main-recipe-header {
+    grid-column: span 1;
   }
 }
