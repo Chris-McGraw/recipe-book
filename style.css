@@ -154,10 +154,6 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  #main-recipe-header {
-    grid-column: span 4;
-  }
-
   #category-container {
     position: relative;
     top: -20px;
@@ -189,16 +185,14 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #main-recipe-header {
-    grid-column: span 3;
-  }
-
   #category-container {
     grid-column: span 3;
   }
 
   #sort-by-button {
     grid-column: span 3;
+
+    margin-top: -40px;
   }
 }
 
@@ -208,10 +202,6 @@ body {
 @media screen and (max-width: 600px) {
   #body-grid-container {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  #main-recipe-header {
-    grid-column: span 2;
   }
 
   #category-container {
@@ -233,10 +223,6 @@ body {
 @media screen and (max-width: 400px) {
   #body-grid-container {
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  #main-recipe-header {
-    grid-column: span 1;
   }
 
   #category-container {
