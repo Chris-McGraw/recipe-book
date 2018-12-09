@@ -24,6 +24,18 @@ $(document).ready(function() {
   var $tile3 = $("#tile-3");
   var $tileHeader3 = $("#tile-header-3");
 
+  var $tile4 = $("#tile-4");
+  var $tileHeader4 = $("#tile-header-4");
+
+  var $tile5 = $("#tile-5");
+  var $tileHeader5 = $("#tile-header-5");
+
+  var $tile6 = $("#tile-6");
+  var $tileHeader6 = $("#tile-header-6");
+
+  var $tile7 = $("#tile-7");
+  var $tileHeader7 = $("#tile-header-7");
+
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function categoryActive() {
@@ -102,5 +114,17 @@ function categoryActive() {
 
   $tile3.css("background-image", "url(" + "'" + recipeListMaster[3].img + "'" + ")");
   $tileHeader3.html(recipeListMaster[3].name);
+
+  $tile4.css("background-image", "url(" + "'" + recipeListMaster[4].img + "'" + ")");
+  $tileHeader4.html(recipeListMaster[4].name);
+
+  $tile5.css("background-image", "url(" + "'" + recipeListMaster[5].img + "'" + ")");
+  $tileHeader5.html(recipeListMaster[5].name);
+
+  $tile6.css("background-image", "url(" + "'" + recipeListMaster[6].img + "'" + ")");
+  $tileHeader6.html(recipeListMaster[6].name);
+
+  $tile7.css("background-image", "url(" + "'" + recipeListMaster[7].img + "'" + ")");
+  $tileHeader7.html(recipeListMaster[7].name);
 
 });
