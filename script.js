@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
+  var $bodyGridContainer = $("#body-grid-container");
+
   var $categoryItem = $(".category-item");
 
   var $catAll = $("#cat-all");
@@ -12,32 +14,35 @@ $(document).ready(function() {
 
   var currentCatActive = "all";
 
-  var $tile0 = $("#tile-0");
-  var $tileHeader0 = $("#tile-header-0");
-
-  var $tile1 = $("#tile-1");
-  var $tileHeader1 = $("#tile-header-1");
-
-  var $tile2 = $("#tile-2");
-  var $tileHeader2 = $("#tile-header-2");
-
-  var $tile3 = $("#tile-3");
-  var $tileHeader3 = $("#tile-header-3");
-
-  var $tile4 = $("#tile-4");
-  var $tileHeader4 = $("#tile-header-4");
-
-  var $tile5 = $("#tile-5");
-  var $tileHeader5 = $("#tile-header-5");
-
-  var $tile6 = $("#tile-6");
-  var $tileHeader6 = $("#tile-header-6");
-
-  var $tile7 = $("#tile-7");
-  var $tileHeader7 = $("#tile-header-7");
+  var $tile = [];
+  var $tileHeader = [];
+  var tileCount = 0;
 
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
+function populateTiles() {
+  for(var tileCount = 0; tileCount < recipeListMaster.length; tileCount++) {
+    $newTileHeader = $("<h3/>")
+                     .attr("id", "tile-header-" + tileCount)
+                     .addClass("tile-header");
+
+    $newTile = $("<div/>")
+                     .attr("id", "tile-" + tileCount)
+                     .addClass("tile")
+                     .html("<div></div>");
+
+    $bodyGridContainer.append($newTile);
+    $newTile.append($newTileHeader);
+
+    $tile[tileCount] = $("#tile-" + tileCount);
+    $tile[tileCount].css("background-image", "url(" + "'" + recipeListMaster[tileCount].img + "'" + ")");
+
+    $tileHeader[tileCount] = $("#tile-header-" + tileCount);
+    $tileHeader[tileCount].html(recipeListMaster[tileCount].name);
+  }
+}
+
+
 function categoryActive() {
   switch(currentCatActive) {
     case "all":
@@ -72,6 +77,12 @@ function categoryActive() {
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
+  populateTiles();
+
+
+
+
+
   $catAll.on("click", function() {
     currentCatActive = "all";
     categoryActive();
@@ -103,28 +114,17 @@ function categoryActive() {
   });
 
 
-  $tile0.css("background-image", "url(" + "'" + recipeListMaster[0].img + "'" + ")");
-  $tileHeader0.html(recipeListMaster[0].name);
 
-  $tile1.css("background-image", "url(" + "'" + recipeListMaster[1].img + "'" + ")");
-  $tileHeader1.html(recipeListMaster[1].name);
 
-  $tile2.css("background-image", "url(" + "'" + recipeListMaster[2].img + "'" + ")");
-  $tileHeader2.html(recipeListMaster[2].name);
 
-  $tile3.css("background-image", "url(" + "'" + recipeListMaster[3].img + "'" + ")");
-  $tileHeader3.html(recipeListMaster[3].name);
+  $tile[0].on("click", function() {
+    console.log("scope test 0");
+  });
 
-  $tile4.css("background-image", "url(" + "'" + recipeListMaster[4].img + "'" + ")");
-  $tileHeader4.html(recipeListMaster[4].name);
+  $tile[1].on("click", function() {
+    console.log("scope test 1");
+  });
 
-  $tile5.css("background-image", "url(" + "'" + recipeListMaster[5].img + "'" + ")");
-  $tileHeader5.html(recipeListMaster[5].name);
 
-  $tile6.css("background-image", "url(" + "'" + recipeListMaster[6].img + "'" + ")");
-  $tileHeader6.html(recipeListMaster[6].name);
-
-  $tile7.css("background-image", "url(" + "'" + recipeListMaster[7].img + "'" + ")");
-  $tileHeader7.html(recipeListMaster[7].name);
 
 });
