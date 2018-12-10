@@ -13,6 +13,11 @@ var fajitas = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544117892/recipe-book/fajitas.jpg"
 };
 
+var frittata = {
+  name: "Frittata",
+  img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544402454/recipe-book/frittata.jpg"
+};
+
 var hamburgers = {
   name: "Hamburgers",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379558/recipe-book/hamburgers.jpg"
@@ -40,5 +45,5 @@ var tortelliniSoup = {
 
 
 
-var recipeListMaster = [bbqChicken, chili, fajitas, hamburgers, potatoCasserole,
+var recipeListMaster = [bbqChicken, chili, fajitas, frittata, hamburgers, potatoCasserole,
   spaghetti, springSalad, tortelliniSoup];

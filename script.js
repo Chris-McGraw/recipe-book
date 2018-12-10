@@ -18,6 +18,7 @@ $(document).ready(function() {
   var $tileHeader = [];
   var tileCount = 0;
 
+
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function populateTiles() {
   for(var tileCount = 0; tileCount < recipeListMaster.length; tileCount++) {
