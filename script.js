@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function populateTiles() {
-  for(var tileCount = 0; tileCount < recipeListMaster.length; tileCount++) {
+  if(tileCount < recipeListMaster.length) {
     $newTileHeader = $("<h3/>")
                      .attr("id", "tile-header-" + tileCount)
                      .addClass("tile-header");
@@ -39,6 +39,16 @@ function populateTiles() {
 
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
     $tileHeader[tileCount].html(recipeListMaster[tileCount].name);
+
+    setTimeout(function() {
+      $tile[tileCount].addClass("tile-fade-in");
+
+      tileCount++;
+    }, 100);
+
+    setTimeout(function() {
+      populateTiles();
+    }, 200);
   }
 }
 
@@ -121,10 +131,11 @@ function categoryActive() {
     console.log("scope test 0");
   });
 
-  $tile[1].on("click", function() {
-    console.log("scope test 1");
-  });
-
+  setTimeout(function() {
+    $tile[1].on("click", function() {
+      console.log("scope test 1");
+    });
+  }, 200);
 
 
 });
