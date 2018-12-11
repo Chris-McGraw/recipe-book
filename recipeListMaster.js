@@ -47,3 +47,7 @@ var tortelliniSoup = {
 
 var recipeListMaster = [bbqChicken, chili, fajitas, frittata, hamburgers, potatoCasserole,
   spaghetti, springSalad, tortelliniSoup];
+
+
+
+var recipeListBeef = [chili, hamburgers, spaghetti];

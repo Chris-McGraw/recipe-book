@@ -18,10 +18,27 @@ $(document).ready(function() {
   var $tileHeader = [];
   var tileCount = 0;
 
+  var allowPopulate = true;
+
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
-function populateTiles() {
+function clearTiles() {
+  allowPopulate = false;
+
+  var $currentTiles = $(".tile");
+
+  $currentTiles.remove();
+
+  tileCount = 0;
+  $tile.length = 0;
+  $tileHeader.length = 0;
+}
+
+
+function populateTilesAll() {
   if(tileCount < recipeListMaster.length) {
+    allowPopulate = true;
+
     $newTileHeader = $("<h3/>")
                      .attr("id", "tile-header-" + tileCount)
                      .addClass("tile-header");
@@ -41,13 +58,56 @@ function populateTiles() {
     $tileHeader[tileCount].html(recipeListMaster[tileCount].name);
 
     setTimeout(function() {
-      $tile[tileCount].addClass("tile-fade-in");
+      if(allowPopulate === true) {
+        $tile[tileCount].addClass("tile-fade-in");
 
-      tileCount++;
+        tileCount++;
+      }
     }, 100);
 
     setTimeout(function() {
-      populateTiles();
+      if(allowPopulate === true) {
+        populateTilesAll();
+      }
+    }, 200);
+  }
+}
+
+
+function populateTilesBeef() {
+  if(tileCount < recipeListBeef.length) {
+    allowPopulate = true;
+
+    $newTileHeader = $("<h3/>")
+                     .attr("id", "tile-header-" + tileCount)
+                     .addClass("tile-header");
+
+    $newTile = $("<div/>")
+                     .attr("id", "tile-" + tileCount)
+                     .addClass("tile")
+                     .html("<div></div>");
+
+    $bodyGridContainer.append($newTile);
+    $newTile.append($newTileHeader);
+
+    $tile[tileCount] = $("#tile-" + tileCount);
+    $tile[tileCount].css("background-image", "url(" + "'" + recipeListBeef[tileCount].img + "'" + ")");
+
+    $tileHeader[tileCount] = $("#tile-header-" + tileCount);
+    $tileHeader[tileCount].html(recipeListBeef[tileCount].name);
+
+    setTimeout(function() {
+      if(allowPopulate === true) {
+        $tile[tileCount].addClass("tile-fade-in");
+
+        tileCount++;
+      }
+    }, 100);
+
+    setTimeout(function() {
+      if(allowPopulate === true) {
+        populateTilesBeef();
+      }
     }, 200);
   }
 }
@@ -87,7 +147,7 @@ function categoryActive() {
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
-  populateTiles();
+  populateTilesAll();
 
 
 
@@ -96,11 +156,21 @@ function categoryActive() {
   $catAll.on("click", function() {
     currentCatActive = "all";
     categoryActive();
+    clearTiles();
+
+    setTimeout(function() {
+      populateTilesAll();
+    }, 200);
   });
 
   $catBeef.on("click", function() {
     currentCatActive = "beef";
     categoryActive();
+    clearTiles();
+
+    setTimeout(function() {
+      populateTilesBeef();
+    }, 200);
   });
 
   $catPork.on("click", function() {
@@ -127,7 +197,7 @@ function categoryActive() {
 
 
 
-  $tile[0].on("click", function() {
+  /* $tile[0].on("click", function() {
     console.log("scope test 0");
   });
 
@@ -135,7 +205,7 @@ function categoryActive() {
     $tile[1].on("click", function() {
       console.log("scope test 1");
     });
-  }, 200);
+  }, 200); */
 
 
 });
