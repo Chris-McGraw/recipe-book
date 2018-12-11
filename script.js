@@ -142,23 +142,27 @@ function categoryActive() {
 
 
   $catAll.on("click", function() {
-    currentCatActive = "all";
-    categoryActive();
-    clearTiles();
+    if(currentCatActive !== "all") {
+      currentCatActive = "all";
+      categoryActive();
+      clearTiles();
 
-    setTimeout(function() {
-      populateTiles();
-    }, 200);
+      setTimeout(function() {
+        populateTiles();
+      }, 200);
+    }
   });
 
   $catBeef.on("click", function() {
-    currentCatActive = "beef";
-    categoryActive();
-    clearTiles();
+    if(currentCatActive !== "beef") {
+      currentCatActive = "beef";
+      categoryActive();
+      clearTiles();
 
-    setTimeout(function() {
-      populateTiles();
-    }, 200);
+      setTimeout(function() {
+        populateTiles();
+      }, 200);
+    }
   });
 
   $catPork.on("click", function() {
