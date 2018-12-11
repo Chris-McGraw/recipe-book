@@ -35,6 +35,8 @@ body {
   font-family: 'Satisfy', cursive;
   font-size: 50px;
   color: white;
+
+  user-select: none;
 }
 
 #body-grid-container {
@@ -56,6 +58,8 @@ body {
   height: 40px;
 
   border-bottom: 1px solid white;
+
+  user-select: none;
 }
 
 #category-row-top {

@@ -35,47 +35,35 @@ function clearTiles() {
 }
 
 
-function populateTilesAll() {
-  if(tileCount < recipeListMaster.length) {
-    allowPopulate = true;
-
-    $newTileHeader = $("<h3/>")
-                     .attr("id", "tile-header-" + tileCount)
-                     .addClass("tile-header");
-
-    $newTile = $("<div/>")
-                     .attr("id", "tile-" + tileCount)
-                     .addClass("tile")
-                     .html("<div></div>");
-
-    $bodyGridContainer.append($newTile);
-    $newTile.append($newTileHeader);
-
-    $tile[tileCount] = $("#tile-" + tileCount);
-    $tile[tileCount].css("background-image", "url(" + "'" + recipeListMaster[tileCount].img + "'" + ")");
-
-    $tileHeader[tileCount] = $("#tile-header-" + tileCount);
-    $tileHeader[tileCount].html(recipeListMaster[tileCount].name);
-
-    setTimeout(function() {
-      if(allowPopulate === true) {
-        $tile[tileCount].addClass("tile-fade-in");
-
-        tileCount++;
-      }
-    }, 100);
-
-    setTimeout(function() {
-      if(allowPopulate === true) {
-        populateTilesAll();
-      }
-    }, 200);
+function populateTiles() {
+  switch(currentCatActive) {
+    case "all":
+      var currentRecipeList = recipeListMaster
+      break;
+    case "beef":
+      var currentRecipeList = recipeListBeef;
+      break;
+    /* case "pork":
+      $categoryItem.removeClass("category-active");
+      $catPork.addClass("category-active");
+      break;
+    case "poultry":
+      $categoryItem.removeClass("category-active");
+      $catPoultry.addClass("category-active");
+      break;
+    case "seafood":
+      $categoryItem.removeClass("category-active");
+      $catSeafood.addClass("category-active");
+      break;
+    case "vegetarian":
+      $categoryItem.removeClass("category-active");
+      $catVeg.addClass("category-active");
+      break; */
+    default:
+      var currentRecipeList = recipeListMaster
   }
-}
 
-
-function populateTilesBeef() {
-  if(tileCount < recipeListBeef.length) {
+  if(tileCount < currentRecipeList.length) {
     allowPopulate = true;
 
     $newTileHeader = $("<h3/>")
@@ -91,10 +79,10 @@ function populateTilesBeef() {
     $newTile.append($newTileHeader);
 
     $tile[tileCount] = $("#tile-" + tileCount);
-    $tile[tileCount].css("background-image", "url(" + "'" + recipeListBeef[tileCount].img + "'" + ")");
+    $tile[tileCount].css("background-image", "url(" + "'" + currentRecipeList[tileCount].img + "'" + ")");
 
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
-    $tileHeader[tileCount].html(recipeListBeef[tileCount].name);
+    $tileHeader[tileCount].html(currentRecipeList[tileCount].name);
 
     setTimeout(function() {
       if(allowPopulate === true) {
@@ -106,7 +94,7 @@ function populateTilesBeef() {
 
     setTimeout(function() {
       if(allowPopulate === true) {
-        populateTilesBeef();
+        populateTiles();
       }
     }, 200);
   }
@@ -147,7 +135,7 @@ function categoryActive() {
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
-  populateTilesAll();
+  populateTiles();
 
 
 
@@ -159,7 +147,7 @@ function categoryActive() {
     clearTiles();
 
     setTimeout(function() {
-      populateTilesAll();
+      populateTiles();
     }, 200);
   });
 
@@ -169,7 +157,7 @@ function categoryActive() {
     clearTiles();
 
     setTimeout(function() {
-      populateTilesBeef();
+      populateTiles();
     }, 200);
   });
 
