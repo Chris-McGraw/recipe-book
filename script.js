@@ -19,6 +19,7 @@ $(document).ready(function() {
   var tileCount = 0;
 
   var allowPopulate = true;
+  var delayPopulate = false;
 
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
@@ -142,24 +143,32 @@ function categoryActive() {
 
 
   $catAll.on("click", function() {
-    if(currentCatActive !== "all") {
+    if(currentCatActive !== "all" && delayPopulate === false) {
       currentCatActive = "all";
       categoryActive();
       clearTiles();
 
+      delayPopulate = true;
+
       setTimeout(function() {
+        delayPopulate = false;
+
         populateTiles();
       }, 200);
     }
   });
 
   $catBeef.on("click", function() {
-    if(currentCatActive !== "beef") {
+    if(currentCatActive !== "beef" && delayPopulate === false) {
       currentCatActive = "beef";
       categoryActive();
       clearTiles();
 
+      delayPopulate = true;
+
       setTimeout(function() {
+        delayPopulate = false;
+
         populateTiles();
       }, 200);
     }
