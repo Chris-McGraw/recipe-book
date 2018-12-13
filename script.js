@@ -135,6 +135,19 @@ function categoryActive() {
 }
 
 
+function categoryClick() {
+  categoryActive();
+  clearTiles();
+
+  delayPopulate = true;
+
+  setTimeout(function() {
+    delayPopulate = false;
+    populateTiles();
+  }, 200);
+}
+
+
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
   populateTiles();
 
@@ -145,32 +158,14 @@ function categoryActive() {
   $catAll.on("click", function() {
     if(currentCatActive !== "all" && delayPopulate === false) {
       currentCatActive = "all";
-      categoryActive();
-      clearTiles();
-
-      delayPopulate = true;
-
-      setTimeout(function() {
-        delayPopulate = false;
-
-        populateTiles();
-      }, 200);
+      categoryClick();
     }
   });
 
   $catBeef.on("click", function() {
     if(currentCatActive !== "beef" && delayPopulate === false) {
       currentCatActive = "beef";
-      categoryActive();
-      clearTiles();
-
-      delayPopulate = true;
-
-      setTimeout(function() {
-        delayPopulate = false;
-
-        populateTiles();
-      }, 200);
+      categoryClick();
     }
   });
 
