@@ -23,9 +23,19 @@ var hamburgers = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379558/recipe-book/hamburgers.jpg"
 };
 
+var macAndCheese = {
+  name: "Mac & Cheese",
+  img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/mac-and-cheese.jpg"
+};
+
 var potatoCasserole = {
   name: "Potato Casserole",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379270/recipe-book/potato-casserole.jpg"
+};
+
+var pulledPork = {
+  name: "Pulled Pork",
+  img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/pulled-pork.jpg"
 };
 
 var spaghetti = {
@@ -45,9 +55,15 @@ var tortelliniSoup = {
 
 
 
-var recipeListMaster = [bbqChicken, chili, fajitas, frittata, hamburgers, potatoCasserole,
-  spaghetti, springSalad, tortelliniSoup];
-
-
+var recipeListMaster = [bbqChicken, chili, fajitas, frittata, hamburgers, macAndCheese,
+  potatoCasserole, pulledPork, spaghetti, springSalad, tortelliniSoup];
 
 var recipeListBeef = [chili, hamburgers, spaghetti];
+
+var recipeListPork = [pulledPork];
+
+var recipeListPoultry = [bbqChicken, fajitas, tortelliniSoup];
+
+var recipeListSeafood = [];
+
+var recipeListVegetarian = [frittata, macAndCheese, potatoCasserole, springSalad];
