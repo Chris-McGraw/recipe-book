@@ -44,22 +44,18 @@ function populateTiles() {
     case "beef":
       var currentRecipeList = recipeListBeef;
       break;
-    /* case "pork":
-      $categoryItem.removeClass("category-active");
-      $catPork.addClass("category-active");
+    case "pork":
+      var currentRecipeList = recipeListPork;
       break;
     case "poultry":
-      $categoryItem.removeClass("category-active");
-      $catPoultry.addClass("category-active");
+      var currentRecipeList = recipeListPoultry;
       break;
     case "seafood":
-      $categoryItem.removeClass("category-active");
-      $catSeafood.addClass("category-active");
+      var currentRecipeList = recipeListSeafood;
       break;
     case "vegetarian":
-      $categoryItem.removeClass("category-active");
-      $catVeg.addClass("category-active");
-      break; */
+      var currentRecipeList = recipeListVegetarian;
+      break;
     default:
       var currentRecipeList = recipeListMaster
   }
@@ -170,23 +166,31 @@ function categoryClick() {
   });
 
   $catPork.on("click", function() {
-    currentCatActive = "pork";
-    categoryActive();
+    if(currentCatActive !== "pork" && delayPopulate === false) {
+      currentCatActive = "pork";
+      categoryClick();
+    }
   });
 
   $catPoultry.on("click", function() {
-    currentCatActive = "poultry";
-    categoryActive();
+    if(currentCatActive !== "poultry" && delayPopulate === false) {
+      currentCatActive = "poultry";
+      categoryClick();
+    }
   });
 
   $catSeafood.on("click", function() {
-    currentCatActive = "seafood";
-    categoryActive();
+    if(currentCatActive !== "seafood" && delayPopulate === false) {
+      currentCatActive = "seafood";
+      categoryClick();
+    }
   });
 
   $catVeg.on("click", function() {
-    currentCatActive = "vegetarian";
-    categoryActive();
+    if(currentCatActive !== "vegetarian" && delayPopulate === false) {
+      currentCatActive = "vegetarian";
+      categoryClick();
+    }
   });
 
 
