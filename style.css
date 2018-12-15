@@ -24,7 +24,7 @@ body {
 #hamburger-menu {
     z-index: 20;
     position: absolute;
-    top: 20px;
+    top: 17px;
     left: 20px;
 
     width: 29px;
@@ -61,6 +61,19 @@ body {
   color: white;
 
   user-select: none;
+}
+
+#search-icon {
+  z-index: 20;
+  position: absolute;
+  top: 20px;
+  left: auto;
+  right: 22px;
+
+  font-size: 1.4em;
+  color: white;
+
+  cursor: pointer;
 }
 
 #body-grid-container {
