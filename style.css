@@ -10,6 +10,14 @@ body {
   background-color: rgb(36, 38, 40);
 }
 
+.hidden {
+  display: none;
+}
+
+.dropdown-active {
+  top: 150px !important;
+}
+
 #navbar {
   z-index: 20;
   position: fixed;
@@ -74,6 +82,55 @@ body {
   color: white;
 
   cursor: pointer;
+}
+
+#navbar-dropdown {
+  z-index: 20;
+  position: fixed;
+  top: 70px;
+
+  width: 100%;
+  height: 40px;
+
+  background-color: rgb(47, 106, 93);
+}
+
+.dropdown-button {
+  z-index: 20;
+  position: absolute;
+  top: 12px;
+
+  width: 50%;
+  height: 100%;
+
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: white;
+
+  cursor: pointer;
+}
+
+#dropdown-left {
+  left: 0;
+}
+
+#dropdown-spacer {
+  z-index: 30;
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  width: 1px;
+  height: 100%;
+  margin: auto;
+
+  border-left: 1px solid white;
+}
+
+#dropdown-right {
+  right: 0;
 }
 
 #body-grid-container {
