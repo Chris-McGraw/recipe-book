@@ -6,6 +6,10 @@ $(document).ready(function() {
   var navbarDropdownActive = false;
   var delayDropdown = false;
 
+  var $hamburgerBarTop = $("#hamburger-bar-top");
+  var $hamburgerBarMiddle = $("#hamburger-bar-middle");
+  var $hamburgerBarBottom = $("#hamburger-bar-bottom");
+
   var $searchIcon = $("#search-icon");
   var $searchDropdown = $("#search-dropdown");
   var searchDropdownActive = false;
@@ -107,13 +111,27 @@ function populateTiles() {
 }
 
 
+function hamburgerIconMorph() {
+  if(navbarDropdownActive === false) {
+    $hamburgerBarTop.addClass("rotate-bar-top");
+    $hamburgerBarMiddle.addClass("hide-bar-middle");
+    $hamburgerBarBottom.addClass("rotate-bar-bottom");
+  }
+
+  else if(navbarDropdownActive === true) {
+    $hamburgerBarTop.removeClass("rotate-bar-top");
+    $hamburgerBarMiddle.removeClass("hide-bar-middle");
+    $hamburgerBarBottom.removeClass("rotate-bar-bottom");
+  }
+}
+
+
 function navbarDropdownToggle() {
   delayDropdown = true;
 
-  if(navbarDropdownActive === false) {
-    $navbarDropdown.removeClass("dropdown-retract");
-    $bodyGridContainer.removeClass("dropdown-retract");
+  hamburgerIconMorph();
 
+  if(navbarDropdownActive === false) {
     $navbarDropdown.addClass("dropdown-expand");
     $bodyGridContainer.addClass("dropdown-expand");
 
@@ -123,9 +141,6 @@ function navbarDropdownToggle() {
   else if(navbarDropdownActive === true) {
     $navbarDropdown.removeClass("dropdown-expand");
     $bodyGridContainer.removeClass("dropdown-expand");
-
-    $navbarDropdown.addClass("dropdown-retract");
-    $bodyGridContainer.addClass("dropdown-retract-body");
 
     navbarDropdownActive = false;
   }
@@ -140,9 +155,6 @@ function searchDropdownToggle() {
   delayDropdown = true;
 
   if(searchDropdownActive === false) {
-    $searchDropdown.removeClass("dropdown-retract");
-    $bodyGridContainer.removeClass("dropdown-retract");
-
     $searchDropdown.addClass("dropdown-expand");
     $bodyGridContainer.addClass("dropdown-expand");
 
@@ -152,9 +164,6 @@ function searchDropdownToggle() {
   else if(searchDropdownActive === true) {
     $searchDropdown.removeClass("dropdown-expand");
     $bodyGridContainer.removeClass("dropdown-expand");
-
-    $searchDropdown.addClass("dropdown-retract");
-    $bodyGridContainer.addClass("dropdown-retract-body");
 
     searchDropdownActive = false;
   }
