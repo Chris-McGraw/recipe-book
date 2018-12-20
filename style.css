@@ -14,12 +14,16 @@ body {
   display: none;
 }
 
-.dropdown-active {
-  top: 150px !important;
+.dropdown-expand {
+  transform: translateY(40px);
+}
+
+.dropdown-retract {
+  transform: translateY(-40px);
 }
 
 #navbar {
-  z-index: 20;
+  z-index: 30;
   position: fixed;
   top: 0;
 
@@ -30,7 +34,7 @@ body {
 }
 
 #hamburger-menu {
-  z-index: 20;
+  z-index: 30;
   position: absolute;
   top: 17px;
   left: 20px;
@@ -72,7 +76,7 @@ body {
 }
 
 #search-icon {
-  z-index: 20;
+  z-index: 30;
   position: absolute;
   top: 19px;
   left: auto;
@@ -87,12 +91,14 @@ body {
 #navbar-dropdown {
   z-index: 20;
   position: fixed;
-  top: 70px;
+  top: 30px;
 
   width: 100%;
   height: 40px;
 
   background-color: rgb(47, 106, 93);
+
+  transition: transform 400ms ease-in-out;
 }
 
 .dropdown-button {
@@ -144,6 +150,8 @@ body {
 
   margin-left: 40px;
   margin-right: 40px;
+
+  transition: transform 400ms ease-in-out;
 }
 
 #category-container {
