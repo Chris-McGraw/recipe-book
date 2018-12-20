@@ -220,13 +220,33 @@ function categoryClick() {
 
   $hamburgerMenu.on("click", function() {
     if(delayDropdown === false) {
-      navbarDropdownToggle();
+      if(searchDropdownActive === true) {
+        searchDropdownToggle();
+
+        setTimeout(function() {
+          navbarDropdownToggle();
+        }, 400);
+      }
+
+      else {
+        navbarDropdownToggle();
+      }
     }
   });
 
   $searchIcon.on("click", function() {
     if(delayDropdown === false) {
-      searchDropdownToggle();
+      if(navbarDropdownActive === true) {
+        navbarDropdownToggle();
+
+        setTimeout(function() {
+          searchDropdownToggle();
+        }, 400);
+      }
+
+      else {
+        searchDropdownToggle();
+      }
     }
   });
 
