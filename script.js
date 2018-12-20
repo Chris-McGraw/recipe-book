@@ -107,22 +107,28 @@ function navbarDropdownToggle() {
   delayDropdown = true;
 
   if(navbarDropdownActive === false) {
-    $navbarDropdown.removeClass("hidden");
-    $bodyGridContainer.addClass("dropdown-active");
+    $navbarDropdown.removeClass("dropdown-retract");
+    $bodyGridContainer.removeClass("dropdown-retract");
+
+    $navbarDropdown.addClass("dropdown-expand");
+    $bodyGridContainer.addClass("dropdown-expand");
 
     navbarDropdownActive = true;
   }
 
   else if(navbarDropdownActive === true) {
-    $navbarDropdown.addClass("hidden");
-    $bodyGridContainer.removeClass("dropdown-active");
+    $navbarDropdown.removeClass("dropdown-expand");
+    $bodyGridContainer.removeClass("dropdown-expand");
+
+    $navbarDropdown.addClass("dropdown-retract");
+    $bodyGridContainer.addClass("dropdown-retract-body");
 
     navbarDropdownActive = false;
   }
 
   setTimeout(function() {
     delayDropdown = false;
-  }, 200);
+  }, 100);
 }
 
 
