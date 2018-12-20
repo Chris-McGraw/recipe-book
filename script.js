@@ -6,6 +6,10 @@ $(document).ready(function() {
   var navbarDropdownActive = false;
   var delayDropdown = false;
 
+  var $searchIcon = $("#search-icon");
+  var $searchDropdown = $("#search-dropdown");
+  var searchDropdownActive = false;
+
   var $bodyGridContainer = $("#body-grid-container");
 
   var $categoryItem = $(".category-item");
@@ -132,6 +136,35 @@ function navbarDropdownToggle() {
 }
 
 
+function searchDropdownToggle() {
+  delayDropdown = true;
+
+  if(searchDropdownActive === false) {
+    $searchDropdown.removeClass("dropdown-retract");
+    $bodyGridContainer.removeClass("dropdown-retract");
+
+    $searchDropdown.addClass("dropdown-expand");
+    $bodyGridContainer.addClass("dropdown-expand");
+
+    searchDropdownActive = true;
+  }
+
+  else if(searchDropdownActive === true) {
+    $searchDropdown.removeClass("dropdown-expand");
+    $bodyGridContainer.removeClass("dropdown-expand");
+
+    $searchDropdown.addClass("dropdown-retract");
+    $bodyGridContainer.addClass("dropdown-retract-body");
+
+    searchDropdownActive = false;
+  }
+
+  setTimeout(function() {
+    delayDropdown = false;
+  }, 100);
+}
+
+
 function categoryActive() {
   switch(currentCatActive) {
     case "all":
@@ -187,7 +220,33 @@ function categoryClick() {
 
   $hamburgerMenu.on("click", function() {
     if(delayDropdown === false) {
-      navbarDropdownToggle();
+      if(searchDropdownActive === true) {
+        searchDropdownToggle();
+
+        setTimeout(function() {
+          navbarDropdownToggle();
+        }, 400);
+      }
+
+      else {
+        navbarDropdownToggle();
+      }
+    }
+  });
+
+  $searchIcon.on("click", function() {
+    if(delayDropdown === false) {
+      if(navbarDropdownActive === true) {
+        navbarDropdownToggle();
+
+        setTimeout(function() {
+          searchDropdownToggle();
+        }, 400);
+      }
+
+      else {
+        searchDropdownToggle();
+      }
     }
   });
 
