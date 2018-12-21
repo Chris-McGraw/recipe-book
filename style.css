@@ -102,6 +102,41 @@ body {
   color: white;
 
   cursor: pointer;
+
+  transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
+}
+
+#search-close-icon {
+  z-index: 30;
+  position: absolute;
+  top: 17px;
+  right: 19px;
+
+  width: 27px;
+
+  cursor: pointer;
+
+  transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
+}
+
+#search-close-bar-top {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#search-close-bar-bottom {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.hide-search-icon {
+  transform: scale(0.0);
+
+  opacity: 0.0;
+}
+
+.show-search-icon {
+  transform: scale(1.0);
+
+  opacity: 1.0;
 }
 
 #navbar-dropdown {
