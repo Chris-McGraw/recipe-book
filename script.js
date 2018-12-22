@@ -28,6 +28,7 @@ $(document).ready(function() {
   var currentCatActive = "all";
 
   var $tile = [];
+  var $tileLink = [];
   var $tileHeader = [];
   var tileCount = 0;
 
@@ -40,11 +41,14 @@ function clearTiles() {
   allowPopulate = false;
 
   var $currentTiles = $(".tile");
+  var $currentTileLinks = $(".tile-link");
 
   $currentTiles.remove();
+  $currentTileLinks.remove();
 
   tileCount = 0;
   $tile.length = 0;
+  $tileLink.length = 0;
   $tileHeader.length = 0;
 }
 
@@ -76,6 +80,11 @@ function populateTiles() {
   if(tileCount < currentRecipeList.length) {
     allowPopulate = true;
 
+    $newTileLink = $("<a/>")
+                     .attr("id", "tile-link-" + tileCount)
+                     .attr("target", "_blank")
+                     .addClass("tile-link");
+
     $newTileHeader = $("<h3/>")
                      .attr("id", "tile-header-" + tileCount)
                      .addClass("tile-header");
@@ -85,11 +94,15 @@ function populateTiles() {
                      .addClass("tile")
                      .html("<div></div>");
 
-    $bodyGridContainer.append($newTile);
+    $bodyGridContainer.append($newTileLink);
+    $newTileLink.append($newTile);
     $newTile.append($newTileHeader);
 
     $tile[tileCount] = $("#tile-" + tileCount);
     $tile[tileCount].css("background-image", "url(" + "'" + currentRecipeList[tileCount].img + "'" + ")");
+
+    $tileLink[tileCount] = $("#tile-link-" + tileCount);
+    $tileLink[tileCount].attr("href", currentRecipeList[tileCount].img);
 
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
     $tileHeader[tileCount].html(currentRecipeList[tileCount].name);

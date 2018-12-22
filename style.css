@@ -346,7 +346,14 @@ body {
   cursor: pointer;
 }
 
+.tile-link {
+  text-decoration: none;
+}
+
 .tile-header {
+  user-select: none;
+  pointer-events: none;
+
   display: flex;
   align-items: center;
   justify-content: center;
