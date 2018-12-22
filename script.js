@@ -102,7 +102,7 @@ function populateTiles() {
     $tile[tileCount].css("background-image", "url(" + "'" + currentRecipeList[tileCount].img + "'" + ")");
 
     $tileLink[tileCount] = $("#tile-link-" + tileCount);
-    $tileLink[tileCount].attr("href", currentRecipeList[tileCount].img);
+    $tileLink[tileCount].attr("href", currentRecipeList[tileCount].link);
 
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
     $tileHeader[tileCount].html(currentRecipeList[tileCount].name);
