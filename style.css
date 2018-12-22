@@ -209,14 +209,16 @@ body {
   left: 0;
   right: 0;
 
-  width: 39%;
-  min-width: 240px;
+  width: 40%;
+  min-width: 275px;
+
   height: 25px;
   margin: auto;
 }
 
 #search-bar {
   -webkit-appearance: none;
+  -webkit-border-radius: 0;
 
   position: absolute;
   left: -30px;
