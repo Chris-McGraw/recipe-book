@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="recipePageStyle.css">
+  <title>Recipe Book</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+  <script type="text/javascript" src="../recipeListMaster.js" defer></script>
+  <!-- <script type="text/javascript" src="../script.js" defer></script> -->
+</head>
+
+<body>
+
+  <div id="navbar">
+    <div id="hamburger-menu">
+      <div class="hamburger-bar" id="hamburger-bar-top"></div>
+      <div class="hamburger-bar" id="hamburger-bar-middle"></div>
+      <div class="hamburger-bar" id="hamburger-bar-bottom"></div>
+    </div>
+
+    <div id="main-logo">Recipe Book</div>
+
+    <i id="search-icon" class="fa fa-search" aria-hidden="true"></i>
+    <div id="search-close-icon" class="hide-search-icon">
+      <div class="hamburger-bar" id="search-close-bar-top"></div>
+      <div class="hamburger-bar hide-bar-middle"></div>
+      <div class="hamburger-bar" id="search-close-bar-bottom"></div>
+    </div>
+  </div>
+
+  <div id="navbar-dropdown">
+    <div class="dropdown-button" id="dropdown-left">Saved Recipes</div>
+    <div id="dropdown-spacer"></div>
+    <div class="dropdown-button" id="dropdown-right">Find New Recipes</div>
+  </div>
+
+  <div id="search-dropdown">
+    <div id="search-bar-container">
+      <input id="search-bar" type="text" placeholder="Search My Saved Recipes..." />
+      <i id="search-icon-dropdown" class="fa fa-search" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div id="body-grid-container">
+    <div id="recipe-title-container"></div>
+    <div id="ingredient-container"></div>
+    <div id="image-container"></div>  
+    <div id="instruction-container"></div>
+  </div>
+
+</body>
+
+</html>
