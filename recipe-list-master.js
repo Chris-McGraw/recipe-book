@@ -1,19 +1,22 @@
 var bbqChicken = {
+  id: "bbqChicken",
   name: "BBQ Chicken",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379016/recipe-book/bbq-chicken.jpg",
-  link: "recipes/template.html"
+  link: "recipes/bbq-chicken.html"
 };
 
 var chili = {
+  id: "chiliConCarne",
   name: "Chili Con Carne",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118007/recipe-book/chili-con-carne.jpg",
-  link: "recipes/template.html"
+  link: "recipes/chili-con-carne.html"
 };
 
 var fajitas = {
+  id: "fajitas",
   name: "Fajitas",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544117892/recipe-book/fajitas.jpg",
-  link: "recipes/template.html"
+  link: "recipes/fajitas.html"
 };
 
 var frittata = {

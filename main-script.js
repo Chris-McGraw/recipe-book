@@ -82,7 +82,7 @@ function populateTiles() {
 
     $newTileLink = $("<a/>")
                      .attr("id", "tile-link-" + tileCount)
-                     .attr("target", "_blank")
+                     /* .attr("target", "_blank") */
                      .addClass("tile-link");
 
     $newTileHeader = $("<h3/>")
