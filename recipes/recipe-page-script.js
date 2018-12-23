@@ -3,6 +3,7 @@ $(document).ready(function() {
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
   var currentRecipeName = "";
 
+  var $recipeTitleContainer = $("#recipe-title-container");
   var $imageContainer = $("#image-container");
 
 
@@ -35,6 +36,7 @@ $(document).ready(function() {
       if(currentRecipeName === recipeListMaster[q].id) {
         /* console.log(recipeListMaster[q].name); */
 
+        $recipeTitleContainer.append(recipeListMaster[q].name);
         $imageContainer.css("background-image", "url(" + "'" + recipeListMaster[q].img + "'" + ")");
       }
     }
