@@ -16,7 +16,7 @@
   font-weight: normal;
   color: white;
 
-  border: 1px dashed white;
+  /* border: 1px dashed white; */
 }
 
 #ingredient-container {
@@ -25,7 +25,70 @@
 
   height: 400px;
 
-  border: 1px dashed white;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: white;
+
+  /* border: 1px dashed white; */
+}
+
+#ingredient-title {
+  position: relative;
+
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+
+  text-align: center;
+  font-size: 20px;
+
+  border-bottom: 1px solid rgb(76, 211, 182);
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding-bottom: 6px;
+}
+
+.ingredient-list-container {
+  position: relative;
+  display: inline-block;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  height: auto;
+  margin: auto;
+
+  text-align: left !important;
+
+  /* border: 1px dashed white; */
+}
+
+#ingredient-list-left {
+  position: relative;
+  float: left;
+
+  width: 50%;
+  height: auto;
+
+  /* border: 1px dashed yellow; */
+}
+
+#ingredient-list-right {
+  position: relative;
+  float: right;
+
+  width: 50%;
+  height: auto;
+
+  /* border: 1px dashed red; */
 }
 
 #image-container {
@@ -41,13 +104,40 @@
   background-size: cover;
 }
 
-#instruction-container {
+#recipe-container {
   grid-column: span 5;
   order: 4;
 
-  height: 400px;
+  position: relative;
 
-  border: 1px dashed white;
+  height: auto;
+  margin-top: 20px;
+
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: white;
+
+  /* border: 1px dashed white; */
+}
+
+#recipe-title {
+  position: relative;
+  top: 0;
+
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+
+  text-align: center;
+  font-size: 20px;
+
+  border-bottom: 1px solid rgb(76, 211, 182);
+}
+
+.recipe-step {
+  padding-bottom: 20px;
 }
 
 
@@ -75,11 +165,20 @@
   #ingredient-container {
     grid-column: span 4;
     order: 3;
+
+    height: auto;
+    margin-top: 20px;
   }
 
-  #instruction-container {
+  .ingredient-list-container {
+    width: auto;
+  }
+
+  #recipe-container {
     grid-column: span 4;
     order: 4;
+
+    /* height: auto; */
   }
 }
 
@@ -105,7 +204,7 @@
     grid-column: span 3;
   }
 
-  #instruction-container {
+  #recipe-container {
     grid-column: span 3;
   }
 }
@@ -132,7 +231,15 @@
     grid-column: span 2;
   }
 
-  #instruction-container {
+  #ingredient-list-left {
+    width: 100%;
+  }
+
+  #ingredient-list-right {
+    display: none;
+  }
+
+  #recipe-container {
     grid-column: span 2;
   }
 }
@@ -159,7 +266,7 @@
     grid-column: span 1;
   }
 
-  #instruction-container {
+  #recipe-container {
     grid-column: span 1;
   }
 }
