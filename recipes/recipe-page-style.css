@@ -25,6 +25,7 @@
 
   height: 400px;
 
+  text-align: center;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -38,13 +39,13 @@
 
   width: 100%;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding-bottom: 5px;
 
   text-align: center;
   font-size: 20px;
 
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(76, 211, 182);
 }
 
 ul {
@@ -52,7 +53,22 @@ ul {
 }
 
 li {
-  padding-bottom: 4px;
+  padding-bottom: 6px;
+}
+
+.ingredient-list-container {
+  position: relative;
+  display: inline-block;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  height: auto;
+  margin: auto;
+
+  text-align: left !important;
+
+  /* border: 1px dashed white; */
 }
 
 #ingredient-list-left {
@@ -94,7 +110,8 @@ li {
 
   position: relative;
 
-  height: 400px;
+  height: auto;
+  margin-top: 20px;
 
   font-family: sans-serif;
   font-size: 14px;
@@ -110,12 +127,17 @@ li {
 
   width: 100%;
   height: auto;
+  margin-bottom: 20px;
   padding-bottom: 5px;
 
   text-align: center;
   font-size: 20px;
 
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(76, 211, 182);
+}
+
+.recipe-step {
+  padding-bottom: 20px;
 }
 
 
@@ -145,6 +167,11 @@ li {
     order: 3;
 
     height: auto;
+    margin-top: 20px;
+  }
+
+  .ingredient-list-container {
+    width: auto;
   }
 
   #recipe-container {
