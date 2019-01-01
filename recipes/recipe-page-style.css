@@ -65,6 +65,7 @@ li {
   width: 100%;
   height: auto;
   margin: auto;
+  padding-right: 10px;
 
   text-align: left !important;
 
@@ -172,6 +173,7 @@ li {
 
   .ingredient-list-container-inner {
     width: auto;
+    padding-right: 0;
   }
 
   #recipe-container {
