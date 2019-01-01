@@ -56,7 +56,7 @@ li {
   padding-bottom: 6px;
 }
 
-.ingredient-list-container {
+.ingredient-list-container-inner {
   position: relative;
   display: inline-block;
   left: 0;
@@ -65,13 +65,14 @@ li {
   width: 100%;
   height: auto;
   margin: auto;
+  padding-right: 10px;
 
   text-align: left !important;
 
   /* border: 1px dashed white; */
 }
 
-#ingredient-list-left {
+#ingredient-list-container-left {
   position: relative;
   float: left;
 
@@ -81,7 +82,7 @@ li {
   /* border: 1px dashed yellow; */
 }
 
-#ingredient-list-right {
+#ingredient-list-container-right {
   position: relative;
   float: right;
 
@@ -170,8 +171,9 @@ li {
     margin-top: 20px;
   }
 
-  .ingredient-list-container {
+  .ingredient-list-container-inner {
     width: auto;
+    padding-right: 0;
   }
 
   #recipe-container {
@@ -231,11 +233,11 @@ li {
     grid-column: span 2;
   }
 
-  #ingredient-list-left {
+  #ingredient-list-container-left {
     width: 100%;
   }
 
-  #ingredient-list-right {
+  #ingredient-list-container-right {
     display: none;
   }
 
