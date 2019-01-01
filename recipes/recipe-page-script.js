@@ -6,6 +6,9 @@ $(document).ready(function() {
   var $recipeTitleContainer = $("#recipe-title-container");
   var $imageContainer = $("#image-container");
 
+  var $ingredientListLeft = $("#ingredient-list-left");
+  var $ingredientListRight = $("#ingredient-list-right");
+
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
   function getCurrentRecipe() {
@@ -29,15 +32,31 @@ $(document).ready(function() {
   }
 
 
+  function getIngredientList() {
+    var ingredientListHalfFirst = Math.round(recipeListMaster[q].ingredients.length / 2);
+    var ingredientListHalfLast = ingredientListHalfFirst;
+
+    /* Get Ingredient List Left */
+    for(ingListCount = 0; ingListCount < ingredientListHalfFirst; ingListCount++) {
+      $ingredientListLeft.append("<li>- " + recipeListMaster[q].ingredients[ingListCount] + "</li>");
+    }
+
+    /* Get Ingredient List Right */
+    for(ingListCount2 = ingredientListHalfLast; ingListCount2 < recipeListMaster[q].ingredients.length; ingListCount2++) {
+      $ingredientListRight.append("<li>- " + recipeListMaster[q].ingredients[ingListCount2] + "</li>");
+    }
+  }
+
+
   function populateRecipePage() {
     getCurrentRecipe();
 
     for(q = 0; q < recipeListMaster.length; q++) {
       if(currentRecipeName === recipeListMaster[q].id) {
-        /* console.log(recipeListMaster[q].name); */
-
         $recipeTitleContainer.append(recipeListMaster[q].name);
         $imageContainer.css("background-image", "url(" + "'" + recipeListMaster[q].img + "'" + ")");
+
+        getIngredientList();
       }
     }
   }
