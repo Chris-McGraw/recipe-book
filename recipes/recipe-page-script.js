@@ -6,6 +6,7 @@ $(document).ready(function() {
   var $recipeTitleContainer = $("#recipe-title-container");
   var $imageContainer = $("#image-container");
 
+  var $ingredientListAll = $("#ingredient-list-all");
   var $ingredientListLeft = $("#ingredient-list-left");
   var $ingredientListRight = $("#ingredient-list-right");
 
@@ -35,6 +36,11 @@ $(document).ready(function() {
   function getIngredientList() {
     var ingredientListHalfFirst = Math.round(recipeListMaster[q].ingredients.length / 2);
     var ingredientListHalfLast = ingredientListHalfFirst;
+
+    /* Get Ingredient List All */
+    for(ingListCount = 0; ingListCount < recipeListMaster[q].ingredients.length; ingListCount++) {
+      $ingredientListAll.append("<li>- " + recipeListMaster[q].ingredients[ingListCount] + "</li>");
+    }
 
     /* Get Ingredient List Left */
     for(ingListCount = 0; ingListCount < ingredientListHalfFirst; ingListCount++) {

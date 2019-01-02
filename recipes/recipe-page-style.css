@@ -72,6 +72,17 @@ li {
   /* border: 1px dashed white; */
 }
 
+#ingredient-list-container-all {
+  display: none;
+
+  position: relative;
+
+  width: 100%;
+  height: auto;
+
+  /* border: 1px dashed blue; */
+}
+
 #ingredient-list-container-left {
   position: relative;
   float: left;
@@ -233,8 +244,12 @@ li {
     grid-column: span 2;
   }
 
+  #ingredient-list-container-all {
+    display: block;
+  }
+
   #ingredient-list-container-left {
-    width: 100%;
+    display: none;
   }
 
   #ingredient-list-container-right {
