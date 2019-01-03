@@ -1,0 +1,11 @@
+{
+  "short_name": "Recipe Book",
+  "name": "Recipe Book",
+  "icons": [
+  ],
+  "start_url": "/index.html",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/recipe-book/",
+  "theme_color": "#fff"
+}
