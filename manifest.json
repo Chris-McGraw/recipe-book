@@ -3,7 +3,7 @@
   "name": "Recipe Book",
   "icons": [
   ],
-  "start_url": "/recipe-book/",
+  "start_url": "/recipe-book/index.html",
   "background_color": "#fff",
   "display": "standalone",
   "scope": "/recipe-book/",
