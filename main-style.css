@@ -24,7 +24,18 @@ body, html {
   transform: translateY(40px);
 }
 
-#apple-mobile-status-bar-background {
+#apple-mobile-status-bar-background-absolute {
+  z-index: 20;
+  position: absolute;
+  top: -20px;
+
+  width: 100%;
+  height: 20px;
+
+  background-color: yellow;
+}
+
+#apple-mobile-status-bar-background-fixed {
   z-index: 20;
   position: fixed;
   top: -20px;
