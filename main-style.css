@@ -16,17 +16,6 @@ body, html {
   background-color: rgb(36, 38, 40);
 }
 
-body:before {
-  display: block;
-  content: " ";
-  position: fixed;
-  top: -20px;
-
-  height: 40px;
-
-  background-color: red;
-}
-
 .hidden {
   display: none;
 }
@@ -35,7 +24,7 @@ body:before {
   transform: translateY(40px);
 }
 
-/* #apple-mobile-status-bar-background {
+#apple-mobile-status-bar-background {
   z-index: 20;
   position: fixed;
   top: -20px;
@@ -44,7 +33,7 @@ body:before {
   height: 20px;
 
   background-color: rgb(59, 135, 118);
-} */
+}
 
 #navbar {
   z-index: 30;
