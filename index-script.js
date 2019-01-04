@@ -166,6 +166,15 @@ function categoryClick() {
 
 
 
+
+
+setTimeout(function() {
+  $("body,html").css("background-color", "red");
+}, 5000);
+
+
+
+
   $catAll.on("click", function() {
     if(currentCatActive !== "all" && delayPopulate === false) {
       currentCatActive = "all";
