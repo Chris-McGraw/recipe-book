@@ -9,14 +9,10 @@
   cursor: default;
 }
 
-body {
+body, html {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 
-  background-color: rgb(59, 135, 118);
-}
-
-#main-body {
   background-color: rgb(36, 38, 40);
 }
 
