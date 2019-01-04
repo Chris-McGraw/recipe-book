@@ -19,13 +19,12 @@ body, html {
 body:before {
   display: block;
   content: " ";
-  position: -webkit-sticky;
-  position: sticky;
-  top: -40px;
+  position: fixed;
+  top: -20px;
 
   height: 40px;
 
-  background-color: yellow;
+  background-color: red;
 }
 
 .hidden {
