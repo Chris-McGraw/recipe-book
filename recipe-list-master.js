@@ -3,6 +3,7 @@ var bbqChicken = {
   name: "BBQ Chicken",
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379016/recipe-book/bbq-chicken.jpg",
+  tags: ["poultry", "bbq chicken", "bbq", "chicken", "american"],
   link: "recipes/bbq-chicken.html",
   ingredients: ["3 lbs. chicken thighs", "1/2 cup olive oil", "3 tbsp. white vinegar",
   "1 tbsp. salt", "1 tbsp. white sugar", "1 tsp. red pepper flakes", "1 cup ketchup",
@@ -15,6 +16,7 @@ var chili = {
   name: "Chili Con Carne",
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118007/recipe-book/chili-con-carne.jpg",
+  tags: ["beef", "chili con carne", "chili", "carne", "beans", "bean", "american", "tex-mex", "tex mex"],
   link: "recipes/chili-con-carne.html",
   ingredients: ["1 lb. ground beef", "1 large yellow onion", "3 cloves garlic",
   "1 fresh lime, juiced", "1 can diced tomatoes", "1 can dark red kidney beans", "1 tbsp. chili powder",
@@ -33,6 +35,7 @@ var fajitas = {
   name: "Fajitas",
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544117892/recipe-book/fajitas.jpg",
+  tags: ["poultry", "fajitas", "fajita", "chicken", "mexican", "tex-mex", "tex mex"],
   link: "recipes/fajitas.html",
   ingredients: [],
   recipe: []
@@ -42,6 +45,7 @@ var frittata = {
   name: "Frittata",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544402454/recipe-book/frittata.jpg",
+  tags: ["vegetarian", "frittata", "egg", "eggs", "italian"],
   link: "recipes/template.html",
   ingredients: [],
   recipe: []
@@ -51,6 +55,7 @@ var hamburgers = {
   name: "Hamburgers",
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379558/recipe-book/hamburgers.jpg",
+  tags: ["beef", "hamburgers", "hamburger", "burgers", "burger", "american"],
   link: "recipes/template.html",
   ingredients: [],
   recipe: []
@@ -60,6 +65,8 @@ var macAndCheese = {
   name: "Mac & Cheese",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/mac-and-cheese.jpg",
+  tags: ["vegetarian", "mac and cheese", "mac & cheese", "pasta", "macaroni", "mac", "cheese",
+  "italian", "american"],
   link: "recipes/template.html",
   ingredients: [],
   recipe: []
@@ -69,6 +76,7 @@ var potatoCasserole = {
   name: "Potato Casserole",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379270/recipe-book/potato-casserole.jpg",
+  tags: ["vegetarian", "potato casserole", "potato", "casserole", "french"],
   link: "recipes/template.html",
   ingredients: [],
   recipe: []
@@ -78,6 +86,7 @@ var pulledPork = {
   name: "Pulled Pork",
   category: "pork",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/pulled-pork.jpg",
+  tags: ["pork", "pulled pork", "pulled", "bbq", "american"],
   link: "recipes/template.html",
   ingredients: [],
   recipe: []
@@ -87,6 +96,7 @@ var spaghetti = {
   name: "Spaghetti",
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118748/recipe-book/spaghetti.jpg",
+  tags: ["beef", "spaghetti", "pasta", "italian"],
   link: "recipes/template.html",
   ingredients: [],
   recipe: []
@@ -96,6 +106,7 @@ var springSalad = {
   name: "Spring Salad",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544121716/recipe-book/spring-salad.jpg",
+  tags: ["vegetarian", "spring salad", "spring", "salad"],
   link: "recipes/template.html",
   ingredients: [],
   recipe: []
@@ -105,6 +116,7 @@ var tortelliniSoup = {
   name: "Tortellini Soup",
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544380718/recipe-book/tortellini-soup.jpg",
+  tags: ["poultry", "tortellini soup", "tortellini", "soup", "chicken", "italian"],
   link: "recipes/template.html",
   ingredients: [],
   recipe: []

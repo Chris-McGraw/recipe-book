@@ -1,6 +1,11 @@
 $(document).ready(function() {
 
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
+  var $searchBar = $("#search-bar");
+  var $searchIconDropdown = $("#search-icon-dropdown");
+  var recipeListSearch = [];
+  var allowLocalSearch = true;
+
   var $categoryItem = $(".category-item");
 
   var $catAll = $("#cat-all");
@@ -61,6 +66,9 @@ function populateTiles() {
     case "vegetarian":
       var currentRecipeList = recipeListVegetarian;
       break;
+    case "search":
+      var currentRecipeList = recipeListSearch;
+      break;
     default:
       var currentRecipeList = recipeListMaster;
   }
@@ -112,7 +120,36 @@ function populateTiles() {
 }
 
 
+function searchSavedRecipes() {
+  allowLocalSearch = false;
+
+  recipeListSearch = [];
+
+  recipeListMaster.forEach(function(element) {
+    element.tags.forEach(function(entry) {
+      if(entry == $searchBar.val().toLowerCase()) {
+        clearTiles();
+
+        $categoryItem.removeClass("category-active");
+
+        recipeListSearch.push(element);
+
+        currentCatActive = "search";
+      }
+    });
+  });
+
+  setTimeout(function() {
+    allowLocalSearch = true;
+  }, 1000);
+
+  populateTiles();
+}
+
+
 function categoryActive() {
+  document.getElementById("search-bar").value= "";
+
   switch(currentCatActive) {
     case "all":
       $categoryItem.removeClass("category-active");
@@ -165,6 +202,23 @@ function categoryClick() {
   sortRecipeCategory();
 
   populateTiles();
+
+
+
+
+
+  $searchIconDropdown.on("click", function() {
+    if(allowLocalSearch === true && $searchBar.val() !== "") {
+      searchSavedRecipes();
+    }
+  });
+
+  $(document).keydown(function(event) {
+  /* ----- Enter Key Press ----- */
+    if(event.which === 13 && allowLocalSearch === true && $searchBar.val() !== "") {
+      searchSavedRecipes();
+    }
+  });
 
 
 
