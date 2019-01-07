@@ -10,6 +10,8 @@ $(document).ready(function() {
   var $ingredientListLeft = $("#ingredient-list-left");
   var $ingredientListRight = $("#ingredient-list-right");
 
+  var $recipeStepList = $("#recipe-step-list");
+
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
   function getCurrentRecipe() {
@@ -54,6 +56,13 @@ $(document).ready(function() {
   }
 
 
+  function getRecipeSteps() {
+    for(recipeStepCount = 0; recipeStepCount < recipeListMaster[q].recipe.length; recipeStepCount++) {
+      $recipeStepList.append("<li class='recipe-step'>" + recipeListMaster[q].recipe[recipeStepCount] + "</li>");
+    }
+  }
+
+
   function populateRecipePage() {
     getCurrentRecipe();
 
@@ -63,6 +72,7 @@ $(document).ready(function() {
         $imageContainer.css("background-image", "url(" + "'" + recipeListMaster[q].img + "'" + ")");
 
         getIngredientList();
+        getRecipeSteps();
       }
     }
   }

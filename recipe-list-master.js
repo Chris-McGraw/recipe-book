@@ -6,7 +6,7 @@ var bbqChicken = {
   ingredients: ["3 lbs. chicken thighs", "1/2 cup olive oil", "3 tbsp. white vinegar",
   "1 tbsp. salt", "1 tbsp. white sugar", "1 tsp. red pepper flakes", "1 cup ketchup",
   "1/4 cup brown sugar", "2 tbsp. paprika", "1 tbsp. chili powder"],
-  recipe: ""
+  recipe: []
 };
 
 var chili = {
@@ -15,10 +15,15 @@ var chili = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118007/recipe-book/chili-con-carne.jpg",
   link: "recipes/chili-con-carne.html",
   ingredients: ["1 lb. ground beef", "1 large yellow onion", "3 cloves garlic",
-  "1 fresh lime", "1 can diced tomatoes", "1 can dark red kidney beans", "1 tbsp. chili powder",
+  "1 fresh lime, juiced", "1 can diced tomatoes", "1 can dark red kidney beans", "1 tbsp. chili powder",
   "1 tsp. ground cumin", "1/4 tsp. cayenne pepper", "1/4 tsp. garlic powder", "1/2 tsp. onion powder",
   "1 tsp. salt", "1/4 tsp. freshly ground pepper"],
-  recipe: ""
+  recipe: ["1. Finely dice onion/garlic and add to large pot.",
+  "2. Saute for 10-15 minutes over low heat until soft.",
+  "3. Transfer onion/garlic to seperate dish and set aside.",
+  "4. Add ground beef to pot over medium high heat and cook for 3-5 minutes or until browned.",
+  "5. Drain excess fat and add remaining ingredients including cooked onion/garlic.",
+  "6. Reduce heat to low and let simmer for at least 1-2 hours uncovered, stirring occasionally."]
 };
 
 var fajitas = {
@@ -27,7 +32,7 @@ var fajitas = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544117892/recipe-book/fajitas.jpg",
   link: "recipes/fajitas.html",
   ingredients: [],
-  recipe: ""
+  recipe: []
 };
 
 var frittata = {
@@ -35,7 +40,7 @@ var frittata = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544402454/recipe-book/frittata.jpg",
   link: "recipes/template.html",
   ingredients: [],
-  recipe: ""
+  recipe: []
 };
 
 var hamburgers = {
@@ -43,7 +48,7 @@ var hamburgers = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379558/recipe-book/hamburgers.jpg",
   link: "recipes/template.html",
   ingredients: [],
-  recipe: ""
+  recipe: []
 };
 
 var macAndCheese = {
@@ -51,7 +56,7 @@ var macAndCheese = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/mac-and-cheese.jpg",
   link: "recipes/template.html",
   ingredients: [],
-  recipe: ""
+  recipe: []
 };
 
 var potatoCasserole = {
@@ -59,7 +64,7 @@ var potatoCasserole = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379270/recipe-book/potato-casserole.jpg",
   link: "recipes/template.html",
   ingredients: [],
-  recipe: ""
+  recipe: []
 };
 
 var pulledPork = {
@@ -67,7 +72,7 @@ var pulledPork = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/pulled-pork.jpg",
   link: "recipes/template.html",
   ingredients: [],
-  recipe: ""
+  recipe: []
 };
 
 var spaghetti = {
@@ -75,7 +80,7 @@ var spaghetti = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118748/recipe-book/spaghetti.jpg",
   link: "recipes/template.html",
   ingredients: [],
-  recipe: ""
+  recipe: []
 };
 
 var springSalad = {
@@ -83,7 +88,7 @@ var springSalad = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544121716/recipe-book/spring-salad.jpg",
   link: "recipes/template.html",
   ingredients: [],
-  recipe: ""
+  recipe: []
 };
 
 var tortelliniSoup = {
@@ -91,7 +96,7 @@ var tortelliniSoup = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544380718/recipe-book/tortellini-soup.jpg",
   link: "recipes/template.html",
   ingredients: [],
-  recipe: ""
+  recipe: []
 };
 
 
