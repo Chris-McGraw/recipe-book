@@ -62,7 +62,7 @@ function populateTiles() {
       var currentRecipeList = recipeListVegetarian;
       break;
     default:
-      var currentRecipeList = recipeListMaster
+      var currentRecipeList = recipeListMaster;
   }
 
   if(tileCount < currentRecipeList.length) {
@@ -162,6 +162,8 @@ function categoryClick() {
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
+  sortRecipeCategory();
+
   populateTiles();
 
 

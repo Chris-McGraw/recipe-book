@@ -1,6 +1,7 @@
 var bbqChicken = {
   id: "bbqChicken",
   name: "BBQ Chicken",
+  category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379016/recipe-book/bbq-chicken.jpg",
   link: "recipes/bbq-chicken.html",
   ingredients: ["3 lbs. chicken thighs", "1/2 cup olive oil", "3 tbsp. white vinegar",
@@ -12,6 +13,7 @@ var bbqChicken = {
 var chili = {
   id: "chiliConCarne",
   name: "Chili Con Carne",
+  category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118007/recipe-book/chili-con-carne.jpg",
   link: "recipes/chili-con-carne.html",
   ingredients: ["1 lb. ground beef", "1 large yellow onion", "3 cloves garlic",
@@ -29,6 +31,7 @@ var chili = {
 var fajitas = {
   id: "fajitas",
   name: "Fajitas",
+  category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544117892/recipe-book/fajitas.jpg",
   link: "recipes/fajitas.html",
   ingredients: [],
@@ -37,6 +40,7 @@ var fajitas = {
 
 var frittata = {
   name: "Frittata",
+  category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544402454/recipe-book/frittata.jpg",
   link: "recipes/template.html",
   ingredients: [],
@@ -45,6 +49,7 @@ var frittata = {
 
 var hamburgers = {
   name: "Hamburgers",
+  category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379558/recipe-book/hamburgers.jpg",
   link: "recipes/template.html",
   ingredients: [],
@@ -53,6 +58,7 @@ var hamburgers = {
 
 var macAndCheese = {
   name: "Mac & Cheese",
+  category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/mac-and-cheese.jpg",
   link: "recipes/template.html",
   ingredients: [],
@@ -61,6 +67,7 @@ var macAndCheese = {
 
 var potatoCasserole = {
   name: "Potato Casserole",
+  category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379270/recipe-book/potato-casserole.jpg",
   link: "recipes/template.html",
   ingredients: [],
@@ -69,6 +76,7 @@ var potatoCasserole = {
 
 var pulledPork = {
   name: "Pulled Pork",
+  category: "pork",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/pulled-pork.jpg",
   link: "recipes/template.html",
   ingredients: [],
@@ -77,6 +85,7 @@ var pulledPork = {
 
 var spaghetti = {
   name: "Spaghetti",
+  category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118748/recipe-book/spaghetti.jpg",
   link: "recipes/template.html",
   ingredients: [],
@@ -85,6 +94,7 @@ var spaghetti = {
 
 var springSalad = {
   name: "Spring Salad",
+  category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544121716/recipe-book/spring-salad.jpg",
   link: "recipes/template.html",
   ingredients: [],
@@ -93,6 +103,7 @@ var springSalad = {
 
 var tortelliniSoup = {
   name: "Tortellini Soup",
+  category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544380718/recipe-book/tortellini-soup.jpg",
   link: "recipes/template.html",
   ingredients: [],
@@ -104,12 +115,38 @@ var tortelliniSoup = {
 var recipeListMaster = [bbqChicken, chili, fajitas, frittata, hamburgers, macAndCheese,
   potatoCasserole, pulledPork, spaghetti, springSalad, tortelliniSoup];
 
-var recipeListBeef = [chili, hamburgers, spaghetti];
+var recipeListBeef = [];
 
-var recipeListPork = [pulledPork];
+var recipeListPork = [];
 
-var recipeListPoultry = [bbqChicken, fajitas, tortelliniSoup];
+var recipeListPoultry = [];
 
 var recipeListSeafood = [];
 
-var recipeListVegetarian = [frittata, macAndCheese, potatoCasserole, springSalad];
+var recipeListVegetarian = [];
+
+
+
+function sortRecipeCategory() {
+  recipeListMaster.forEach(function(element) {
+    switch(element.category) {
+      case "beef":
+        recipeListBeef.push(element);
+        break;
+      case "pork":
+        recipeListPork.push(element);
+        break;
+      case "poultry":
+        recipeListPoultry.push(element);
+        break;
+      case "seafood":
+        recipeListSeafood.push(element);
+        break;
+      case "vegetarian":
+        recipeListVegetarian.push(element);
+        break;
+      default:
+        recipeListAll.push(element);
+    }
+  });
+}
