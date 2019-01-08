@@ -163,7 +163,6 @@ function searchSavedRecipes() {
     setTimeout(function() {
       $searchResultNone.addClass("search-fade-in");
     }, 0);
-
   }
 
   setTimeout(function() {
