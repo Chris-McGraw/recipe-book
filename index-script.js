@@ -147,6 +147,8 @@ function searchSavedRecipes() {
 
     clearTiles();
 
+    document.activeElement.blur();
+
     populateTiles();
   }
 
@@ -154,6 +156,8 @@ function searchSavedRecipes() {
     clearSearch();
 
     clearTiles();
+
+    document.activeElement.blur();
 
     $searchResultNone = $("<div>No Results Found</div>")
                      .attr("id", "search-result-none")

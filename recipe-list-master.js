@@ -116,7 +116,7 @@ var tortelliniSoup = {
   name: "Tortellini Soup",
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544380718/recipe-book/tortellini-soup.jpg",
-  tags: ["poultry", "tortellini soup", "tortellini", "soup", "chicken", "italian"],
+  tags: ["poultry", "tortellini soup", "tortellini", "soup", "chicken", "pasta", "italian"],
   link: "recipes/template.html",
   ingredients: [],
   recipe: []
