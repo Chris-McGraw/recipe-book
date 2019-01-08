@@ -5,6 +5,7 @@ $(document).ready(function() {
   var $searchIconDropdown = $("#search-icon-dropdown");
   var recipeListSearch = [];
   var allowLocalSearch = true;
+  var $searchResultNone = $("#search-result-none");
 
   var $categoryItem = $(".category-item");
 
@@ -120,6 +121,14 @@ function populateTiles() {
 }
 
 
+function clearSearch() {
+  $categoryItem.removeClass("category-active");
+  currentCatActive = "search";
+
+  $searchResultNone.remove();
+}
+
+
 function searchSavedRecipes() {
   allowLocalSearch = false;
 
@@ -128,27 +137,44 @@ function searchSavedRecipes() {
   recipeListMaster.forEach(function(element) {
     element.tags.forEach(function(entry) {
       if(entry == $searchBar.val().toLowerCase()) {
-        clearTiles();
-
-        $categoryItem.removeClass("category-active");
-
         recipeListSearch.push(element);
-
-        currentCatActive = "search";
       }
     });
   });
 
+  if(recipeListSearch.length !== 0) {
+    clearSearch();
+
+    clearTiles();
+
+    populateTiles();
+  }
+
+  else if(recipeListSearch.length === 0) {
+    clearSearch();
+
+    clearTiles();
+
+    $searchResultNone = $("<div>No Results Found</div>")
+                     .attr("id", "search-result-none")
+
+    $bodyGridContainer.append($searchResultNone);
+
+    setTimeout(function() {
+      $searchResultNone.addClass("search-fade-in");
+    }, 0);
+
+  }
+
   setTimeout(function() {
     allowLocalSearch = true;
   }, 1000);
-
-  populateTiles();
 }
 
 
 function categoryActive() {
   document.getElementById("search-bar").value= "";
+  $searchResultNone.remove();
 
   switch(currentCatActive) {
     case "all":
