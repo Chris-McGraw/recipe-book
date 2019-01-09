@@ -130,13 +130,15 @@ function clearSearch() {
 
 
 function searchSavedRecipes() {
-  allowLocalSearch = false;
+  var userInputTrim = $searchBar.val().trim();
+  /* console.log(userInputTrim.toLowerCase()); */
 
+  allowLocalSearch = false;
   recipeListSearch = [];
 
   recipeListMaster.forEach(function(element) {
     element.tags.forEach(function(entry) {
-      if(entry == $searchBar.val().toLowerCase()) {
+      if(entry == userInputTrim.toLowerCase()) {
         recipeListSearch.push(element);
       }
     });
@@ -144,9 +146,9 @@ function searchSavedRecipes() {
 
   if(recipeListSearch.length !== 0) {
     clearSearch();
+    $searchBar.val(userInputTrim);
 
     clearTiles();
-
     document.activeElement.blur();
 
     populateTiles();
@@ -154,9 +156,9 @@ function searchSavedRecipes() {
 
   else if(recipeListSearch.length === 0) {
     clearSearch();
+    $searchBar.val(userInputTrim);
 
     clearTiles();
-
     document.activeElement.blur();
 
     $searchResultNone = $("<div>No Results Found</div>")
