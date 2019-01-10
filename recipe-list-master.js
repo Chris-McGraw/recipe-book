@@ -19,15 +19,15 @@ var chili = {
   tags: ["beef", "chili con carne", "chili", "carne", "beans", "bean", "american", "tex-mex", "tex mex"],
   link: "recipes/chili-con-carne.html",
   ingredients: ["1 lb. ground beef", "1 large yellow onion", "3 cloves garlic",
-  "1 fresh lime, juiced", "1 can diced tomatoes", "1 can dark red kidney beans", "1 tbsp. chili powder",
-  "1 tsp. ground cumin", "1/4 tsp. cayenne pepper", "1/4 tsp. garlic powder", "1/2 tsp. onion powder",
-  "1 tsp. salt", "1/4 tsp. freshly ground pepper"],
-  recipe: ["1. Finely dice onion/garlic and add to large pot.",
-  "2. Saute for 10-15 minutes over low heat until soft.",
-  "3. Transfer onion/garlic to seperate dish and set aside.",
-  "4. Add ground beef to pot over medium high heat and cook for 3-5 minutes or until browned.",
-  "5. Drain excess fat and add remaining ingredients including cooked onion/garlic.",
-  "6. Reduce heat to low and let simmer for at least 1-2 hours uncovered, stirring occasionally."]
+  "1/2 fresh lime, juiced", "1 can diced tomatoes", "1 can dark red kidney beans",
+  "2 tbsp. canola oil", "1 tbsp. chili powder", "1 tsp. salt", "1 tsp. ground cumin",
+  "1/2 tsp. onion powder", "1/4 tsp. cayenne pepper", "1/4 tsp. brown sugar",
+  "1/4 tsp. garlic powder", "1/4 tsp. freshly ground pepper"],
+  recipe: ["1. Finely dice onion/garlic. Add with canola oil to large pot over low heat.",
+  "2. Saute onion/garlic for 10-15 minutes or until soft. Transfer to separate dish and set aside.",
+  "3. Add ground beef to pot over medium-high heat and break into small pieces while cooking for 3-5 minutes or until browned.",
+  "4. Drain excess fat and add remaining ingredients including cooked onion/garlic.",
+  "5. Reduce heat to low and let simmer for at least 1-2 hours uncovered, stirring occasionally."]
 };
 
 var fajitas = {
@@ -37,8 +37,19 @@ var fajitas = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544117892/recipe-book/fajitas.jpg",
   tags: ["poultry", "fajitas", "fajita", "chicken", "mexican", "tex-mex", "tex mex"],
   link: "recipes/fajitas.html",
-  ingredients: [],
-  recipe: []
+  ingredients: ["1 lb. chicken breast", "1 package large tortillas", "1 large yellow onion",
+  "1 large bell pepper", "1/2 fresh lime, juiced", "4 tbsp. canola oil", "1 tbsp. cornstarch",
+  "2 tsp. chili powder", "1 tsp. salt", "1 tsp. paprika", "1/2 tsp. ground cumin",
+  "1/2 tsp. garlic powder", "1/2 tsp. onion powder", "1/2 tsp. dried oregano",
+  "1/4 tsp. cayenne pepper", "1/4 tsp. freshly ground pepper"],
+  recipe: ["1. Cut chicken breasts into long, thin strips.",
+  "2. In large bowl or plastic bag, combine 2 tbsp. canola oil, lime juice, and dry spice blend.",
+  "3. Add chicken to bowl/bag and turn to coat. Refrigerate for 1-4 hours.",
+  "4. Slice onion/bell pepper into long, thin strips.",
+  "5. Add remaining 2 tbsp. canola oil to large skillet and bring to medium-high heat.",
+  "6. Add onion/bell pepper to skillet and saute for 3-5 minutes or until crisp-tender. Transfer to separate dish and set aside.",
+  "7. Drain and discard 3/4 of marinade from bowl/bag. Add chicken and remaining marinade to skillet and cook for 5-6 minutes or until no longer pink.",
+  "8. Return onion/bell pepper to skillet and heat through."]
 };
 
 var frittata = {
