@@ -340,7 +340,7 @@ body, html {
   border-bottom: 4px solid rgb(76, 211, 182);
 }
 
-#sort-by-button {
+#sort-by-select {
   grid-column: span 2;
 
   height: 40px;
@@ -464,7 +464,7 @@ body, html {
     grid-column: span 3;
   }
 
-  #sort-by-button {
+  #sort-by-select {
     grid-column: span 3;
 
     margin-top: -40px;
@@ -491,7 +491,7 @@ body, html {
     grid-column: span 2;
   }
 
-  #sort-by-button {
+  #sort-by-select {
     grid-column: span 2;
   }
 
@@ -512,7 +512,7 @@ body, html {
     grid-column: span 1;
   }
 
-  #sort-by-button {
+  #sort-by-select {
     grid-column: span 1;
   }
 
