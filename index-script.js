@@ -18,6 +18,9 @@ $(document).ready(function() {
 
   var currentCatActive = "all";
 
+  var $sortBySelect = $("#sort-by-select");
+  var recipeOrderAlpha = "ascending";
+
   var $tile = [];
   var $tileLink = [];
   var $tileHeader = [];
@@ -50,7 +53,7 @@ function clearTiles() {
 function populateTiles() {
   switch(currentCatActive) {
     case "all":
-      var currentRecipeList = recipeListMaster
+      var currentRecipeList = recipeListMaster;
       break;
     case "beef":
       var currentRecipeList = recipeListBeef;
@@ -226,6 +229,52 @@ function categoryClick() {
 }
 
 
+function clearRecipeLists() {
+  recipeListBeef = [];
+  recipeListPork = [];
+  recipeListPoultry = [];
+  recipeListSeafood = [];
+  recipeListVegetarian = [];
+
+  recipeListMaster.reverse();
+
+  sortRecipeCategory();
+
+  clearTiles();
+
+  setTimeout(function() {
+    populateTiles();
+  }, 200);
+}
+
+
+function sortRecipeMaster() {
+  if($sortBySelect.val() === "ascending") {
+    if(recipeOrderAlpha === "descending") {
+      if(recipeListSearch.length > 0) {
+        recipeListSearch.reverse();
+      }
+
+      clearRecipeLists();
+
+      recipeOrderAlpha = "ascending";
+    }
+  }
+
+  else if($sortBySelect.val() === "descending") {
+    if(recipeOrderAlpha === "ascending") {
+      if(recipeListSearch.length > 0) {
+        recipeListSearch.reverse();
+      }
+
+      clearRecipeLists();
+
+      recipeOrderAlpha = "descending";
+    }
+  }
+}
+
+
 
 
 
@@ -295,6 +344,14 @@ function categoryClick() {
       currentCatActive = "vegetarian";
       categoryClick();
     }
+  });
+
+
+
+
+
+  $sortBySelect.change(function() {
+    sortRecipeMaster();
   });
 
 
