@@ -54,13 +54,21 @@ var fajitas = {
 };
 
 var frittata = {
+  id: "frittata",
   name: "Frittata",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544402454/recipe-book/frittata.jpg",
   tags: ["vegetarian", "frittata", "egg", "eggs", "italian"],
-  link: "recipes/template.html",
-  ingredients: [],
-  recipe: []
+  link: "recipes/frittata.html",
+  ingredients: ["8 large eggs", "2 medium red potatoes", "1 medium red bell pepper",
+  "1 clove garlic", "1/2 small red onion", "8 oz. shredded sharp cheddar", "8 oz. fresh mushrooms",
+  "8 oz. fresh baby spinach", "1/3 cup milk", "1/3 cup grated parmesan", "2 tbsp. olive oil",
+  "1/2 tsp. salt", "1/4 tsp. ground black pepper"],
+  recipe: ["1. ",
+  "2. ",
+  "3. ",
+  "4. ",
+  "5. "]
 };
 
 var hamburgers = {

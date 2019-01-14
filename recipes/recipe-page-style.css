@@ -2,6 +2,8 @@
   grid-row-gap: 20px;
 
   top: 110px;
+
+  padding-bottom: 0;
 }
 
 #recipe-title-container {
