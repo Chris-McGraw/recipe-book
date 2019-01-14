@@ -5,10 +5,11 @@ var bbqChicken = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379016/recipe-book/bbq-chicken.jpg",
   tags: ["poultry", "bbq chicken", "bbq", "chicken", "american"],
   link: "recipes/bbq-chicken.html",
-  ingredients: ["3 lbs. chicken thighs", "1/2 cup olive oil", "3 tbsp. white vinegar",
-  "1 tbsp. salt", "1 tbsp. white sugar", "1 tsp. red pepper flakes", "1 cup ketchup",
-  "1/4 cup brown sugar", "2 tbsp. paprika", "1 tbsp. chili powder"],
-  recipe: []
+  ingredients: ["1 lb. chicken thighs", "1/2 cup BBQ sauce", "1 tbsp. olive oil",
+  "1 tsp. salt", "1/4 tsp. ground black pepper"],
+  recipe: ["1. Rub chicken thighs with olive oil, salt, and pepper.",
+  "2. Preheat grill to medium-high heat.",
+  "3. Grill chicken 5-7 minutes on each side or until internal temperature equals 165°F, basting with BBQ sauce during final few minutes of cooking."]
 };
 
 var chili = {
@@ -22,7 +23,7 @@ var chili = {
   "1/2 fresh lime, juiced", "1 can diced tomatoes", "1 can dark red kidney beans",
   "2 tbsp. canola oil", "1 tbsp. chili powder", "1 tsp. salt", "1 tsp. ground cumin",
   "1/2 tsp. onion powder", "1/4 tsp. cayenne pepper", "1/4 tsp. brown sugar",
-  "1/4 tsp. garlic powder", "1/4 tsp. freshly ground pepper"],
+  "1/4 tsp. garlic powder", "1/4 tsp. ground black pepper"],
   recipe: ["1. Finely dice onion/garlic. Add with canola oil to large pot over low heat.",
   "2. Saute onion/garlic for 10-15 minutes or until soft. Transfer to separate dish and set aside.",
   "3. Add ground beef to pot over medium-high heat and break into small pieces while cooking for 3-5 minutes or until browned.",
@@ -41,7 +42,7 @@ var fajitas = {
   "1 large bell pepper", "1/2 fresh lime, juiced", "4 tbsp. canola oil", "1 tbsp. cornstarch",
   "2 tsp. chili powder", "1 tsp. salt", "1 tsp. paprika", "1/2 tsp. ground cumin",
   "1/2 tsp. garlic powder", "1/2 tsp. onion powder", "1/2 tsp. dried oregano",
-  "1/4 tsp. cayenne pepper", "1/4 tsp. freshly ground pepper"],
+  "1/4 tsp. cayenne pepper", "1/4 tsp. ground black pepper"],
   recipe: ["1. Cut chicken breasts into long, thin strips.",
   "2. In large bowl or plastic bag, combine 2 tbsp. canola oil, lime juice, and dry spice blend.",
   "3. Add chicken to bowl/bag and turn to coat. Refrigerate for 1-4 hours.",
