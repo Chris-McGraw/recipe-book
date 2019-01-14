@@ -62,13 +62,16 @@ var frittata = {
   link: "recipes/frittata.html",
   ingredients: ["8 large eggs", "2 medium red potatoes", "1 medium red bell pepper",
   "1 clove garlic", "1/2 small red onion", "8 oz. shredded sharp cheddar", "8 oz. fresh mushrooms",
-  "8 oz. fresh baby spinach", "1/3 cup milk", "1/3 cup grated parmesan", "2 tbsp. olive oil",
+  "8 oz. fresh baby spinach", "1/3 cup milk", "1/3 cup grated parmesan", "2 tbsp. canola oil",
   "1/2 tsp. salt", "1/4 tsp. ground black pepper"],
-  recipe: ["1. ",
-  "2. ",
-  "3. ",
-  "4. ",
-  "5. "]
+  recipe: ["1. Preheat oven to 350°F.",
+  "2. Finely dice garlic. Cube onion, bell pepper, and potatoes. Slice mushrooms into thin pieces.",
+  "3. Add 1 tbsp. canola oil with onion, bell pepper, and mushrooms to 10" + '"' + " cast iron skillet over medium-high heat and saute for 5-10 minutes or until soft.",
+  "4. Add spinach/garlic and saute for an additional 3-5 minutes. Transfer cooked ingredients to separate dish and set aside.",
+  "5. Add potatoes to skillet along with remaining 1 tbsp. canola oil. Cook 3-5 minutes or until lightly browned. Remove skillet from heat and set aside.",
+  "6. Whisk together eggs, milk, cheese, salt, and pepper in a medium bowl.",
+  "7. Return cooked ingredients to skillet and pour egg mixture over top, stirring to combine.",
+  "8. Bake in oven for 15 minutes or until eggs are set. Let stand 5 minutes before cutting."]
 };
 
 var hamburgers = {
