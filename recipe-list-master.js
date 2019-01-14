@@ -5,10 +5,11 @@ var bbqChicken = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379016/recipe-book/bbq-chicken.jpg",
   tags: ["poultry", "bbq chicken", "bbq", "chicken", "american"],
   link: "recipes/bbq-chicken.html",
-  ingredients: ["3 lbs. chicken thighs", "1/2 cup olive oil", "3 tbsp. white vinegar",
-  "1 tbsp. salt", "1 tbsp. white sugar", "1 tsp. red pepper flakes", "1 cup ketchup",
-  "1/4 cup brown sugar", "2 tbsp. paprika", "1 tbsp. chili powder"],
-  recipe: []
+  ingredients: ["1 lb. chicken thighs", "1/2 cup BBQ sauce", "1 tbsp. olive oil",
+  "1 tsp. salt", "1/4 tsp. ground black pepper"],
+  recipe: ["1. Rub chicken thighs with olive oil, salt, and pepper.",
+  "2. Preheat grill to medium-high heat.",
+  "3. Grill chicken 5-7 minutes on each side or until internal temperature equals 165°F, basting with BBQ sauce during final few minutes of cooking."]
 };
 
 var chili = {
@@ -22,7 +23,7 @@ var chili = {
   "1/2 fresh lime, juiced", "1 can diced tomatoes", "1 can dark red kidney beans",
   "2 tbsp. canola oil", "1 tbsp. chili powder", "1 tsp. salt", "1 tsp. ground cumin",
   "1/2 tsp. onion powder", "1/4 tsp. cayenne pepper", "1/4 tsp. brown sugar",
-  "1/4 tsp. garlic powder", "1/4 tsp. freshly ground pepper"],
+  "1/4 tsp. garlic powder", "1/4 tsp. ground black pepper"],
   recipe: ["1. Finely dice onion/garlic. Add with canola oil to large pot over low heat.",
   "2. Saute onion/garlic for 10-15 minutes or until soft. Transfer to separate dish and set aside.",
   "3. Add ground beef to pot over medium-high heat and break into small pieces while cooking for 3-5 minutes or until browned.",
@@ -41,7 +42,7 @@ var fajitas = {
   "1 large bell pepper", "1/2 fresh lime, juiced", "4 tbsp. canola oil", "1 tbsp. cornstarch",
   "2 tsp. chili powder", "1 tsp. salt", "1 tsp. paprika", "1/2 tsp. ground cumin",
   "1/2 tsp. garlic powder", "1/2 tsp. onion powder", "1/2 tsp. dried oregano",
-  "1/4 tsp. cayenne pepper", "1/4 tsp. freshly ground pepper"],
+  "1/4 tsp. cayenne pepper", "1/4 tsp. ground black pepper"],
   recipe: ["1. Cut chicken breasts into long, thin strips.",
   "2. In large bowl or plastic bag, combine 2 tbsp. canola oil, lime juice, and dry spice blend.",
   "3. Add chicken to bowl/bag and turn to coat. Refrigerate for 1-4 hours.",
@@ -53,13 +54,24 @@ var fajitas = {
 };
 
 var frittata = {
+  id: "frittata",
   name: "Frittata",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544402454/recipe-book/frittata.jpg",
   tags: ["vegetarian", "frittata", "egg", "eggs", "italian"],
-  link: "recipes/template.html",
-  ingredients: [],
-  recipe: []
+  link: "recipes/frittata.html",
+  ingredients: ["8 large eggs", "2 medium red potatoes", "1 medium red bell pepper",
+  "1 clove garlic", "1/2 small red onion", "8 oz. shredded sharp cheddar", "8 oz. fresh mushrooms",
+  "8 oz. fresh baby spinach", "1/3 cup milk", "1/3 cup grated parmesan", "2 tbsp. canola oil",
+  "1/2 tsp. salt", "1/4 tsp. ground black pepper"],
+  recipe: ["1. Preheat oven to 350°F.",
+  "2. Finely dice garlic. Cube onion, bell pepper, and potatoes. Slice mushrooms into thin pieces.",
+  "3. Add 1 tbsp. canola oil with onion, bell pepper, and mushrooms to 10" + '"' + " cast iron skillet over medium-high heat and saute for 5-10 minutes or until soft.",
+  "4. Add spinach/garlic and saute for an additional 3-5 minutes. Transfer cooked ingredients to separate dish and set aside.",
+  "5. Add potatoes to skillet along with remaining 1 tbsp. canola oil. Cook 3-5 minutes or until lightly browned. Remove skillet from heat and set aside.",
+  "6. Whisk together eggs, milk, cheese, salt, and pepper in a medium bowl.",
+  "7. Return cooked ingredients to skillet and pour egg mixture over top, stirring to combine.",
+  "8. Bake in oven for 15 minutes or until eggs are set. Let stand 5 minutes before cutting."]
 };
 
 var hamburgers = {
