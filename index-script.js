@@ -154,7 +154,9 @@ function searchSavedRecipes() {
     clearTiles();
     document.activeElement.blur();
 
-    populateTiles();
+    setTimeout(function() {
+      populateTiles();
+    }, 200);
   }
 
   else if(recipeListSearch.length === 0) {
