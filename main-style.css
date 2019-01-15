@@ -9,7 +9,9 @@
   cursor: default;
 }
 
-body, html {
+html, body {
+  height: 100%;
+
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 
@@ -22,6 +24,21 @@ body, html {
 
 .dropdown-expand {
   transform: translateY(40px);
+}
+
+#main-content-container {
+  min-height: 100%;
+  padding-bottom: 150px;
+}
+
+.main-content-container-expand {
+  padding-bottom: 190px !important;
+  transition: padding-bottom 300ms ease-in-out;
+}
+
+.main-content-container-retract {
+  padding-bottom: 150px !important;
+  transition: padding-bottom 300ms ease-in-out;
 }
 
 #apple-mobile-status-bar-background {
@@ -414,6 +431,19 @@ body, html {
 .search-fade-in {
   opacity: 1.0 !important;
   transition: opacity 1000ms ease-in-out;
+}
+
+footer {
+  user-select: none;
+
+  position: relative;
+  top: -40px;
+
+  height: 40px;
+
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 
