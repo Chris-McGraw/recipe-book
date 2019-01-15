@@ -3,7 +3,7 @@
 
   top: 110px;
 
-  padding-bottom: 0;
+  padding-bottom: 40px;
 }
 
 #recipe-title-container {
@@ -18,8 +18,6 @@
   font-weight: 300;
   letter-spacing: 0.5px;
   color: white;
-
-  /* border: 1px dashed white; */
 }
 
 #ingredient-container {
@@ -31,8 +29,6 @@
   text-align: center;
   font-size: 14px;
   color: white;
-
-  /* border: 1px dashed white; */
 }
 
 #ingredient-title {
@@ -75,8 +71,6 @@ li {
   padding-right: 10px;
 
   text-align: left !important;
-
-  /* border: 1px dashed white; */
 }
 
 #ingredient-list-container-all {
@@ -86,8 +80,6 @@ li {
 
   width: 100%;
   height: auto;
-
-  /* border: 1px dashed blue; */
 }
 
 #ingredient-list-container-left {
@@ -96,8 +88,6 @@ li {
 
   width: 50%;
   height: auto;
-
-  /* border: 1px dashed yellow; */
 }
 
 #ingredient-list-container-right {
@@ -106,8 +96,6 @@ li {
 
   width: 50%;
   height: auto;
-
-  /* border: 1px dashed red; */
 }
 
 #image-container {
@@ -134,8 +122,6 @@ li {
 
   font-size: 14px;
   color: white;
-
-  /* border: 1px dashed white; */
 }
 
 #recipe-title {
@@ -199,8 +185,6 @@ li {
   #recipe-container {
     grid-column: span 4;
     order: 4;
-
-    /* height: auto; */
   }
 }
 

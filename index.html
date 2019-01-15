@@ -30,65 +30,68 @@
 </head>
 
 <body>
+  <div id="main-content-container">
+    <div id="apple-mobile-status-bar-background"></div>
 
-  <div id="apple-mobile-status-bar-background"></div>
+    <div id="navbar">
+      <div id="hamburger-menu">
+        <div class="hamburger-bar" id="hamburger-bar-top"></div>
+        <div class="hamburger-bar" id="hamburger-bar-middle"></div>
+        <div class="hamburger-bar" id="hamburger-bar-bottom"></div>
+      </div>
 
-  <div id="navbar">
-    <div id="hamburger-menu">
-      <div class="hamburger-bar" id="hamburger-bar-top"></div>
-      <div class="hamburger-bar" id="hamburger-bar-middle"></div>
-      <div class="hamburger-bar" id="hamburger-bar-bottom"></div>
+      <div id="main-logo">Recipe Book</div>
+
+      <i id="search-icon" class="fa fa-search" aria-hidden="true"></i>
+      <div id="search-close-icon" class="hide-search-icon">
+        <div class="hamburger-bar" id="search-close-bar-top"></div>
+        <div class="hamburger-bar hide-bar-middle"></div>
+        <div class="hamburger-bar" id="search-close-bar-bottom"></div>
+      </div>
     </div>
 
-    <div id="main-logo">Recipe Book</div>
+    <div id="navbar-dropdown">
+      <a href="index.html">
+        <div class="dropdown-button" id="dropdown-left">Saved Recipes</div>
+      </a>
+      <div id="dropdown-spacer"></div>
+      <div class="dropdown-button" id="dropdown-right">Find New Recipes</div>
+    </div>
 
-    <i id="search-icon" class="fa fa-search" aria-hidden="true"></i>
-    <div id="search-close-icon" class="hide-search-icon">
-      <div class="hamburger-bar" id="search-close-bar-top"></div>
-      <div class="hamburger-bar hide-bar-middle"></div>
-      <div class="hamburger-bar" id="search-close-bar-bottom"></div>
+    <div id="search-dropdown">
+      <div id="search-bar-container">
+        <form action="javascript:void(0);">
+          <input id="search-bar" type="text" placeholder="Search My Saved Recipes..." />
+          <i id="search-icon-dropdown" class="fa fa-search" aria-hidden="true"></i>
+        </form>
+      </div>
+    </div>
+
+    <div id="body-grid-container">
+      <div id="category-container">
+        <ul>
+          <div id="category-row-top">
+            <li class="category-item category-active" id="cat-all">All</li>
+            <li class="category-item" id="cat-beef">Beef</li>
+            <li class="category-item" id="cat-pork">Pork</li>
+          </div>
+          <div id="category-row-bottom">
+            <li class="category-item" id="cat-poultry">Poultry</li>
+            <li class="category-item" id="cat-seafood">Seafood</li>
+            <li class="category-item" id="cat-veg">Vegetarian</li>
+          </div>
+        </ul>
+      </div>
+
+      <select id="sort-by-select" value="">
+        <option value="" disabled selected>SORT BY</option>
+        <option value="ascending">Alphabetical (A-Z)</option>
+        <option value="descending">Alphabetical (Z-A)</option>
+      </select>
     </div>
   </div>
 
-  <div id="navbar-dropdown">
-    <a href="index.html">
-      <div class="dropdown-button" id="dropdown-left">Saved Recipes</div>
-    </a>
-    <div id="dropdown-spacer"></div>
-    <div class="dropdown-button" id="dropdown-right">Find New Recipes</div>
-  </div>
-
-  <div id="search-dropdown">
-    <div id="search-bar-container">
-      <form action="javascript:void(0);">
-        <input id="search-bar" type="text" placeholder="Search My Saved Recipes..." />
-        <i id="search-icon-dropdown" class="fa fa-search" aria-hidden="true"></i>
-      </form>
-    </div>
-  </div>
-
-  <div id="body-grid-container">
-    <div id="category-container">
-      <ul>
-        <div id="category-row-top">
-          <li class="category-item category-active" id="cat-all">All</li>
-          <li class="category-item" id="cat-beef">Beef</li>
-          <li class="category-item" id="cat-pork">Pork</li>
-        </div>
-        <div id="category-row-bottom">
-          <li class="category-item" id="cat-poultry">Poultry</li>
-          <li class="category-item" id="cat-seafood">Seafood</li>
-          <li class="category-item" id="cat-veg">Vegetarian</li>
-        </div>
-      </ul>
-    </div>
-
-    <select id="sort-by-select" value="">
-      <option value="" disabled selected>SORT BY</option>
-      <option value="ascending">Alphabetical (A-Z)</option>
-      <option value="descending">Alphabetical (Z-A)</option>
-    </select>
-  </div>
+  <footer>© 2019 Recipe Book. All rights reserved.</footer>
 
 </body>
 
