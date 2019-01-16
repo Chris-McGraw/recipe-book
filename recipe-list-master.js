@@ -136,13 +136,23 @@ var springSalad = {
 };
 
 var tortelliniSoup = {
+  id: "tortelliniSoup",
   name: "Tortellini Soup",
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544380718/recipe-book/tortellini-soup.jpg",
   tags: ["poultry", "tortellini soup", "tortellini", "soup", "chicken", "pasta", "italian"],
-  link: "recipes/template.html",
-  ingredients: [],
-  recipe: []
+  link: "recipes/tortellini-soup.html",
+  ingredients: ["1 pkg. chicken tortellini (19 oz.)", "2 cans chicken broth (14 oz.)",
+  "2 cans vegetable broth (14 oz.)", "2 cans tomato soup (10.75 oz.)",
+  "8 oz. cream cheese, softened", "1/2 tsp. dried oregano", "1/2 tsp. dried thyme",
+  "1/4 tsp. onion powder", "1/4 tsp. garlic powder", "1/4 tsp. cayenne pepper",
+  "1/4 tsp. dried basil", "1/4 tsp. dried rosemary", "1/4 tsp. ground black pepper"],
+  recipe: ["1. Combine broth in large pot and bring to boil.",
+  "2. Add packaged tortellini to pot and cook for 3 minutes if fresh or 5 minutes if frozen.",
+  "3. Remove pot from heat. Transfer tortellini to separate dish and set aside.",
+  "4. Take 1 cup of warm broth and slowly add to softened cream cheese in medium bowl while whisking to combine.",
+  "5. Return large pot of broth to low heat and add cream cheese mixture, tomato soup, and dry spice blend.",
+  "6. Return tortellini to soup and mix well."]
 };
 
 
