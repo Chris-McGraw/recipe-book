@@ -18,6 +18,10 @@ html, body {
   background-color: rgb(36, 38, 40);
 }
 
+ul {
+  list-style: none;
+}
+
 .hidden {
   display: none;
 }
