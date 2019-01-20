@@ -7,7 +7,9 @@ $(document).ready(function() {
   var allowLocalSearch = true;
   var $searchResultNone = $("#search-result-none");
 
+  var $categoryContainer = $("#category-container");
   var $categoryItem = $(".category-item");
+  var catContainerHidden = false;
 
   var $catAll = $("#cat-all");
   var $catBeef = $("#cat-beef");
@@ -20,6 +22,7 @@ $(document).ready(function() {
 
   var $sortBySelect = $("#sort-by-select");
   var recipeOrderAlpha = "ascending";
+  var sortSelectHidden = false;
 
   var $tile = [];
   var $tileLink = [];
@@ -29,8 +32,9 @@ $(document).ready(function() {
   var allowPopulate = true;
   var delayPopulate = false;
 
-
-
+  var currentRecipeList = [];
+  var currentRecipeName = "";
+  var currentURL = "";
 
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
@@ -50,40 +54,64 @@ function clearTiles() {
 }
 
 
+function getSelectedRecipeName() {
+  var recipeNameDashed = currentURL.split("recipe-book/")[1].split(".jpg")[0];
+  var splitArray = recipeNameDashed.split("-");
+
+  for(n = 0; n < splitArray.length; n++) {
+    if(n >= 1) {
+      splitArray[n] = splitArray[n].charAt(0).toUpperCase() + splitArray[n].slice(1);
+    }
+  }
+
+  currentRecipeName = splitArray.join("");
+  console.log(currentRecipeName);
+}
+
+
+function appendSelectedRecipe() {
+  /* $recipeTitleContainer.show();
+  $ingredientContainer.show();
+  $imageContainer.show();
+  $recipeContainer.show(); */
+
+  for(y = 0; y < currentRecipeList.length; y++) {
+    if(currentRecipeName === currentRecipeList[y].id) {
+      console.log(currentRecipeList[y].ingredients);
+    }
+  }
+}
+
+
 function populateTiles() {
   switch(currentCatActive) {
     case "all":
-      var currentRecipeList = recipeListMaster;
+      currentRecipeList = recipeListMaster;
       break;
     case "beef":
-      var currentRecipeList = recipeListBeef;
+      currentRecipeList = recipeListBeef;
       break;
     case "pork":
-      var currentRecipeList = recipeListPork;
+      currentRecipeList = recipeListPork;
       break;
     case "poultry":
-      var currentRecipeList = recipeListPoultry;
+      currentRecipeList = recipeListPoultry;
       break;
     case "seafood":
-      var currentRecipeList = recipeListSeafood;
+      currentRecipeList = recipeListSeafood;
       break;
     case "vegetarian":
-      var currentRecipeList = recipeListVegetarian;
+      currentRecipeList = recipeListVegetarian;
       break;
     case "search":
-      var currentRecipeList = recipeListSearch;
+      currentRecipeList = recipeListSearch;
       break;
     default:
-      var currentRecipeList = recipeListMaster;
+      currentRecipeList = recipeListMaster;
   }
 
   if(tileCount < currentRecipeList.length) {
     allowPopulate = true;
-
-    $newTileLink = $("<a/>")
-                     .attr("id", "tile-link-" + tileCount)
-                     /* .attr("target", "_blank") */
-                     .addClass("tile-link");
 
     $newTileHeader = $("<h3/>")
                      .attr("id", "tile-header-" + tileCount)
@@ -94,18 +122,33 @@ function populateTiles() {
                      .addClass("tile")
                      .html("<div></div>");
 
-    $bodyGridContainer.append($newTileLink);
-    $newTileLink.append($newTile);
+    $bodyGridContainer.append($newTile);
+
     $newTile.append($newTileHeader);
 
     $tile[tileCount] = $("#tile-" + tileCount);
     $tile[tileCount].css("background-image", "url(" + "'" + currentRecipeList[tileCount].img + "'" + ")");
 
-    $tileLink[tileCount] = $("#tile-link-" + tileCount);
-    $tileLink[tileCount].attr("href", currentRecipeList[tileCount].link);
-
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
     $tileHeader[tileCount].html(currentRecipeList[tileCount].name);
+
+
+
+    $newTile.on("click", function() {
+      currentURL = $(this).css("background-image");
+
+      getSelectedRecipeName();
+
+      document.getElementById("search-bar").value= "";
+
+      $categoryContainer.hide();
+      $sortBySelect.hide();
+      clearTiles();
+
+      appendSelectedRecipe();
+    });
+
+
 
     setTimeout(function() {
       if(allowPopulate === true) {
