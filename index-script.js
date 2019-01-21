@@ -117,6 +117,15 @@ function appendSelectedRecipe() {
   $bodyGridContainer.css("top", "110px");
   $bodyGridContainer.css("padding-bottom", "40px");
 
+  $recipeTitleContainer.empty();
+
+  $imageContainer.css("background-image", "none");
+
+  $ingredientListAll.empty();
+  $ingredientListLeft.empty();
+  $ingredientListRight.empty();
+  $recipeStepList.empty();
+
   $recipeTitleContainer.show();
   $ingredientContainer.show();
   $imageContainer.show();
@@ -124,7 +133,7 @@ function appendSelectedRecipe() {
 
   for(y = 0; y < currentRecipeList.length; y++) {
     if(currentRecipeName === currentRecipeList[y].id) {
-      $recipeTitleContainer.append(currentRecipeList[y].name);
+      $recipeTitleContainer.html(currentRecipeList[y].name);
 
       $imageContainer.css("background-image", "url(" + "'" + currentRecipeList[y].img + "'" + ")");
 
@@ -133,6 +142,21 @@ function appendSelectedRecipe() {
       getRecipeSteps();
     }
   }
+}
+
+
+function showRecipeHome() {
+  $bodyGridContainer.css("grid-row-gap", "80px");
+  $bodyGridContainer.css("top", "110px");
+  $bodyGridContainer.css("padding-bottom", "60px");
+
+  $recipeTitleContainer.hide();
+  $ingredientContainer.hide();
+  $imageContainer.hide();
+  $recipeContainer.hide();
+
+  $categoryContainer.show();
+  $sortBySelect.show();
 }
 
 
@@ -250,6 +274,8 @@ function searchSavedRecipes() {
     clearTiles();
     document.activeElement.blur();
 
+    showRecipeHome();
+
     setTimeout(function() {
       populateTiles();
     }, 200);
@@ -261,6 +287,8 @@ function searchSavedRecipes() {
 
     clearTiles();
     document.activeElement.blur();
+
+    showRecipeHome();
 
     $searchResultNone = $("<div>No Results Found</div>")
                      .attr("id", "search-result-none")
