@@ -113,6 +113,8 @@ function getRecipeSteps() {
 
 
 function appendSelectedRecipe() {
+  window.scrollTo(0, 0);
+
   $bodyGridContainer.css("grid-row-gap", "20px");
   $bodyGridContainer.css("top", "110px");
   $bodyGridContainer.css("padding-bottom", "40px");

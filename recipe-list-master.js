@@ -4,7 +4,6 @@ var bbqChicken = {
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379016/recipe-book/bbq-chicken.jpg",
   tags: ["poultry", "bbq chicken", "bbq", "chicken", "american"],
-  link: "recipes/bbq-chicken.html",
   ingredients: ["1 lb. chicken thighs", "1/2 cup BBQ sauce", "1 tbsp. olive oil",
   "1 tsp. salt", "1/4 tsp. ground black pepper"],
   recipe: ["1. Rub chicken thighs with olive oil, salt, and pepper.",
@@ -18,7 +17,6 @@ var chili = {
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118007/recipe-book/chili-con-carne.jpg",
   tags: ["beef", "chili con carne", "chili", "carne", "beans", "bean", "american", "tex-mex", "tex mex"],
-  link: "recipes/chili-con-carne.html",
   ingredients: ["1 lb. ground beef", "1 large yellow onion", "3 cloves garlic",
   "1/2 fresh lime, juiced", "1 can diced tomatoes", "1 can dark red kidney beans",
   "2 tbsp. canola oil", "1 tbsp. chili powder", "1 tsp. salt", "1 tsp. ground cumin",
@@ -37,7 +35,6 @@ var fajitas = {
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544117892/recipe-book/fajitas.jpg",
   tags: ["poultry", "fajitas", "fajita", "chicken", "mexican", "tex-mex", "tex mex"],
-  link: "recipes/fajitas.html",
   ingredients: ["1 lb. chicken breast", "1 package large tortillas", "1 large yellow onion",
   "1 large bell pepper", "1/2 fresh lime, juiced", "4 tbsp. canola oil", "1 tbsp. cornstarch",
   "2 tsp. chili powder", "1 tsp. salt", "1 tsp. paprika", "1/2 tsp. ground cumin",
@@ -59,7 +56,6 @@ var frittata = {
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544402454/recipe-book/frittata.jpg",
   tags: ["vegetarian", "frittata", "egg", "eggs", "italian"],
-  link: "recipes/frittata.html",
   ingredients: ["8 large eggs", "2 medium red potatoes", "1 medium red bell pepper",
   "1 clove garlic", "1/2 small red onion", "8 oz. shredded sharp cheddar", "8 oz. fresh mushrooms",
   "8 oz. fresh baby spinach", "1/3 cup milk", "1/3 cup grated parmesan", "2 tbsp. canola oil",
@@ -75,62 +71,62 @@ var frittata = {
 };
 
 var hamburgers = {
+  id: "hamburgers",
   name: "Hamburgers",
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379558/recipe-book/hamburgers.jpg",
   tags: ["beef", "hamburgers", "hamburger", "burgers", "burger", "american"],
-  link: "recipes/template.html",
   ingredients: [],
   recipe: []
 };
 
 var macAndCheese = {
+  id: "macAndCheese",
   name: "Mac & Cheese",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/mac-and-cheese.jpg",
   tags: ["vegetarian", "mac and cheese", "mac & cheese", "pasta", "macaroni", "mac", "cheese",
   "italian", "american"],
-  link: "recipes/template.html",
   ingredients: [],
   recipe: []
 };
 
 var potatoCasserole = {
+  id: "potatoCasserole",
   name: "Potato Casserole",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379270/recipe-book/potato-casserole.jpg",
   tags: ["vegetarian", "potato casserole", "potato", "casserole", "french"],
-  link: "recipes/template.html",
   ingredients: [],
   recipe: []
 };
 
 var pulledPork = {
+  id: "pulledPork",
   name: "Pulled Pork",
   category: "pork",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/pulled-pork.jpg",
   tags: ["pork", "pulled pork", "pulled", "bbq", "american"],
-  link: "recipes/template.html",
   ingredients: [],
   recipe: []
 };
 
 var spaghetti = {
+  id: "spaghetti",
   name: "Spaghetti",
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118748/recipe-book/spaghetti.jpg",
   tags: ["beef", "spaghetti", "pasta", "italian"],
-  link: "recipes/template.html",
   ingredients: [],
   recipe: []
 };
 
 var springSalad = {
+  id: "springSalad",
   name: "Spring Salad",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544121716/recipe-book/spring-salad.jpg",
   tags: ["vegetarian", "spring salad", "spring", "salad"],
-  link: "recipes/template.html",
   ingredients: [],
   recipe: []
 };
@@ -141,7 +137,6 @@ var tortelliniSoup = {
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544380718/recipe-book/tortellini-soup.jpg",
   tags: ["poultry", "tortellini soup", "tortellini", "soup", "chicken", "pasta", "italian"],
-  link: "recipes/tortellini-soup.html",
   ingredients: ["1 pkg. chicken tortellini (19 oz.)", "2 cans chicken broth (14 oz.)",
   "2 cans vegetable broth (14 oz.)", "2 cans tomato soup (10.75 oz.)",
   "8 oz. cream cheese, softened", "1/2 tsp. dried oregano", "1/2 tsp. dried thyme",
