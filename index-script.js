@@ -51,6 +51,9 @@ $(document).ready(function() {
 
   var $recipeStepList = $("#recipe-step-list");
 
+  var $bottomOptionBar = $("#bottom-option-bar");
+  var $backButton = $("#back-button");
+
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function clearTiles() {
@@ -123,6 +126,10 @@ function appendSelectedRecipe() {
 
   $imageContainer.css("background-image", "none");
 
+  /* $mainContentContainer.css("padding-bottom", "200px");
+  $copyrightFooter.css("top", "-92px");
+  $copyrightFooter.css("height", "92px"); */
+
   $ingredientListAll.empty();
   $ingredientListLeft.empty();
   $ingredientListRight.empty();
@@ -132,6 +139,7 @@ function appendSelectedRecipe() {
   $ingredientContainer.show();
   $imageContainer.show();
   $recipeContainer.show();
+  $bottomOptionBar.show();
 
   for(y = 0; y < currentRecipeList.length; y++) {
     if(currentRecipeName === currentRecipeList[y].id) {
@@ -152,10 +160,15 @@ function showRecipeHome() {
   $bodyGridContainer.css("top", "110px");
   $bodyGridContainer.css("padding-bottom", "60px");
 
+  /* $mainContentContainer.css("padding-bottom", "150px");
+  $copyrightFooter.css("top", "-42px");
+  $copyrightFooter.css("height", "42px"); */
+
   $recipeTitleContainer.hide();
   $ingredientContainer.hide();
   $imageContainer.hide();
   $recipeContainer.hide();
+  $bottomOptionBar.hide();
 
   $categoryContainer.show();
   $sortBySelect.show();
@@ -480,6 +493,18 @@ function sortRecipeMaster() {
 
   $sortBySelect.change(function() {
     sortRecipeMaster();
+  });
+
+
+
+
+
+  $backButton.on("click", function() {
+    showRecipeHome();
+
+    setTimeout(function() {
+      populateTiles();
+    }, 200);
   });
 
 
