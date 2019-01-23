@@ -137,8 +137,8 @@ function appendSelectedRecipe() {
   $imageContainer.css("background-image", "none");
 
 /* Footer Position Adjustments Begin ----- */
-  $copyrightFooter.css("top", "-92px");
-  $copyrightFooter.css("height", "92px");
+  $copyrightFooter.css("top", "-82px");
+  $copyrightFooter.css("height", "82px");
 
   if(navbarDropdownActive === true || searchDropdownActive === true) {
     removeContainerClasses();

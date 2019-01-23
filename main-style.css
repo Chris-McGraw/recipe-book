@@ -46,12 +46,12 @@ ul {
 }
 
 .main-content-container-expand-recipe {
-  padding-bottom: 240px !important;
+  padding-bottom: 230px !important;
   transition: padding-bottom 300ms ease-in-out;
 }
 
 .main-content-container-retract-recipe {
-  padding-bottom: 200px !important;
+  padding-bottom: 190px !important;
   transition: padding-bottom 300ms ease-in-out;
 }
 
