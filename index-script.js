@@ -51,6 +51,9 @@ $(document).ready(function() {
 
   var $recipeStepList = $("#recipe-step-list");
 
+  var $bottomOptionBar = $("#bottom-option-bar");
+  var $backButton = $("#back-button");
+
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function clearTiles() {
@@ -112,7 +115,17 @@ function getRecipeSteps() {
 }
 
 
+function removeContainerClasses() {
+  $mainContentContainer.removeClass("main-content-container-retract");
+  $mainContentContainer.removeClass("main-content-container-expand");
+  $mainContentContainer.removeClass("main-content-container-retract-recipe");
+  $mainContentContainer.removeClass("main-content-container-expand-recipe");
+}
+
+
 function appendSelectedRecipe() {
+  currentScreen = "screenRecipe";
+
   window.scrollTo(0, 0);
 
   $bodyGridContainer.css("grid-row-gap", "20px");
@@ -123,6 +136,20 @@ function appendSelectedRecipe() {
 
   $imageContainer.css("background-image", "none");
 
+/* Footer Position Adjustments Begin ----- */
+  $copyrightFooter.css("top", "-82px");
+  $copyrightFooter.css("height", "82px");
+
+  if(navbarDropdownActive === true || searchDropdownActive === true) {
+    removeContainerClasses();
+    $mainContentContainer.addClass("main-content-container-expand-recipe");
+  }
+  else if(navbarDropdownActive === false && searchDropdownActive === false) {
+    removeContainerClasses();
+    $mainContentContainer.addClass("main-content-container-retract-recipe");
+  }
+/* ----- Footer Position Adjustments End */
+
   $ingredientListAll.empty();
   $ingredientListLeft.empty();
   $ingredientListRight.empty();
@@ -132,6 +159,7 @@ function appendSelectedRecipe() {
   $ingredientContainer.show();
   $imageContainer.show();
   $recipeContainer.show();
+  $bottomOptionBar.show();
 
   for(y = 0; y < currentRecipeList.length; y++) {
     if(currentRecipeName === currentRecipeList[y].id) {
@@ -148,14 +176,31 @@ function appendSelectedRecipe() {
 
 
 function showRecipeHome() {
+  currentScreen = "screenHome";
+
   $bodyGridContainer.css("grid-row-gap", "80px");
   $bodyGridContainer.css("top", "110px");
   $bodyGridContainer.css("padding-bottom", "60px");
+
+/* Footer Position Adjustments Begin ----- */
+  $copyrightFooter.css("top", "-42px");
+  $copyrightFooter.css("height", "42px");
+
+  if(navbarDropdownActive === true || searchDropdownActive === true) {
+    removeContainerClasses();
+    $mainContentContainer.addClass("main-content-container-expand");
+  }
+  else if(navbarDropdownActive === false && searchDropdownActive === false) {
+    removeContainerClasses();
+    $mainContentContainer.addClass("main-content-container-retract");
+  }
+/* ----- Footer Position Adjustments End */
 
   $recipeTitleContainer.hide();
   $ingredientContainer.hide();
   $imageContainer.hide();
   $recipeContainer.hide();
+  $bottomOptionBar.hide();
 
   $categoryContainer.show();
   $sortBySelect.show();
@@ -480,6 +525,18 @@ function sortRecipeMaster() {
 
   $sortBySelect.change(function() {
     sortRecipeMaster();
+  });
+
+
+
+
+
+  $backButton.on("click", function() {
+    showRecipeHome();
+
+    setTimeout(function() {
+      populateTiles();
+    }, 200);
   });
 
 

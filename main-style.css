@@ -45,6 +45,16 @@ ul {
   transition: padding-bottom 300ms ease-in-out;
 }
 
+.main-content-container-expand-recipe {
+  padding-bottom: 230px !important;
+  transition: padding-bottom 300ms ease-in-out;
+}
+
+.main-content-container-retract-recipe {
+  padding-bottom: 190px !important;
+  transition: padding-bottom 300ms ease-in-out;
+}
+
 #navbar {
   z-index: 30;
   position: fixed;
@@ -427,11 +437,14 @@ ul {
 }
 
 footer {
+  z-index: 20;
+
   user-select: none;
 
   position: relative;
   top: -42px;
 
+  width: 100%;
   height: 42px;
 
   text-align: center;
