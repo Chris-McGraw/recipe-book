@@ -1,20 +1,10 @@
 $(document).ready(function() {
 
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
-  var $mainContentContainer = $("#main-content-container");
-
   var $hamburgerMenu = $("#hamburger-menu");
   var $hamburgerBarTop = $("#hamburger-bar-top");
   var $hamburgerBarMiddle = $("#hamburger-bar-middle");
   var $hamburgerBarBottom = $("#hamburger-bar-bottom");
-  var $navbarDropdown = $("#navbar-dropdown");
-  var navbarDropdownActive = false;
-  var delayDropdown = false;
-
-  var $searchIcon = $("#search-icon");
-  var $searchCloseIcon = $("#search-close-icon");
-  var $searchDropdown = $("#search-dropdown");
-  var searchDropdownActive = false;
 
 
 
@@ -45,8 +35,14 @@ $(document).ready(function() {
       $navbarDropdown.addClass("dropdown-expand");
       $bodyGridContainer.addClass("dropdown-expand");
 
-      $mainContentContainer.removeClass("main-content-container-retract");
-      $mainContentContainer.addClass("main-content-container-expand");
+      if(currentScreen === "screenHome") {
+        $mainContentContainer.removeClass("main-content-container-retract");
+        $mainContentContainer.addClass("main-content-container-expand");
+      }
+      else if(currentScreen === "screenRecipe") {
+        $mainContentContainer.removeClass("main-content-container-retract-recipe");
+        $mainContentContainer.addClass("main-content-container-expand-recipe");
+      }
 
       navbarDropdownActive = true;
     }
@@ -55,8 +51,14 @@ $(document).ready(function() {
       $navbarDropdown.removeClass("dropdown-expand");
       $bodyGridContainer.removeClass("dropdown-expand");
 
-      $mainContentContainer.removeClass("main-content-container-expand");
-      $mainContentContainer.addClass("main-content-container-retract");
+      if(currentScreen === "screenHome") {
+        $mainContentContainer.removeClass("main-content-container-expand");
+        $mainContentContainer.addClass("main-content-container-retract");
+      }
+      else if(currentScreen === "screenRecipe") {
+        $mainContentContainer.removeClass("main-content-container-expand-recipe");
+        $mainContentContainer.addClass("main-content-container-retract-recipe");
+      }
 
       navbarDropdownActive = false;
     }
@@ -99,8 +101,14 @@ $(document).ready(function() {
       $searchDropdown.addClass("dropdown-expand");
       $bodyGridContainer.addClass("dropdown-expand");
 
-      $mainContentContainer.removeClass("main-content-container-retract");
-      $mainContentContainer.addClass("main-content-container-expand");
+      if(currentScreen === "screenHome") {
+        $mainContentContainer.removeClass("main-content-container-retract");
+        $mainContentContainer.addClass("main-content-container-expand");
+      }
+      else if(currentScreen === "screenRecipe") {
+        $mainContentContainer.removeClass("main-content-container-retract-recipe");
+        $mainContentContainer.addClass("main-content-container-expand-recipe");
+      }
 
       searchDropdownActive = true;
     }
@@ -109,8 +117,14 @@ $(document).ready(function() {
       $searchDropdown.removeClass("dropdown-expand");
       $bodyGridContainer.removeClass("dropdown-expand");
 
-      $mainContentContainer.removeClass("main-content-container-expand");
-      $mainContentContainer.addClass("main-content-container-retract");
+      if(currentScreen === "screenHome") {
+        $mainContentContainer.removeClass("main-content-container-expand");
+        $mainContentContainer.addClass("main-content-container-retract");
+      }
+      else if(currentScreen === "screenRecipe") {
+        $mainContentContainer.removeClass("main-content-container-expand-recipe");
+        $mainContentContainer.addClass("main-content-container-retract-recipe");
+      }
 
       searchDropdownActive = false;
     }

@@ -115,7 +115,17 @@ function getRecipeSteps() {
 }
 
 
+function removeContainerClasses() {
+  $mainContentContainer.removeClass("main-content-container-retract");
+  $mainContentContainer.removeClass("main-content-container-expand");
+  $mainContentContainer.removeClass("main-content-container-retract-recipe");
+  $mainContentContainer.removeClass("main-content-container-expand-recipe");
+}
+
+
 function appendSelectedRecipe() {
+  currentScreen = "screenRecipe";
+
   window.scrollTo(0, 0);
 
   $bodyGridContainer.css("grid-row-gap", "20px");
@@ -126,9 +136,19 @@ function appendSelectedRecipe() {
 
   $imageContainer.css("background-image", "none");
 
-  /* $mainContentContainer.css("padding-bottom", "200px");
+/* Footer Position Adjustments Begin ----- */
   $copyrightFooter.css("top", "-92px");
-  $copyrightFooter.css("height", "92px"); */
+  $copyrightFooter.css("height", "92px");
+
+  if(navbarDropdownActive === true || searchDropdownActive === true) {
+    removeContainerClasses();
+    $mainContentContainer.addClass("main-content-container-expand-recipe");
+  }
+  else if(navbarDropdownActive === false && searchDropdownActive === false) {
+    removeContainerClasses();
+    $mainContentContainer.addClass("main-content-container-retract-recipe");
+  }
+/* ----- Footer Position Adjustments End */
 
   $ingredientListAll.empty();
   $ingredientListLeft.empty();
@@ -156,13 +176,25 @@ function appendSelectedRecipe() {
 
 
 function showRecipeHome() {
+  currentScreen = "screenHome";
+
   $bodyGridContainer.css("grid-row-gap", "80px");
   $bodyGridContainer.css("top", "110px");
   $bodyGridContainer.css("padding-bottom", "60px");
 
-  /* $mainContentContainer.css("padding-bottom", "150px");
+/* Footer Position Adjustments Begin ----- */
   $copyrightFooter.css("top", "-42px");
-  $copyrightFooter.css("height", "42px"); */
+  $copyrightFooter.css("height", "42px");
+
+  if(navbarDropdownActive === true || searchDropdownActive === true) {
+    removeContainerClasses();
+    $mainContentContainer.addClass("main-content-container-expand");
+  }
+  else if(navbarDropdownActive === false && searchDropdownActive === false) {
+    removeContainerClasses();
+    $mainContentContainer.addClass("main-content-container-retract");
+  }
+/* ----- Footer Position Adjustments End */
 
   $recipeTitleContainer.hide();
   $ingredientContainer.hide();
