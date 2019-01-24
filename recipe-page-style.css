@@ -160,10 +160,11 @@
 #back-button {
   position: absolute;
   top: 8px;
-  left: 19px;
+  left: 20px;
 
   width: 0;
   height: 0;
+
   border-top: 12px solid transparent;
   border-right: 16px solid white;
   border-bottom: 12px solid transparent;
@@ -184,6 +185,35 @@
   background-color: white;
 }
 
+#font-size-button {
+  user-select: none;
+
+  position: absolute;
+  top: 11px;
+  right: 20px;
+
+  width: auto;
+  height: 21px;
+  padding-top: 10px;
+
+  text-align: center;
+  line-height: 0;
+  font-size: 24px;
+  color: white;
+
+  cursor: pointer;
+}
+
+#font-size-button-span {
+  user-select: none;
+
+  position: relative;
+  right: 1px;
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
 
 
 
