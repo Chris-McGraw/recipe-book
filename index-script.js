@@ -45,14 +45,18 @@ $(document).ready(function() {
   var $imageContainer = $("#image-container");
   var $recipeContainer = $("#recipe-container");
 
+  var $ingredientTitle = $("#ingredient-title");
   var $ingredientListAll = $("#ingredient-list-all");
   var $ingredientListLeft = $("#ingredient-list-left");
   var $ingredientListRight = $("#ingredient-list-right");
 
+  var $recipeTitle = $("#recipe-title");
   var $recipeStepList = $("#recipe-step-list");
 
   var $bottomOptionBar = $("#bottom-option-bar");
   var $backButton = $("#back-button");
+  var $fontSizeButton = $("#font-size-button");
+  var currentFontSize = "default";
 
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
@@ -105,6 +109,8 @@ function getIngredientList() {
   for(ingListCount2 = ingredientListHalfLast; ingListCount2 < currentRecipeList[y].ingredients.length; ingListCount2++) {
     $ingredientListRight.append("<li class='ingredient-list-item'>- " + currentRecipeList[y].ingredients[ingListCount2] + "</li>");
   }
+
+  $ingredientListItem = $(".ingredient-list-item");
 }
 
 
@@ -112,6 +118,8 @@ function getRecipeSteps() {
   for(recipeStepCount = 0; recipeStepCount < currentRecipeList[y].recipe.length; recipeStepCount++) {
     $recipeStepList.append("<li class='recipe-step'>" + currentRecipeList[y].recipe[recipeStepCount] + "</li>");
   }
+
+  $recipeStep = $(".recipe-step");
 }
 
 
@@ -120,6 +128,68 @@ function removeContainerClasses() {
   $mainContentContainer.removeClass("main-content-container-expand");
   $mainContentContainer.removeClass("main-content-container-retract-recipe");
   $mainContentContainer.removeClass("main-content-container-expand-recipe");
+}
+
+
+function increaseFontSize() {
+  $bodyGridContainer.css("top", "114px");
+  $bodyGridContainer.css("grid-row-gap", "24px");
+
+  $recipeTitleContainer.css("font-size", "28px");
+  $recipeTitleContainer.css("padding-bottom", "4px");
+
+  $ingredientContainer.css("font-size", "18px");
+  $ingredientTitle.css("font-size", "24px");
+  $ingredientTitle.css("margin-bottom", "24px");
+  $ingredientTitle.css("padding-bottom", "9px");
+
+  $ingredientListItem.css("padding-bottom", "10px");
+
+  $recipeContainer.css("font-size", "18px");
+  $recipeTitle.css("font-size", "24px");
+  $recipeTitle.css("margin-bottom", "24px");
+  $recipeTitle.css("padding-bottom", "9px");
+
+  $recipeStep.css("line-height", "24px");
+  $recipeStep.css("padding-bottom", "24px");
+
+  currentFontSize = "increased";
+}
+
+
+function decreaseFontSize() {
+  $bodyGridContainer.css("top", "110px");
+  $bodyGridContainer.css("grid-row-gap", "20px");
+
+  $recipeTitleContainer.css("font-size", "24px");
+  $recipeTitleContainer.css("padding-bottom", "0px");
+
+  $ingredientContainer.css("font-size", "14px");
+  $ingredientTitle.css("font-size", "20px");
+  $ingredientTitle.css("margin-bottom", "20px");
+  $ingredientTitle.css("padding-bottom", "5px");
+
+  $ingredientListItem.css("padding-bottom", "6px");
+
+  $recipeContainer.css("font-size", "14px");
+  $recipeTitle.css("font-size", "20px");
+  $recipeTitle.css("margin-bottom", "20px");
+  $recipeTitle.css("padding-bottom", "5px");
+
+  $recipeStep.css("line-height", "20px");
+  $recipeStep.css("padding-bottom", "20px");
+
+  currentFontSize = "default";
+}
+
+
+function toggleFontSize() {
+  if(currentFontSize === "default") {
+    increaseFontSize();
+  }
+  else if(currentFontSize === "increased") {
+    decreaseFontSize();
+  }
 }
 
 
@@ -537,6 +607,10 @@ function sortRecipeMaster() {
     setTimeout(function() {
       populateTiles();
     }, 200);
+  });
+
+  $fontSizeButton.on("click", function() {
+    toggleFontSize();
   });
 
 
