@@ -15,7 +15,7 @@ html, body {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 
-  background-color: rgb(36, 38, 40);
+  background-color: rgb(59, 135, 118);
 }
 
 ul {
@@ -33,6 +33,8 @@ ul {
 #main-content-container {
   min-height: 100%;
   padding-bottom: 150px;
+
+  background-color: rgb(36, 38, 40);
 }
 
 .main-content-container-expand {
