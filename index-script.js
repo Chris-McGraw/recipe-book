@@ -376,13 +376,6 @@ function searchSavedRecipes() {
   allowLocalSearch = false;
   recipeListSearch = [];
 
-
-
-  $navbar.css("top", "0px");
-  $bottomOptionBar.css("bottom", "0px");
-
-
-
   recipeListMaster.forEach(function(element) {
     element.tags.forEach(function(entry) {
       if(entry == userInputTrim.toLowerCase()) {

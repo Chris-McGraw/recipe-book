@@ -38,9 +38,7 @@ ul {
   width: 100%;
   height: 40px;
 
-  /* background-color: rgb(59, 135, 118); */
-
-  background-color: yellow;
+  background-color: rgb(59, 135, 118);
 }
 
 #main-content-container {
@@ -477,11 +475,6 @@ footer {
     position: fixed;
     top: 0;
   }
-
-  #bottom-option-bar {
-    position: fixed;
-    bottom: 0;
-  }
 }
 
 
@@ -491,11 +484,6 @@ footer {
   #navbar {
     position: fixed;
     top: 0;
-  }
-
-  #bottom-option-bar {
-    position: fixed;
-    bottom: 0;
   }
 }
 
