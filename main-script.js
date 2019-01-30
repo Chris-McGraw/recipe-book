@@ -1,8 +1,6 @@
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
 var $mainContentContainer = $("#main-content-container");
 
-var $navbar = $("#navbar");
-
 var $navbarDropdown = $("#navbar-dropdown");
 var navbarDropdownActive = false;
 var delayDropdown = false;
