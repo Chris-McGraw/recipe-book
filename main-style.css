@@ -469,6 +469,26 @@ footer {
 
 
 
+/* ------------------------- MEDIA QUERY PORTRAIT ------------------------- */
+@media screen and (orientation: portrait) {
+  #navbar {
+    position: fixed;
+    top: 0;
+  }
+}
+
+
+
+/* ------------------------- MEDIA QUERY LANDSCAPE ------------------------- */
+@media screen and (orientation: landscape) {
+  #navbar {
+    position: fixed;
+    top: 0;
+  }
+}
+
+
+
 /* -------------------------- MEDIA QUERY <= 1000 -------------------------- */
 @media screen and (max-width: 1000px) {
   #body-grid-container {
