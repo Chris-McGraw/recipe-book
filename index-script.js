@@ -242,6 +242,10 @@ function appendSelectedRecipe() {
       getRecipeSteps();
     }
   }
+
+  if(currentFontSize === "increased") {
+    increaseFontSize();
+  }
 }
 
 
