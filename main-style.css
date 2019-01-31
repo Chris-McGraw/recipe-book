@@ -41,7 +41,21 @@ ul {
   background-color: rgb(59, 135, 118);
 }
 
+#body-background {
+  z-index: -10;
+
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  min-height: 100%;
+
+  background-color: red;
+}
+
 #main-content-container {
+  z-index: 10;
+
   min-height: 100%;
   padding-bottom: 150px;
 
