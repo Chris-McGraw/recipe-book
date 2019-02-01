@@ -536,18 +536,10 @@ function sortRecipeMaster() {
 
   $searchBar.on("touchstart", function() {
     /* console.log("hello test"); */
-
-    $navbar.css("position", "absolute");
-    $navbarDropdown.css("position", "absolute");
-    $searchDropdown.css("position", "absolute");
   });
 
   $searchBar.on("blur", function() {
     /* console.log("goodbye test"); */
-
-    $navbar.css("position", "fixed");
-    $navbarDropdown.css("position", "fixed");
-    $searchDropdown.css("position", "fixed");
   });
 
 
