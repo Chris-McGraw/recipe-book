@@ -536,8 +536,6 @@ function sortRecipeMaster() {
 
   $searchBar.on("touchstart", function() {
     /* console.log("hello test"); */
-
-    window.scrollTo(0, 0);
   });
 
   $searchBar.on("blur", function() {
