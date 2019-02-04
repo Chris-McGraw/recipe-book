@@ -91,6 +91,8 @@ ul {
   height: 70px;
 
   background-color: rgb(59, 135, 118);
+
+  user-select: none;
 }
 
 #hamburger-menu {
@@ -151,8 +153,6 @@ ul {
   font-family: "Satisfy", cursive;
   font-size: 50px;
   color: white;
-
-  user-select: none;
 }
 
 #search-icon {
@@ -213,6 +213,8 @@ ul {
 
   background-color: rgb(47, 106, 93);
 
+  user-select: none;
+
   transition: transform 300ms ease-in-out;
 }
 
@@ -265,6 +267,8 @@ ul {
   height: 40px;
 
   background-color: rgb(47, 106, 93);
+
+  user-select: none;
 
   transition: transform 300ms ease-in-out;
 }
@@ -338,6 +342,8 @@ ul {
   margin-right: 40px;
   padding-bottom: 60px;
 
+  user-select: none;
+
   transition: transform 300ms ease-in-out;
 }
 
@@ -347,8 +353,6 @@ ul {
   height: 40px;
 
   border-bottom: 1px solid white;
-
-  user-select: none;
 }
 
 #category-row-top {
@@ -416,9 +420,6 @@ ul {
 }
 
 .tile-header {
-  user-select: none;
-  pointer-events: none;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -429,6 +430,8 @@ ul {
   font-size: 18px;
   font-weight: 300;
   color: white;
+
+  pointer-events: none;
 }
 
 .tile-fade-in {
@@ -437,8 +440,6 @@ ul {
 }
 
 #search-result-none {
-  user-select: none;
-
   grid-column: span 5;
 
   position: relative;
@@ -465,9 +466,6 @@ ul {
 
 footer {
   z-index: 20;
-
-  user-select: none;
-
   position: relative;
   top: -42px;
 
@@ -477,6 +475,8 @@ footer {
   text-align: center;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
+
+  user-select: none;
 }
 
 
