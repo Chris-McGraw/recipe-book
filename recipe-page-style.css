@@ -12,6 +12,9 @@
   font-weight: 300;
   letter-spacing: 0.5px;
   color: white;
+
+  cursor: text;
+  user-select: text;
 }
 
 #ingredient-container {
@@ -41,6 +44,9 @@
   font-weight: 300;
 
   border-bottom: 1px solid rgb(76, 211, 182);
+
+  cursor: text;
+  user-select: text;
 }
 
 .ingredient-list-container-inner {
@@ -58,11 +64,10 @@
 }
 
 .ingredient-list-item {
-  user-select: text;
-
   padding-bottom: 6px;
 
   cursor: text;
+  user-select: text;
 }
 
 #ingredient-list-container-all {
@@ -135,12 +140,18 @@
   font-weight: 300;
 
   border-bottom: 1px solid rgb(76, 211, 182);
+
+  cursor: text;
+  user-select: text;
 }
 
 .recipe-step {
   line-height: 20px;
 
   padding-bottom: 20px;
+
+  cursor: text;
+  user-select: text;
 }
 
 #bottom-option-bar {
@@ -186,8 +197,6 @@
 }
 
 #font-size-button {
-  user-select: none;
-
   position: absolute;
   top: 11px;
   right: 20px;
@@ -205,8 +214,6 @@
 }
 
 #font-size-button-span {
-  user-select: none;
-
   position: relative;
   right: 1px;
 

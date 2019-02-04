@@ -201,6 +201,7 @@ function appendSelectedRecipe() {
   $bodyGridContainer.css("grid-row-gap", "20px");
   $bodyGridContainer.css("top", "110px");
   $bodyGridContainer.css("padding-bottom", "40px");
+  $bodyGridContainer.css("user-select", "auto");
 
   $recipeTitleContainer.empty();
 
@@ -255,6 +256,7 @@ function showRecipeHome() {
   $bodyGridContainer.css("grid-row-gap", "80px");
   $bodyGridContainer.css("top", "110px");
   $bodyGridContainer.css("padding-bottom", "60px");
+  $bodyGridContainer.css("user-select", "none");
 
 /* Footer Position Adjustments Begin ----- */
   $copyrightFooter.css("top", "-42px");
