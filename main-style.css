@@ -2,6 +2,9 @@
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
+  -webkit-touch-callout: none;
+  touch-action: none;
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -92,6 +95,7 @@ ul {
 
   background-color: rgb(59, 135, 118);
 
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -213,6 +217,7 @@ ul {
 
   background-color: rgb(47, 106, 93);
 
+  -webkit-user-select: none;
   user-select: none;
 
   transition: transform 300ms ease-in-out;
@@ -268,6 +273,7 @@ ul {
 
   background-color: rgb(47, 106, 93);
 
+  -webkit-user-select: none;
   user-select: none;
 
   transition: transform 300ms ease-in-out;
@@ -342,6 +348,7 @@ ul {
   margin-right: 40px;
   padding-bottom: 60px;
 
+  -webkit-user-select: none;
   user-select: none;
 
   transition: transform 300ms ease-in-out;
@@ -476,6 +483,7 @@ footer {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
 
+  -webkit-user-select: none;
   user-select: none;
 }
 
