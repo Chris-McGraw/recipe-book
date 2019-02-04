@@ -538,6 +538,15 @@ function sortRecipeMaster() {
 
 
 
+  $(document).on("touchmove", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  });
+
+
+
+
+
   $searchBar.on("touchstart", function() {
     /* console.log("hello test"); */
   });
