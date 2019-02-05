@@ -6,6 +6,7 @@
   "start_url": "/recipe-book/",
   "background_color": "#fff",
   "display": "standalone",
+  "orientation": "portrait",
   "scope": "/recipe-book/",
   "theme_color": "#3b8776"
 }
