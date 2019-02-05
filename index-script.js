@@ -538,7 +538,7 @@ function sortRecipeMaster() {
 
 
 
-  $(document).on("touchmove", function(event) {
+  $(document).on("touchmove", function() {
     event.preventDefault();
     event.stopPropagation();
   });
@@ -547,7 +547,7 @@ function sortRecipeMaster() {
 
 
 
-  $(document).on("scroll", function(event) {
+  $(document).on("scroll", function() {
     currentScrollPosition = window.pageYOffset;
 
     /* console.log(currentScrollPosition); */
