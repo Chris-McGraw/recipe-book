@@ -551,6 +551,12 @@ function sortRecipeMaster() {
     /* console.log("hello test"); */
   });
 
+  $searchBar.on("focus", function() {
+    /* console.log("hello test"); */
+
+    document.body.scrollTop = 0;
+  });
+
   $searchBar.on("blur", function() {
     /* console.log("goodbye test"); */
   });
