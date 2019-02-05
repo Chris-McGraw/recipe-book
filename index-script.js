@@ -548,14 +548,16 @@ function sortRecipeMaster() {
 
 
   $searchBar.on("touchstart", function() {
-    /* console.log("hello test"); */
-
-    var currentScrollPosition = window.pageYOffset;
+    currentScrollPosition = window.pageYOffset;
 
     /* console.log(currentScrollPosition); */
+  });
 
+  $searchBar.on("touchend", function() {
     window.scrollTo(0, currentScrollPosition);
     document.body.scrollTop = currentScrollPosition;
+
+    /* console.log(window.pageYOffset); */
   });
 
   $searchBar.on("focus", function() {
