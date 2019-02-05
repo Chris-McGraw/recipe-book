@@ -547,21 +547,25 @@ function sortRecipeMaster() {
 
 
 
-  $searchBar.on("touchstart", function() {
+  $(document).on("scroll", function(event) {
     currentScrollPosition = window.pageYOffset;
 
     /* console.log(currentScrollPosition); */
   });
 
+  $searchBar.on("touchstart", function() {
+    /* console.log("hello test"); */
+  });
+
   $searchBar.on("touchend", function() {
+    /* console.log("hello test"); */
+  });
+
+  $searchBar.on("focus", function() {
     window.scrollTo(0, currentScrollPosition);
     document.body.scrollTop = currentScrollPosition;
 
     /* console.log(window.pageYOffset); */
-  });
-
-  $searchBar.on("focus", function() {
-    /* console.log("hello test"); */
   });
 
   $searchBar.on("blur", function() {
