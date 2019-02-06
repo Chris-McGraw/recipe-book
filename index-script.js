@@ -381,6 +381,10 @@ function userSearchFocused() {
   /* document.body.scrollTop = currentScrollPosition; */
   window.scrollTo(0, currentScrollPosition);
 
+  $navbar.css("z-index", "300");
+  $navbarDropdown.css("z-index", "200");
+  $searchDropdown.css("z-index", "200");
+
   $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
 
@@ -390,6 +394,10 @@ function userSearchFocused() {
 
 function userSearchBlurred() {
   $(document.body).css("overflow", "auto");
+
+  $navbar.css("z-index", "30");
+  $navbarDropdown.css("z-index", "20");
+  $searchDropdown.css("z-index", "20");
 
   $bodySearchMask.removeClass("body-search-mask-expand");
   $bodySearchMask.addClass("body-search-mask-retract");
