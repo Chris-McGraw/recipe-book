@@ -376,7 +376,10 @@ function populateTiles() {
 
 
 function userSearchFocused() {
-  /* $(document.body).css("overflow", "hidden"); */
+  /* $(document.body).css("overflow", "hidden");
+  document.body.scrollTop = currentScrollPosition; */
+
+  window.scrollTo(0, currentScrollPosition);
 
   $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
@@ -580,26 +583,11 @@ function sortRecipeMaster() {
   });
 
   $searchBar.on("focus", function() {
-    window.scrollTo(0, currentScrollPosition);
-    document.body.scrollTop = currentScrollPosition;
-
-    $bodySearchMask.removeClass("body-search-mask-retract");
-    $bodySearchMask.addClass("body-search-mask-expand");
-
-    $bodySearchMask.css("z-index", "10");
-
-    /* userSearchFocused(); */
+    userSearchFocused();
   });
 
   $searchBar.on("blur", function() {
-    $bodySearchMask.removeClass("body-search-mask-expand");
-    $bodySearchMask.addClass("body-search-mask-retract");
-
-    setTimeout(function() {
-      $bodySearchMask.css("z-index", "-10");
-    }, 300);
-
-    /* userSearchBlurred(); */
+    userSearchBlurred();
   });
 
 
