@@ -381,6 +381,8 @@ function userSearchFocused() {
 
   window.scrollTo(0, currentScrollPosition);
 
+  $navbar.css("top", "0");
+
   $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
 
