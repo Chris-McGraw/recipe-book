@@ -376,9 +376,6 @@ function populateTiles() {
 
 
 function userSearchFocused() {
-  window.scrollTo(0, currentScrollPosition);
-  document.body.scrollTop = currentScrollPosition;
-
   $(document.body).css("overflow", "hidden");
   $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
@@ -581,6 +578,9 @@ function sortRecipeMaster() {
   });
 
   $searchBar.on("focus", function() {
+    window.scrollTo(0, currentScrollPosition);
+    document.body.scrollTop = currentScrollPosition;
+
     userSearchFocused();
   });
 
