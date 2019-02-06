@@ -258,7 +258,7 @@ function appendSelectedRecipe() {
 function showRecipeHome() {
   currentScreen = "screenHome";
 
-  $bodySearchMask.css("z-index", "-20");
+  /* $bodySearchMask.css("z-index", "-20"); */
 
   $bodyGridContainer.css("grid-row-gap", "80px");
   $bodyGridContainer.css("top", "110px");
@@ -378,13 +378,13 @@ function populateTiles() {
 function userSearchFocused() {
   /* document.body.scrollTop = currentScrollPosition; */
   window.scrollTo(0, currentScrollPosition);
-  
-  $(document.body).css("overflow", "hidden");
+
+  /* $(document.body).css("overflow", "hidden");
 
   $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
 
-  $bodySearchMask.css("z-index", "10");
+  $bodySearchMask.css("z-index", "10"); */
 }
 
 
@@ -586,9 +586,9 @@ function sortRecipeMaster() {
     userSearchFocused();
   });
 
-  $searchBar.on("blur", function() {
+  /* $searchBar.on("blur", function() {
     userSearchBlurred();
-  });
+  }); */
 
 
 
