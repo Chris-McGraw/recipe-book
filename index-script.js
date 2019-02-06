@@ -379,8 +379,6 @@ function userSearchFocused() {
   /* document.body.scrollTop = currentScrollPosition; */
   window.scrollTo(0, currentScrollPosition);
 
-  $bodyGridContainer.css("touch-action", "none");
-
   /* $(document.body).css("overflow", "hidden");
 
   $bodySearchMask.removeClass("body-search-mask-retract");
@@ -392,8 +390,6 @@ function userSearchFocused() {
 
 function userSearchBlurred() {
   /* $(document.body).css("overflow", "auto"); */
-
-  $bodyGridContainer.css("touch-action", "auto");
 
   /* $bodySearchMask.removeClass("body-search-mask-expand");
   $bodySearchMask.addClass("body-search-mask-retract");
