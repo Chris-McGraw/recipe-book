@@ -4,6 +4,7 @@ $(document).ready(function() {
   var currentScrollPosition = 0;
 
   var $bodySearchMask = $("#body-search-mask");
+  var $bodyBackground = $("#body-background");
 
   var $searchBar = $("#search-bar");
   var $searchIconDropdown = $("#search-icon-dropdown");
@@ -258,7 +259,8 @@ function appendSelectedRecipe() {
 function showRecipeHome() {
   currentScreen = "screenHome";
 
-  $bodySearchMask.css("z-index", "-20");
+  /* $bodySearchMask.css("z-index", "-20"); */
+  $bodyBackground.css("z-index", "-10");
 
   $bodyGridContainer.css("grid-row-gap", "80px");
   $bodyGridContainer.css("top", "110px");
@@ -376,24 +378,32 @@ function populateTiles() {
 
 
 function userSearchFocused() {
-  $(document.body).css("overflow", "hidden");
+  /* $(document.body).css("overflow", "hidden"); */
 
-  $bodySearchMask.removeClass("body-search-mask-retract");
+  $bodyBackground.css("z-index", "10");
+  $bodyBackground.css("opacity", "0.8");
+
+  /* $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
 
-  $bodySearchMask.css("z-index", "10");
+  $bodySearchMask.css("z-index", "10"); */
 }
 
 
 function userSearchBlurred() {
-  $(document.body).css("overflow", "auto");
+  /* $(document.body).css("overflow", "auto"); */
 
-  $bodySearchMask.removeClass("body-search-mask-expand");
+  setTimeout(function() {
+    $bodyBackground.css("z-index", "-10");
+    $bodyBackground.css("opacity", "1.0");
+  }, 300);
+
+  /* $bodySearchMask.removeClass("body-search-mask-expand");
   $bodySearchMask.addClass("body-search-mask-retract");
 
   setTimeout(function() {
     $bodySearchMask.css("z-index", "-20");
-  }, 300);
+  }, 300); */
 }
 
 
@@ -583,11 +593,11 @@ function sortRecipeMaster() {
     window.scrollTo(0, currentScrollPosition);
     document.body.scrollTop = currentScrollPosition;
 
-    /* userSearchFocused(); */
+    userSearchFocused();
   });
 
   $searchBar.on("blur", function() {
-    /* userSearchBlurred(); */
+    userSearchBlurred();
   });
 
 
