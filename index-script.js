@@ -1,6 +1,10 @@
 $(document).ready(function() {
 
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
+  var currentScrollPosition = 0;
+
+  var $bodySearchMask = $("#body-search-mask");
+
   var $searchBar = $("#search-bar");
   var $searchIconDropdown = $("#search-icon-dropdown");
   var recipeListSearch = [];
@@ -254,6 +258,8 @@ function appendSelectedRecipe() {
 function showRecipeHome() {
   currentScreen = "screenHome";
 
+  $bodySearchMask.css("z-index", "-20");
+
   $bodyGridContainer.css("grid-row-gap", "80px");
   $bodyGridContainer.css("top", "110px");
   $bodyGridContainer.css("padding-bottom", "60px");
@@ -366,6 +372,29 @@ function populateTiles() {
       }
     }, 200);
   }
+}
+
+
+function userSearchFocused() {
+  window.scrollTo(0, currentScrollPosition);
+  document.body.scrollTop = currentScrollPosition;
+
+  $(document.body).css("overflow", "hidden");
+  $bodySearchMask.removeClass("body-search-mask-retract");
+  $bodySearchMask.addClass("body-search-mask-expand");
+
+  $bodySearchMask.css("z-index", "10");
+}
+
+
+function userSearchBlurred() {
+  $(document.body).css("overflow", "auto");
+  $bodySearchMask.removeClass("body-search-mask-expand");
+  $bodySearchMask.addClass("body-search-mask-retract");
+
+  setTimeout(function() {
+    $bodySearchMask.css("z-index", "-20");
+  }, 300);
 }
 
 
@@ -549,27 +578,14 @@ function sortRecipeMaster() {
 
   $(document).on("scroll", function() {
     currentScrollPosition = window.pageYOffset;
-
-    /* console.log(currentScrollPosition); */
-  });
-
-  $searchBar.on("touchstart", function() {
-    /* console.log("hello test"); */
-  });
-
-  $searchBar.on("touchend", function() {
-    /* console.log("hello test"); */
   });
 
   $searchBar.on("focus", function() {
-    window.scrollTo(0, currentScrollPosition);
-    document.body.scrollTop = currentScrollPosition;
-
-    /* console.log(window.pageYOffset); */
+    userSearchFocused();
   });
 
   $searchBar.on("blur", function() {
-    /* console.log("goodbye test"); */
+    userSearchBlurred();
   });
 
 
