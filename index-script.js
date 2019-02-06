@@ -3,7 +3,7 @@ $(document).ready(function() {
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
   var currentScrollPosition = 0;
 
-  var searchFocusActive = true;
+  var searchFocusActive = false;
   var $bodySearchMask = $("#body-search-mask");
 
   var $searchBar = $("#search-bar");
@@ -596,13 +596,6 @@ function sortRecipeMaster() {
 
   $(document).on("scroll", function() {
     currentScrollPosition = window.pageYOffset;
-  });
-
-  $searchBar.on("touchstart", function(e) {
-    userSearchFocused();
-
-    e.preventDefault();
-    e.stopPropagation();
   });
 
   $searchBar.on("focus", function() {
