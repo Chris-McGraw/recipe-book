@@ -376,7 +376,8 @@ function populateTiles() {
 
 
 function userSearchFocused() {
-  $(document.body).css("overflow", "hidden");
+  /* $(document.body).css("overflow", "hidden"); */
+
   $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
 
@@ -385,7 +386,8 @@ function userSearchFocused() {
 
 
 function userSearchBlurred() {
-  $(document.body).css("overflow", "auto");
+  /* $(document.body).css("overflow", "auto"); */
+  
   $bodySearchMask.removeClass("body-search-mask-expand");
   $bodySearchMask.addClass("body-search-mask-retract");
 
