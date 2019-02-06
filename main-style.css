@@ -335,6 +335,29 @@ ul {
   cursor: pointer;
 }
 
+#body-search-mask {
+  z-index: -20;
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.8);
+
+  opacity: 0.0;
+}
+
+.body-search-mask-expand {
+  opacity: 1.0 !important;
+  transition: opacity 300ms ease-in-out;
+}
+
+.body-search-mask-retract {
+  opacity: 0.0 !important;
+  transition: opacity 300ms ease-in-out;
+}
+
 #body-grid-container {
   position: relative;
   top: 110px;
@@ -472,7 +495,7 @@ ul {
 }
 
 footer {
-  z-index: 20;
+  z-index: 0;
   position: relative;
   top: -42px;
 
