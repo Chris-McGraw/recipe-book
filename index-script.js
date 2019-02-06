@@ -581,11 +581,11 @@ function sortRecipeMaster() {
     window.scrollTo(0, currentScrollPosition);
     document.body.scrollTop = currentScrollPosition;
 
-    userSearchFocused();
+    /* userSearchFocused(); */
   });
 
   $searchBar.on("blur", function() {
-    userSearchBlurred();
+    /* userSearchBlurred(); */
   });
 
 
