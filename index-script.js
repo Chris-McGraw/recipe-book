@@ -379,8 +379,9 @@ function userSearchFocused() {
   /* document.body.scrollTop = currentScrollPosition; */
   window.scrollTo(0, currentScrollPosition);
 
-  document.ontouchmove = function(e) {
+  document.ontouchstart = function(e) {
     e.preventDefault();
+    e.stopPropagation();
   }
 
   /* $(document.body).css("overflow", "hidden");
@@ -395,7 +396,7 @@ function userSearchFocused() {
 function userSearchBlurred() {
   /* $(document.body).css("overflow", "auto"); */
 
-  document.ontouchmove = function(e) {
+  document.ontouchstart = function(e) {
     return true;
   }
 
