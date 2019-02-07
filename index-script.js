@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
   var currentScrollPosition = 0;
+  var savedScrollPosition = 0;
 
   var $bodySearchMask = $("#body-search-mask");
 
@@ -258,7 +259,7 @@ function appendSelectedRecipe() {
 function showRecipeHome() {
   currentScreen = "screenHome";
 
-  /* $bodySearchMask.css("z-index", "-20"); */
+  window.scrollTo(0, 0);
 
   $bodyGridContainer.css("grid-row-gap", "80px");
   $bodyGridContainer.css("top", "110px");
@@ -376,10 +377,7 @@ function populateTiles() {
 
 
 function userSearchFocused() {
-  /* document.body.scrollTop = currentScrollPosition;
-  window.scrollTo(0, currentScrollPosition); */
-
-  currentScrollPosition2 = currentScrollPosition;
+  savedScrollPosition = currentScrollPosition;
 
   window.scrollTo(0, 0);
 
@@ -393,7 +391,7 @@ function userSearchFocused() {
 
 
 function userSearchBlurred() {
-  window.scrollTo(0, currentScrollPosition2);
+  window.scrollTo(0, savedScrollPosition);
 
   $(document.body).css("overflow", "auto");
 
