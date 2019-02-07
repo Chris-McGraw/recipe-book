@@ -376,29 +376,33 @@ function populateTiles() {
 
 
 function userSearchFocused() {
-  /* document.body.scrollTop = currentScrollPosition; */
-  window.scrollTo(0, currentScrollPosition);
+  /* document.body.scrollTop = currentScrollPosition;
+  window.scrollTo(0, currentScrollPosition); */
 
-  $(document.body).css("position", "relative");
+  currentScrollPosition2 = currentScrollPosition;
+
+  window.scrollTo(0, 0);
+
   $(document.body).css("overflow", "hidden");
 
-  /* $bodySearchMask.removeClass("body-search-mask-retract");
+  $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
 
-  $bodySearchMask.css("z-index", "10"); */
+  $bodySearchMask.css("z-index", "10");
 }
 
 
 function userSearchBlurred() {
-  $(document.body).css("position", "static");
+  window.scrollTo(0, currentScrollPosition2);
+
   $(document.body).css("overflow", "auto");
 
-  /* $bodySearchMask.removeClass("body-search-mask-expand");
+  $bodySearchMask.removeClass("body-search-mask-expand");
   $bodySearchMask.addClass("body-search-mask-retract");
 
   setTimeout(function() {
     $bodySearchMask.css("z-index", "-10");
-  }, 300); */
+  }, 300);
 }
 
 
