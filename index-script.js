@@ -379,7 +379,8 @@ function userSearchFocused() {
   /* document.body.scrollTop = currentScrollPosition; */
   window.scrollTo(0, currentScrollPosition);
 
-  /* $(document.body).css("overflow", "hidden"); */
+  $(document.body).css("position", "relative");
+  $(document.body).css("overflow", "hidden");
 
   /* $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
@@ -389,11 +390,8 @@ function userSearchFocused() {
 
 
 function userSearchBlurred() {
-  /* $(document.body).css("overflow", "auto"); */
-
-  document.ontouchmove = function(event) {
-    return true;
-  }
+  $(document.body).css("position", "static");
+  $(document.body).css("overflow", "auto");
 
   /* $bodySearchMask.removeClass("body-search-mask-expand");
   $bodySearchMask.addClass("body-search-mask-retract");
@@ -587,11 +585,6 @@ function sortRecipeMaster() {
   });
 
   $searchBar.on("focus", function() {
-    window.ontouchmove = function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
     userSearchFocused();
   });
 
