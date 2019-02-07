@@ -3,7 +3,6 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   -webkit-touch-callout: none;
-  touch-action: manipulation;
 
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +12,8 @@
 }
 
 html, body {
+  touch-action: manipulation;
+
   height: 100%;
 
   font-family: "Roboto", sans-serif;
@@ -53,6 +54,8 @@ ul {
   min-height: 100%;
 
   background-color: rgb(36, 38, 40);
+
+  background-color: rgb(255, 255, 255);
 }
 
 #body-search-mask {
