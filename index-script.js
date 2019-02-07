@@ -586,14 +586,12 @@ function sortRecipeMaster() {
     currentScrollPosition = window.pageYOffset;
   });
 
-  $searchBar.on("touchstart", function() {
+  $searchBar.on("focus", function() {
     document.ontouchmove = function(event) {
       event.preventDefault();
       event.stopPropagation();
     }
-  });
 
-  $searchBar.on("focus", function() {
     userSearchFocused();
   });
 
