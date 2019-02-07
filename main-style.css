@@ -12,8 +12,6 @@
 }
 
 html, body {
-  touch-action: manipulation;
-
   height: 100%;
 
   font-family: "Roboto", sans-serif;
@@ -54,8 +52,6 @@ ul {
   min-height: 100%;
 
   background-color: rgb(36, 38, 40);
-
-  background-color: rgb(255, 255, 255);
 }
 
 #body-search-mask {
