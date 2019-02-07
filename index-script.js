@@ -379,8 +379,11 @@ function userSearchFocused() {
   /* document.body.scrollTop = currentScrollPosition; */
   window.scrollTo(0, currentScrollPosition);
 
-  $(document.body).css("overflow", "hidden");
-  $(document.html).css("overflow", "hidden");
+  /* $(document.body).css("overflow", "hidden"); */
+
+  document.ontouchmove = function(event) {
+    event.preventDefault();
+  }
 
   /* $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
@@ -390,8 +393,11 @@ function userSearchFocused() {
 
 
 function userSearchBlurred() {
-  $(document.body).css("overflow", "auto");
-  $(document.html).css("overflow", "auto");
+  /* $(document.body).css("overflow", "auto"); */
+
+  document.ontouchmove = function(event) {
+    return true;
+  }
 
   /* $bodySearchMask.removeClass("body-search-mask-expand");
   $bodySearchMask.addClass("body-search-mask-retract");
