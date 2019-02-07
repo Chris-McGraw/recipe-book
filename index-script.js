@@ -587,7 +587,7 @@ function sortRecipeMaster() {
   });
 
   $searchBar.on("focus", function() {
-    $(window).ontouchmove = function(event) {
+    window.ontouchmove = function(event) {
       event.preventDefault();
       event.stopPropagation();
     }
