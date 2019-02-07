@@ -381,10 +381,6 @@ function userSearchFocused() {
 
   /* $(document.body).css("overflow", "hidden"); */
 
-  document.ontouchmove = function(event) {
-    event.preventDefault();
-  }
-
   /* $bodySearchMask.removeClass("body-search-mask-retract");
   $bodySearchMask.addClass("body-search-mask-expand");
 
@@ -588,6 +584,13 @@ function sortRecipeMaster() {
 
   $(document).on("scroll", function() {
     currentScrollPosition = window.pageYOffset;
+  });
+
+  $searchBar.on("touchstart", function() {
+    document.ontouchmove = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
   });
 
   $searchBar.on("focus", function() {
