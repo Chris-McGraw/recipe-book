@@ -381,9 +381,10 @@ function userSearchFocused() {
 
   window.scrollTo(0, 0);
 
-  /* document.ontouchmove = function(event) {
+  document.ontouchmove = function(event) {
     event.preventDefault();
-  } */
+    event.stopPropagation();
+  }
 
   $(document.body).css("overflow", "hidden");
 
@@ -397,9 +398,9 @@ function userSearchFocused() {
 function userSearchBlurred() {
   window.scrollTo(0, savedScrollPosition);
 
-  /* document.ontouchmove = function(event) {
+  document.ontouchmove = function(event) {
     return true;
-  } */
+  }
 
   $(document.body).css("overflow", "auto");
 
