@@ -381,6 +381,10 @@ function userSearchFocused() {
 
   window.scrollTo(0, 0);
 
+  document.ontouchmove = function(event) {
+    event.preventDefault();
+  }
+
   $(document.body).css("overflow", "hidden");
 
   $bodySearchMask.removeClass("body-search-mask-retract");
@@ -392,6 +396,10 @@ function userSearchFocused() {
 
 function userSearchBlurred() {
   window.scrollTo(0, savedScrollPosition);
+
+  document.ontouchmove = function(event) {
+    return true;
+  }
 
   $(document.body).css("overflow", "auto");
 
