@@ -381,10 +381,6 @@ function userSearchFocused() {
 
   window.scrollTo(0, 0);
 
-  document.ontouchmove = function(event) {
-    event.preventDefault();
-  }
-
   $(document.body).css("overflow", "hidden");
 
   $bodySearchMask.removeClass("body-search-mask-retract");
@@ -592,6 +588,12 @@ function sortRecipeMaster() {
 
   $(document).on("scroll", function() {
     currentScrollPosition = window.pageYOffset;
+  });
+
+  $searchBar.on("click", function() {
+    document.ontouchmove = function(event) {
+      event.preventDefault();
+    }
   });
 
   $searchBar.on("focus", function() {
