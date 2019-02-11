@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 
+
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0" />
@@ -30,15 +32,16 @@
   <script type="text/javascript" src="index-script.js" defer></script>
 </head>
 
+
+
 <body>
-
   <div id="ios-status-bar-background"></div>
-
   <div id="body-background"></div>
-
   <div id="body-search-mask"></div>
 
+<!-- ==================== MAIN CONTENT CONTAINER START ==================== -->
   <div id="main-content-container">
+<!-- ============================ NAVBAR START ============================ -->
     <div id="navbar">
       <div id="hamburger-menu">
         <div class="hamburger-bar" id="hamburger-bar-top"></div>
@@ -72,8 +75,13 @@
         </form>
       </div>
     </div>
+<!-- _____________________________ NAVBAR END _____________________________ -->
 
+
+
+<!-- ====================== BODY GRID CONTAINER START ====================== -->
     <div id="body-grid-container">
+<!-- ===================== SAVED RECIPES SCREEN START ===================== -->
       <div id="category-container">
         <ul>
           <div id="category-row-top">
@@ -94,9 +102,11 @@
         <option value="ascending">Alphabetical (A-Z)</option>
         <option value="descending">Alphabetical (Z-A)</option>
       </select>
+<!-- ______________________ SAVED RECIPES SCREEN END ______________________ -->
 
 
 
+<!-- ===================== RECIPE DISPLAY SCREEN START ===================== -->
       <div id="recipe-title-container"></div>
       <div id="ingredient-container">
         <div id="ingredient-title">Ingredients</div>
@@ -130,21 +140,29 @@
         <ul id="recipe-step-list">
         </ul>
       </div>
-
-
-
+<!-- ______________________ RECIPE DISPLAY SCREEN END ______________________ -->
     </div>
+<!-- _______________________ BODY GRID CONTAINER END _______________________ -->
 
+
+
+<!-- ====================== BOTTOM OPTIONS BAR START ====================== -->
     <div id="bottom-option-bar">
       <div id="back-button"></div>
       <div id="font-size-button"><span id="font-size-button-span">A</span>A</div>
     </div>
-
+<!-- _______________________ BOTTOM OPTIONS BAR END _______________________ -->
   </div>
+<!-- _____________________ MAIN CONTENT CONTAINER END _____________________ -->
 
+
+
+<!-- ============================ FOOTER START ============================ -->
   <footer id="copyright-footer">© 2019 Recipe Book. All rights reserved.</footer>
-
+<!-- _____________________________ FOOTER END _____________________________ -->
 
 </body>
+
+
 
 </html>
