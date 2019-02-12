@@ -609,10 +609,7 @@ function sortRecipeMaster() {
 
 
   $dropdownButtonSaved.on("click", function() {
-    if(currentScreen !== "screenHome") {
-      console.log("fix dropdown button saved functionality");
-      console.log("");
-
+    if(delayPopulate === false) {
       clearSearch();
       clearTiles();
 
@@ -622,7 +619,13 @@ function sortRecipeMaster() {
 
       showRecipeHome();
 
+      console.log("current screen = " + currentScreen);
+      console.log("");
+
+      delayPopulate = true;
+
       setTimeout(function() {
+        delayPopulate = false;
         populateTiles();
       }, 200);
     }
