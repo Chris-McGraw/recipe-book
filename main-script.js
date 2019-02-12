@@ -15,4 +15,4 @@ var $bodyGridContainer = $("#body-grid-container");
 
 var $copyrightFooter = $("#copyright-footer");
 
-var currentScreen = "screenHome";
+var currentScreen = "savedRecipeListScreen";

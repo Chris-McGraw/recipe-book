@@ -202,7 +202,10 @@ function toggleFontSize() {
 
 
 function appendSelectedRecipe() {
-  currentScreen = "screenRecipe";
+  currentScreen = "displayedRecipeScreen";
+
+  /* console.log("current screen = " + currentScreen);
+  console.log(""); */
 
   window.scrollTo(0, 0);
 
@@ -260,7 +263,10 @@ function appendSelectedRecipe() {
 
 
 function showRecipeHome() {
-  currentScreen = "screenHome";
+  currentScreen = "savedRecipeListScreen";
+
+  /* console.log("current screen = " + currentScreen);
+  console.log(""); */
 
   window.scrollTo(0, 0);
 
@@ -619,9 +625,6 @@ function sortRecipeMaster() {
 
       showRecipeHome();
 
-      console.log("current screen = " + currentScreen);
-      console.log("");
-
       delayPopulate = true;
 
       setTimeout(function() {
@@ -632,10 +635,10 @@ function sortRecipeMaster() {
   });
 
   $dropdownButtonFindNew.on("click", function() {
-    console.log("fix screen names");
-    console.log("");
+    currentScreen = "newRecipeFinderScreen";
 
-    currentScreen = "newRecipeScreen";
+    /* console.log("current screen = " + currentScreen);
+    console.log(""); */
 
     $categoryContainer.hide();
     $sortBySelect.hide();

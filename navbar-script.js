@@ -35,11 +35,11 @@ $(document).ready(function() {
       $navbarDropdown.addClass("dropdown-expand");
       $bodyGridContainer.addClass("dropdown-expand");
 
-      if(currentScreen === "screenHome") {
+      if(currentScreen === "savedRecipeListScreen") {
         $mainContentContainer.removeClass("main-content-container-retract");
         $mainContentContainer.addClass("main-content-container-expand");
       }
-      else if(currentScreen === "screenRecipe") {
+      else if(currentScreen === "displayedRecipeScreen") {
         $mainContentContainer.removeClass("main-content-container-retract-recipe");
         $mainContentContainer.addClass("main-content-container-expand-recipe");
       }
@@ -51,11 +51,11 @@ $(document).ready(function() {
       $navbarDropdown.removeClass("dropdown-expand");
       $bodyGridContainer.removeClass("dropdown-expand");
 
-      if(currentScreen === "screenHome") {
+      if(currentScreen === "savedRecipeListScreen") {
         $mainContentContainer.removeClass("main-content-container-expand");
         $mainContentContainer.addClass("main-content-container-retract");
       }
-      else if(currentScreen === "screenRecipe") {
+      else if(currentScreen === "displayedRecipeScreen") {
         $mainContentContainer.removeClass("main-content-container-expand-recipe");
         $mainContentContainer.addClass("main-content-container-retract-recipe");
       }
@@ -101,11 +101,11 @@ $(document).ready(function() {
       $searchDropdown.addClass("dropdown-expand");
       $bodyGridContainer.addClass("dropdown-expand");
 
-      if(currentScreen === "screenHome") {
+      if(currentScreen === "savedRecipeListScreen") {
         $mainContentContainer.removeClass("main-content-container-retract");
         $mainContentContainer.addClass("main-content-container-expand");
       }
-      else if(currentScreen === "screenRecipe") {
+      else if(currentScreen === "displayedRecipeScreen") {
         $mainContentContainer.removeClass("main-content-container-retract-recipe");
         $mainContentContainer.addClass("main-content-container-expand-recipe");
       }
@@ -117,11 +117,11 @@ $(document).ready(function() {
       $searchDropdown.removeClass("dropdown-expand");
       $bodyGridContainer.removeClass("dropdown-expand");
 
-      if(currentScreen === "screenHome") {
+      if(currentScreen === "savedRecipeListScreen") {
         $mainContentContainer.removeClass("main-content-container-expand");
         $mainContentContainer.addClass("main-content-container-retract");
       }
-      else if(currentScreen === "screenRecipe") {
+      else if(currentScreen === "displayedRecipeScreen") {
         $mainContentContainer.removeClass("main-content-container-expand-recipe");
         $mainContentContainer.addClass("main-content-container-retract-recipe");
       }
