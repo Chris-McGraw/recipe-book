@@ -6,6 +6,9 @@ $(document).ready(function() {
 
   var $bodySearchMask = $("#body-search-mask");
 
+  var $dropdownButtonSaved = $("#dropdown-button-saved");
+  var $dropdownButtonFindNew = $("#dropdown-button-find-new");
+
   var $searchBar = $("#search-bar");
   var $searchIconDropdown = $("#search-icon-dropdown");
   var recipeListSearch = [];
@@ -601,6 +604,60 @@ function sortRecipeMaster() {
 
   $searchBar.on("blur", function() {
     userSearchBlurred();
+  });
+
+
+
+  $dropdownButtonSaved.on("click", function() {
+    if(currentScreen !== "screenHome") {
+      console.log("fix dropdown button saved functionality");
+      console.log("");
+
+      clearSearch();
+      clearTiles();
+
+      $categoryItem.removeClass("category-active");
+      $catAll.addClass("category-active");
+      currentCatActive = "all";
+
+      showRecipeHome();
+
+      setTimeout(function() {
+        populateTiles();
+      }, 200);
+    }
+  });
+
+  $dropdownButtonFindNew.on("click", function() {
+    console.log("fix screen names");
+    console.log("");
+
+    currentScreen = "newRecipeScreen";
+
+    $categoryContainer.hide();
+    $sortBySelect.hide();
+    clearTiles();
+    $searchResultNone.remove();
+
+    $recipeTitleContainer.hide();
+    $ingredientContainer.hide();
+    $imageContainer.hide();
+    $recipeContainer.hide();
+    $bottomOptionBar.hide();
+
+  /* Footer Position Adjustments Begin ----- */
+    $copyrightFooter.css("top", "-42px");
+    $copyrightFooter.css("height", "42px");
+
+    if(navbarDropdownActive === true || searchDropdownActive === true) {
+      removeContainerClasses();
+      $mainContentContainer.addClass("main-content-container-expand");
+    }
+    else if(navbarDropdownActive === false && searchDropdownActive === false) {
+      removeContainerClasses();
+      $mainContentContainer.addClass("main-content-container-retract");
+    }
+  /* ----- Footer Position Adjustments End */
   });
 
 
