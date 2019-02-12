@@ -201,7 +201,7 @@ function toggleFontSize() {
 }
 
 
-function appendSelectedRecipe() {
+function showDisplayedRecipeScreen() {
   currentScreen = "displayedRecipeScreen";
 
   /* console.log("current screen = " + currentScreen);
@@ -262,7 +262,7 @@ function appendSelectedRecipe() {
 }
 
 
-function showRecipeHome() {
+function showSavedRecipeListScreen() {
   currentScreen = "savedRecipeListScreen";
 
   /* console.log("current screen = " + currentScreen);
@@ -363,7 +363,7 @@ function populateTiles() {
       $sortBySelect.hide();
       clearTiles();
 
-      appendSelectedRecipe();
+      showDisplayedRecipeScreen();
     });
 
 
@@ -452,7 +452,7 @@ function searchSavedRecipes() {
     clearTiles();
     document.activeElement.blur();
 
-    showRecipeHome();
+    showSavedRecipeListScreen();
 
     setTimeout(function() {
       populateTiles();
@@ -466,7 +466,7 @@ function searchSavedRecipes() {
     clearTiles();
     document.activeElement.blur();
 
-    showRecipeHome();
+    showSavedRecipeListScreen();
 
     $searchResultNone = $("<div>No Results Found</div>")
                      .attr("id", "search-result-none")
@@ -623,7 +623,7 @@ function sortRecipeMaster() {
       $catAll.addClass("category-active");
       currentCatActive = "all";
 
-      showRecipeHome();
+      showSavedRecipeListScreen();
 
       delayPopulate = true;
 
@@ -742,7 +742,7 @@ function sortRecipeMaster() {
 
 
   $backButton.on("click", function() {
-    showRecipeHome();
+    showSavedRecipeListScreen();
 
     setTimeout(function() {
       populateTiles();
