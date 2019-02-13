@@ -67,6 +67,12 @@ $(document).ready(function() {
   var currentFontSize = "default";
 
 
+
+
+
+  var $newRecipeFinderTitle = $("#new-recipe-finder-title");
+
+
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function clearTiles() {
   allowPopulate = false;
@@ -650,6 +656,8 @@ function sortRecipeMaster() {
     $imageContainer.hide();
     $recipeContainer.hide();
     $bottomOptionBar.hide();
+
+    /* $newRecipeFinderTitle.show(); */
 
   /* Footer Position Adjustments Begin ----- */
     $copyrightFooter.css("top", "-42px");
