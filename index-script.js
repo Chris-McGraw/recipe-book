@@ -211,10 +211,11 @@ function toggleFontSize() {
 
 
 function hideDisplayedRecipeScreen() {
-  $categoryContainer.hide();
-  $sortBySelect.hide();
-  clearTiles();
-  $searchResultNone.remove();
+  $recipeTitleContainer.hide();
+  $ingredientContainer.hide();
+  $imageContainer.hide();
+  $recipeContainer.hide();
+  $bottomOptionBar.hide();
 }
 
 
@@ -282,11 +283,10 @@ function showDisplayedRecipeScreen() {
 
 
 function hideSavedRecipeListScreen() {
-  $recipeTitleContainer.hide();
-  $ingredientContainer.hide();
-  $imageContainer.hide();
-  $recipeContainer.hide();
-  $bottomOptionBar.hide();
+  $categoryContainer.hide();
+  $sortBySelect.hide();
+  clearTiles();
+  $searchResultNone.remove();
 }
 
 
@@ -318,12 +318,7 @@ function showSavedRecipeListScreen() {
   }
 /* ----- Footer Position Adjustments End */
 
-  $recipeTitleContainer.hide();
-  $ingredientContainer.hide();
-  $imageContainer.hide();
-  $recipeContainer.hide();
-  $bottomOptionBar.hide();
-
+  hideDisplayedRecipeScreen();
   hideNewRecipeFinderScreen();
 
   $categoryContainer.show();
