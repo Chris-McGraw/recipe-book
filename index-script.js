@@ -285,7 +285,9 @@ function showDisplayedRecipeScreen() {
 function hideSavedRecipeListScreen() {
   $categoryContainer.hide();
   $sortBySelect.hide();
+
   clearTiles();
+
   $searchResultNone.remove();
 }
 
@@ -417,9 +419,7 @@ function populateTiles() {
 
       document.getElementById("search-bar").value= "";
 
-      $categoryContainer.hide();
-      $sortBySelect.hide();
-      clearTiles();
+      hideSavedRecipeListScreen();
 
       showDisplayedRecipeScreen();
     });
