@@ -547,11 +547,6 @@ function searchSavedRecipes() {
 
 
 function categoryActive() {
-  document.getElementById("search-bar").value= "";
-  $searchResultNone.remove();
-
-  userInputArchive = "";
-
   switch(currentCatActive) {
     case "all":
       $categoryItem.removeClass("category-active");
@@ -585,8 +580,12 @@ function categoryActive() {
 
 
 function categoryClick() {
+  document.getElementById("search-bar").value= "";
+  userInputArchive = "";
+
   categoryActive();
   clearTiles();
+  $searchResultNone.remove();
 
   delayPopulate = true;
 
@@ -680,6 +679,9 @@ function sortRecipeMaster() {
 
   $dropdownButtonSaved.on("click", function() {
     if(delayPopulate === false) {
+      document.getElementById("search-bar").value= "";
+      userInputArchive = "";
+
       clearSearch();
       clearTiles();
 
@@ -699,6 +701,9 @@ function sortRecipeMaster() {
   });
 
   $dropdownButtonFindNew.on("click", function() {
+    document.getElementById("search-bar").value= "";
+    userInputArchive = "";
+
     hideDisplayedRecipeScreen();
     hideSavedRecipeListScreen();
 
