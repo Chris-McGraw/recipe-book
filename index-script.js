@@ -4,6 +4,8 @@ $(document).ready(function() {
   var currentScrollPosition = 0;
   var savedScrollPosition = 0;
 
+  var userInputArchive = "";
+
   var $bodySearchMask = $("#body-search-mask");
 
   var $dropdownButtonSaved = $("#dropdown-button-saved");
@@ -492,6 +494,8 @@ function searchSavedRecipes() {
   var userInputTrim = $searchBar.val().trim();
   /* console.log(userInputTrim.toLowerCase()); */
 
+  userInputArchive = $searchBar.val();
+
   allowLocalSearch = false;
   recipeListSearch = [];
 
@@ -545,6 +549,8 @@ function searchSavedRecipes() {
 function categoryActive() {
   document.getElementById("search-bar").value= "";
   $searchResultNone.remove();
+
+  userInputArchive = "";
 
   switch(currentCatActive) {
     case "all":
@@ -776,6 +782,8 @@ function sortRecipeMaster() {
 
   $backButton.on("click", function() {
     showSavedRecipeListScreen();
+
+    document.getElementById("search-bar").value = userInputArchive;
 
     setTimeout(function() {
       populateTiles();
