@@ -1,0 +1,97 @@
+#new-recipe-finder-title {
+  display: none;
+
+  grid-column: span 5;
+
+  height: auto;
+
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+#new-recipe-finder-form-container {
+  display: none;
+
+  grid-column: span 5;
+
+  height: auto;
+}
+
+#new-recipe-search-bar {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+
+  width: 100%;
+  height: 40px;
+  padding-left: 4px;
+  padding-right: 4px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: black;
+
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+  background-color: white;
+  outline: none;
+
+  cursor: text;
+}
+
+
+
+
+/* -------------------------- MEDIA QUERY <= 1000 -------------------------- */
+@media screen and (max-width: 1000px) {
+  #new-recipe-finder-title {
+    grid-column: span 4;
+  }
+
+  #new-recipe-finder-form-container {
+    grid-column: span 4;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 800 -------------------------- */
+@media screen and (max-width: 800px) {
+  #new-recipe-finder-title {
+    grid-column: span 3;
+  }
+
+  #new-recipe-finder-form-container {
+    grid-column: span 3;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 600 -------------------------- */
+@media screen and (max-width: 600px) {
+  #new-recipe-finder-title {
+    grid-column: span 2;
+  }
+
+  #new-recipe-finder-form-container {
+    grid-column: span 2;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 400 -------------------------- */
+@media screen and (max-width: 400px) {
+  #new-recipe-finder-title {
+    grid-column: span 1;
+  }
+
+  #new-recipe-finder-form-container {
+    grid-column: span 1;
+  }
+}

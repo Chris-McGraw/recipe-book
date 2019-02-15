@@ -4,7 +4,12 @@ $(document).ready(function() {
   var currentScrollPosition = 0;
   var savedScrollPosition = 0;
 
+  var userInputArchive = "";
+
   var $bodySearchMask = $("#body-search-mask");
+
+  var $dropdownButtonSaved = $("#dropdown-button-saved");
+  var $dropdownButtonFindNew = $("#dropdown-button-find-new");
 
   var $searchBar = $("#search-bar");
   var $searchIconDropdown = $("#search-icon-dropdown");
@@ -62,6 +67,15 @@ $(document).ready(function() {
   var $backButton = $("#back-button");
   var $fontSizeButton = $("#font-size-button");
   var currentFontSize = "default";
+
+
+
+
+
+  var $newRecipeFinderTitle = $("#new-recipe-finder-title");
+  var $newRecipeFinderFormContainer = $("#new-recipe-finder-form-container");
+
+  var $newRecipeSearchBar = $("#new-recipe-search-bar");
 
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
@@ -198,8 +212,20 @@ function toggleFontSize() {
 }
 
 
-function appendSelectedRecipe() {
-  currentScreen = "screenRecipe";
+function hideDisplayedRecipeScreen() {
+  $recipeTitleContainer.hide();
+  $ingredientContainer.hide();
+  $imageContainer.hide();
+  $recipeContainer.hide();
+  $bottomOptionBar.hide();
+}
+
+
+function showDisplayedRecipeScreen() {
+  currentScreen = "displayedRecipeScreen";
+
+  /* console.log("current screen = " + currentScreen);
+  console.log(""); */
 
   window.scrollTo(0, 0);
 
@@ -232,6 +258,8 @@ function appendSelectedRecipe() {
   $ingredientListRight.empty();
   $recipeStepList.empty();
 
+  hideNewRecipeFinderScreen();
+
   $recipeTitleContainer.show();
   $ingredientContainer.show();
   $imageContainer.show();
@@ -256,8 +284,21 @@ function appendSelectedRecipe() {
 }
 
 
-function showRecipeHome() {
-  currentScreen = "screenHome";
+function hideSavedRecipeListScreen() {
+  $categoryContainer.hide();
+  $sortBySelect.hide();
+
+  clearTiles();
+
+  $searchResultNone.remove();
+}
+
+
+function showSavedRecipeListScreen() {
+  currentScreen = "savedRecipeListScreen";
+
+  /* console.log("current screen = " + currentScreen);
+  console.log(""); */
 
   window.scrollTo(0, 0);
 
@@ -281,14 +322,44 @@ function showRecipeHome() {
   }
 /* ----- Footer Position Adjustments End */
 
-  $recipeTitleContainer.hide();
-  $ingredientContainer.hide();
-  $imageContainer.hide();
-  $recipeContainer.hide();
-  $bottomOptionBar.hide();
+  hideDisplayedRecipeScreen();
+  hideNewRecipeFinderScreen();
 
   $categoryContainer.show();
   $sortBySelect.show();
+}
+
+
+function hideNewRecipeFinderScreen() {
+  $newRecipeFinderTitle.hide();
+  $newRecipeFinderFormContainer.hide();
+}
+
+
+function showNewRecipeFinderScreen() {
+  currentScreen = "newRecipeFinderScreen";
+
+  /* console.log("current screen = " + currentScreen);
+  console.log(""); */
+
+  $bodyGridContainer.css("grid-row-gap", "20px");
+
+  /* Footer Position Adjustments Begin ----- */
+    $copyrightFooter.css("top", "-42px");
+    $copyrightFooter.css("height", "42px");
+
+    if(navbarDropdownActive === true || searchDropdownActive === true) {
+      removeContainerClasses();
+      $mainContentContainer.addClass("main-content-container-expand");
+    }
+    else if(navbarDropdownActive === false && searchDropdownActive === false) {
+      removeContainerClasses();
+      $mainContentContainer.addClass("main-content-container-retract");
+    }
+  /* ----- Footer Position Adjustments End */
+
+  $newRecipeFinderTitle.show();
+  $newRecipeFinderFormContainer.show();
 }
 
 
@@ -350,11 +421,9 @@ function populateTiles() {
 
       document.getElementById("search-bar").value= "";
 
-      $categoryContainer.hide();
-      $sortBySelect.hide();
-      clearTiles();
+      hideSavedRecipeListScreen();
 
-      appendSelectedRecipe();
+      showDisplayedRecipeScreen();
     });
 
 
@@ -425,6 +494,8 @@ function searchSavedRecipes() {
   var userInputTrim = $searchBar.val().trim();
   /* console.log(userInputTrim.toLowerCase()); */
 
+  userInputArchive = $searchBar.val();
+
   allowLocalSearch = false;
   recipeListSearch = [];
 
@@ -443,7 +514,7 @@ function searchSavedRecipes() {
     clearTiles();
     document.activeElement.blur();
 
-    showRecipeHome();
+    showSavedRecipeListScreen();
 
     setTimeout(function() {
       populateTiles();
@@ -457,7 +528,7 @@ function searchSavedRecipes() {
     clearTiles();
     document.activeElement.blur();
 
-    showRecipeHome();
+    showSavedRecipeListScreen();
 
     $searchResultNone = $("<div>No Results Found</div>")
                      .attr("id", "search-result-none")
@@ -476,9 +547,6 @@ function searchSavedRecipes() {
 
 
 function categoryActive() {
-  document.getElementById("search-bar").value= "";
-  $searchResultNone.remove();
-
   switch(currentCatActive) {
     case "all":
       $categoryItem.removeClass("category-active");
@@ -512,8 +580,12 @@ function categoryActive() {
 
 
 function categoryClick() {
+  document.getElementById("search-bar").value= "";
+  userInputArchive = "";
+
   categoryActive();
   clearTiles();
+  $searchResultNone.remove();
 
   delayPopulate = true;
 
@@ -605,6 +677,41 @@ function sortRecipeMaster() {
 
 
 
+  $dropdownButtonSaved.on("click", function() {
+    if(delayPopulate === false) {
+      document.getElementById("search-bar").value= "";
+      userInputArchive = "";
+
+      clearSearch();
+      clearTiles();
+
+      $categoryItem.removeClass("category-active");
+      $catAll.addClass("category-active");
+      currentCatActive = "all";
+
+      showSavedRecipeListScreen();
+
+      delayPopulate = true;
+
+      setTimeout(function() {
+        delayPopulate = false;
+        populateTiles();
+      }, 200);
+    }
+  });
+
+  $dropdownButtonFindNew.on("click", function() {
+    document.getElementById("search-bar").value= "";
+    userInputArchive = "";
+
+    hideDisplayedRecipeScreen();
+    hideSavedRecipeListScreen();
+
+    /* showNewRecipeFinderScreen(); */
+  });
+
+
+
 
 
   $searchIconDropdown.on("click", function() {
@@ -679,7 +786,9 @@ function sortRecipeMaster() {
 
 
   $backButton.on("click", function() {
-    showRecipeHome();
+    showSavedRecipeListScreen();
+
+    document.getElementById("search-bar").value = userInputArchive;
 
     setTimeout(function() {
       populateTiles();

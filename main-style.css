@@ -263,7 +263,7 @@ ul {
   box-shadow: inset 0 0 40px DarkSlateGray;
 }
 
-#dropdown-left {
+#dropdown-button-saved {
   left: 0;
 }
 
@@ -280,7 +280,7 @@ ul {
   border-left: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-#dropdown-right {
+#dropdown-button-find-new {
   right: 0;
 }
 
