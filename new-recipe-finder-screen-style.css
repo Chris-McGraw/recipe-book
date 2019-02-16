@@ -7,7 +7,8 @@
 
   text-align: center;
   font-family: "Roboto Slab", serif;
-  font-size: 24px;
+  font-size: 30px;
+
   font-weight: 300;
   letter-spacing: 0.5px;
   color: white;
@@ -19,13 +20,15 @@
   grid-column: span 5;
 
   height: auto;
+
+  text-align: center;
 }
 
 #new-recipe-search-bar {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
 
-  width: 100%;
+  width: 80%;
   height: 40px;
   padding-left: 4px;
   padding-right: 4px;
@@ -43,6 +46,29 @@
   cursor: text;
 }
 
+#new-recipe-search-button {
+  width: 20%;
+  height: 40px;
+  margin: auto;
+  margin-top: 50px;
+  padding-top: 10px;
+
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: white;
+
+  border-radius: 10px;
+  background-color: rgb(47, 106, 93);
+  outline: none;
+
+  cursor: pointer;
+}
+
+#new-recipe-search-button:active {
+  box-shadow: inset 0 0 40px DarkSlateGray;
+}
+
 
 
 
@@ -54,6 +80,10 @@
 
   #new-recipe-finder-form-container {
     grid-column: span 4;
+  }
+
+  #new-recipe-search-button {
+    width: 25%;
   }
 }
 
@@ -68,6 +98,10 @@
   #new-recipe-finder-form-container {
     grid-column: span 3;
   }
+
+  #new-recipe-search-button {
+    width: 30%;
+  }
 }
 
 
@@ -81,6 +115,14 @@
   #new-recipe-finder-form-container {
     grid-column: span 2;
   }
+
+  #new-recipe-search-bar {
+    width: 100%;
+  }
+
+  #new-recipe-search-button {
+    width: 40%;
+  }
 }
 
 
@@ -93,5 +135,9 @@
 
   #new-recipe-finder-form-container {
     grid-column: span 1;
+  }
+
+  #new-recipe-search-button {
+    width: 45%;
   }
 }

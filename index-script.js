@@ -342,7 +342,8 @@ function showNewRecipeFinderScreen() {
   /* console.log("current screen = " + currentScreen);
   console.log(""); */
 
-  $bodyGridContainer.css("grid-row-gap", "20px");
+  $bodyGridContainer.css("grid-row-gap", "40px");
+  $bodyGridContainer.css("top", "210px");
 
   /* Footer Position Adjustments Begin ----- */
     $copyrightFooter.css("top", "-42px");
