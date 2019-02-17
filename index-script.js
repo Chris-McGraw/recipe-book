@@ -708,7 +708,7 @@ function sortRecipeMaster() {
     hideDisplayedRecipeScreen();
     hideSavedRecipeListScreen();
 
-    /* showNewRecipeFinderScreen(); */
+    showNewRecipeFinderScreen();
   });
 
 
