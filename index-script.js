@@ -343,7 +343,7 @@ function showNewRecipeFinderScreen() {
   console.log(""); */
 
   $bodyGridContainer.css("grid-row-gap", "40px");
-  $bodyGridContainer.css("top", "210px");
+  $bodyGridContainer.css("top", "110px");
 
   /* Footer Position Adjustments Begin ----- */
     $copyrightFooter.css("top", "-42px");
