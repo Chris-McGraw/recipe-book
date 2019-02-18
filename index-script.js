@@ -212,9 +212,16 @@ function toggleFontSize() {
 }
 
 
-function screenTransition() {
+function screenTransitionFadeOut() {
   $bodyGridContainer.addClass("screen-fade-out");
   $copyrightFooter.addClass("screen-fade-out");
+}
+
+
+function hideScreenAll() {
+  hideSavedRecipeListScreen();
+  hideDisplayedRecipeScreen();
+  hideNewRecipeFinderScreen();
 }
 
 
@@ -264,8 +271,6 @@ function showDisplayedRecipeScreen() {
   $ingredientListRight.empty();
   $recipeStepList.empty();
 
-  hideNewRecipeFinderScreen();
-
   $recipeTitleContainer.show();
   $ingredientContainer.show();
   $imageContainer.show();
@@ -291,14 +296,10 @@ function showDisplayedRecipeScreen() {
 
 
 function hideSavedRecipeListScreen() {
-  screenTransition();
+  $categoryContainer.hide();
+  $sortBySelect.hide();
 
-  setTimeout(function() {
-    $categoryContainer.hide();
-    $sortBySelect.hide();
-
-    clearTiles();
-  }, 500);
+  clearTiles();
 
   $searchResultNone.remove();
 }
@@ -331,9 +332,6 @@ function showSavedRecipeListScreen() {
     $mainContentContainer.addClass("main-content-container-retract");
   }
 /* ----- Footer Position Adjustments End */
-
-  hideDisplayedRecipeScreen();
-  hideNewRecipeFinderScreen();
 
   $categoryContainer.show();
   $sortBySelect.show();
@@ -432,9 +430,11 @@ function populateTiles() {
 
       document.getElementById("search-bar").value= "";
 
-      hideSavedRecipeListScreen();
+      screenTransitionFadeOut();
 
       setTimeout(function() {
+        hideSavedRecipeListScreen();
+
         $bodyGridContainer.removeClass("screen-fade-out");
         $copyrightFooter.removeClass("screen-fade-out");
 
@@ -530,6 +530,8 @@ function searchSavedRecipes() {
     clearTiles();
     document.activeElement.blur();
 
+    hideScreenAll();
+
     showSavedRecipeListScreen();
 
     setTimeout(function() {
@@ -543,6 +545,8 @@ function searchSavedRecipes() {
 
     clearTiles();
     document.activeElement.blur();
+
+    hideScreenAll();
 
     showSavedRecipeListScreen();
 
@@ -705,6 +709,8 @@ function sortRecipeMaster() {
       $catAll.addClass("category-active");
       currentCatActive = "all";
 
+      hideScreenAll();
+
       showSavedRecipeListScreen();
 
       delayPopulate = true;
@@ -720,10 +726,11 @@ function sortRecipeMaster() {
     document.getElementById("search-bar").value= "";
     userInputArchive = "";
 
-    hideDisplayedRecipeScreen();
-    hideSavedRecipeListScreen();
+    screenTransitionFadeOut();
 
     setTimeout(function() {
+      hideScreenAll();
+
       $bodyGridContainer.removeClass("screen-fade-out");
       $copyrightFooter.removeClass("screen-fade-out");
 
@@ -807,6 +814,8 @@ function sortRecipeMaster() {
 
 
   $backButton.on("click", function() {
+    hideScreenAll();
+
     showSavedRecipeListScreen();
 
     document.getElementById("search-bar").value = userInputArchive;
