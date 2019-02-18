@@ -32,6 +32,10 @@ ul {
   transform: translateY(40px);
 }
 
+.screen-fade-out {
+  opacity: 0.0 !important;
+}
+
 #ios-status-bar-background {
   z-index: 40;
   position: fixed;
@@ -372,7 +376,7 @@ ul {
   -webkit-user-select: none;
   user-select: none;
 
-  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, opacity 500ms ease-in-out;
 }
 
 #category-container {
@@ -506,6 +510,8 @@ footer {
 
   -webkit-user-select: none;
   user-select: none;
+
+  transition: opacity 500ms ease-in-out;
 }
 
 

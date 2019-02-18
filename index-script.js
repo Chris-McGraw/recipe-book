@@ -212,6 +212,12 @@ function toggleFontSize() {
 }
 
 
+function screenTransition() {
+  $bodyGridContainer.addClass("screen-fade-out");
+  $copyrightFooter.addClass("screen-fade-out");
+}
+
+
 function hideDisplayedRecipeScreen() {
   $recipeTitleContainer.hide();
   $ingredientContainer.hide();
@@ -285,10 +291,14 @@ function showDisplayedRecipeScreen() {
 
 
 function hideSavedRecipeListScreen() {
-  $categoryContainer.hide();
-  $sortBySelect.hide();
+  screenTransition();
 
-  clearTiles();
+  setTimeout(function() {
+    $categoryContainer.hide();
+    $sortBySelect.hide();
+
+    clearTiles();
+  }, 500);
 
   $searchResultNone.remove();
 }
@@ -424,7 +434,12 @@ function populateTiles() {
 
       hideSavedRecipeListScreen();
 
-      showDisplayedRecipeScreen();
+      setTimeout(function() {
+        $bodyGridContainer.removeClass("screen-fade-out");
+        $copyrightFooter.removeClass("screen-fade-out");
+
+        showDisplayedRecipeScreen();
+      }, 500);
     });
 
 
@@ -708,7 +723,12 @@ function sortRecipeMaster() {
     hideDisplayedRecipeScreen();
     hideSavedRecipeListScreen();
 
-    showNewRecipeFinderScreen();
+    setTimeout(function() {
+      $bodyGridContainer.removeClass("screen-fade-out");
+      $copyrightFooter.removeClass("screen-fade-out");
+
+      showNewRecipeFinderScreen();
+    }, 500);
   });
 
 
