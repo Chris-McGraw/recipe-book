@@ -217,6 +217,11 @@ function screenTransitionFadeOut() {
   $copyrightFooter.addClass("screen-fade-out");
 }
 
+function screenTransitionFadeIn() {
+  $bodyGridContainer.removeClass("screen-fade-out");
+  $copyrightFooter.removeClass("screen-fade-out");
+}
+
 
 function hideScreenAll() {
   hideSavedRecipeListScreen();
@@ -428,15 +433,14 @@ function populateTiles() {
 
       getSelectedRecipeName();
 
-      document.getElementById("search-bar").value= "";
-
       screenTransitionFadeOut();
 
       setTimeout(function() {
         hideSavedRecipeListScreen();
 
-        $bodyGridContainer.removeClass("screen-fade-out");
-        $copyrightFooter.removeClass("screen-fade-out");
+        document.getElementById("search-bar").value= "";
+
+        screenTransitionFadeIn();
 
         showDisplayedRecipeScreen();
       }, 500);
@@ -699,26 +703,32 @@ function sortRecipeMaster() {
 
   $dropdownButtonSaved.on("click", function() {
     if(delayPopulate === false) {
-      document.getElementById("search-bar").value= "";
-      userInputArchive = "";
-
-      clearSearch();
-      clearTiles();
-
-      $categoryItem.removeClass("category-active");
-      $catAll.addClass("category-active");
-      currentCatActive = "all";
-
-      hideScreenAll();
-
-      showSavedRecipeListScreen();
-
       delayPopulate = true;
 
+      screenTransitionFadeOut();
+
       setTimeout(function() {
-        delayPopulate = false;
-        populateTiles();
-      }, 200);
+        document.getElementById("search-bar").value= "";
+        userInputArchive = "";
+
+        clearSearch();
+        clearTiles();
+
+        $categoryItem.removeClass("category-active");
+        $catAll.addClass("category-active");
+        currentCatActive = "all";
+
+        hideScreenAll();
+
+        screenTransitionFadeIn();
+
+        showSavedRecipeListScreen();
+
+        setTimeout(function() {
+          delayPopulate = false;
+          populateTiles();
+        }, 200);
+      }, 500);
     }
   });
 
@@ -731,8 +741,7 @@ function sortRecipeMaster() {
     setTimeout(function() {
       hideScreenAll();
 
-      $bodyGridContainer.removeClass("screen-fade-out");
-      $copyrightFooter.removeClass("screen-fade-out");
+      screenTransitionFadeIn();
 
       showNewRecipeFinderScreen();
     }, 500);
@@ -814,15 +823,21 @@ function sortRecipeMaster() {
 
 
   $backButton.on("click", function() {
-    hideScreenAll();
-
-    showSavedRecipeListScreen();
-
-    document.getElementById("search-bar").value = userInputArchive;
+    screenTransitionFadeOut();
 
     setTimeout(function() {
-      populateTiles();
-    }, 200);
+      hideScreenAll();
+
+      screenTransitionFadeIn();
+
+      showSavedRecipeListScreen();
+
+      document.getElementById("search-bar").value = userInputArchive;
+
+      setTimeout(function() {
+        populateTiles();
+      }, 200);
+    }, 500);
   });
 
   $fontSizeButton.on("click", function() {
