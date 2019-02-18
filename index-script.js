@@ -212,6 +212,24 @@ function toggleFontSize() {
 }
 
 
+function screenTransitionFadeOut() {
+  $bodyGridContainer.addClass("screen-fade-out");
+  $copyrightFooter.addClass("screen-fade-out");
+}
+
+function screenTransitionFadeIn() {
+  $bodyGridContainer.removeClass("screen-fade-out");
+  $copyrightFooter.removeClass("screen-fade-out");
+}
+
+
+function hideScreenAll() {
+  hideSavedRecipeListScreen();
+  hideDisplayedRecipeScreen();
+  hideNewRecipeFinderScreen();
+}
+
+
 function hideDisplayedRecipeScreen() {
   $recipeTitleContainer.hide();
   $ingredientContainer.hide();
@@ -257,8 +275,6 @@ function showDisplayedRecipeScreen() {
   $ingredientListLeft.empty();
   $ingredientListRight.empty();
   $recipeStepList.empty();
-
-  hideNewRecipeFinderScreen();
 
   $recipeTitleContainer.show();
   $ingredientContainer.show();
@@ -321,9 +337,6 @@ function showSavedRecipeListScreen() {
     $mainContentContainer.addClass("main-content-container-retract");
   }
 /* ----- Footer Position Adjustments End */
-
-  hideDisplayedRecipeScreen();
-  hideNewRecipeFinderScreen();
 
   $categoryContainer.show();
   $sortBySelect.show();
@@ -420,11 +433,17 @@ function populateTiles() {
 
       getSelectedRecipeName();
 
-      document.getElementById("search-bar").value= "";
+      screenTransitionFadeOut();
 
-      hideSavedRecipeListScreen();
+      setTimeout(function() {
+        hideSavedRecipeListScreen();
 
-      showDisplayedRecipeScreen();
+        document.getElementById("search-bar").value= "";
+
+        screenTransitionFadeIn();
+
+        showDisplayedRecipeScreen();
+      }, 500);
     });
 
 
@@ -515,6 +534,8 @@ function searchSavedRecipes() {
     clearTiles();
     document.activeElement.blur();
 
+    hideScreenAll();
+
     showSavedRecipeListScreen();
 
     setTimeout(function() {
@@ -528,6 +549,8 @@ function searchSavedRecipes() {
 
     clearTiles();
     document.activeElement.blur();
+
+    hideScreenAll();
 
     showSavedRecipeListScreen();
 
@@ -680,24 +703,32 @@ function sortRecipeMaster() {
 
   $dropdownButtonSaved.on("click", function() {
     if(delayPopulate === false) {
-      document.getElementById("search-bar").value= "";
-      userInputArchive = "";
-
-      clearSearch();
-      clearTiles();
-
-      $categoryItem.removeClass("category-active");
-      $catAll.addClass("category-active");
-      currentCatActive = "all";
-
-      showSavedRecipeListScreen();
-
       delayPopulate = true;
 
+      screenTransitionFadeOut();
+
       setTimeout(function() {
-        delayPopulate = false;
-        populateTiles();
-      }, 200);
+        document.getElementById("search-bar").value= "";
+        userInputArchive = "";
+
+        clearSearch();
+        clearTiles();
+
+        $categoryItem.removeClass("category-active");
+        $catAll.addClass("category-active");
+        currentCatActive = "all";
+
+        hideScreenAll();
+
+        screenTransitionFadeIn();
+
+        showSavedRecipeListScreen();
+
+        setTimeout(function() {
+          delayPopulate = false;
+          populateTiles();
+        }, 200);
+      }, 500);
     }
   });
 
@@ -705,10 +736,15 @@ function sortRecipeMaster() {
     document.getElementById("search-bar").value= "";
     userInputArchive = "";
 
-    hideDisplayedRecipeScreen();
-    hideSavedRecipeListScreen();
+    screenTransitionFadeOut();
 
-    showNewRecipeFinderScreen();
+    setTimeout(function() {
+      hideScreenAll();
+
+      screenTransitionFadeIn();
+
+      showNewRecipeFinderScreen();
+    }, 500);
   });
 
 
@@ -787,13 +823,21 @@ function sortRecipeMaster() {
 
 
   $backButton.on("click", function() {
-    showSavedRecipeListScreen();
-
-    document.getElementById("search-bar").value = userInputArchive;
+    screenTransitionFadeOut();
 
     setTimeout(function() {
-      populateTiles();
-    }, 200);
+      hideScreenAll();
+
+      screenTransitionFadeIn();
+
+      showSavedRecipeListScreen();
+
+      document.getElementById("search-bar").value = userInputArchive;
+
+      setTimeout(function() {
+        populateTiles();
+      }, 200);
+    }, 500);
   });
 
   $fontSizeButton.on("click", function() {
