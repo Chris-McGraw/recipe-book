@@ -64,6 +64,7 @@ $(document).ready(function() {
   var $recipeStepList = $("#recipe-step-list");
 
   var $bottomOptionBar = $("#bottom-option-bar");
+  var $bottomOptionBarBackground = $("#bottom-option-bar-background");
   var $backButton = $("#back-button");
   var $fontSizeButton = $("#font-size-button");
   var currentFontSize = "default";
@@ -215,11 +216,19 @@ function toggleFontSize() {
 function screenTransitionFadeOut() {
   $bodyGridContainer.addClass("screen-fade-out");
   $copyrightFooter.addClass("screen-fade-out");
+
+  setTimeout(function() {
+    $bottomOptionBar.removeClass("screen-fade-in");
+  }, 0);
 }
 
 function screenTransitionFadeIn() {
   $bodyGridContainer.removeClass("screen-fade-out");
   $copyrightFooter.removeClass("screen-fade-out");
+
+  setTimeout(function() {
+    $bottomOptionBar.addClass("screen-fade-in");
+  }, 0);
 }
 
 
@@ -236,6 +245,7 @@ function hideDisplayedRecipeScreen() {
   $imageContainer.hide();
   $recipeContainer.hide();
   $bottomOptionBar.hide();
+  $bottomOptionBarBackground.hide();
 }
 
 
@@ -281,6 +291,7 @@ function showDisplayedRecipeScreen() {
   $imageContainer.show();
   $recipeContainer.show();
   $bottomOptionBar.show();
+  $bottomOptionBarBackground.show();
 
   for(y = 0; y < currentRecipeList.length; y++) {
     if(currentRecipeName === currentRecipeList[y].id) {
