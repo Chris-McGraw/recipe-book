@@ -36,6 +36,10 @@ ul {
   opacity: 0.0 !important;
 }
 
+.screen-fade-in {
+  opacity: 1.0 !important;
+}
+
 #ios-status-bar-background {
   z-index: 40;
   position: fixed;
