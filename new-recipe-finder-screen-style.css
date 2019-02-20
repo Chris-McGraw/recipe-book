@@ -45,9 +45,25 @@
   cursor: text;
 }
 
+#edamam-badge-mask {
+  z-index: 20;
+
+  position: absolute;
+  top: 102px;
+  left: 125px;
+  right: 0;
+
+  height: 48px;
+  width: 202px;
+  margin: auto;
+
+  cursor: pointer;
+}
+
 #edamam-badge {
   position: relative;
-  top: -95px;
+
+  top: -100px;
   left: 63px;
   right: 0;
 
@@ -143,6 +159,20 @@
 
   #new-recipe-finder-form-container {
     grid-column: span 1;
+  }
+
+  #edamam-badge-mask {
+    left: 0;
+    right: 0;
+
+    margin: auto;
+  }
+
+  #edamam-badge {
+    left: 0;
+    right: 0;
+
+    margin: auto;
   }
 
   #new-recipe-search-button {
