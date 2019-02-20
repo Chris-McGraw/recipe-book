@@ -744,18 +744,26 @@ function sortRecipeMaster() {
   });
 
   $dropdownButtonFindNew.on("click", function() {
-    document.getElementById("search-bar").value= "";
-    userInputArchive = "";
+    if(delayPopulate === false) {
+      delayPopulate = true;
 
-    screenTransitionFadeOut();
+      document.getElementById("search-bar").value= "";
+      userInputArchive = "";
 
-    setTimeout(function() {
-      hideScreenAll();
+      screenTransitionFadeOut();
 
-      screenTransitionFadeIn();
+      setTimeout(function() {
+        hideScreenAll();
 
-      showNewRecipeFinderScreen();
-    }, 500);
+        screenTransitionFadeIn();
+
+        showNewRecipeFinderScreen();
+
+        setTimeout(function() {
+          delayPopulate = false;
+        }, 200);
+      }, 500);
+    }
   });
 
 
