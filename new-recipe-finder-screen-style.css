@@ -12,6 +12,9 @@
   font-weight: 300;
   letter-spacing: 0.5px;
   color: white;
+
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #new-recipe-finder-form-container {
@@ -22,6 +25,9 @@
   height: auto;
 
   text-align: center;
+
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #new-recipe-search-bar {
