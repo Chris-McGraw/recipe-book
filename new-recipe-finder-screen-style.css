@@ -49,6 +49,10 @@
   position: relative;
   top: -95px;
   left: 63px;
+  right: 0;
+
+  width: 200px;
+  margin: auto;
 }
 
 #new-recipe-search-button {
