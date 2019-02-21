@@ -2,6 +2,11 @@ $(document).ready(function() {
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
   function newRecipeFinderSearchFocused() {
+    $iosStatusBarBackground.css("position", "absolute");
+    $navbar.css("position", "absolute");
+    $navbarDropdown.css("position", "absolute");
+    $searchDropdown.css("position", "absolute");
+
     window.scrollTo(0, 0);
 
     document.ontouchmove = function(event) {
@@ -10,10 +15,6 @@ $(document).ready(function() {
     }
 
     $(document.body).css("overflow", "hidden");
-
-    $navbar.css("position", "absolute");
-    $navbarDropdown.css("position", "absolute");
-    $searchDropdown.css("position", "absolute");
 
     $navbar.addClass("navbar-retract-all");
     $navbarDropdown.addClass("navbar-retract-all");
@@ -30,6 +31,7 @@ $(document).ready(function() {
 
     $(document.body).css("overflow", "auto");
 
+    $iosStatusBarBackground.css("position", "fixed");
     $navbar.css("position", "fixed");
     $navbarDropdown.css("position", "fixed");
     $searchDropdown.css("position", "fixed")
