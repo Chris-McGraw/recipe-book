@@ -48,10 +48,6 @@ $(document).ready(function() {
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
-  $newRecipeSearchBar.on("click", function() {
-    window.scrollTo(0, 0);
-  });
-
   $newRecipeSearchBar.on("focus", function() {
     newRecipeFinderSearchFocused();
   });
