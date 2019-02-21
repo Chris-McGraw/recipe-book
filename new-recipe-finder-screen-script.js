@@ -11,13 +11,15 @@ $(document).ready(function() {
 
     $(document.body).css("overflow", "hidden");
 
+    $navbar.css("position", "absolute");
+    $navbarDropdown.css("position", "absolute");
+    $searchDropdown.css("position", "absolute");
+
     $navbar.addClass("navbar-retract-all");
     $navbarDropdown.addClass("navbar-retract-all");
     $searchDropdown.addClass("navbar-retract-all");
 
     $bodyGridContainer.addClass("body-grid-container-retract");
-
-    /* $iosStatusBarBackground.css("top", "40px"); */
   }
 
 
@@ -28,13 +30,15 @@ $(document).ready(function() {
 
     $(document.body).css("overflow", "auto");
 
+    $navbar.css("position", "fixed");
+    $navbarDropdown.css("position", "fixed");
+    $searchDropdown.css("position", "fixed")
+
     $navbar.removeClass("navbar-retract-all");
     $navbarDropdown.removeClass("navbar-retract-all");
     $searchDropdown.removeClass("navbar-retract-all");
 
     $bodyGridContainer.removeClass("body-grid-container-retract");
-
-    /* $iosStatusBarBackground.css("top", "-40px"); */
   }
 
 

@@ -1,5 +1,4 @@
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
-/* var $iosStatusBarBackground = $("#ios-status-bar-background"); */
 var $mainContentContainer = $("#main-content-container");
 
 var $navbar = $("#navbar");
