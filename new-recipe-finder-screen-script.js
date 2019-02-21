@@ -9,6 +9,10 @@ $(document).ready(function() {
 
     window.scrollTo(0, 0);
 
+    setTimeout(function() {
+      $newRecipeSearchBar.focus();
+    }, 0);
+
     document.ontouchmove = function(event) {
       event.preventDefault();
       event.stopPropagation();
