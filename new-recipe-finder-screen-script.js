@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     setTimeout(function() {
       $newRecipeSearchBar.focus();
-    }, 0);
+    }, 10);
 
     document.ontouchmove = function(event) {
       event.preventDefault();
