@@ -3,7 +3,7 @@
 }
 
 .new-recipe-finder-screen-retract {
-  transform: translateY(-120px);
+  transform: translateY(-130px);
 }
 
 #new-recipe-finder-title {
@@ -61,6 +61,8 @@
   outline: none;
 
   cursor: text;
+
+  transition: transform 300ms ease-in-out;
 }
 
 #edamam-badge-mask {
