@@ -73,10 +73,10 @@ $(document).ready(function() {
 
 
 
-  var $newRecipeFinderTitle = $("#new-recipe-finder-title");
+  /* var $newRecipeFinderTitle = $("#new-recipe-finder-title");
   var $newRecipeFinderFormContainer = $("#new-recipe-finder-form-container");
 
-  var $newRecipeSearchBar = $("#new-recipe-search-bar");
+  var $newRecipeSearchBar = $("#new-recipe-search-bar"); */
 
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
