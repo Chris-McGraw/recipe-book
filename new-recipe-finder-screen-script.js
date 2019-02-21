@@ -2,8 +2,6 @@ $(document).ready(function() {
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
   function newRecipeFinderSearchFocused() {
-    /* window.scrollTo(0, 0); */
-
     document.ontouchmove = function(event) {
       event.preventDefault();
       event.stopPropagation();
@@ -14,6 +12,12 @@ $(document).ready(function() {
     $navbar.addClass("navbar-retract-all");
     $navbarDropdown.addClass("navbar-retract-all");
     $searchDropdown.addClass("navbar-retract-all");
+
+    setTimeout(function() {
+      window.scrollTo(0, 0);
+
+      $newRecipeFinderTitle.css("color", "blue");
+    }, 1000);
 
     /* $bodyGridContainer.addClass("body-grid-container-retract"); */
 
@@ -48,10 +52,6 @@ $(document).ready(function() {
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
-  $newRecipeSearchBar.on("click", function() {
-    window.scrollTo(0, 0);
-  });
-
   $newRecipeSearchBar.on("focus", function() {
     newRecipeFinderSearchFocused();
   });
