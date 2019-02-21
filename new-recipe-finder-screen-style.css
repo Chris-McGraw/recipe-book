@@ -1,3 +1,11 @@
+.navbar-retract-all {
+  transform: translateY(-70px);
+}
+
+.body-grid-container-retract {
+  transform: translateY(-100px);
+}
+
 #new-recipe-finder-title {
   display: none;
 

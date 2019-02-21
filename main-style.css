@@ -126,6 +126,8 @@ ul {
 
   -webkit-user-select: none;
   user-select: none;
+
+  transition: transform 300ms ease-in-out;
 }
 
 #hamburger-menu {
