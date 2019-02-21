@@ -15,9 +15,9 @@ $(document).ready(function() {
     $navbarDropdown.addClass("navbar-retract-all");
     $searchDropdown.addClass("navbar-retract-all");
 
-    /* $bodyGridContainer.addClass("body-grid-container-retract"); */
+    $bodyGridContainer.addClass("body-grid-container-retract");
 
-    $iosStatusBarBackground.css("top", "40px");
+    /* $iosStatusBarBackground.css("top", "40px"); */
   }
 
 
@@ -32,9 +32,9 @@ $(document).ready(function() {
     $navbarDropdown.removeClass("navbar-retract-all");
     $searchDropdown.removeClass("navbar-retract-all");
 
-    /* $bodyGridContainer.removeClass("body-grid-container-retract"); */
+    $bodyGridContainer.removeClass("body-grid-container-retract");
 
-    $iosStatusBarBackground.css("top", "-40px");
+    /* $iosStatusBarBackground.css("top", "-40px"); */
   }
 
 
