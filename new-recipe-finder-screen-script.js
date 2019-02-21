@@ -20,7 +20,9 @@ $(document).ready(function() {
     $navbarDropdown.addClass("navbar-retract-all");
     $searchDropdown.addClass("navbar-retract-all");
 
-    $bodyGridContainer.addClass("body-grid-container-retract");
+    /* $bodyGridContainer.addClass("body-grid-container-retract"); */
+
+    $newRecipeSearchBar.addClass("body-grid-container-retract");
   }
 
 
@@ -40,7 +42,9 @@ $(document).ready(function() {
     $navbarDropdown.removeClass("navbar-retract-all");
     $searchDropdown.removeClass("navbar-retract-all");
 
-    $bodyGridContainer.removeClass("body-grid-container-retract");
+    /* $bodyGridContainer.removeClass("body-grid-container-retract"); */
+
+    $newRecipeSearchBar.removeClass("body-grid-container-retract");
   }
 
 
@@ -48,13 +52,9 @@ $(document).ready(function() {
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
-  $newRecipeSearchBar.on("click", function() {
+  $newRecipeSearchBar.on("focus", function() {
     newRecipeFinderSearchFocused();
   });
-
-  /* $newRecipeSearchBar.on("focus", function() {
-    newRecipeFinderSearchFocused();
-  }); */
 
   $newRecipeSearchBar.on("blur", function() {
     newRecipeFinderSearchBlurred();
