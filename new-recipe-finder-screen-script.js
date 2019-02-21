@@ -14,7 +14,7 @@ $(document).ready(function() {
     $navbar.addClass("navbar-retract-all");
     $navbarDropdown.addClass("navbar-retract-all");
     $searchDropdown.addClass("navbar-retract-all");
-    $bodyGridContainer.addClass("body-grid-container-retract");
+    /* $bodyGridContainer.addClass("body-grid-container-retract"); */
   }
 
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
     $navbar.removeClass("navbar-retract-all");
     $navbarDropdown.removeClass("navbar-retract-all");
     $searchDropdown.removeClass("navbar-retract-all");
-    $bodyGridContainer.removeClass("body-grid-container-retract");
+    /* $bodyGridContainer.removeClass("body-grid-container-retract"); */
   }
 
 
