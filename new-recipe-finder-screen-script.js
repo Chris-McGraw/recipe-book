@@ -11,21 +11,16 @@ $(document).ready(function() {
 
     $(document.body).css("overflow", "hidden");
 
-    $iosStatusBarBackground.css("position", "absolute");
-    $navbar.css("position", "absolute");
-    $navbarDropdown.css("position", "absolute");
-    $searchDropdown.css("position", "absolute");
-
     $navbar.addClass("navbar-retract-all");
     $navbarDropdown.addClass("navbar-retract-all");
     $searchDropdown.addClass("navbar-retract-all");
 
     /* $bodyGridContainer.addClass("body-grid-container-retract"); */
 
-    $newRecipeFinderTitle.addClass("body-grid-container-retract");
-    $newRecipeFinderFormContainer.addClass("body-grid-container-retract");
+    $newRecipeFinderTitle.addClass("new-recipe-finder-screen-retract");
+    $newRecipeFinderFormContainer.addClass("new-recipe-finder-screen-retract");
 
-    /* $newRecipeSearchBar.addClass("body-grid-container-retract"); */
+    /* $newRecipeSearchBar.addClass("new-recipe-finder-screen-retract"); */
   }
 
 
@@ -36,21 +31,16 @@ $(document).ready(function() {
 
     $(document.body).css("overflow", "auto");
 
-    $iosStatusBarBackground.css("position", "fixed");
-    $navbar.css("position", "fixed");
-    $navbarDropdown.css("position", "fixed");
-    $searchDropdown.css("position", "fixed")
-
     $navbar.removeClass("navbar-retract-all");
     $navbarDropdown.removeClass("navbar-retract-all");
     $searchDropdown.removeClass("navbar-retract-all");
 
     /* $bodyGridContainer.removeClass("body-grid-container-retract"); */
 
-    $newRecipeFinderTitle.removeClass("body-grid-container-retract");
-    $newRecipeFinderFormContainer.removeClass("body-grid-container-retract");
+    $newRecipeFinderTitle.removeClass("new-recipe-finder-screen-retract");
+    $newRecipeFinderFormContainer.removeClass("new-recipe-finder-screen-retract");
 
-    /* $newRecipeSearchBar.removeClass("body-grid-container-retract"); */
+    /* $newRecipeSearchBar.removeClass("new-recipe-finder-screen-retract"); */
   }
 
 
