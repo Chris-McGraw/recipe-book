@@ -23,6 +23,8 @@
 
   -webkit-user-select: none;
   user-select: none;
+
+  transition: transform 300ms ease-in-out;
 }
 
 #new-recipe-finder-form-container {
@@ -36,6 +38,8 @@
 
   -webkit-user-select: none;
   user-select: none;
+
+  transition: transform 300ms ease-in-out;
 }
 
 #new-recipe-search-bar {

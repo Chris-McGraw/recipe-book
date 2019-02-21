@@ -22,7 +22,10 @@ $(document).ready(function() {
 
     /* $bodyGridContainer.addClass("body-grid-container-retract"); */
 
-    $newRecipeSearchBar.addClass("body-grid-container-retract");
+    $newRecipeFinderTitle.addClass("body-grid-container-retract");
+    $newRecipeFinderFormContainer.addClass("body-grid-container-retract");
+
+    /* $newRecipeSearchBar.addClass("body-grid-container-retract"); */
   }
 
 
@@ -44,7 +47,10 @@ $(document).ready(function() {
 
     /* $bodyGridContainer.removeClass("body-grid-container-retract"); */
 
-    $newRecipeSearchBar.removeClass("body-grid-container-retract");
+    $newRecipeFinderTitle.removeClass("body-grid-container-retract");
+    $newRecipeFinderFormContainer.removeClass("body-grid-container-retract");
+
+    /* $newRecipeSearchBar.removeClass("body-grid-container-retract"); */
   }
 
 
