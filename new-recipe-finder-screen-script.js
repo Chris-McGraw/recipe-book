@@ -13,11 +13,15 @@ $(document).ready(function() {
     $navbarDropdown.css("position", "absolute");
     $searchDropdown.css("position", "absolute");
 
-    $navbar.addClass("navbar-retract-all");
+    /* $navbar.addClass("navbar-retract-all");
     $navbarDropdown.addClass("navbar-retract-all");
-    $searchDropdown.addClass("navbar-retract-all");
+    $searchDropdown.addClass("navbar-retract-all"); */
 
-    $newRecipeFinderTitle.css("color", "yellow");
+    $navbar.css("top", "-70px");
+    $navbarDropdown.css("top", "-110px");
+    $searchDropdown.css("top", "-110px");
+
+    $newRecipeFinderTitle.css("color", "blue");
     $bodyGridContainer.css("top", "-20px");
 
     /* $newRecipeFinderTitle.addClass("new-recipe-finder-screen-retract");
@@ -40,9 +44,13 @@ $(document).ready(function() {
     $navbarDropdown.css("position", "fixed");
     $searchDropdown.css("position", "fixed");
 
-    $navbar.removeClass("navbar-retract-all");
+    /* $navbar.removeClass("navbar-retract-all");
     $navbarDropdown.removeClass("navbar-retract-all");
-    $searchDropdown.removeClass("navbar-retract-all");
+    $searchDropdown.removeClass("navbar-retract-all"); */
+
+    $navbar.css("top", "0px");
+    $navbarDropdown.css("top", "30px");
+    $searchDropdown.css("top", "30px");
 
     $newRecipeFinderTitle.css("color", "white");
     $bodyGridContainer.css("top", "110px");
