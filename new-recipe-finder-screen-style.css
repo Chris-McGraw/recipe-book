@@ -1,10 +1,10 @@
-.navbar-retract-all {
+/* .navbar-retract-all {
   transform: translateY(-70px);
 }
 
 .new-recipe-finder-screen-retract {
   transform: translateY(-130px);
-}
+} */
 
 #new-recipe-finder-title {
   display: none;
