@@ -15,9 +15,12 @@ $(document).ready(function() {
     $navbarDropdown.hide();
     $searchDropdown.hide();
 
-    $bodyGridContainer.css("top", "-20px");
-
-    $newRecipeFinderTitle.css("color", "red");
+    if(navbarDropdownActive === true || searchDropdownActive === true) {
+      $bodyGridContainer.css("top", "-20px");
+    }
+    else if(navbarDropdownActive === false && searchDropdownActive === false) {
+      $bodyGridContainer.css("top", "20px");
+    }
   }
 
 
