@@ -14,7 +14,8 @@ $(document).ready(function() {
   var $searchBar = $("#search-bar");
   var $searchIconDropdown = $("#search-icon-dropdown");
   var recipeListSearch = [];
-  var allowLocalSearch = true;
+  var allowLocalSearch = false;
+  var delayLocalSearch = false;
   var $searchResultNone = $("#search-result-none");
 
   var $categoryContainer = $("#category-container");
@@ -489,6 +490,8 @@ function userSearchFocused() {
 
   window.scrollTo(0, 0);
 
+  allowLocalSearch = true;
+
   document.ontouchmove = function(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -505,6 +508,8 @@ function userSearchFocused() {
 
 function userSearchBlurred() {
   window.scrollTo(0, savedScrollPosition);
+
+  allowLocalSearch = false;
 
   document.ontouchmove = function(event) {
     return true;
@@ -535,7 +540,7 @@ function searchSavedRecipes() {
 
   userInputArchive = $searchBar.val();
 
-  allowLocalSearch = false;
+  delayLocalSearch = true;
   recipeListSearch = [];
 
   recipeListMaster.forEach(function(element) {
@@ -584,7 +589,7 @@ function searchSavedRecipes() {
   }
 
   setTimeout(function() {
-    allowLocalSearch = true;
+    delayLocalSearch = false;
   }, 1000);
 }
 
@@ -785,14 +790,14 @@ function sortRecipeMaster() {
 
 
   $searchIconDropdown.on("click", function() {
-    if(allowLocalSearch === true && $searchBar.val() !== "") {
+    if(delayLocalSearch === false && $searchBar.val() !== "") {
       searchSavedRecipes();
     }
   });
 
   $(document).keydown(function(event) {
   /* ----- Enter Key Press ----- */
-    if(event.which === 13 && allowLocalSearch === true && $searchBar.val() !== "") {
+    if(event.which === 13 && allowLocalSearch === true && delayLocalSearch === false && $searchBar.val() !== "") {
       searchSavedRecipes();
     }
   });
