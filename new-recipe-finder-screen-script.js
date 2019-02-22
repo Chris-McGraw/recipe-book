@@ -17,7 +17,7 @@ $(document).ready(function() {
       $bodyGridContainer.css("top", "20px");
     }
 
-    $newRecipeFinderTitle.css("color", "yellow");
+    /* $newRecipeFinderTitle.css("color", "yellow"); */
   }
 
 
@@ -40,6 +40,8 @@ $(document).ready(function() {
     document.ontouchmove = function(event) {
       event.preventDefault();
       event.stopPropagation();
+
+      touchDevice = true;
     }
 
     if(touchDevice === true) {
@@ -52,6 +54,8 @@ $(document).ready(function() {
   $newRecipeSearchBar.on("blur", function() {
     document.ontouchmove = function(event) {
       return true;
+
+      touchDevice = true;
     }
 
     if(touchDevice === true) {
