@@ -21,7 +21,7 @@ $(document).ready(function() {
     $navbarDropdown.css("top", "-110px");
     $searchDropdown.css("top", "-110px");
 
-    $newRecipeFinderTitle.css("color", "purple");
+    $newRecipeFinderTitle.css("color", "red");
     $bodyGridContainer.css("top", "-20px");
 
     /* $newRecipeFinderTitle.addClass("new-recipe-finder-screen-retract");
@@ -31,7 +31,7 @@ $(document).ready(function() {
 
     setTimeout(function() {
       window.scrollTo(0, 0);
-    }, 0);
+    }, 50);
   }
 
 
