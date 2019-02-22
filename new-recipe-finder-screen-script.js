@@ -19,16 +19,16 @@ $(document).ready(function() {
 
     $navbar.css("top", "-70px");
     $navbarDropdown.css("top", "-110px");
-    $searchDropdown.css("top", "-110px"); */
+    $searchDropdown.css("top", "-110px");
 
     $navbar.hide();
     $navbarDropdown.hide();
     $searchDropdown.hide();
 
-    $newRecipeFinderTitle.css("color", "red");
+    $newRecipeFinderTitle.css("color", "blue");
     $bodyGridContainer.css("top", "-20px");
 
-    /* $newRecipeFinderTitle.addClass("new-recipe-finder-screen-retract");
+    $newRecipeFinderTitle.addClass("new-recipe-finder-screen-retract");
     $newRecipeFinderFormContainer.addClass("new-recipe-finder-screen-retract");
 
     $newRecipeSearchBar.addClass("new-recipe-finder-screen-retract"); */
@@ -54,7 +54,7 @@ $(document).ready(function() {
 
     $navbar.css("top", "0px");
     $navbarDropdown.css("top", "30px");
-    $searchDropdown.css("top", "30px"); */
+    $searchDropdown.css("top", "30px");
 
     $navbar.show();
     $navbarDropdown.show();
@@ -63,7 +63,7 @@ $(document).ready(function() {
     $newRecipeFinderTitle.css("color", "white");
     $bodyGridContainer.css("top", "110px");
 
-    /* $newRecipeFinderTitle.removeClass("new-recipe-finder-screen-retract");
+    $newRecipeFinderTitle.removeClass("new-recipe-finder-screen-retract");
     $newRecipeFinderFormContainer.removeClass("new-recipe-finder-screen-retract");
 
     $newRecipeSearchBar.removeClass("new-recipe-finder-screen-retract"); */
