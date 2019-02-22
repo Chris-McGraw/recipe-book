@@ -15,7 +15,9 @@ $(document).ready(function() {
 
     setTimeout(function() {
       window.scrollTo(0, 0);
-    }, 0);
+
+      $newRecipeFinderTitle.css("color", "yellow");
+    }, 10);
 
     /* $bodyGridContainer.addClass("body-grid-container-retract"); */
 
