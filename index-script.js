@@ -767,6 +767,8 @@ function sortRecipeMaster() {
       setTimeout(function() {
         hideScreenAll();
 
+        document.getElementById("new-recipe-search-bar").value= "";
+
         screenTransitionFadeIn();
 
         showNewRecipeFinderScreen();
