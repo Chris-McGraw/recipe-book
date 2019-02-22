@@ -9,6 +9,10 @@ $(document).ready(function() {
 
     $(document.body).css("overflow", "hidden");
 
+    $navbar.css("position", "absolute");
+    $navbarDropdown.css("position", "absolute");
+    $searchDropdown.css("position", "absolute");
+
     $navbar.addClass("navbar-retract-all");
     $navbarDropdown.addClass("navbar-retract-all");
     $searchDropdown.addClass("navbar-retract-all");
@@ -16,7 +20,7 @@ $(document).ready(function() {
     setTimeout(function() {
       window.scrollTo(0, 0);
 
-      $newRecipeFinderTitle.css("color", "blue");
+      $newRecipeFinderTitle.css("color", "yellow");
     }, 100);
 
     /* $bodyGridContainer.addClass("body-grid-container-retract"); */
@@ -35,9 +39,15 @@ $(document).ready(function() {
 
     $(document.body).css("overflow", "auto");
 
+    $navbar.css("position", "fixed");
+    $navbarDropdown.css("position", "fixed");
+    $searchDropdown.css("position", "fixed");
+
     $navbar.removeClass("navbar-retract-all");
     $navbarDropdown.removeClass("navbar-retract-all");
     $searchDropdown.removeClass("navbar-retract-all");
+
+    $newRecipeFinderTitle.css("color", "white");
 
     /* $bodyGridContainer.removeClass("body-grid-container-retract"); */
 
