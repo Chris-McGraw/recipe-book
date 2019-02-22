@@ -4,11 +4,6 @@ $(document).ready(function() {
   function newRecipeFinderSearchFocused() {
     window.scrollTo(0, 0);
 
-    document.ontouchmove = function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
     $(document.body).css("overflow", "hidden");
 
     $navbar.hide();
@@ -45,6 +40,11 @@ $(document).ready(function() {
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
   $newRecipeSearchBar.on("focus", function() {
     if(touchDevice === true) {
+      document.ontouchmove = function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      
       setTimeout(function() {
         newRecipeFinderSearchFocused();
       }, 200);
