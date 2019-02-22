@@ -77,7 +77,9 @@ $(document).ready(function() {
   $newRecipeSearchBar.on("focus", function() {
     newRecipeFinderSearchFocused();
 
-    window.scrollTo(0, 0);
+    setTimeout(function() {
+      window.scrollTo(0, 0);
+    }, 200);
   });
 
   $newRecipeSearchBar.on("blur", function() {
