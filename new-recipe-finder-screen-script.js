@@ -4,6 +4,11 @@ $(document).ready(function() {
   function newRecipeFinderSearchFocused() {
     window.scrollTo(0, 0);
 
+    document.ontouchmove = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
     $(document.body).css("overflow", "hidden");
 
     $navbar.hide();
@@ -17,11 +22,15 @@ $(document).ready(function() {
       $bodyGridContainer.css("top", "20px");
     }
 
-    /* $newRecipeFinderTitle.css("color", "yellow"); */
+    $newRecipeFinderTitle.css("color", "yellow");
   }
 
 
   function newRecipeFinderSearchBlurred() {
+    document.ontouchmove = function(event) {
+      return true;
+    }
+
     $(document.body).css("overflow", "auto");
 
     $navbar.show();
@@ -37,13 +46,6 @@ $(document).ready(function() {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
   $newRecipeSearchBar.on("focus", function() {
-    document.ontouchmove = function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      touchDevice = true;
-    }
-
     if(touchDevice === true) {
       setTimeout(function() {
         newRecipeFinderSearchFocused();
@@ -52,12 +54,6 @@ $(document).ready(function() {
   });
 
   $newRecipeSearchBar.on("blur", function() {
-    document.ontouchmove = function(event) {
-      return true;
-
-      touchDevice = true;
-    }
-
     if(touchDevice === true) {
       newRecipeFinderSearchBlurred();
     }

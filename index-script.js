@@ -687,7 +687,9 @@ function sortRecipeMaster() {
 
 
 
-
+  document.ontouchstart = function(event) {
+    touchDevice = true;
+  }
 
   document.ontouchmove = function(event) {
     event.preventDefault();
