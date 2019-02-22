@@ -440,21 +440,29 @@ function populateTiles() {
 
 
     $newTile.on("click", function() {
-      currentURL = $(this).css("background-image");
+      if(delayPopulate === false) {
+        delayPopulate = true;
 
-      getSelectedRecipeName();
+        currentURL = $(this).css("background-image");
 
-      screenTransitionFadeOut();
+        getSelectedRecipeName();
 
-      setTimeout(function() {
-        hideSavedRecipeListScreen();
+        screenTransitionFadeOut();
 
-        document.getElementById("search-bar").value= "";
+        setTimeout(function() {
+          hideSavedRecipeListScreen();
 
-        screenTransitionFadeIn();
+          document.getElementById("search-bar").value= "";
 
-        showDisplayedRecipeScreen();
-      }, 500);
+          screenTransitionFadeIn();
+
+          showDisplayedRecipeScreen();
+
+          setTimeout(function() {
+            delayPopulate = false;
+          }, 200);
+        }, 500);
+      }
     });
 
 
@@ -759,6 +767,8 @@ function sortRecipeMaster() {
       setTimeout(function() {
         hideScreenAll();
 
+        document.getElementById("new-recipe-search-bar").value= "";
+
         screenTransitionFadeIn();
 
         showNewRecipeFinderScreen();
@@ -846,21 +856,26 @@ function sortRecipeMaster() {
 
 
   $backButton.on("click", function() {
-    screenTransitionFadeOut();
+    if(delayPopulate === false) {
+      delayPopulate = true;
 
-    setTimeout(function() {
-      hideScreenAll();
-
-      screenTransitionFadeIn();
-
-      showSavedRecipeListScreen();
-
-      document.getElementById("search-bar").value = userInputArchive;
+      screenTransitionFadeOut();
 
       setTimeout(function() {
-        populateTiles();
-      }, 200);
-    }, 500);
+        hideScreenAll();
+
+        screenTransitionFadeIn();
+
+        showSavedRecipeListScreen();
+
+        document.getElementById("search-bar").value = userInputArchive;
+
+        setTimeout(function() {
+          delayPopulate = false;
+          populateTiles();
+        }, 200);
+      }, 500);
+    }
   });
 
   $fontSizeButton.on("click", function() {
