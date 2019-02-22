@@ -21,7 +21,7 @@ $(document).ready(function() {
     $navbarDropdown.css("top", "-110px");
     $searchDropdown.css("top", "-110px");
 
-    $newRecipeFinderTitle.css("color", "blue");
+    $newRecipeFinderTitle.css("color", "red");
     $bodyGridContainer.css("top", "-20px");
 
     /* $newRecipeFinderTitle.addClass("new-recipe-finder-screen-retract");
@@ -29,7 +29,9 @@ $(document).ready(function() {
 
     $newRecipeSearchBar.addClass("new-recipe-finder-screen-retract"); */
 
-    window.scrollTo(0, 0);
+    setTimeout(function() {
+      window.scrollTo(0, 0);
+    }, 100);
   }
 
 
