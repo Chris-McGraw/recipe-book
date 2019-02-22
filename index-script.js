@@ -690,8 +690,6 @@ function sortRecipeMaster() {
 
 
   document.ontouchmove = function(event) {
-    touchDevice = true;
-
     event.preventDefault();
     event.stopPropagation();
   }
