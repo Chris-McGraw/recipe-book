@@ -44,13 +44,17 @@ $(document).ready(function() {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
   $newRecipeSearchBar.on("focus", function() {
-    setTimeout(function() {
-      newRecipeFinderSearchFocused();
-    }, 200);
+    if(touchDevice === true) {
+      setTimeout(function() {
+        newRecipeFinderSearchFocused();
+      }, 200);
+    }
   });
 
   $newRecipeSearchBar.on("blur", function() {
-    newRecipeFinderSearchBlurred();
+    if(touchDevice === true) {
+      newRecipeFinderSearchBlurred();
+    }
   });
 
 
