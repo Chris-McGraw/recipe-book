@@ -440,21 +440,29 @@ function populateTiles() {
 
 
     $newTile.on("click", function() {
-      currentURL = $(this).css("background-image");
+      if(delayPopulate === false) {
+        delayPopulate = true;
 
-      getSelectedRecipeName();
+        currentURL = $(this).css("background-image");
 
-      screenTransitionFadeOut();
+        getSelectedRecipeName();
 
-      setTimeout(function() {
-        hideSavedRecipeListScreen();
+        screenTransitionFadeOut();
 
-        document.getElementById("search-bar").value= "";
+        setTimeout(function() {
+          hideSavedRecipeListScreen();
 
-        screenTransitionFadeIn();
+          document.getElementById("search-bar").value= "";
 
-        showDisplayedRecipeScreen();
-      }, 500);
+          screenTransitionFadeIn();
+
+          showDisplayedRecipeScreen();
+
+          setTimeout(function() {
+            delayPopulate = false;
+          }, 200);
+        }, 500);
+      }
     });
 
 
