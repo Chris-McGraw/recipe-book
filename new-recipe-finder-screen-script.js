@@ -25,7 +25,7 @@ $(document).ready(function() {
     $navbarDropdown.hide();
     $searchDropdown.hide(); */
 
-    $newRecipeFinderTitle.css("color", "blue");
+    $newRecipeFinderTitle.css("color", "yellow");
     /* $bodyGridContainer.css("top", "-20px");
 
     $newRecipeFinderTitle.addClass("new-recipe-finder-screen-retract");
@@ -79,7 +79,7 @@ $(document).ready(function() {
 
     setTimeout(function() {
       window.scrollTo(0, 0);
-    }, 200);
+    }, 0);
   });
 
   $newRecipeSearchBar.on("blur", function() {
