@@ -2,6 +2,8 @@ $(document).ready(function() {
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
   function newRecipeFinderSearchFocused() {
+    window.scrollTo(0, 0);
+
     document.ontouchmove = function(event) {
       event.preventDefault();
       event.stopPropagation();
@@ -14,6 +16,8 @@ $(document).ready(function() {
     $searchDropdown.hide();
 
     $bodyGridContainer.css("top", "-20px");
+
+    $newRecipeFinderTitle.css("color", "red");
   }
 
 
@@ -37,10 +41,8 @@ $(document).ready(function() {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
   $newRecipeSearchBar.on("focus", function() {
-    newRecipeFinderSearchFocused();
-
     setTimeout(function() {
-      window.scrollTo(0, 0);
+      newRecipeFinderSearchFocused();
     }, 200);
   });
 
