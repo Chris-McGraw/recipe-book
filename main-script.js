@@ -1,4 +1,6 @@
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
+var touchDevice = false;
+
 var $iosStatusBarBackground = $("#ios-status-bar-background");
 var $mainContentContainer = $("#main-content-container");
 
