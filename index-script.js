@@ -854,21 +854,26 @@ function sortRecipeMaster() {
 
 
   $backButton.on("click", function() {
-    screenTransitionFadeOut();
+    if(delayPopulate === false) {
+      delayPopulate = true;
 
-    setTimeout(function() {
-      hideScreenAll();
-
-      screenTransitionFadeIn();
-
-      showSavedRecipeListScreen();
-
-      document.getElementById("search-bar").value = userInputArchive;
+      screenTransitionFadeOut();
 
       setTimeout(function() {
-        populateTiles();
-      }, 200);
-    }, 500);
+        hideScreenAll();
+
+        screenTransitionFadeIn();
+
+        showSavedRecipeListScreen();
+
+        document.getElementById("search-bar").value = userInputArchive;
+
+        setTimeout(function() {
+          delayPopulate = false;
+          populateTiles();
+        }, 200);
+      }, 500);
+    }
   });
 
   $fontSizeButton.on("click", function() {
