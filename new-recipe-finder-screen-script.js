@@ -9,19 +9,23 @@ $(document).ready(function() {
 
     $(document.body).css("overflow", "hidden");
 
-    $navbar.css("position", "absolute");
+    /* $navbar.css("position", "absolute");
     $navbarDropdown.css("position", "absolute");
     $searchDropdown.css("position", "absolute");
 
-    /* $navbar.addClass("navbar-retract-all");
+    $navbar.addClass("navbar-retract-all");
     $navbarDropdown.addClass("navbar-retract-all");
-    $searchDropdown.addClass("navbar-retract-all"); */
+    $searchDropdown.addClass("navbar-retract-all");
 
     $navbar.css("top", "-70px");
     $navbarDropdown.css("top", "-110px");
-    $searchDropdown.css("top", "-110px");
+    $searchDropdown.css("top", "-110px"); */
 
-    $newRecipeFinderTitle.css("color", "yellow");
+    $navbar.hide();
+    $navbarDropdown.hide();
+    $searchDropdown.hide();
+
+    $newRecipeFinderTitle.css("color", "red");
     $bodyGridContainer.css("top", "-20px");
 
     /* $newRecipeFinderTitle.addClass("new-recipe-finder-screen-retract");
@@ -29,9 +33,7 @@ $(document).ready(function() {
 
     $newRecipeSearchBar.addClass("new-recipe-finder-screen-retract"); */
 
-    setTimeout(function() {
-      window.scrollTo(0, 0);
-    }, 100);
+    window.scrollTo(0, 0);
   }
 
 
@@ -42,17 +44,21 @@ $(document).ready(function() {
 
     $(document.body).css("overflow", "auto");
 
-    $navbar.css("position", "fixed");
+    /* $navbar.css("position", "fixed");
     $navbarDropdown.css("position", "fixed");
     $searchDropdown.css("position", "fixed");
 
-    /* $navbar.removeClass("navbar-retract-all");
+    $navbar.removeClass("navbar-retract-all");
     $navbarDropdown.removeClass("navbar-retract-all");
-    $searchDropdown.removeClass("navbar-retract-all"); */
+    $searchDropdown.removeClass("navbar-retract-all");
 
     $navbar.css("top", "0px");
     $navbarDropdown.css("top", "30px");
-    $searchDropdown.css("top", "30px");
+    $searchDropdown.css("top", "30px"); */
+
+    $navbar.show();
+    $navbarDropdown.show();
+    $searchDropdown.show();
 
     $newRecipeFinderTitle.css("color", "white");
     $bodyGridContainer.css("top", "110px");
