@@ -7,9 +7,9 @@ $(document).ready(function() {
       event.stopPropagation();
     }
 
-    $(document.body).css("overflow", "hidden");
+    /* $(document.body).css("overflow", "hidden");
 
-    /* $navbar.css("position", "absolute");
+    $navbar.css("position", "absolute");
     $navbarDropdown.css("position", "absolute");
     $searchDropdown.css("position", "absolute");
 
@@ -23,17 +23,17 @@ $(document).ready(function() {
 
     $navbar.hide();
     $navbarDropdown.hide();
-    $searchDropdown.hide();
+    $searchDropdown.hide(); */
 
     $newRecipeFinderTitle.css("color", "blue");
-    $bodyGridContainer.css("top", "-20px");
+    /* $bodyGridContainer.css("top", "-20px");
 
     $newRecipeFinderTitle.addClass("new-recipe-finder-screen-retract");
     $newRecipeFinderFormContainer.addClass("new-recipe-finder-screen-retract");
 
-    $newRecipeSearchBar.addClass("new-recipe-finder-screen-retract"); */
+    $newRecipeSearchBar.addClass("new-recipe-finder-screen-retract");
 
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); */
   }
 
 
@@ -42,9 +42,9 @@ $(document).ready(function() {
       return true;
     }
 
-    $(document.body).css("overflow", "auto");
+    /* $(document.body).css("overflow", "auto");
 
-    /* $navbar.css("position", "fixed");
+    $navbar.css("position", "fixed");
     $navbarDropdown.css("position", "fixed");
     $searchDropdown.css("position", "fixed");
 
@@ -58,10 +58,10 @@ $(document).ready(function() {
 
     $navbar.show();
     $navbarDropdown.show();
-    $searchDropdown.show();
+    $searchDropdown.show(); */
 
     $newRecipeFinderTitle.css("color", "white");
-    $bodyGridContainer.css("top", "110px");
+    /* $bodyGridContainer.css("top", "110px");
 
     $newRecipeFinderTitle.removeClass("new-recipe-finder-screen-retract");
     $newRecipeFinderFormContainer.removeClass("new-recipe-finder-screen-retract");
@@ -76,6 +76,8 @@ $(document).ready(function() {
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
   $newRecipeSearchBar.on("focus", function() {
     newRecipeFinderSearchFocused();
+
+    window.scrollTo(0, 0);
   });
 
   $newRecipeSearchBar.on("blur", function() {
