@@ -26,6 +26,10 @@ var currentScreen = "savedRecipeListScreen";
 
 
 var $newRecipeFinderTitle = $("#new-recipe-finder-title");
+
 var $newRecipeFinderFormContainer = $("#new-recipe-finder-form-container");
 
 var $newRecipeSearchBar = $("#new-recipe-search-bar");
+var $newRecipeSearchButton = $("#new-recipe-search-button");
+
+var allowNewRecipeSearch = false;
