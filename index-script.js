@@ -1,15 +1,7 @@
 $(document).ready(function() {
 
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
-  var currentScrollPosition = 0;
-  var savedScrollPosition = 0;
-
   var userInputArchive = "";
-
-  var $bodySearchMask = $("#body-search-mask");
-
-  var $dropdownButtonSaved = $("#dropdown-button-saved");
-  var $dropdownButtonFindNew = $("#dropdown-button-find-new");
 
   var $searchBar = $("#search-bar");
   var $searchIconDropdown = $("#search-icon-dropdown");
