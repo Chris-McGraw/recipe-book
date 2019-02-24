@@ -43,35 +43,6 @@ $(document).ready(function() {
 
 
 
-  var $recipeTitleContainer = $("#recipe-title-container");
-  var $ingredientContainer = $("#ingredient-container");
-  var $imageContainer = $("#image-container");
-  var $recipeContainer = $("#recipe-container");
-
-  var $ingredientTitle = $("#ingredient-title");
-  var $ingredientListAll = $("#ingredient-list-all");
-  var $ingredientListLeft = $("#ingredient-list-left");
-  var $ingredientListRight = $("#ingredient-list-right");
-
-  var $recipeTitle = $("#recipe-title");
-  var $recipeStepList = $("#recipe-step-list");
-
-  var $bottomOptionBar = $("#bottom-option-bar");
-  var $bottomOptionBarBackground = $("#bottom-option-bar-background");
-  var $backButton = $("#back-button");
-  var $fontSizeButton = $("#font-size-button");
-  var currentFontSize = "default";
-
-
-
-
-
-  /* var $newRecipeFinderTitle = $("#new-recipe-finder-title");
-  var $newRecipeFinderFormContainer = $("#new-recipe-finder-form-container");
-
-  var $newRecipeSearchBar = $("#new-recipe-search-bar"); */
-
-
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function clearTiles() {
   allowPopulate = false;
