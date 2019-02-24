@@ -17,15 +17,22 @@ var navbarDropdownActive = false;
 var searchDropdownActive = false;
 var delayDropdown = false;
 
+var allowLocalSearch = false;
+var delayLocalSearch = false;
+var recipeListSearch = [];
+var userInputArchive = "";
+
 var $navbar = $("#navbar");
+var $searchIcon = $("#search-icon");
+var $searchCloseIcon = $("#search-close-icon");
 
 var $navbarDropdown = $("#navbar-dropdown");
 var $dropdownButtonSaved = $("#dropdown-button-saved");
 var $dropdownButtonFindNew = $("#dropdown-button-find-new");
 
 var $searchDropdown = $("#search-dropdown");
-var $searchIcon = $("#search-icon");
-var $searchCloseIcon = $("#search-close-icon");
+var $searchBar = $("#search-bar");
+var $searchIconDropdown = $("#search-icon-dropdown");
 
 
 /* __________ BODY GRID CONTAINER __________ */

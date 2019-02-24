@@ -1,13 +1,6 @@
 $(document).ready(function() {
 
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
-  var userInputArchive = "";
-
-  var $searchBar = $("#search-bar");
-  var $searchIconDropdown = $("#search-icon-dropdown");
-  var recipeListSearch = [];
-  var allowLocalSearch = false;
-  var delayLocalSearch = false;
   var $searchResultNone = $("#search-result-none");
 
   var $categoryContainer = $("#category-container");
