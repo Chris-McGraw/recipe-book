@@ -173,8 +173,8 @@ $(document).ready(function() {
   function showDisplayedRecipeScreen() {
     currentScreen = "displayedRecipeScreen";
 
-    /* console.log("current screen = " + currentScreen);
-    console.log(""); */
+    // console.log("current screen = " + currentScreen);
+    // console.log("");
 
     window.scrollTo(0, 0);
 
@@ -188,7 +188,7 @@ $(document).ready(function() {
 
     $imageContainer.css("background-image", "none");
 
-  /* Footer Position Adjustments Begin ----- */
+  // Footer Position Adjustments Begin
     $copyrightFooter.css("top", "-82px");
     $copyrightFooter.css("height", "82px");
 
@@ -200,7 +200,7 @@ $(document).ready(function() {
       removeContainerClasses();
       $mainContentContainer.addClass("main-content-container-retract-recipe");
     }
-  /* ----- Footer Position Adjustments End */
+  // Footer Position Adjustments End
 
     $ingredientListAll.empty();
     $ingredientListLeft.empty();
@@ -245,8 +245,8 @@ $(document).ready(function() {
   function showSavedRecipeListScreen() {
     currentScreen = "savedRecipeListScreen";
 
-    /* console.log("current screen = " + currentScreen);
-    console.log(""); */
+    // console.log("current screen = " + currentScreen);
+    // console.log("");
 
     window.scrollTo(0, 0);
 
@@ -256,7 +256,7 @@ $(document).ready(function() {
     $bodyGridContainer.css("-webkit-user-select", "none");
     $bodyGridContainer.css("user-select", "none");
 
-  /* Footer Position Adjustments Begin ----- */
+  // Footer Position Adjustments Begin
     $copyrightFooter.css("top", "-42px");
     $copyrightFooter.css("height", "42px");
 
@@ -268,7 +268,7 @@ $(document).ready(function() {
       removeContainerClasses();
       $mainContentContainer.addClass("main-content-container-retract");
     }
-  /* ----- Footer Position Adjustments End */
+  // Footer Position Adjustments End
 
     $categoryContainer.show();
     $sortBySelect.show();
@@ -284,25 +284,25 @@ $(document).ready(function() {
   function showNewRecipeFinderScreen() {
     currentScreen = "newRecipeFinderScreen";
 
-    /* console.log("current screen = " + currentScreen);
-    console.log(""); */
+    // console.log("current screen = " + currentScreen);
+    // console.log("");
 
     $bodyGridContainer.css("grid-row-gap", "70px");
     $bodyGridContainer.css("top", "110px");
 
-    /* Footer Position Adjustments Begin ----- */
-      $copyrightFooter.css("top", "-42px");
-      $copyrightFooter.css("height", "42px");
+  // Footer Position Adjustments Begin
+    $copyrightFooter.css("top", "-42px");
+    $copyrightFooter.css("height", "42px");
 
-      if(navbarDropdownActive === true || searchDropdownActive === true) {
-        removeContainerClasses();
-        $mainContentContainer.addClass("main-content-container-expand");
-      }
-      else if(navbarDropdownActive === false && searchDropdownActive === false) {
-        removeContainerClasses();
-        $mainContentContainer.addClass("main-content-container-retract");
-      }
-    /* ----- Footer Position Adjustments End */
+    if(navbarDropdownActive === true || searchDropdownActive === true) {
+      removeContainerClasses();
+      $mainContentContainer.addClass("main-content-container-expand");
+    }
+    else if(navbarDropdownActive === false && searchDropdownActive === false) {
+      removeContainerClasses();
+      $mainContentContainer.addClass("main-content-container-retract");
+    }
+  // Footer Position Adjustments End
 
     $newRecipeFinderTitle.show();
     $newRecipeFinderFormContainer.show();
