@@ -19,8 +19,8 @@ var delayDropdown = false;
 
 var allowLocalSearch = false;
 var delayLocalSearch = false;
-var recipeListSearch = [];
 var userInputArchive = "";
+var recipeListSearch = [];
 
 var $navbar = $("#navbar");
 var $searchIcon = $("#search-icon");
@@ -40,6 +40,8 @@ var $bodyGridContainer = $("#body-grid-container");
 
 
 /* ________ DISPLAYED RECIPE SCREEN ________ */
+var currentRecipeName = "";
+var currentURL = "";
 var currentFontSize = "default";
 
 var $recipeTitleContainer = $("#recipe-title-container");

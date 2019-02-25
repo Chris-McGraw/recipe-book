@@ -1,12 +1,18 @@
 $(document).ready(function() {
 
 /* ------------------------- VARIABLE DECLARATIONS ------------------------- */
-  var $searchResultNone = $("#search-result-none");
+  var currentCatActive = "all";
+
+  var recipeOrderAlpha = "ascending";
+  var sortSelectHidden = false;
+
+  var allowPopulate = true;
+  var delayPopulate = false;
+  var currentRecipeList = [];
+  var tileCount = 0;
 
   var $categoryContainer = $("#category-container");
   var $categoryItem = $(".category-item");
-  var catContainerHidden = false;
-
   var $catAll = $("#cat-all");
   var $catBeef = $("#cat-beef");
   var $catPork = $("#cat-pork");
@@ -14,23 +20,13 @@ $(document).ready(function() {
   var $catSeafood = $("#cat-seafood");
   var $catVeg = $("#cat-veg");
 
-  var currentCatActive = "all";
-
   var $sortBySelect = $("#sort-by-select");
-  var recipeOrderAlpha = "ascending";
-  var sortSelectHidden = false;
 
   var $tile = [];
   var $tileLink = [];
   var $tileHeader = [];
-  var tileCount = 0;
 
-  var allowPopulate = true;
-  var delayPopulate = false;
-
-  var currentRecipeList = [];
-  var currentRecipeName = "";
-  var currentURL = "";
+  var $searchResultNone = $("#search-result-none");
 
 
 
