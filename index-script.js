@@ -1,22 +1,6 @@
 $(document).ready(function() {
 
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
-  function clearTiles() {
-    allowPopulate = false;
-
-    var $currentTiles = $(".tile");
-    var $currentTileLinks = $(".tile-link");
-
-    $currentTiles.remove();
-    $currentTileLinks.remove();
-
-    tileCount = 0;
-    $tile.length = 0;
-    $tileLink.length = 0;
-    $tileHeader.length = 0;
-  }
-
-
   function getSelectedRecipeName() {
     var recipeNameDashed = currentURL.split("recipe-book/")[1].split(".jpg")[0];
     var splitArray = recipeNameDashed.split("-");
@@ -134,42 +118,6 @@ $(document).ready(function() {
   }
 
 
-  function screenTransitionFadeOut() {
-    $bodyGridContainer.addClass("screen-fade-out");
-    $copyrightFooter.addClass("screen-fade-out");
-
-    setTimeout(function() {
-      $bottomOptionBar.removeClass("screen-fade-in");
-    }, 0);
-  }
-
-  function screenTransitionFadeIn() {
-    $bodyGridContainer.removeClass("screen-fade-out");
-    $copyrightFooter.removeClass("screen-fade-out");
-
-    setTimeout(function() {
-      $bottomOptionBar.addClass("screen-fade-in");
-    }, 0);
-  }
-
-
-  function hideScreenAll() {
-    hideSavedRecipeListScreen();
-    hideDisplayedRecipeScreen();
-    hideNewRecipeFinderScreen();
-  }
-
-
-  function hideDisplayedRecipeScreen() {
-    $recipeTitleContainer.hide();
-    $ingredientContainer.hide();
-    $imageContainer.hide();
-    $recipeContainer.hide();
-    $bottomOptionBar.hide();
-    $bottomOptionBarBackground.hide();
-  }
-
-
   function showDisplayedRecipeScreen() {
     currentScreen = "displayedRecipeScreen";
 
@@ -232,16 +180,6 @@ $(document).ready(function() {
   }
 
 
-  function hideSavedRecipeListScreen() {
-    $categoryContainer.hide();
-    $sortBySelect.hide();
-
-    clearTiles();
-
-    $searchResultNone.remove();
-  }
-
-
   function showSavedRecipeListScreen() {
     currentScreen = "savedRecipeListScreen";
 
@@ -272,12 +210,6 @@ $(document).ready(function() {
 
     $categoryContainer.show();
     $sortBySelect.show();
-  }
-
-
-  function hideNewRecipeFinderScreen() {
-    $newRecipeFinderTitle.hide();
-    $newRecipeFinderFormContainer.hide();
   }
 
 
