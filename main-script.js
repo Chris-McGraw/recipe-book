@@ -39,6 +39,35 @@ var $searchIconDropdown = $("#search-icon-dropdown");
 var $bodyGridContainer = $("#body-grid-container");
 
 
+/* _______ SAVED RECIPE LIST SCREEN _______ */
+var currentCatActive = "all";
+
+var recipeOrderAlpha = "ascending";
+var sortSelectHidden = false;
+
+var allowPopulate = true;
+var delayPopulate = false;
+var currentRecipeList = [];
+var tileCount = 0;
+
+var $categoryContainer = $("#category-container");
+var $categoryItem = $(".category-item");
+var $catAll = $("#cat-all");
+var $catBeef = $("#cat-beef");
+var $catPork = $("#cat-pork");
+var $catPoultry = $("#cat-poultry");
+var $catSeafood = $("#cat-seafood");
+var $catVeg = $("#cat-veg");
+
+var $sortBySelect = $("#sort-by-select");
+
+var $tile = [];
+var $tileLink = [];
+var $tileHeader = [];
+
+var $searchResultNone = $("#search-result-none");
+
+
 /* ________ DISPLAYED RECIPE SCREEN ________ */
 var currentRecipeName = "";
 var currentURL = "";
