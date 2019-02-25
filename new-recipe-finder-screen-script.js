@@ -34,12 +34,27 @@ $(document).ready(function() {
   }
 
 
+  function recipeSearchNew() {
+    delayRecipeSearchNew = true;
+
+    screenTransitionFadeOut();
+
+    setTimeout(function() {
+      hideScreenAll();
+
+      setTimeout(function() {
+        delayRecipeSearchNew = false;
+      }, 200);
+    }, 500);
+  }
+
+
 
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
   $newRecipeSearchBar.on("focus", function() {
-    allowNewRecipeSearch = true;
+    allowRecipeSearchNew = true;
 
     if(touchDevice === true) {
       document.ontouchmove = function(event) {
@@ -54,7 +69,7 @@ $(document).ready(function() {
   });
 
   $newRecipeSearchBar.on("blur", function() {
-    allowNewRecipeSearch = false;
+    allowRecipeSearchNew = false;
 
     if(touchDevice === true) {
       newRecipeFinderSearchBlurred();
@@ -66,15 +81,20 @@ $(document).ready(function() {
 
 
   $newRecipeSearchButton.on("click", function() {
-    if($newRecipeSearchBar.val() !== "") {
+    if($newRecipeSearchBar.val() !== "" && delayRecipeSearchNew === false) {
       console.log("New Recipe Search Button Press");
+
+      recipeSearchNew();
     }
   });
 
   $(document).keydown(function(event) {
   /* ----- Enter Key Press ----- */
-    if(event.which === 13 && allowNewRecipeSearch === true && $newRecipeSearchBar.val() !== "") {
+    if(event.which === 13 && allowRecipeSearchNew === true
+    && delayRecipeSearchNew === false && $newRecipeSearchBar.val() !== "") {
       console.log("New Recipe Search Enter Key Press");
+
+      recipeSearchNew();
     }
   });
 

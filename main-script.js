@@ -94,7 +94,8 @@ var $fontSizeButton = $("#font-size-button");
 
 
 /* _______ NEW RECIPE FINDER SCREEN _______ */
-var allowNewRecipeSearch = false;
+var allowRecipeSearchNew = false;
+var delayRecipeSearchNew = false;
 
 var $newRecipeFinderTitle = $("#new-recipe-finder-title");
 var $newRecipeFinderFormContainer = $("#new-recipe-finder-form-container");
