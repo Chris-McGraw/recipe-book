@@ -177,3 +177,27 @@ function hideNewRecipeFinderScreen() {
   $newRecipeFinderTitle.hide();
   $newRecipeFinderFormContainer.hide();
 }
+
+
+
+
+
+/* ---------------------------- EVENT HANDLERS ---------------------------- */
+$(document).ready(function() {
+  sortRecipeCategory();
+
+  document.ontouchstart = function(event) {
+    touchDevice = true;
+  }
+
+  document.ontouchmove = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  $(document).on("scroll", function() {
+    currentScrollPosition = window.pageYOffset;
+  });
+
+  
+});
