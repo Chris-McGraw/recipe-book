@@ -23,6 +23,10 @@ var userInputArchive = "";
 var recipeListSearch = [];
 
 var $navbar = $("#navbar");
+var $hamburgerMenu = $("#hamburger-menu");
+var $hamburgerBarTop = $("#hamburger-bar-top");
+var $hamburgerBarMiddle = $("#hamburger-bar-middle");
+var $hamburgerBarBottom = $("#hamburger-bar-bottom");
 var $searchIcon = $("#search-icon");
 var $searchCloseIcon = $("#search-close-icon");
 
@@ -184,6 +188,8 @@ function hideNewRecipeFinderScreen() {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
+
+
   sortRecipeCategory();
 
   document.ontouchstart = function(event) {
@@ -199,5 +205,5 @@ $(document).ready(function() {
     currentScrollPosition = window.pageYOffset;
   });
 
-  
+
 });
