@@ -546,30 +546,11 @@ $(document).ready(function() {
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
-  sortRecipeCategory();
-
   populateTiles();
 
 
 
 
-
-  document.ontouchstart = function(event) {
-    touchDevice = true;
-  }
-
-  document.ontouchmove = function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-  }
-
-
-
-
-
-  $(document).on("scroll", function() {
-    currentScrollPosition = window.pageYOffset;
-  });
 
   $searchBar.on("focus", function() {
     userSearchFocused();
@@ -578,6 +559,8 @@ $(document).ready(function() {
   $searchBar.on("blur", function() {
     userSearchBlurred();
   });
+
+
 
 
 
