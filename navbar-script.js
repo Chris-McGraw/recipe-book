@@ -123,6 +123,115 @@ function searchDropdownToggle() {
 }
 
 
+function userSearchFocused() {
+  savedScrollPosition = currentScrollPosition;
+
+  window.scrollTo(0, 0);
+
+  allowLocalSearch = true;
+
+  document.ontouchmove = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  $(document.body).css("overflow", "hidden");
+
+  $bodySearchMask.removeClass("body-search-mask-retract");
+  $bodySearchMask.addClass("body-search-mask-expand");
+
+  $bodySearchMask.css("z-index", "10");
+}
+
+
+function userSearchBlurred() {
+  window.scrollTo(0, savedScrollPosition);
+
+  allowLocalSearch = false;
+
+  document.ontouchmove = function(event) {
+    return true;
+  }
+
+  $(document.body).css("overflow", "auto");
+
+  $bodySearchMask.removeClass("body-search-mask-expand");
+  $bodySearchMask.addClass("body-search-mask-retract");
+
+  setTimeout(function() {
+    $bodySearchMask.css("z-index", "-10");
+  }, 300);
+}
+
+
+function clearSearch() {
+  $categoryItem.removeClass("category-active");
+  currentCatActive = "search";
+
+  $searchResultNone.remove();
+}
+
+
+function searchSavedRecipes() {
+  var userInputTrim = $searchBar.val().trim();
+  /* console.log(userInputTrim.toLowerCase()); */
+
+  userInputArchive = $searchBar.val();
+
+  delayLocalSearch = true;
+  recipeListSearch = [];
+
+  recipeListMaster.forEach(function(element) {
+    element.tags.forEach(function(entry) {
+      if(entry == userInputTrim.toLowerCase()) {
+        recipeListSearch.push(element);
+      }
+    });
+  });
+
+  if(recipeListSearch.length !== 0) {
+    clearSearch();
+    $searchBar.val(userInputTrim);
+
+    clearTiles();
+    document.activeElement.blur();
+
+    hideScreenAll();
+
+    showSavedRecipeListScreen();
+
+    setTimeout(function() {
+      populateTiles();
+    }, 200);
+  }
+
+  else if(recipeListSearch.length === 0) {
+    clearSearch();
+    $searchBar.val(userInputTrim);
+
+    clearTiles();
+    document.activeElement.blur();
+
+    hideScreenAll();
+
+    showSavedRecipeListScreen();
+
+    $searchResultNone = $("<div>No Results Found</div>")
+                     .attr("id", "search-result-none")
+
+    $bodyGridContainer.append($searchResultNone);
+
+    setTimeout(function() {
+      $searchResultNone.addClass("search-fade-in");
+    }, 0);
+  }
+
+  setTimeout(function() {
+    delayLocalSearch = false;
+  }, 1000);
+}
+
+
 
 
 
@@ -177,6 +286,95 @@ $(document).ready(function() {
       else {
         searchDropdownToggle();
       }
+    }
+  });
+
+
+
+
+
+  $searchBar.on("focus", function() {
+    userSearchFocused();
+  });
+
+  $searchBar.on("blur", function() {
+    userSearchBlurred();
+  });
+
+
+
+
+
+  $dropdownButtonSaved.on("click", function() {
+    if(delayPopulate === false) {
+      delayPopulate = true;
+
+      screenTransitionFadeOut();
+
+      setTimeout(function() {
+        document.getElementById("search-bar").value= "";
+        userInputArchive = "";
+
+        clearSearch();
+        clearTiles();
+
+        $categoryItem.removeClass("category-active");
+        $catAll.addClass("category-active");
+        currentCatActive = "all";
+
+        hideScreenAll();
+
+        screenTransitionFadeIn();
+
+        showSavedRecipeListScreen();
+
+        setTimeout(function() {
+          delayPopulate = false;
+          populateTiles();
+        }, 200);
+      }, 500);
+    }
+  });
+
+  $dropdownButtonFindNew.on("click", function() {
+    if(delayPopulate === false) {
+      delayPopulate = true;
+
+      document.getElementById("search-bar").value= "";
+      userInputArchive = "";
+
+      screenTransitionFadeOut();
+
+      setTimeout(function() {
+        hideScreenAll();
+
+        document.getElementById("new-recipe-search-bar").value= "";
+
+        screenTransitionFadeIn();
+
+        showNewRecipeFinderScreen();
+
+        setTimeout(function() {
+          delayPopulate = false;
+        }, 200);
+      }, 500);
+    }
+  });
+
+
+
+
+
+  $searchIconDropdown.on("click", function() {
+    if(delayLocalSearch === false && $searchBar.val() !== "") {
+      searchSavedRecipes();
+    }
+  });
+
+  $(document).keydown(function(event) {
+  /* ----- Enter Key Press ----- */
+    if(event.which === 13 && allowLocalSearch === true && delayLocalSearch === false && $searchBar.val() !== "") {
+      searchSavedRecipes();
     }
   });
 
