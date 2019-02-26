@@ -388,41 +388,6 @@ function showDisplayedRecipeScreen() {
 }
 
 
-/* _______ NEW RECIPE FINDER SCREEN _______ */
-function hideNewRecipeFinderScreen() {
-  $newRecipeFinderTitle.hide();
-  $newRecipeFinderFormContainer.hide();
-}
-
-
-function showNewRecipeFinderScreen() {
-  currentScreen = "newRecipeFinderScreen";
-
-  // console.log("current screen = " + currentScreen);
-  // console.log("");
-
-  $bodyGridContainer.css("grid-row-gap", "70px");
-  $bodyGridContainer.css("top", "110px");
-
-// Footer Position Adjustments Begin
-  $copyrightFooter.css("top", "-42px");
-  $copyrightFooter.css("height", "42px");
-
-  if(navbarDropdownActive === true || searchDropdownActive === true) {
-    removeContainerClasses();
-    $mainContentContainer.addClass("main-content-container-expand");
-  }
-  else if(navbarDropdownActive === false && searchDropdownActive === false) {
-    removeContainerClasses();
-    $mainContentContainer.addClass("main-content-container-retract");
-  }
-// Footer Position Adjustments End
-
-  $newRecipeFinderTitle.show();
-  $newRecipeFinderFormContainer.show();
-}
-
-
 
 
 

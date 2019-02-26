@@ -1,58 +1,93 @@
-$(document).ready(function() {
-
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
-  function newRecipeFinderSearchFocused() {
-    window.scrollTo(0, 0);
+function hideNewRecipeFinderScreen() {
+  $newRecipeFinderTitle.hide();
+  $newRecipeFinderFormContainer.hide();
+}
 
-    $(document.body).css("overflow", "hidden");
 
-    $navbar.hide();
-    $navbarDropdown.hide();
-    $searchDropdown.hide();
+function showNewRecipeFinderScreen() {
+  currentScreen = "newRecipeFinderScreen";
 
-    if(navbarDropdownActive === true || searchDropdownActive === true) {
-      $bodyGridContainer.css("top", "-20px");
-    }
-    else if(navbarDropdownActive === false && searchDropdownActive === false) {
-      $bodyGridContainer.css("top", "20px");
-    }
+  // console.log("current screen = " + currentScreen);
+  // console.log("");
+
+  $bodyGridContainer.css("grid-row-gap", "70px");
+  $bodyGridContainer.css("top", "110px");
+
+// Footer Position Adjustments Begin
+  $copyrightFooter.css("top", "-42px");
+  $copyrightFooter.css("height", "42px");
+
+  if(navbarDropdownActive === true || searchDropdownActive === true) {
+    removeContainerClasses();
+    $mainContentContainer.addClass("main-content-container-expand");
+  }
+  else if(navbarDropdownActive === false && searchDropdownActive === false) {
+    removeContainerClasses();
+    $mainContentContainer.addClass("main-content-container-retract");
+  }
+// Footer Position Adjustments End
+
+  $newRecipeFinderTitle.show();
+  $newRecipeFinderFormContainer.show();
+}
+
+
+function newRecipeFinderSearchFocused() {
+  window.scrollTo(0, 0);
+
+  $(document.body).css("overflow", "hidden");
+
+  $navbar.hide();
+  $navbarDropdown.hide();
+  $searchDropdown.hide();
+
+  if(navbarDropdownActive === true || searchDropdownActive === true) {
+    $bodyGridContainer.css("top", "-20px");
+  }
+  else if(navbarDropdownActive === false && searchDropdownActive === false) {
+    $bodyGridContainer.css("top", "20px");
+  }
+}
+
+
+function newRecipeFinderSearchBlurred() {
+  document.ontouchmove = function(event) {
+    return true;
   }
 
+  $(document.body).css("overflow", "auto");
 
-  function newRecipeFinderSearchBlurred() {
-    document.ontouchmove = function(event) {
-      return true;
-    }
+  $navbar.show();
+  $navbarDropdown.show();
+  $searchDropdown.show();
 
-    $(document.body).css("overflow", "auto");
-
-    $navbar.show();
-    $navbarDropdown.show();
-    $searchDropdown.show();
-
-    $bodyGridContainer.css("top", "110px");
-  }
+  $bodyGridContainer.css("top", "110px");
+}
 
 
-  function recipeSearchNew() {
-    delayRecipeSearchNew = true;
+function recipeSearchNew() {
+  delayRecipeSearchNew = true;
 
-    screenTransitionFadeOut();
+  screenTransitionFadeOut();
+
+  setTimeout(function() {
+    hideScreenAll();
 
     setTimeout(function() {
-      hideScreenAll();
-
-      setTimeout(function() {
-        delayRecipeSearchNew = false;
-      }, 200);
-    }, 500);
-  }
+      delayRecipeSearchNew = false;
+    }, 200);
+  }, 500);
+}
 
 
 
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
+$(document).ready(function() {
+
+
   $newRecipeSearchBar.on("focus", function() {
     allowRecipeSearchNew = true;
 
