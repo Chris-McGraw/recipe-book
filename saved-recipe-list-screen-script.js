@@ -1,69 +1,4 @@
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
-function increaseFontSize() {
-  $bodyGridContainer.css("top", "114px");
-  $bodyGridContainer.css("grid-row-gap", "24px");
-
-  $recipeTitleContainer.css("font-size", "28px");
-  $recipeTitleContainer.css("padding-bottom", "4px");
-
-  $ingredientContainer.css("font-size", "18px");
-  $ingredientTitle.css("font-size", "24px");
-  $ingredientTitle.css("margin-bottom", "24px");
-  $ingredientTitle.css("padding-bottom", "9px");
-
-  $ingredientListItem.css("padding-bottom", "10px");
-
-  $recipeContainer.css("font-size", "18px");
-  $recipeTitle.css("font-size", "24px");
-  $recipeTitle.css("margin-bottom", "24px");
-  $recipeTitle.css("padding-bottom", "9px");
-
-  $recipeStep.css("line-height", "24px");
-  $recipeStep.css("padding-bottom", "24px");
-
-  currentFontSize = "increased";
-}
-
-
-function decreaseFontSize() {
-  $bodyGridContainer.css("top", "110px");
-  $bodyGridContainer.css("grid-row-gap", "20px");
-
-  $recipeTitleContainer.css("font-size", "24px");
-  $recipeTitleContainer.css("padding-bottom", "0px");
-
-  $ingredientContainer.css("font-size", "14px");
-  $ingredientTitle.css("font-size", "20px");
-  $ingredientTitle.css("margin-bottom", "20px");
-  $ingredientTitle.css("padding-bottom", "5px");
-
-  $ingredientListItem.css("padding-bottom", "6px");
-
-  $recipeContainer.css("font-size", "14px");
-  $recipeTitle.css("font-size", "20px");
-  $recipeTitle.css("margin-bottom", "20px");
-  $recipeTitle.css("padding-bottom", "5px");
-
-  $recipeStep.css("line-height", "20px");
-  $recipeStep.css("padding-bottom", "20px");
-
-  currentFontSize = "default";
-}
-
-
-function toggleFontSize() {
-  if(currentFontSize === "default") {
-    increaseFontSize();
-  }
-  else if(currentFontSize === "increased") {
-    decreaseFontSize();
-  }
-}
-
-
-
-
-
 function hideSavedRecipeListScreen() {
   $categoryContainer.hide();
   $sortBySelect.hide();
@@ -258,37 +193,6 @@ $(document).ready(function() {
 
   $sortBySelect.change(function() {
     sortRecipeMaster();
-  });
-
-
-
-
-
-  $backButton.on("click", function() {
-    if(delayPopulate === false) {
-      delayPopulate = true;
-
-      screenTransitionFadeOut();
-
-      setTimeout(function() {
-        hideScreenAll();
-
-        screenTransitionFadeIn();
-
-        showSavedRecipeListScreen();
-
-        document.getElementById("search-bar").value = userInputArchive;
-
-        setTimeout(function() {
-          delayPopulate = false;
-          populateTiles();
-        }, 200);
-      }, 500);
-    }
-  });
-
-  $fontSizeButton.on("click", function() {
-    toggleFontSize();
   });
 
 
