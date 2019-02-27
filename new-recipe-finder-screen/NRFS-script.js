@@ -79,12 +79,12 @@ function recipeSearchNew() {
     showNewRecipeListScreen();
 
     setTimeout(function() {
-      delayRecipeSearchNew = false;
-    }, 200);
+      populateTilesNewRecipes();
+    }, 1000);
 
     setTimeout(function() {
-      populateTilesNewRecipes();
-    }, 500);
+      delayRecipeSearchNew = false;
+    }, 2000);
 
   }, 500);
 }
