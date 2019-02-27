@@ -109,6 +109,9 @@ var $newRecipeSearchButton = $("#new-recipe-search-button");
 
 /* ________ NEW RECIPE LIST SCREEN ________ */
 var $newRecipeListTitle = $("#new-recipe-list-title");
+var tileCountNewRecipe = 0;
+var recipeListNew = [];
+var recipeListNewImg = [];
 
 
 /* ________________ FOOTER ________________ */

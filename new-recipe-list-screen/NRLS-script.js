@@ -42,17 +42,82 @@ function getNewRecipes() {
   /* console.log(userInputTrimNewRecipes);
   console.log(""); */
 
+  recipeListNew = [];
+  recipeListNewImg = [];
+
   $.get("https://api.edamam.com/search?q=" + userInputTrimNewRecipes + "&app_id=dfccee37&app_key=d26c5e336c0a0000719208cb86e67ca4&from=0&to=5", function(data) {
     if(data.hits.length > 0) {
       for(i = 0; i < data.to; i++) {
-        console.log(data.hits[i].recipe.label)
+        /* console.log(data.hits[i].recipe.label); */
 
-        console.log("");
+        recipeListNew.push(data.hits[i].recipe.label);
+        recipeListNewImg.push(data.hits[i].recipe.image);
+
+        /* console.log(""); */
       }
+
+      console.log(recipeListNew);
     }
 
     else {
       console.log("no results");
     }
   });
+}
+
+
+
+
+
+function populateTilesNewRecipes() {
+  /* console.log(tileCount); */
+
+  currentRecipeList = recipeListNew;
+
+  /* console.log(currentRecipeList.length);
+  console.log(recipeListNew.length); */
+
+  if(tileCount < 5) {
+    allowPopulate = true;
+
+    $newTileHeader = $("<h3/>")
+                     .attr("id", "tile-header-" + tileCount)
+                     .addClass("tile-header");
+
+    $newTile = $("<div/>")
+                     .attr("id", "tile-" + tileCount)
+                     .addClass("tile")
+                     .html("<div></div>");
+
+    $bodyGridContainer.append($newTile);
+
+    $newTile.append($newTileHeader);
+
+    $tile[tileCount] = $("#tile-" + tileCount);
+    $tile[tileCount].css("background-image", "url(" + "'" + recipeListNewImg[tileCount] + "'" + ")");
+
+    $tileHeader[tileCount] = $("#tile-header-" + tileCount);
+    $tileHeader[tileCount].html(currentRecipeList[tileCount]);
+
+
+
+    $newTile.on("click", function() {
+    });
+
+
+
+    setTimeout(function() {
+      if(allowPopulate === true) {
+        $tile[tileCount].addClass("tile-fade-in");
+
+        tileCount++;
+      }
+    }, 100);
+
+    setTimeout(function() {
+      if(allowPopulate === true) {
+        populateTilesNewRecipes();
+      }
+    }, 200);
+  }
 }

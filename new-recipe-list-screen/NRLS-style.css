@@ -19,7 +19,7 @@
 
 /* -------------------------- MEDIA QUERY <= 1000 -------------------------- */
 @media screen and (max-width: 1000px) {
-  #new-recipe-list-titler {
+  #new-recipe-list-title {
     grid-column: span 4;
   }
 }
@@ -28,7 +28,7 @@
 
 /* -------------------------- MEDIA QUERY <= 800 -------------------------- */
 @media screen and (max-width: 800px) {
-  #new-recipe-list-titler {
+  #new-recipe-list-title {
     grid-column: span 3;
   }
 }
@@ -37,7 +37,7 @@
 
 /* -------------------------- MEDIA QUERY <= 600 -------------------------- */
 @media screen and (max-width: 600px) {
-  #new-recipe-list-titler {
+  #new-recipe-list-title {
     grid-column: span 2;
   }
 }
@@ -46,7 +46,7 @@
 
 /* -------------------------- MEDIA QUERY <= 400 -------------------------- */
 @media screen and (max-width: 400px) {
-  #new-recipe-list-titler {
+  #new-recipe-list-title {
     grid-column: span 1;
   }
 }

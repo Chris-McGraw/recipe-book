@@ -81,6 +81,11 @@ function recipeSearchNew() {
     setTimeout(function() {
       delayRecipeSearchNew = false;
     }, 200);
+
+    setTimeout(function() {
+      populateTilesNewRecipes();
+    }, 500);
+
   }, 500);
 }
 
@@ -121,8 +126,9 @@ $(document).ready(function() {
 
   $newRecipeSearchButton.on("click", function() {
     if($newRecipeSearchBar.val() !== "" && delayRecipeSearchNew === false) {
-      recipeSearchNew();
       getNewRecipes();
+
+      recipeSearchNew();
     }
   });
 
@@ -130,8 +136,9 @@ $(document).ready(function() {
   /* ----- Enter Key Press ----- */
     if(event.which === 13 && allowRecipeSearchNew === true
     && delayRecipeSearchNew === false && $newRecipeSearchBar.val() !== "") {
-      recipeSearchNew();
       getNewRecipes();
+
+      recipeSearchNew();
     }
   });
 
