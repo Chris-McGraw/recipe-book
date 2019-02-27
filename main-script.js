@@ -23,6 +23,10 @@ var userInputArchive = "";
 var recipeListSearch = [];
 
 var $navbar = $("#navbar");
+var $hamburgerMenu = $("#hamburger-menu");
+var $hamburgerBarTop = $("#hamburger-bar-top");
+var $hamburgerBarMiddle = $("#hamburger-bar-middle");
+var $hamburgerBarBottom = $("#hamburger-bar-bottom");
 var $searchIcon = $("#search-icon");
 var $searchCloseIcon = $("#search-close-icon");
 
@@ -127,6 +131,102 @@ function clearTiles() {
 }
 
 
+function populateTiles() {
+  switch(currentCatActive) {
+    case "all":
+      currentRecipeList = recipeListMaster;
+      break;
+    case "beef":
+      currentRecipeList = recipeListBeef;
+      break;
+    case "pork":
+      currentRecipeList = recipeListPork;
+      break;
+    case "poultry":
+      currentRecipeList = recipeListPoultry;
+      break;
+    case "seafood":
+      currentRecipeList = recipeListSeafood;
+      break;
+    case "vegetarian":
+      currentRecipeList = recipeListVegetarian;
+      break;
+    case "search":
+      currentRecipeList = recipeListSearch;
+      break;
+    default:
+      currentRecipeList = recipeListMaster;
+  }
+
+  if(tileCount < currentRecipeList.length) {
+    allowPopulate = true;
+
+    $newTileHeader = $("<h3/>")
+                     .attr("id", "tile-header-" + tileCount)
+                     .addClass("tile-header");
+
+    $newTile = $("<div/>")
+                     .attr("id", "tile-" + tileCount)
+                     .addClass("tile")
+                     .html("<div></div>");
+
+    $bodyGridContainer.append($newTile);
+
+    $newTile.append($newTileHeader);
+
+    $tile[tileCount] = $("#tile-" + tileCount);
+    $tile[tileCount].css("background-image", "url(" + "'" + currentRecipeList[tileCount].img + "'" + ")");
+
+    $tileHeader[tileCount] = $("#tile-header-" + tileCount);
+    $tileHeader[tileCount].html(currentRecipeList[tileCount].name);
+
+
+
+    $newTile.on("click", function() {
+      if(delayPopulate === false) {
+        delayPopulate = true;
+
+        currentURL = $(this).css("background-image");
+
+        getSelectedRecipeName();
+
+        screenTransitionFadeOut();
+
+        setTimeout(function() {
+          hideSavedRecipeListScreen();
+
+          document.getElementById("search-bar").value= "";
+
+          screenTransitionFadeIn();
+
+          showDisplayedRecipeScreen();
+
+          setTimeout(function() {
+            delayPopulate = false;
+          }, 200);
+        }, 500);
+      }
+    });
+
+
+
+    setTimeout(function() {
+      if(allowPopulate === true) {
+        $tile[tileCount].addClass("tile-fade-in");
+
+        tileCount++;
+      }
+    }, 100);
+
+    setTimeout(function() {
+      if(allowPopulate === true) {
+        populateTiles();
+      }
+    }, 200);
+  }
+}
+
+
 function screenTransitionFadeOut() {
   $bodyGridContainer.addClass("screen-fade-out");
   $copyrightFooter.addClass("screen-fade-out");
@@ -135,6 +235,7 @@ function screenTransitionFadeOut() {
     $bottomOptionBar.removeClass("screen-fade-in");
   }, 0);
 }
+
 
 function screenTransitionFadeIn() {
   $bodyGridContainer.removeClass("screen-fade-out");
@@ -146,36 +247,18 @@ function screenTransitionFadeIn() {
 }
 
 
+function removeContainerClasses() {
+  $mainContentContainer.removeClass("main-content-container-retract");
+  $mainContentContainer.removeClass("main-content-container-expand");
+  $mainContentContainer.removeClass("main-content-container-retract-recipe");
+  $mainContentContainer.removeClass("main-content-container-expand-recipe");
+}
+
+
 function hideScreenAll() {
   hideSavedRecipeListScreen();
   hideDisplayedRecipeScreen();
   hideNewRecipeFinderScreen();
-}
-
-
-function hideSavedRecipeListScreen() {
-  $categoryContainer.hide();
-  $sortBySelect.hide();
-
-  clearTiles();
-
-  $searchResultNone.remove();
-}
-
-
-function hideDisplayedRecipeScreen() {
-  $recipeTitleContainer.hide();
-  $ingredientContainer.hide();
-  $imageContainer.hide();
-  $recipeContainer.hide();
-  $bottomOptionBar.hide();
-  $bottomOptionBarBackground.hide();
-}
-
-
-function hideNewRecipeFinderScreen() {
-  $newRecipeFinderTitle.hide();
-  $newRecipeFinderFormContainer.hide();
 }
 
 
@@ -184,7 +267,15 @@ function hideNewRecipeFinderScreen() {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
+
+
+  populateTiles();
+
   sortRecipeCategory();
+
+
+
+
 
   document.ontouchstart = function(event) {
     touchDevice = true;
@@ -199,5 +290,5 @@ $(document).ready(function() {
     currentScrollPosition = window.pageYOffset;
   });
 
-  
+
 });
