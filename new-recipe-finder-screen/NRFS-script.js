@@ -122,6 +122,7 @@ $(document).ready(function() {
   $newRecipeSearchButton.on("click", function() {
     if($newRecipeSearchBar.val() !== "" && delayRecipeSearchNew === false) {
       recipeSearchNew();
+      getNewRecipes();
     }
   });
 
@@ -130,6 +131,7 @@ $(document).ready(function() {
     if(event.which === 13 && allowRecipeSearchNew === true
     && delayRecipeSearchNew === false && $newRecipeSearchBar.val() !== "") {
       recipeSearchNew();
+      getNewRecipes();
     }
   });
 
