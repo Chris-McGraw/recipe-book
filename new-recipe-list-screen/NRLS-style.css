@@ -1,0 +1,52 @@
+#new-recipe-list-title {
+  display: none;
+
+  grid-column: span 5;
+
+  height: auto;
+
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+
+
+
+
+/* -------------------------- MEDIA QUERY <= 1000 -------------------------- */
+@media screen and (max-width: 1000px) {
+  #new-recipe-list-titler {
+    grid-column: span 4;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 800 -------------------------- */
+@media screen and (max-width: 800px) {
+  #new-recipe-list-titler {
+    grid-column: span 3;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 600 -------------------------- */
+@media screen and (max-width: 600px) {
+  #new-recipe-list-titler {
+    grid-column: span 2;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 400 -------------------------- */
+@media screen and (max-width: 400px) {
+  #new-recipe-list-titler {
+    grid-column: span 1;
+  }
+}

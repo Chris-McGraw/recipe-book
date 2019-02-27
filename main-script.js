@@ -107,6 +107,10 @@ var $newRecipeSearchBar = $("#new-recipe-search-bar");
 var $newRecipeSearchButton = $("#new-recipe-search-button");
 
 
+/* ________ NEW RECIPE LIST SCREEN ________ */
+var $newRecipeListTitle = $("#new-recipe-list-title");
+
+
 /* ________________ FOOTER ________________ */
 var $copyrightFooter = $("#copyright-footer");
 
@@ -259,6 +263,7 @@ function hideScreenAll() {
   hideSavedRecipeListScreen();
   hideDisplayedRecipeScreen();
   hideNewRecipeFinderScreen();
+  hideNewRecipeListScreen();
 }
 
 
