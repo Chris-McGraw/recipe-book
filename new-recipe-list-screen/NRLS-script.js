@@ -41,6 +41,7 @@ function getNewRecipes() {
 
   recipeListNew = [];
   recipeListNewImg = [];
+  recipeListNewLink = [];
 
   $.get("https://api.edamam.com/search?q=" + userInputTrimNewRecipes +
   "&app_id=dfccee37&app_key=d26c5e336c0a0000719208cb86e67ca4&from=0&to=15").done(function(data) {
@@ -48,6 +49,7 @@ function getNewRecipes() {
       for(i = 0; i < data.to; i++) {
         recipeListNew.push(data.hits[i].recipe.label);
         recipeListNewImg.push(data.hits[i].recipe.image);
+        recipeListNewLink.push(data.hits[i].recipe.url);
       }
 
       console.log(recipeListNew);
@@ -77,14 +79,22 @@ function populateTilesNewRecipes() {
                      .attr("id", "tile-header-" + tileCount)
                      .addClass("tile-header");
 
+    $newTileLink = $("<a/>")
+                     .attr("id", "tile-link" + tileCount)
+                     .attr("target", "_blank")
+                     .addClass("tile-link");
+
     $newTile = $("<div/>")
                      .attr("id", "tile-" + tileCount)
                      .addClass("tile")
                      .html("<div></div>");
 
-    $bodyGridContainer.append($newTile);
-
+    $bodyGridContainer.append($newTileLink);
+    $newTileLink.append($newTile);
     $newTile.append($newTileHeader);
+
+    $newTileLink[tileCount] = $("#tile-link" + tileCount);
+    $newTileLink[tileCount].attr("href", recipeListNewLink[tileCount]);
 
     $tile[tileCount] = $("#tile-" + tileCount);
     $tile[tileCount].css("background-image", "url(" + "'" + recipeListNewImg[tileCount] + "'" + ")");
@@ -92,12 +102,8 @@ function populateTilesNewRecipes() {
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
     $tileHeader[tileCount].html(currentRecipeList[tileCount]);
 
-
-
-    $newTile.on("click", function() {
-    });
-
-
+    /* $newTile.on("click", function() {
+    }); */
 
     setTimeout(function() {
       if(allowPopulate === true) {

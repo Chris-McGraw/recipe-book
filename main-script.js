@@ -112,6 +112,7 @@ var $newRecipeListTitle = $("#new-recipe-list-title");
 var tileCountNewRecipe = 0;
 var recipeListNew = [];
 var recipeListNewImg = [];
+var recipeListNewLink = [];
 
 
 /* ________________ FOOTER ________________ */
