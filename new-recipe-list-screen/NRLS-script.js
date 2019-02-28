@@ -45,7 +45,7 @@ function getNewRecipes() {
   recipeListNew = [];
   recipeListNewImg = [];
 
-  $.get("https://api.edamam.com/search?q=" + userInputTrimNewRecipes + "&app_id=dfccee37&app_key=d26c5e336c0a0000719208cb86e67ca4&from=0&to=5", function(data) {
+  $.get("https://api.edamam.com/search?q=" + userInputTrimNewRecipes + "&app_id=dfccee37&app_key=d26c5e336c0a0000719208cb86e67ca4&from=0&to=15", function(data) {
     if(data.hits.length > 0) {
       for(i = 0; i < data.to; i++) {
         /* console.log(data.hits[i].recipe.label); */
@@ -77,7 +77,7 @@ function populateTilesNewRecipes() {
   /* console.log(currentRecipeList.length);
   console.log(recipeListNew.length); */
 
-  if(tileCount < 5) {
+  if(tileCount < currentRecipeList.length) {
     allowPopulate = true;
 
     $newTileHeader = $("<h3/>")
