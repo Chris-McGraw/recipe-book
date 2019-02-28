@@ -78,9 +78,7 @@ function recipeSearchNew() {
 
     showNewRecipeListScreen();
 
-    setTimeout(function() {
-      populateTilesNewRecipes();
-    }, 1000);
+    getNewRecipes();
 
     setTimeout(function() {
       delayRecipeSearchNew = false;
@@ -126,8 +124,6 @@ $(document).ready(function() {
 
   $newRecipeSearchButton.on("click", function() {
     if($newRecipeSearchBar.val() !== "" && delayRecipeSearchNew === false) {
-      getNewRecipes();
-
       recipeSearchNew();
     }
   });
@@ -136,8 +132,6 @@ $(document).ready(function() {
   /* ----- Enter Key Press ----- */
     if(event.which === 13 && allowRecipeSearchNew === true
     && delayRecipeSearchNew === false && $newRecipeSearchBar.val() !== "") {
-      getNewRecipes();
-
       recipeSearchNew();
     }
   });

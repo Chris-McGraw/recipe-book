@@ -39,24 +39,20 @@ function showNewRecipeListScreen() {
 function getNewRecipes() {
   var userInputTrimNewRecipes = $newRecipeSearchBar.val().toLowerCase().replace(/\s/g,"+");
 
-  /* console.log(userInputTrimNewRecipes);
-  console.log(""); */
-
   recipeListNew = [];
   recipeListNewImg = [];
 
-  $.get("https://api.edamam.com/search?q=" + userInputTrimNewRecipes + "&app_id=dfccee37&app_key=d26c5e336c0a0000719208cb86e67ca4&from=0&to=15", function(data) {
+  $.get("https://api.edamam.com/search?q=" + userInputTrimNewRecipes +
+  "&app_id=dfccee37&app_key=d26c5e336c0a0000719208cb86e67ca4&from=0&to=15").done(function(data) {
     if(data.hits.length > 0) {
       for(i = 0; i < data.to; i++) {
-        /* console.log(data.hits[i].recipe.label); */
-
         recipeListNew.push(data.hits[i].recipe.label);
         recipeListNewImg.push(data.hits[i].recipe.image);
-
-        /* console.log(""); */
       }
 
       console.log(recipeListNew);
+
+      populateTilesNewRecipes();
     }
 
     else {
@@ -64,9 +60,6 @@ function getNewRecipes() {
     }
   });
 }
-
-
-
 
 
 function populateTilesNewRecipes() {
