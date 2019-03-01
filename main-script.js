@@ -102,17 +102,22 @@ var allowRecipeSearchNew = false;
 var delayRecipeSearchNew = false;
 
 var $newRecipeFinderTitle = $("#new-recipe-finder-title");
+var $edamamBadge = $("#edamam-badge");
+var $edamamBadgeMask = $("#edamam-badge-mask");
 var $newRecipeFinderFormContainer = $("#new-recipe-finder-form-container");
 var $newRecipeSearchBar = $("#new-recipe-search-bar");
 var $newRecipeSearchButton = $("#new-recipe-search-button");
 
 
 /* ________ NEW RECIPE LIST SCREEN ________ */
-var $newRecipeListTitle = $("#new-recipe-list-title");
-var tileCountNewRecipe = 0;
 var recipeListNew = [];
 var recipeListNewImg = [];
 var recipeListNewLink = [];
+
+var $newRecipeListTitle = $("#new-recipe-list-title");
+var $edamamBadgeClone = "";
+var $edamamBadgeMaskClone = "";
+var $edamamBadgeMaskCloneLink = $("#edamam-badge-mask-clone-link");
 
 
 /* ________________ FOOTER ________________ */

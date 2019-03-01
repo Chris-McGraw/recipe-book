@@ -1,6 +1,13 @@
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function hideNewRecipeListScreen() {
   $newRecipeListTitle.hide();
+
+  if($edamamBadgeClone.length) {
+    $edamamBadgeClone.remove();
+  }
+  if($edamamBadgeMaskClone.length) {
+    $edamamBadgeMaskClone.remove();
+  }
 }
 
 
@@ -33,6 +40,15 @@ function showNewRecipeListScreen() {
 // Footer Position Adjustments End
 
   $newRecipeListTitle.show();
+
+  $edamamBadgeClone = $edamamBadge.clone();
+  $edamamBadgeClone.appendTo($newRecipeListTitle);
+  $edamamBadgeClone.css("top", "40px");
+
+
+  $edamamBadgeMaskClone = $edamamBadgeMask.clone();
+  $edamamBadgeMaskClone.appendTo($edamamBadgeMaskCloneLink);
+  $edamamBadgeMaskClone.css("top", "71px");
 }
 
 
