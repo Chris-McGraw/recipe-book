@@ -54,6 +54,7 @@ var delayPopulate = false;
 var currentRecipeList = [];
 var tileCount = 0;
 
+var $savedRecipeListTitle = $("#saved-recipe-list-title");
 var $categoryContainer = $("#category-container");
 var $categoryItem = $(".category-item");
 var $catAll = $("#cat-all");

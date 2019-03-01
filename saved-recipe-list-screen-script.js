@@ -1,5 +1,6 @@
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function hideSavedRecipeListScreen() {
+  $savedRecipeListTitle.hide();
   $categoryContainer.hide();
   $sortBySelect.hide();
 
@@ -18,7 +19,7 @@ function showSavedRecipeListScreen() {
   window.scrollTo(0, 0);
 
   $bodyGridContainer.css("grid-row-gap", "80px");
-  $bodyGridContainer.css("top", "110px");
+  $bodyGridContainer.css("top", "80px");
   $bodyGridContainer.css("padding-bottom", "60px");
   $bodyGridContainer.css("-webkit-user-select", "none");
   $bodyGridContainer.css("user-select", "none");
@@ -37,6 +38,7 @@ function showSavedRecipeListScreen() {
   }
 // Footer Position Adjustments End
 
+  $savedRecipeListTitle.show();
   $categoryContainer.show();
   $sortBySelect.show();
 }

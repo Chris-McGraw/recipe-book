@@ -368,7 +368,7 @@ ul {
 
 #body-grid-container {
   position: relative;
-  top: 110px;
+  top: 80px;
 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -383,6 +383,24 @@ ul {
   user-select: none;
 
   transition: transform 300ms ease-in-out, opacity 500ms ease-in-out;
+}
+
+#saved-recipe-list-title {
+  position: relative;
+  top: 10px;
+
+  grid-column: span 5;
+
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: -30px;
+
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: white;
 }
 
 #category-container {
@@ -403,6 +421,9 @@ ul {
 
 #category-row-bottom {
   position: absolute;
+
+  top: 107px;
+
   left: 155.45px;
 
   display: inline-block;
@@ -530,6 +551,10 @@ footer {
     grid-template-columns: repeat(4, 1fr);
   }
 
+  #saved-recipe-list-title {
+    grid-column: span 4;
+  }
+
   #category-container {
     position: relative;
     top: -20px;
@@ -565,6 +590,10 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  #saved-recipe-list-title {
+    grid-column: span 3;
+  }
+
   #category-container {
     grid-column: span 3;
   }
@@ -586,6 +615,10 @@ footer {
 @media screen and (max-width: 600px) {
   #body-grid-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  #saved-recipe-list-title {
+    grid-column: span 2;
   }
 
   #category-container {
@@ -611,6 +644,10 @@ footer {
 @media screen and (max-width: 400px) {
   #body-grid-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  #saved-recipe-list-title {
+    grid-column: span 1;
   }
 
   #category-container {
