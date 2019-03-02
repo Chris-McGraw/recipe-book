@@ -119,6 +119,7 @@ var $newRecipeListTitle = $("#new-recipe-list-title");
 var $edamamBadgeClone = "";
 var $edamamBadgeMaskClone = "";
 var $edamamBadgeMaskCloneLink = $("#edamam-badge-mask-clone-link");
+var $sortBySelectNewRecipe = $("#sort-by-select-new-recipe");
 
 
 /* ________________ FOOTER ________________ */
