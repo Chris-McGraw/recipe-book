@@ -103,6 +103,7 @@ var allowRecipeSearchNew = false;
 var delayRecipeSearchNew = false;
 
 var $newRecipeFinderTitle = $("#new-recipe-finder-title");
+var $badgeCloneContainer = $("#badge-clone-container");
 var $edamamBadge = $("#edamam-badge");
 var $edamamBadgeMask = $("#edamam-badge-mask");
 var $newRecipeFinderFormContainer = $("#new-recipe-finder-form-container");
