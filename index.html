@@ -22,6 +22,7 @@
   <link rel="stylesheet" type="text/css" href="main-style.css">
   <link rel="stylesheet" type="text/css" href="displayed-recipe-screen/DRS-style.css">
   <link rel="stylesheet" type="text/css" href="new-recipe-finder-screen/NRFS-style.css">
+  <link rel="stylesheet" type="text/css" href="new-recipe-list-screen/NRLS-style.css">
   <title>Recipe Book</title>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -34,6 +35,7 @@
   <script type="text/javascript" src="saved-recipe-list-screen-script.js" defer></script>
   <script type="text/javascript" src="displayed-recipe-screen/DRS-script.js" defer></script>
   <script type="text/javascript" src="new-recipe-finder-screen/NRFS-script.js" defer></script>
+  <script type="text/javascript" src="new-recipe-list-screen/NRLS-script.js" defer></script>
 </head>
 
 
@@ -85,6 +87,8 @@
 <!-- ====================== BODY GRID CONTAINER START ====================== -->
     <div id="body-grid-container">
 <!-- =================== SAVED RECIPE LIST SCREEN START =================== -->
+      <div id="saved-recipe-list-title">My Saved Recipes</div>
+
       <div id="category-container">
         <ul>
           <div id="category-row-top">
@@ -163,6 +167,25 @@
         <div id="new-recipe-search-button">Search</div>
       </div>
 <!-- ____________________ NEW RECIPE FINDER SCREEN END ____________________ -->
+
+
+
+<!-- ==================== NEW RECIPE LIST SCREEN START ==================== -->
+      <div id="new-recipe-list-title">Browse New Recipes</div>
+
+      <div id="badge-clone-container">
+        <a id="edamam-badge-mask-clone-link" href="https://www.edamam.com/" target="_blank"></a>
+      </div>
+
+      <select id="sort-by-select-new-recipe" value="">
+        <option value="" disabled selected>SORT BY</option>
+        <option value="ascending">Alphabetical (A-Z)</option>
+        <option value="descending">Alphabetical (Z-A)</option>
+      </select>
+<!-- _____________________ NEW RECIPE LIST SCREEN END _____________________ -->
+
+
+
     </div>
 <!-- _______________________ BODY GRID CONTAINER END _______________________ -->
 

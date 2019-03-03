@@ -1,0 +1,130 @@
+#new-recipe-list-title {
+  display: none;
+
+  grid-column: span 5;
+
+  height: auto;
+
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+#badge-clone-container {
+  display: none;
+
+  grid-column: span 3;
+
+  position: relative;
+  top: -40px;
+
+  height: 40px;
+}
+
+#edamam-badge-mask-clone-link {
+  top: -2px;
+}
+
+#sort-by-select-new-recipe {
+  display: none;
+
+  grid-column: span 2;
+
+  position: relative;
+  top: -40px;
+
+  height: 40px;
+
+  outline: none;
+}
+
+
+
+
+
+/* -------------------------- MEDIA QUERY <= 1000 -------------------------- */
+@media screen and (max-width: 1000px) {
+  #new-recipe-list-title {
+    grid-column: span 4;
+  }
+
+  #sort-by-select-new-recipe {
+    grid-column: span 4;
+  }
+
+  #badge-clone-container {
+    grid-column: span 2;
+  }
+
+  #sort-by-select-new-recipe {
+    grid-column: span 2;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 800 -------------------------- */
+@media screen and (max-width: 800px) {
+  #new-recipe-list-title {
+    grid-column: span 3;
+  }
+
+  #sort-by-select-new-recipe {
+    grid-column: span 3;
+
+    margin-top: -40px;
+  }
+
+  #badge-clone-container {
+    grid-column: span 3;
+  }
+
+  #sort-by-select-new-recipe {
+    grid-column: span 3;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 600 -------------------------- */
+@media screen and (max-width: 600px) {
+  #new-recipe-list-title {
+    grid-column: span 2;
+  }
+
+  #sort-by-select-new-recipe {
+    grid-column: span 2;
+  }
+
+  #badge-clone-container {
+    grid-column: span 2;
+  }
+
+  #sort-by-select-new-recipe {
+    grid-column: span 2;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 400 -------------------------- */
+@media screen and (max-width: 400px) {
+  #new-recipe-list-title {
+    grid-column: span 1;
+  }
+
+  #sort-by-select-new-recipe {
+    grid-column: span 1;
+  }
+
+  #badge-clone-container {
+    grid-column: span 1;
+  }
+
+  #sort-by-select-new-recipe {
+    grid-column: span 1;
+  }
+}

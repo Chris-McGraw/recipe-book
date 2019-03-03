@@ -74,9 +74,16 @@ function recipeSearchNew() {
   setTimeout(function() {
     hideScreenAll();
 
+    screenTransitionFadeIn();
+
+    showNewRecipeListScreen();
+
+    /* getNewRecipes(); */
+
     setTimeout(function() {
       delayRecipeSearchNew = false;
-    }, 200);
+    }, 2000);
+
   }, 500);
 }
 
@@ -117,8 +124,6 @@ $(document).ready(function() {
 
   $newRecipeSearchButton.on("click", function() {
     if($newRecipeSearchBar.val() !== "" && delayRecipeSearchNew === false) {
-      console.log("New Recipe Search Button Press");
-
       recipeSearchNew();
     }
   });
@@ -127,8 +132,6 @@ $(document).ready(function() {
   /* ----- Enter Key Press ----- */
     if(event.which === 13 && allowRecipeSearchNew === true
     && delayRecipeSearchNew === false && $newRecipeSearchBar.val() !== "") {
-      console.log("New Recipe Search Enter Key Press");
-
       recipeSearchNew();
     }
   });

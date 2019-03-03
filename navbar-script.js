@@ -23,7 +23,7 @@ function navbarDropdownToggle() {
     $navbarDropdown.addClass("dropdown-expand");
     $bodyGridContainer.addClass("dropdown-expand");
 
-    if(currentScreen === "savedRecipeListScreen") {
+    if(currentScreen === "savedRecipeListScreen" || currentScreen === "newRecipeListScreen") {
       $mainContentContainer.removeClass("main-content-container-retract");
       $mainContentContainer.addClass("main-content-container-expand");
     }
@@ -39,7 +39,7 @@ function navbarDropdownToggle() {
     $navbarDropdown.removeClass("dropdown-expand");
     $bodyGridContainer.removeClass("dropdown-expand");
 
-    if(currentScreen === "savedRecipeListScreen") {
+    if(currentScreen === "savedRecipeListScreen" || currentScreen === "newRecipeListScreen") {
       $mainContentContainer.removeClass("main-content-container-expand");
       $mainContentContainer.addClass("main-content-container-retract");
     }
@@ -89,7 +89,7 @@ function searchDropdownToggle() {
     $searchDropdown.addClass("dropdown-expand");
     $bodyGridContainer.addClass("dropdown-expand");
 
-    if(currentScreen === "savedRecipeListScreen") {
+    if(currentScreen === "savedRecipeListScreen" || currentScreen === "newRecipeListScreen") {
       $mainContentContainer.removeClass("main-content-container-retract");
       $mainContentContainer.addClass("main-content-container-expand");
     }
@@ -105,7 +105,7 @@ function searchDropdownToggle() {
     $searchDropdown.removeClass("dropdown-expand");
     $bodyGridContainer.removeClass("dropdown-expand");
 
-    if(currentScreen === "savedRecipeListScreen") {
+    if(currentScreen === "savedRecipeListScreen" || currentScreen === "newRecipeListScreen") {
       $mainContentContainer.removeClass("main-content-container-expand");
       $mainContentContainer.addClass("main-content-container-retract");
     }
