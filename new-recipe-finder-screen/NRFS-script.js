@@ -76,9 +76,11 @@ function recipeSearchNew() {
 
     screenTransitionFadeIn();
 
+    newRecipeFinderSearchBlurred();
+
     showNewRecipeListScreen();
 
-    /* getNewRecipes(); */
+    getNewRecipes();
 
     setTimeout(function() {
       delayRecipeSearchNew = false;
