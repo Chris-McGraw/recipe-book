@@ -24,8 +24,8 @@ function showNewRecipeListScreen() {
   window.scrollTo(0, 0);
 
   $bodyGridContainer.css("grid-row-gap", "80px");
-  $bodyGridContainer.css("top", "110px");
-  $bodyGridContainer.css("padding-bottom", "60px");
+  $bodyGridContainer.css("top", "70px");
+  $bodyGridContainer.css("padding-bottom", "50px");
   $bodyGridContainer.css("-webkit-user-select", "none");
   $bodyGridContainer.css("user-select", "none");
 
