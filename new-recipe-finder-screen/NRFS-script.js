@@ -71,6 +71,8 @@ function recipeSearchNew() {
 
   screenTransitionFadeOut();
 
+  document.activeElement.blur();
+
   setTimeout(function() {
     hideScreenAll();
 
