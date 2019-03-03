@@ -1,7 +1,7 @@
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function hideNewRecipeListScreen() {
   $newRecipeListTitle.hide();
-
+  $newRecipeSearchTermContainer.hide();
   $badgeCloneContainer.hide();
 
   if($edamamBadgeClone.length) {
@@ -44,17 +44,17 @@ function showNewRecipeListScreen() {
 // Footer Position Adjustments End
 
   $newRecipeListTitle.show();
-
+  $newRecipeSearchTermContainer.show();
   $badgeCloneContainer.show();
 
   $edamamBadgeClone = $edamamBadge.clone();
   $edamamBadgeClone.appendTo($badgeCloneContainer);
-  $edamamBadgeClone.css("top", "-2px");
+  $edamamBadgeClone.css("top", "0px");
   $edamamBadgeClone.css("left", "0px");
 
   $edamamBadgeMaskClone = $edamamBadgeMask.clone();
   $edamamBadgeMaskClone.appendTo($edamamBadgeMaskCloneLink);
-  $edamamBadgeMaskClone.css("top", "-2px");
+  $edamamBadgeMaskClone.css("top", "0px");
   $edamamBadgeMaskClone.css("left", "0px");
 
   $sortBySelectNewRecipe.show();

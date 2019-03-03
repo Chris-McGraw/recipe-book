@@ -4,6 +4,7 @@
   grid-column: span 5;
 
   height: auto;
+  margin-bottom: 48px;
 
   text-align: center;
   font-family: "Roboto Slab", serif;
@@ -16,16 +17,43 @@
 #badge-clone-container {
   display: none;
 
+  position: absolute;
+  top: 37px;
+  left: 0;
+  right: 0;
+
+  height: auto;
+  margin: auto;
+}
+
+
+#edamam-badge-mask-clone-link {
+  top: 0px;
+}
+
+#new-recipe-search-term-container {
+  display: none;
+
   grid-column: span 3;
 
   position: relative;
-  top: -40px;
+  top: -88px;
 
   height: 40px;
+  padding-top: 17px;
+
+  font-size: 16px;
+  color: white;
+
+  border-bottom: 1px solid white;
 }
 
-#edamam-badge-mask-clone-link {
-  top: -2px;
+#search-term-result-title {
+  display: inline-block;
+}
+
+#search-term-result-term {
+  display: inline-block;
 }
 
 #sort-by-select-new-recipe {
@@ -34,7 +62,7 @@
   grid-column: span 2;
 
   position: relative;
-  top: -40px;
+  top: -88px;
 
   height: 40px;
 
@@ -51,11 +79,7 @@
     grid-column: span 4;
   }
 
-  #sort-by-select-new-recipe {
-    grid-column: span 4;
-  }
-
-  #badge-clone-container {
+  #new-recipe-search-term-container {
     grid-column: span 2;
   }
 
@@ -72,18 +96,26 @@
     grid-column: span 3;
   }
 
+  #badge-clone-container {
+    top: 41px;
+  }
+
+  #new-recipe-search-term-container {
+    grid-column: span 3;
+
+    text-align: center;
+  }
+
+  #search-term-result-term {
+    display: block;
+
+    padding-top: 7px;
+  }
+
   #sort-by-select-new-recipe {
     grid-column: span 3;
 
     margin-top: -40px;
-  }
-
-  #badge-clone-container {
-    grid-column: span 3;
-  }
-
-  #sort-by-select-new-recipe {
-    grid-column: span 3;
   }
 }
 
@@ -95,11 +127,7 @@
     grid-column: span 2;
   }
 
-  #sort-by-select-new-recipe {
-    grid-column: span 2;
-  }
-
-  #badge-clone-container {
+  #new-recipe-search-term-container {
     grid-column: span 2;
   }
 
@@ -116,11 +144,7 @@
     grid-column: span 1;
   }
 
-  #sort-by-select-new-recipe {
-    grid-column: span 1;
-  }
-
-  #badge-clone-container {
+  #new-recipe-search-term-container {
     grid-column: span 1;
   }
 
