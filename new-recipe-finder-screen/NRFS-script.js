@@ -76,6 +76,8 @@ function recipeSearchNew() {
 
     screenTransitionFadeIn();
 
+    newRecipeFinderSearchBlurred();
+
     showNewRecipeListScreen();
 
     getNewRecipes();
