@@ -82,7 +82,7 @@ function recipeSearchNew() {
 
     showNewRecipeListScreen();
 
-    getNewRecipes();
+    /* getNewRecipes(); */
 
     setTimeout(function() {
       delayRecipeSearchNew = false;
