@@ -124,7 +124,7 @@ var $edamamBadgeClone = "";
 var $edamamBadgeMaskClone = "";
 var $edamamBadgeMaskCloneLink = $("#edamam-badge-mask-clone-link");
 
-var $newRecipeSearchTermContainer = $("#new-recipe-search-term-container");
+var $newRecipeSearchResultContainer = $("#new-recipe-search-result-container");
 
 var $sortBySelectNewRecipe = $("#sort-by-select-new-recipe");
 

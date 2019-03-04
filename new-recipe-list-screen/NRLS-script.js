@@ -1,7 +1,7 @@
 /* ------------------------- FUNCTION DECLARATIONS ------------------------- */
 function hideNewRecipeListScreen() {
   $newRecipeListTitle.hide();
-  $newRecipeSearchTermContainer.hide();
+  $newRecipeSearchResultContainer.hide();
   $badgeCloneContainer.hide();
 
   if($edamamBadgeClone.length) {
@@ -44,7 +44,7 @@ function showNewRecipeListScreen() {
 // Footer Position Adjustments End
 
   $newRecipeListTitle.show();
-  $newRecipeSearchTermContainer.show();
+  $newRecipeSearchResultContainer.show();
   $badgeCloneContainer.show();
 
   $edamamBadgeClone = $edamamBadge.clone();
