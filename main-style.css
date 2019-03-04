@@ -4,9 +4,11 @@
 
   -webkit-touch-callout: none;
 
-  box-sizing: border-box;
+  min-width: 0;
   margin: 0;
   padding: 0;
+
+  box-sizing: border-box;
 
   cursor: default;
 }
@@ -479,18 +481,20 @@ ul {
 }
 
 .tile-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   margin-top: -31px;
+  /* margin-top: -54px; */
 
+  text-align: center;
   font-family: "Roboto Slab", serif;
   font-size: 18px;
   font-weight: 300;
   color: white;
 
   pointer-events: none;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tile-fade-in {
