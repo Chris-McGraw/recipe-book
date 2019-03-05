@@ -34,7 +34,7 @@
   top: 0px;
 }
 
-#new-recipe-search-term-container {
+#new-recipe-search-result-container {
   display: none;
 
   grid-column: span 3;
@@ -48,11 +48,11 @@
   border-bottom: 1px solid white;
 }
 
-#search-term-result-title {
+#new-search-result-title {
   display: inline-block;
 }
 
-#search-term-result-term {
+#new-search-result-term {
   display: inline-block;
 }
 
@@ -76,7 +76,7 @@
     grid-column: span 4;
   }
 
-  #new-recipe-search-term-container {
+  #new-recipe-search-result-container {
     grid-column: span 2;
   }
 
@@ -97,13 +97,13 @@
     top: 81px;
   }
 
-  #new-recipe-search-term-container {
+  #new-recipe-search-result-container {
     grid-column: span 3;
 
     text-align: center;
   }
 
-  #search-term-result-term {
+  #new-search-result-term {
     display: block;
 
     padding-top: 7px;
@@ -124,7 +124,7 @@
     grid-column: span 2;
   }
 
-  #new-recipe-search-term-container {
+  #new-recipe-search-result-container {
     grid-column: span 2;
   }
 
@@ -141,7 +141,7 @@
     grid-column: span 1;
   }
 
-  #new-recipe-search-term-container {
+  #new-recipe-search-result-container {
     grid-column: span 1;
   }
 

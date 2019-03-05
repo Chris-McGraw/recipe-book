@@ -69,6 +69,8 @@ function newRecipeFinderSearchBlurred() {
 function recipeSearchNew() {
   delayRecipeSearchNew = true;
 
+  newSearchResultArchive = $newRecipeSearchBar.val().toLowerCase().trim();
+
   screenTransitionFadeOut();
 
   document.activeElement.blur();
@@ -76,13 +78,15 @@ function recipeSearchNew() {
   setTimeout(function() {
     hideScreenAll();
 
-    screenTransitionFadeIn();
-
     newRecipeFinderSearchBlurred();
+
+    $newSearchResultTerm.html('"' + newSearchResultArchive + '"');
+
+    screenTransitionFadeIn();
 
     showNewRecipeListScreen();
 
-    /* getNewRecipes(); */
+    getNewRecipes();
 
     setTimeout(function() {
       delayRecipeSearchNew = false;

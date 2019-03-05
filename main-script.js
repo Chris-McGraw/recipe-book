@@ -102,6 +102,8 @@ var $fontSizeButton = $("#font-size-button");
 var allowRecipeSearchNew = false;
 var delayRecipeSearchNew = false;
 
+var newSearchResultArchive = "";
+
 var $newRecipeFinderTitle = $("#new-recipe-finder-title");
 
 var $edamamBadge = $("#edamam-badge");
@@ -124,7 +126,8 @@ var $edamamBadgeClone = "";
 var $edamamBadgeMaskClone = "";
 var $edamamBadgeMaskCloneLink = $("#edamam-badge-mask-clone-link");
 
-var $newRecipeSearchTermContainer = $("#new-recipe-search-term-container");
+var $newRecipeSearchResultContainer = $("#new-recipe-search-result-container");
+var $newSearchResultTerm = $("#new-search-result-term");
 
 var $sortBySelectNewRecipe = $("#sort-by-select-new-recipe");
 
