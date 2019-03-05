@@ -88,7 +88,7 @@ function recipeSearchNew() {
 
     toggleLoadSpinner();
 
-    getNewRecipes();
+    /* getNewRecipes(); */
 
     setTimeout(function() {
       delayRecipeSearchNew = false;
