@@ -89,7 +89,18 @@ function getNewRecipes() {
 
       console.log(recipeListNew);
 
-      populateTilesNewRecipes();
+      $newRecipeSearchSpinner.addClass("fade-out-search-spinner");
+      $newRecipeSearchSpinnerBackground.addClass("fade-out-search-spinner");
+
+      setTimeout(function() {
+        $newRecipeSearchSpinner.removeClass("rotate-search-spinner");
+        $newRecipeSearchSpinner.hide();
+        $newRecipeSearchSpinnerBackground.hide();
+        $newRecipeSearchSpinner.removeClass("fade-out-search-spinner");
+        $newRecipeSearchSpinnerBackground.removeClass("fade-out-search-spinner");
+
+        populateTilesNewRecipes();
+      }, 200);
     }
 
     else {
