@@ -66,6 +66,62 @@
   outline: none;
 }
 
+#new-recipe-search-spinner {
+  display: none;
+
+  z-index: 20;
+  position: absolute;
+  top: 238px;
+  left: 0;
+  right: 0;
+
+  height: 40px;
+  width: 40px;
+  margin: auto;
+
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+
+  opacity: 1.0;
+
+  transition: opacity 200ms ease-in-out;
+}
+
+.rotate-search-spinner {
+  animation: rotateSpinner 2.5s infinite linear;
+}
+
+@keyframes rotateSpinner {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
+}
+
+#new-recipe-search-spinner-background {
+  display: none;
+
+  z-index: 10;
+  position: absolute;
+  top: 238px;
+  left: 0;
+  right: 0;
+
+  height: 40px;
+  width: 40px;
+  margin: auto;
+
+  border: 2px solid rgb(59, 135, 118);
+  border-radius: 50%;
+
+  opacity: 1.0;
+
+  transition: opacity 200ms ease-in-out;
+}
+
+.fade-out-search-spinner {
+  opacity: 0.0 !important;
+}
+
 
 
 
@@ -113,6 +169,14 @@
     grid-column: span 3;
 
     margin-top: -40px;
+  }
+
+  #new-recipe-search-spinner {
+    top: 318px;
+  }
+
+  #new-recipe-search-spinner-background {
+    top: 318px;
   }
 }
 

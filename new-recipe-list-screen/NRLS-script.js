@@ -61,6 +61,25 @@ function showNewRecipeListScreen() {
 }
 
 
+function toggleLoadSpinner() {
+  $newRecipeSearchSpinner.show();
+  $newRecipeSearchSpinnerBackground.show();
+
+  setTimeout(function() {
+    $newRecipeSearchSpinner.addClass("rotate-search-spinner");
+  }, 200);
+}
+
+
+function removeLoadSpinner() {
+  $newRecipeSearchSpinner.removeClass("rotate-search-spinner");
+  $newRecipeSearchSpinner.hide();
+  $newRecipeSearchSpinnerBackground.hide();
+  $newRecipeSearchSpinner.removeClass("fade-out-search-spinner");
+  $newRecipeSearchSpinnerBackground.removeClass("fade-out-search-spinner");
+}
+
+
 function getNewRecipes() {
   var userInputTrimNewRecipes = $newRecipeSearchBar.val().toLowerCase().replace(/\s/g,"+");
 
@@ -79,7 +98,16 @@ function getNewRecipes() {
 
       console.log(recipeListNew);
 
-      populateTilesNewRecipes();
+      $newRecipeSearchSpinner.addClass("fade-out-search-spinner");
+      $newRecipeSearchSpinnerBackground.addClass("fade-out-search-spinner");
+
+      setTimeout(function() {
+        removeLoadSpinner();
+
+        if(currentScreen === "newRecipeListScreen") {
+          populateTilesNewRecipes();
+        }
+      }, 200);
     }
 
     else {
