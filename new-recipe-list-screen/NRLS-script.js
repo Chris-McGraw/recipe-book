@@ -104,7 +104,9 @@ function getNewRecipes() {
       setTimeout(function() {
         removeLoadSpinner();
 
-        populateTilesNewRecipes();
+        if(currentScreen === "newRecipeListScreen") {
+          populateTilesNewRecipes();
+        }
       }, 200);
     }
 
