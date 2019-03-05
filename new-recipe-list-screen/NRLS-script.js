@@ -61,6 +61,16 @@ function showNewRecipeListScreen() {
 }
 
 
+function toggleLoadSpinner() {
+  $newRecipeSearchSpinner.show();
+  $newRecipeSearchSpinnerBackground.show();
+
+  setTimeout(function() {
+    $newRecipeSearchSpinner.addClass("rotate-search-spinner");
+  }, 200);
+}
+
+
 function getNewRecipes() {
   var userInputTrimNewRecipes = $newRecipeSearchBar.val().toLowerCase().replace(/\s/g,"+");
 

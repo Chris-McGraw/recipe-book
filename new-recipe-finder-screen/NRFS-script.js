@@ -86,6 +86,8 @@ function recipeSearchNew() {
 
     showNewRecipeListScreen();
 
+    toggleLoadSpinner();
+
     /* getNewRecipes(); */
 
     setTimeout(function() {
