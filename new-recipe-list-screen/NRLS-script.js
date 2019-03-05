@@ -71,6 +71,15 @@ function toggleLoadSpinner() {
 }
 
 
+function removeLoadSpinner() {
+  $newRecipeSearchSpinner.removeClass("rotate-search-spinner");
+  $newRecipeSearchSpinner.hide();
+  $newRecipeSearchSpinnerBackground.hide();
+  $newRecipeSearchSpinner.removeClass("fade-out-search-spinner");
+  $newRecipeSearchSpinnerBackground.removeClass("fade-out-search-spinner");
+}
+
+
 function getNewRecipes() {
   var userInputTrimNewRecipes = $newRecipeSearchBar.val().toLowerCase().replace(/\s/g,"+");
 
@@ -93,11 +102,7 @@ function getNewRecipes() {
       $newRecipeSearchSpinnerBackground.addClass("fade-out-search-spinner");
 
       setTimeout(function() {
-        $newRecipeSearchSpinner.removeClass("rotate-search-spinner");
-        $newRecipeSearchSpinner.hide();
-        $newRecipeSearchSpinnerBackground.hide();
-        $newRecipeSearchSpinner.removeClass("fade-out-search-spinner");
-        $newRecipeSearchSpinnerBackground.removeClass("fade-out-search-spinner");
+        removeLoadSpinner();
 
         populateTilesNewRecipes();
       }, 200);

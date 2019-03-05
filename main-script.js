@@ -288,6 +288,8 @@ function hideScreenAll() {
   hideDisplayedRecipeScreen();
   hideNewRecipeFinderScreen();
   hideNewRecipeListScreen();
+
+  removeLoadSpinner();
 }
 
 
