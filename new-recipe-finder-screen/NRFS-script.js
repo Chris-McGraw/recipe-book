@@ -28,6 +28,8 @@ function showNewRecipeFinderScreen() {
   }
 // Footer Position Adjustments End
 
+  $searchBar.attr("placeholder", "Search For New Recipes...");
+
   $newRecipeFinderTitle.show();
   $newRecipeFinderFormContainer.show();
 }

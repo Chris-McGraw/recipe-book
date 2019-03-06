@@ -43,6 +43,9 @@ function showNewRecipeListScreen() {
   }
 // Footer Position Adjustments End
 
+  $searchBar.attr("placeholder", "Search For New Recipes...");
+  document.getElementById("search-bar").value= "";
+
   $newRecipeListTitle.show();
   $newRecipeSearchResultContainer.show();
   $badgeCloneContainer.show();

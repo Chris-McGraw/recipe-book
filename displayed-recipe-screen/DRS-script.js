@@ -41,6 +41,8 @@ function showDisplayedRecipeScreen() {
   }
 // Footer Position Adjustments End
 
+  $searchBar.attr("placeholder", "Search My Saved Recipes...");
+
   $ingredientListAll.empty();
   $ingredientListLeft.empty();
   $ingredientListRight.empty();

@@ -366,14 +366,18 @@ $(document).ready(function() {
 
 
   $searchIconDropdown.on("click", function() {
-    if(delayLocalSearch === false && $searchBar.val() !== "") {
+    if(currentScreen === "savedRecipeListScreen" && delayLocalSearch === false && $searchBar.val() !== ""
+    || currentScreen === "displayedRecipeScreen" && delayLocalSearch === false && $searchBar.val() !== "") {
       searchSavedRecipes();
     }
   });
 
   $(document).keydown(function(event) {
   /* ----- Enter Key Press ----- */
-    if(event.which === 13 && allowLocalSearch === true && delayLocalSearch === false && $searchBar.val() !== "") {
+    if(event.which === 13 && currentScreen === "savedRecipeListScreen" && allowLocalSearch === true
+    && delayLocalSearch === false && $searchBar.val() !== ""
+    || event.which === 13 && currentScreen === "displayedRecipeScreen" && allowLocalSearch === true
+    && delayLocalSearch === false && $searchBar.val() !== "") {
       searchSavedRecipes();
     }
   });
