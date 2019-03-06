@@ -63,7 +63,6 @@ function showNewRecipeListScreen() {
 
 function toggleLoadSpinner() {
   $newRecipeSearchSpinner.show();
-  $newRecipeSearchSpinnerBackground.show();
 
   setTimeout(function() {
     $newRecipeSearchSpinner.addClass("rotate-search-spinner");
@@ -74,9 +73,7 @@ function toggleLoadSpinner() {
 function removeLoadSpinner() {
   $newRecipeSearchSpinner.removeClass("rotate-search-spinner");
   $newRecipeSearchSpinner.hide();
-  $newRecipeSearchSpinnerBackground.hide();
   $newRecipeSearchSpinner.removeClass("fade-out-search-spinner");
-  $newRecipeSearchSpinnerBackground.removeClass("fade-out-search-spinner");
 }
 
 
@@ -99,7 +96,6 @@ function getNewRecipes() {
       console.log(recipeListNew);
 
       $newRecipeSearchSpinner.addClass("fade-out-search-spinner");
-      $newRecipeSearchSpinnerBackground.addClass("fade-out-search-spinner");
 
       setTimeout(function() {
         removeLoadSpinner();
