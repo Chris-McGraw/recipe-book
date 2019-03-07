@@ -100,6 +100,40 @@ function recipeSearchNew() {
 }
 
 
+function navbarRecipeSearchNew() {
+  delayRecipeSearchNew = true;
+
+  newSearchResultArchiveNavbar = $searchBar.val().toLowerCase().trim();
+
+  screenTransitionFadeOut();
+
+  setTimeout(function() {
+    hideScreenAll();
+
+    document.activeElement.blur();
+
+    newRecipeFinderSearchBlurred();
+
+    $newSearchResultTerm.html('"' + newSearchResultArchiveNavbar + '"');
+
+    showNewRecipeListScreen();
+
+    toggleLoadSpinner();
+
+    /* getNewRecipes(); */
+
+    setTimeout(function() {
+      screenTransitionFadeIn();
+    }, 200);
+
+    setTimeout(function() {
+      delayRecipeSearchNew = false;
+    }, 2000);
+
+  }, 500);
+}
+
+
 
 
 
