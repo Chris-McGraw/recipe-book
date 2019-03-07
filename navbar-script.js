@@ -189,46 +189,53 @@ function searchSavedRecipes() {
     });
   });
 
-  if(recipeListSearch.length !== 0) {
-    clearSearch();
-    $searchBar.val(userInputTrim);
-
-    clearTiles();
-    document.activeElement.blur();
-
-    hideScreenAll();
-
-    showSavedRecipeListScreen();
-
-    setTimeout(function() {
-      populateTiles();
-    }, 200);
-  }
-
-  else if(recipeListSearch.length === 0) {
-    clearSearch();
-    $searchBar.val(userInputTrim);
-
-    clearTiles();
-    document.activeElement.blur();
-
-    hideScreenAll();
-
-    showSavedRecipeListScreen();
-
-    $searchResultNone = $("<div>No Results Found</div>")
-                     .attr("id", "search-result-none")
-
-    $bodyGridContainer.append($searchResultNone);
-
-    setTimeout(function() {
-      $searchResultNone.addClass("search-fade-in");
-    }, 0);
-  }
+  screenTransitionFadeOut();
 
   setTimeout(function() {
-    delayLocalSearch = false;
-  }, 1000);
+    hideScreenAll();
+
+    document.activeElement.blur();
+
+    showSavedRecipeListScreen();
+
+    if(recipeListSearch.length !== 0) {
+      clearSearch();
+      $searchBar.val(userInputTrim);
+
+      clearTiles();
+    }
+
+    else if(recipeListSearch.length === 0) {
+      clearSearch();
+      $searchBar.val(userInputTrim);
+
+      clearTiles();
+
+      $searchResultNone = $("<div>No Results Found</div>")
+                       .attr("id", "search-result-none")
+
+      $bodyGridContainer.append($searchResultNone);
+
+      setTimeout(function() {
+        $searchResultNone.addClass("search-fade-in");
+      }, 0);
+    }
+
+    setTimeout(function() {
+      screenTransitionFadeIn();
+
+      setTimeout(function() {
+        populateTiles();
+      }, 200);
+
+    }, 200);
+
+    setTimeout(function() {
+      delayLocalSearch = false;
+    }, 1000);
+
+  }, 500);
+
 }
 
 
@@ -370,6 +377,11 @@ $(document).ready(function() {
     || currentScreen === "displayedRecipeScreen" && delayLocalSearch === false && $searchBar.val() !== "") {
       searchSavedRecipes();
     }
+
+    else if(currentScreen === "newRecipeFinderScreen" && delayLocalSearch === false && $searchBar.val() !== ""
+    || currentScreen === "newRecipeListScreen" && delayLocalSearch === false && $searchBar.val() !== "") {
+      navbarRecipeSearchNew();
+    }
   });
 
   $(document).keydown(function(event) {
@@ -379,6 +391,13 @@ $(document).ready(function() {
     || event.which === 13 && currentScreen === "displayedRecipeScreen" && allowLocalSearch === true
     && delayLocalSearch === false && $searchBar.val() !== "") {
       searchSavedRecipes();
+    }
+
+    else if(event.which === 13 && currentScreen === "newRecipeFinderScreen" && allowLocalSearch === true
+    && delayLocalSearch === false && $searchBar.val() !== ""
+    || event.which === 13 && currentScreen === "newRecipeListScreen" && allowLocalSearch === true
+    && delayLocalSearch === false && $searchBar.val() !== "") {
+      navbarRecipeSearchNew();
     }
   });
 
