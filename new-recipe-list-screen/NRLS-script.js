@@ -81,7 +81,14 @@ function removeLoadSpinner() {
 
 
 function getNewRecipes() {
-  var userInputTrimNewRecipes = $newRecipeSearchBar.val().toLowerCase().replace(/\s/g,"+");
+  var userInputTrimNewRecipes = "";
+
+  if(recipeSearchNewOrigin === "searchBarSearchNew") {
+    userInputTrimNewRecipes = $newRecipeSearchBar.val().toLowerCase().replace(/\s/g,"+");
+  }
+  else if(recipeSearchNewOrigin === "navbarSearchNew") {
+    userInputTrimNewRecipes = newSearchResultArchiveNavbar;
+  }
 
   recipeListNew = [];
   recipeListNewImg = [];

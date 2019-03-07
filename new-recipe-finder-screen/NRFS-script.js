@@ -71,6 +71,8 @@ function newRecipeFinderSearchBlurred() {
 function recipeSearchNew() {
   delayRecipeSearchNew = true;
 
+  recipeSearchNewOrigin = "searchBarSearchNew";
+
   newSearchResultArchive = $newRecipeSearchBar.val().toLowerCase().trim();
 
   screenTransitionFadeOut();
@@ -102,6 +104,8 @@ function recipeSearchNew() {
 
 function navbarRecipeSearchNew() {
   delayRecipeSearchNew = true;
+
+  recipeSearchNewOrigin = "navbarSearchNew";
 
   newSearchResultArchiveNavbar = $searchBar.val().toLowerCase().trim();
 

@@ -102,7 +102,10 @@ var $fontSizeButton = $("#font-size-button");
 var allowRecipeSearchNew = false;
 var delayRecipeSearchNew = false;
 
+var recipeSearchNewOrigin = "";
+
 var newSearchResultArchive = "";
+var newSearchResultArchiveNavbar = "";
 
 var $newRecipeFinderTitle = $("#new-recipe-finder-title");
 
