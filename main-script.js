@@ -132,7 +132,6 @@ var $newSearchResultTerm = $("#new-search-result-term");
 var $sortBySelectNewRecipe = $("#sort-by-select-new-recipe");
 
 var $newRecipeSearchSpinner = $("#new-recipe-search-spinner");
-var $newRecipeSearchSpinnerBackground = $("#new-recipe-search-spinner-background");
 
 
 /* ________________ FOOTER ________________ */

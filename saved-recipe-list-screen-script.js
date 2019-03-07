@@ -38,6 +38,8 @@ function showSavedRecipeListScreen() {
   }
 // Footer Position Adjustments End
 
+  $searchBar.attr("placeholder", "Search My Saved Recipes...");
+
   $savedRecipeListTitle.show();
   $categoryContainer.show();
   $sortBySelect.show();
