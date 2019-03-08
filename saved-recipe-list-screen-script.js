@@ -206,7 +206,6 @@ $(document).ready(function() {
         newRecipeFinderSearchFocused();
 
         $searchBar.attr("disabled", "disabled");
-        $searchBar.hide();
       }, 200);
     }
   });
@@ -216,11 +215,12 @@ $(document).ready(function() {
       newRecipeFinderSearchBlurred();
 
       $searchBar.removeAttr("disabled");
-      $searchBar.show();
+
+      sortRecipeMaster();
     }
   });
 
-  $sortBySelect.change(function() {
+  /* $sortBySelect.change(function() {
     if(touchDevice === true) {
       newRecipeFinderSearchBlurred();
     }
@@ -228,6 +228,12 @@ $(document).ready(function() {
     $searchBar.removeAttr("disabled");
 
     sortRecipeMaster();
+  }); */
+
+  $sortBySelect.change(function() {
+    if(touchDevice !== true) {
+      sortRecipeMaster();
+    }
   });
 
 
