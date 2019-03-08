@@ -220,16 +220,6 @@ $(document).ready(function() {
     }
   });
 
-  /* $sortBySelect.change(function() {
-    if(touchDevice === true) {
-      newRecipeFinderSearchBlurred();
-    }
-
-    $searchBar.removeAttr("disabled");
-
-    sortRecipeMaster();
-  }); */
-
   $sortBySelect.change(function() {
     if(touchDevice !== true) {
       sortRecipeMaster();
