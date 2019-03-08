@@ -202,6 +202,8 @@ $(document).ready(function() {
         event.stopPropagation();
       }
 
+      $searchBar.attr("disabled", "disabled");
+
       setTimeout(function() {
         newRecipeFinderSearchFocused();
       }, 200);
@@ -211,6 +213,8 @@ $(document).ready(function() {
   $sortBySelect.on("blur", function() {
     if(touchDevice === true) {
       newRecipeFinderSearchBlurred();
+
+      $searchBar.removeAttribute("disabled");
     }
   });
 
