@@ -202,10 +202,10 @@ $(document).ready(function() {
         event.stopPropagation();
       }
 
-      $searchBar.attr("disabled", "disabled");
-
       setTimeout(function() {
         newRecipeFinderSearchFocused();
+
+        $searchBar.attr("disabled", "disabled");
       }, 200);
     }
   });
@@ -214,7 +214,7 @@ $(document).ready(function() {
     if(touchDevice === true) {
       newRecipeFinderSearchBlurred();
 
-      $searchBar.removeAttribute("disabled");
+      $searchBar.removeAttr("disabled");
     }
   });
 
