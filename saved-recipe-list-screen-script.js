@@ -197,33 +197,31 @@ $(document).ready(function() {
 
   $sortBySelect.on("focus", function() {
     if(touchDevice === true) {
-      /* document.ontouchmove = function(event) {
+      document.ontouchmove = function(event) {
         event.preventDefault();
         event.stopPropagation();
-      } */
+      }
 
-      userSearchFocused();
+      setTimeout(function() {
+        newRecipeFinderSearchFocused();
 
-      /* setTimeout(function() {
         $searchBar.attr("disabled", "disabled");
-      }, 200); */
+      }, 200);
     }
   });
 
   $sortBySelect.on("blur", function() {
     if(touchDevice === true) {
-      userSearchBlurred();
+      newRecipeFinderSearchBlurred();
 
-      window.scrollTo(0, 0);
-
-      /* $searchBar.removeAttr("disabled"); */
+      $searchBar.removeAttr("disabled");
     }
   });
 
   $sortBySelect.change(function() {
-    /* if(touchDevice === true) {
+    if(touchDevice === true) {
       newRecipeFinderSearchBlurred();
-    } */
+    }
 
     sortRecipeMaster();
   });
