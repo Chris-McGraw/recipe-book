@@ -179,3 +179,39 @@ function populateTilesNewRecipes() {
     }, 200);
   }
 }
+
+
+
+
+
+/* ---------------------------- EVENT HANDLERS ---------------------------- */
+$(document).ready(function() {
+
+
+  $sortBySelectNewRecipe.on("focus", function() {
+    if(touchDevice === true) {
+      document.ontouchmove = function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      setTimeout(function() {
+        newRecipeFinderSearchFocused();
+
+        $searchBar.attr("disabled", "disabled");
+      }, 200);
+    }
+  });
+
+  $sortBySelectNewRecipe.on("blur", function() {
+    if(touchDevice === true) {
+      newRecipeFinderSearchBlurred();
+
+      $searchBar.removeAttr("disabled");
+
+      /* sortRecipeMaster(); */
+    }
+  });
+
+
+});
