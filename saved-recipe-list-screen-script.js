@@ -195,7 +195,30 @@ $(document).ready(function() {
 
 
 
+  $sortBySelect.on("focus", function() {
+    if(touchDevice === true) {
+      document.ontouchmove = function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      setTimeout(function() {
+        newRecipeFinderSearchFocused();
+      }, 200);
+    }
+  });
+
+  $sortBySelect.on("blur", function() {
+    if(touchDevice === true) {
+      newRecipeFinderSearchBlurred();
+    }
+  });
+
   $sortBySelect.change(function() {
+    if(touchDevice === true) {
+      newRecipeFinderSearchBlurred();
+    }
+
     sortRecipeMaster();
   });
 
