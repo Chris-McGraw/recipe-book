@@ -206,6 +206,7 @@ $(document).ready(function() {
         newRecipeFinderSearchFocused();
 
         $searchBar.attr("disabled", "disabled");
+        $searchBar.hide();
       }, 200);
     }
   });
@@ -215,6 +216,7 @@ $(document).ready(function() {
       newRecipeFinderSearchBlurred();
 
       $searchBar.removeAttr("disabled");
+      $searchBar.show();
     }
   });
 
@@ -222,6 +224,8 @@ $(document).ready(function() {
     if(touchDevice === true) {
       newRecipeFinderSearchBlurred();
     }
+
+    $searchBar.removeAttr("disabled");
 
     sortRecipeMaster();
   });
