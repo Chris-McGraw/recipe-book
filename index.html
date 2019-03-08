@@ -75,7 +75,7 @@
     <div id="search-dropdown">
       <div id="search-bar-container">
         <form action="javascript:void(0);">
-          <input id="search-bar" type="text" placeholder="Search My Saved Recipes..." />
+          <input id="search-bar" type="text" tabIndex="-1" placeholder="Search My Saved Recipes..." />
           <i id="search-icon-dropdown" class="fa fa-search" aria-hidden="true"></i>
         </form>
       </div>
@@ -104,7 +104,7 @@
         </ul>
       </div>
 
-      <select id="sort-by-select" value="">
+      <select id="sort-by-select" tabIndex="-1" value="">
         <option value="" disabled selected>SORT BY</option>
         <option value="ascending">Alphabetical (A-Z)</option>
         <option value="descending">Alphabetical (Z-A)</option>
@@ -159,7 +159,7 @@
           <input id="new-recipe-search-bar" type="text" placeholder="Search For New Recipes..." />
         </form>
 
-        <a href="https://www.edamam.com/" target="_blank">
+        <a href="https://www.edamam.com/" tabIndex="-1" target="_blank">
           <div id="edamam-badge-mask"></div>
         </a>
         <div id="edamam-badge" data-color="transparent"></div>
@@ -174,7 +174,7 @@
       <div id="new-recipe-list-title">Browse New Recipes</div>
 
       <div id="badge-clone-container">
-        <a id="edamam-badge-mask-clone-link" href="https://www.edamam.com/" target="_blank"></a>
+        <a id="edamam-badge-mask-clone-link" href="https://www.edamam.com/" tabIndex="-1" target="_blank"></a>
       </div>
 
       <div id="new-recipe-search-result-container">
@@ -182,7 +182,7 @@
         <div id="new-search-result-term">"food item"</div>
       </div>
 
-      <select id="sort-by-select-new-recipe" value="">
+      <select id="sort-by-select-new-recipe" tabIndex="-1" value="">
         <option value="" disabled selected>SORT BY</option>
         <option value="ascending">Alphabetical (A-Z)</option>
         <option value="descending">Alphabetical (Z-A)</option>
