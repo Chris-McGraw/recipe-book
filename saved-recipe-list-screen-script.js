@@ -214,7 +214,13 @@ $(document).ready(function() {
         $searchDropdown.hide();
 
 
-        $bodyGridContainer.css("top", "-40px");
+
+        if(navbarDropdownActive === true || searchDropdownActive === true) {
+          $bodyGridContainer.css("top", "40px");
+        }
+        else if(navbarDropdownActive === false && searchDropdownActive === false) {
+          $bodyGridContainer.css("top", "-40px");
+        }
 
 
         $searchBar.attr("disabled", "disabled");
@@ -224,7 +230,19 @@ $(document).ready(function() {
 
   $sortBySelect.on("blur", function() {
     if(touchDevice === true) {
-      newRecipeFinderSearchBlurred();
+      /* newRecipeFinderSearchBlurred(); */
+
+      document.ontouchmove = function(event) {
+        return true;
+      }
+
+      $(document.body).css("overflow", "auto");
+
+      $navbar.show();
+      $navbarDropdown.show();
+      $searchDropdown.show();
+
+      $bodyGridContainer.css("top", "80px");
 
       $searchBar.removeAttr("disabled");
 
