@@ -227,7 +227,9 @@ $(document).ready(function() {
 
         $bodySearchMask.css("z-index", "10");
 
-        $sortBySelect.css("z-index", "10");
+        $savedRecipeListTitle.css("z-index", "20");
+        $categoryContainer.css("z-index", "20");
+        $sortBySelect.css("z-index", "20");
 
         $searchBar.attr("disabled", "disabled");
       }, 200);
@@ -256,6 +258,8 @@ $(document).ready(function() {
       setTimeout(function() {
         $bodySearchMask.css("z-index", "-10");
 
+        $savedRecipeListTitle.css("z-index", "0");
+        $categoryContainer.css("z-index", "0");
         $sortBySelect.css("z-index", "0");
       }, 300);
 
