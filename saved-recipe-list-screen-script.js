@@ -214,7 +214,7 @@ $(document).ready(function() {
         $searchDropdown.hide();
 
 
-        $bodyGridContainer.css("top", "-60px");
+        $bodyGridContainer.css("top", "-40px");
 
 
         $searchBar.attr("disabled", "disabled");
