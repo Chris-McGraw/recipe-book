@@ -225,11 +225,8 @@ $(document).ready(function() {
         $bodySearchMask.removeClass("body-search-mask-retract");
         $bodySearchMask.addClass("body-search-mask-expand");
 
+        $bodySearchMask.css("background-color", "rgba(0, 0, 0, 0.0)");
         $bodySearchMask.css("z-index", "10");
-
-        $savedRecipeListTitle.css("z-index", "20");
-        $categoryContainer.css("z-index", "20");
-        $sortBySelect.css("z-index", "20");
 
         $searchBar.attr("disabled", "disabled");
       }, 200);
@@ -257,10 +254,7 @@ $(document).ready(function() {
 
       setTimeout(function() {
         $bodySearchMask.css("z-index", "-10");
-
-        $savedRecipeListTitle.css("z-index", "0");
-        $categoryContainer.css("z-index", "0");
-        $sortBySelect.css("z-index", "0");
+        $bodySearchMask.css("background-color", "rgba(0, 0, 0, 0.8)");;
       }, 300);
 
       $searchBar.removeAttr("disabled");
