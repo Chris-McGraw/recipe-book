@@ -214,7 +214,8 @@ $(document).ready(function() {
 
         $bodySearchMask.css("z-index", "10");
 
-        $sortBySelect.css("z-index", "10");
+        $navbarDropdown.hide();
+        $searchDropdown.hide();
 
         $searchBar.attr("disabled", "disabled");
       }, 200);
@@ -239,7 +240,8 @@ $(document).ready(function() {
       setTimeout(function() {
         $bodySearchMask.css("z-index", "-10");
 
-        $sortBySelect.css("z-index", "0");
+        $navbarDropdown.show();
+        $searchDropdown.show();
       }, 300);
 
       $searchBar.removeAttr("disabled");
