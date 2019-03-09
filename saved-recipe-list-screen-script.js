@@ -196,14 +196,14 @@ $(document).ready(function() {
 
 
   $sortBySelect.on("focus", function() {
-    /* if(touchDevice === true) { */
+    if(touchDevice === true) {
       document.ontouchmove = function(event) {
         event.preventDefault();
         event.stopPropagation();
       }
 
       setTimeout(function() {
-        newRecipeFinderSearchFocused();
+        /* newRecipeFinderSearchFocused(); */
 
         window.scrollTo(0, 0);
 
