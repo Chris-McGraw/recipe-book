@@ -222,6 +222,12 @@ $(document).ready(function() {
           $bodyGridContainer.css("top", "10px");
         }
 
+        $bodySearchMask.removeClass("body-search-mask-retract");
+        $bodySearchMask.addClass("body-search-mask-expand");
+
+        $bodySearchMask.css("z-index", "10");
+
+        $sortBySelect.css("z-index", "10");
 
         $searchBar.attr("disabled", "disabled");
       }, 200);
@@ -243,6 +249,15 @@ $(document).ready(function() {
       $searchDropdown.show();
 
       $bodyGridContainer.css("top", "80px");
+
+      $bodySearchMask.removeClass("body-search-mask-expand");
+      $bodySearchMask.addClass("body-search-mask-retract");
+
+      setTimeout(function() {
+        $bodySearchMask.css("z-index", "-10");
+
+        $sortBySelect.css("z-index", "0");
+      }, 300);
 
       $searchBar.removeAttr("disabled");
 
