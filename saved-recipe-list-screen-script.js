@@ -216,10 +216,10 @@ $(document).ready(function() {
 
 
         if(navbarDropdownActive === true || searchDropdownActive === true) {
-          $bodyGridContainer.css("top", "40px");
+          $bodyGridContainer.css("top", "-40px");
         }
         else if(navbarDropdownActive === false && searchDropdownActive === false) {
-          $bodyGridContainer.css("top", "-40px");
+          $bodyGridContainer.css("top", "40px");
         }
 
 
