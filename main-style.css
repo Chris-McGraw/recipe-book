@@ -434,7 +434,8 @@ ul {
 }
 
 .category-item {
-  z-index: 10;
+  /* z-index: 10; */
+
   position: relative !important;
   top: 17px;
 
