@@ -209,13 +209,13 @@ $(document).ready(function() {
 
         $(document.body).css("overflow", "hidden");
 
-        $bodySearchMask.removeClass("body-search-mask-retract");
-        $bodySearchMask.addClass("body-search-mask-expand");
-
-        $bodySearchMask.css("z-index", "10");
-
+        $navbar.hide();
         $navbarDropdown.hide();
         $searchDropdown.hide();
+
+
+        $bodyGridContainer.css("top", "-60px");
+
 
         $searchBar.attr("disabled", "disabled");
       }, 200);
@@ -224,25 +224,7 @@ $(document).ready(function() {
 
   $sortBySelect.on("blur", function() {
     if(touchDevice === true) {
-      /* newRecipeFinderSearchBlurred(); */
-
-      window.scrollTo(0, 0);
-
-      document.ontouchmove = function(event) {
-        return true;
-      }
-
-      $(document.body).css("overflow", "auto");
-
-      $bodySearchMask.removeClass("body-search-mask-expand");
-      $bodySearchMask.addClass("body-search-mask-retract");
-
-      setTimeout(function() {
-        $bodySearchMask.css("z-index", "-10");
-
-        $navbarDropdown.show();
-        $searchDropdown.show();
-      }, 300);
+      newRecipeFinderSearchBlurred();
 
       $searchBar.removeAttr("disabled");
 
