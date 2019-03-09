@@ -197,22 +197,30 @@ $(document).ready(function() {
 
   $sortBySelect.on("focus", function() {
     if(touchDevice === true) {
-      document.ontouchmove = function(event) {
+      /* document.ontouchmove = function(event) {
         event.preventDefault();
-        event.stopPropagation();
+        event.stopPropagation(); */
+
+      userSearchFocused();
+
+      $searchBar.attr("disabled", "disabled");
       }
 
-      setTimeout(function() {
+      /* setTimeout(function() {
         newRecipeFinderSearchFocused();
 
         $searchBar.attr("disabled", "disabled");
-      }, 200);
+      }, 200); */
     }
   });
 
   $sortBySelect.on("blur", function() {
     if(touchDevice === true) {
-      newRecipeFinderSearchBlurred();
+      /* newRecipeFinderSearchBlurred(); */
+
+      userSearchBlurred();
+
+      window.scrollTo(0, 0);
 
       $searchBar.removeAttr("disabled");
 
