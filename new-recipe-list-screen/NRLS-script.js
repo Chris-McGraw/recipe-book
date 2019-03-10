@@ -207,10 +207,10 @@ $(document).ready(function() {
         $searchDropdown.hide();
 
         if(navbarDropdownActive === true || searchDropdownActive === true) {
-          $bodyGridContainer.css("top", "-30px");
+          $bodyGridContainer.css("top", "-40px");
         }
         else if(navbarDropdownActive === false && searchDropdownActive === false) {
-          $bodyGridContainer.css("top", "10px");
+          $bodyGridContainer.css("top", "0px");
         }
 
         $bodySearchMask.removeClass("body-search-mask-retract");
