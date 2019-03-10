@@ -212,9 +212,7 @@ $(document).ready(function() {
         $navbar.hide();
         $navbarDropdown.hide();
         $searchDropdown.hide();
-
-
-
+        
         if(navbarDropdownActive === true || searchDropdownActive === true) {
           $bodyGridContainer.css("top", "-30px");
         }

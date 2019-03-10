@@ -196,7 +196,28 @@ $(document).ready(function() {
       }
 
       setTimeout(function() {
-        newRecipeFinderSearchFocused();
+        /* newRecipeFinderSearchFocused(); */
+
+        window.scrollTo(0, 0);
+
+        $(document.body).css("overflow", "hidden");
+
+        $navbar.hide();
+        $navbarDropdown.hide();
+        $searchDropdown.hide();
+
+        if(navbarDropdownActive === true || searchDropdownActive === true) {
+          $bodyGridContainer.css("top", "-30px");
+        }
+        else if(navbarDropdownActive === false && searchDropdownActive === false) {
+          $bodyGridContainer.css("top", "10px");
+        }
+
+        $bodySearchMask.removeClass("body-search-mask-retract");
+        $bodySearchMask.addClass("body-search-mask-expand");
+
+        $bodySearchMask.css("background-color", "rgba(0, 0, 0, 0.0)");
+        $bodySearchMask.css("z-index", "10");
 
         $searchBar.attr("disabled", "disabled");
       }, 200);
@@ -205,10 +226,36 @@ $(document).ready(function() {
 
   $sortBySelectNewRecipe.on("blur", function() {
     if(touchDevice === true) {
-      newRecipeFinderSearchBlurred();
+      /* newRecipeFinderSearchBlurred(); */
+
+      document.ontouchmove = function(event) {
+        return true;
+      }
+
+      $(document.body).css("overflow", "auto");
+
+      $navbar.show();
+      $navbarDropdown.show();
+      $searchDropdown.show();
+
+      $bodyGridContainer.css("top", "70px");
+
+      $bodySearchMask.removeClass("body-search-mask-expand");
+      $bodySearchMask.addClass("body-search-mask-retract");
+
+      setTimeout(function() {
+        $bodySearchMask.css("z-index", "-10");
+        $bodySearchMask.css("background-color", "rgba(0, 0, 0, 0.8)");;
+      }, 300);
 
       $searchBar.removeAttr("disabled");
 
+      /* sortRecipeMaster(); */
+    }
+  });
+
+  $sortBySelectNewRecipe.change(function() {
+    if(touchDevice !== true) {
       /* sortRecipeMaster(); */
     }
   });
