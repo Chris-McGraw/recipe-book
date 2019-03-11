@@ -127,12 +127,7 @@ function getNewRecipes() {
 
 
 function populateTilesNewRecipes() {
-  /* console.log(tileCount); */
-
   currentRecipeList = recipeListMasterNew;
-
-  /* console.log(currentRecipeList.length);
-  console.log(recipeListNew.length); */
 
   if(tileCount < currentRecipeList.length) {
     allowPopulate = true;
@@ -163,9 +158,6 @@ function populateTilesNewRecipes() {
 
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
     $tileHeader[tileCount].html(recipeListMasterNew[tileCount].name);
-
-    /* $newTile.on("click", function() {
-    }); */
 
     setTimeout(function() {
       if(allowPopulate === true) {
