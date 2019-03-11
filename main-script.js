@@ -122,6 +122,8 @@ var recipeListNew = [];
 var recipeListNewImg = [];
 var recipeListNewLink = [];
 
+var recipeOrderAlphaNew = "ascending";
+
 var $newRecipeListTitle = $("#new-recipe-list-title");
 
 var $badgeCloneContainer = $("#badge-clone-container");
