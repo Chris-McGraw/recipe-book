@@ -92,7 +92,7 @@ function recipeSearchNew() {
 
     toggleLoadSpinner();
 
-    getNewRecipes();
+    /* getNewRecipes(); */
 
     setTimeout(function() {
       delayRecipeSearchNew = false;
@@ -124,7 +124,7 @@ function navbarRecipeSearchNew() {
 
     toggleLoadSpinner();
 
-    getNewRecipes();
+    /* getNewRecipes(); */
 
     setTimeout(function() {
       screenTransitionFadeIn();

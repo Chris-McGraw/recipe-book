@@ -126,9 +126,12 @@ function getNewRecipes() {
 function populateTilesNewRecipes() {
   /* console.log(tileCount); */
 
-   console.log(recipeListNew.length); */
+  currentRecipeList = recipeListNew;
 
-  if(tileCount < recipeListNew.length) {
+  /* console.log(currentRecipeList.length);
+  console.log(recipeListNew.length); */
+
+  if(tileCount < currentRecipeList.length) {
     allowPopulate = true;
 
     $newTileHeader = $("<h3/>")
@@ -156,7 +159,7 @@ function populateTilesNewRecipes() {
     $tile[tileCount].css("background-image", "url(" + "'" + recipeListNewImg[tileCount] + "'" + ")");
 
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
-    $tileHeader[tileCount].html(recipeListNew[tileCount]);
+    $tileHeader[tileCount].html(currentRecipeList[tileCount]);
 
     /* $newTile.on("click", function() {
     }); */
@@ -247,13 +250,13 @@ $(document).ready(function() {
 
       $searchBar.removeAttr("disabled");
 
-      sortRecipeNew();
+      /* sortRecipeMaster(); */
     }
   });
 
   $sortBySelectNewRecipe.change(function() {
     if(touchDevice !== true) {
-      sortRecipeNew();
+      /* sortRecipeMaster(); */
     }
   });
 
