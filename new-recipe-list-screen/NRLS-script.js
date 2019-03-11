@@ -104,6 +104,10 @@ function getNewRecipes() {
         recipeListMasterNew = recipeListMasterNew.sort(function(a, b) {
           return a.name.localeCompare(b.name);
         });
+
+        if(recipeOrderAlphaNew === "descending") {
+          recipeListMasterNew.reverse();
+        }
       }
 
       /* console.log(recipeListMasterNew); */
@@ -170,6 +174,41 @@ function populateTilesNewRecipes() {
         populateTilesNewRecipes();
       }
     }, 200);
+  }
+}
+
+
+function sortRecipeMasterNew() {
+  if($sortBySelectNewRecipe.val() === "ascending") {
+    if(recipeOrderAlphaNew === "descending") {
+      if(recipeListMasterNew.length > 0) {
+        recipeListMasterNew.reverse();
+      }
+
+      clearTiles();
+
+      setTimeout(function() {
+        populateTilesNewRecipes();
+      }, 200);
+
+      recipeOrderAlphaNew = "ascending";
+    }
+  }
+
+  else if($sortBySelectNewRecipe.val() === "descending") {
+    if(recipeOrderAlphaNew === "ascending") {
+      if(recipeListMasterNew.length > 0) {
+        recipeListMasterNew.reverse();
+      }
+
+      clearTiles();
+
+      setTimeout(function() {
+        populateTilesNewRecipes();
+      }, 200);
+
+      recipeOrderAlphaNew = "descending";
+    }
   }
 }
 
@@ -243,13 +282,13 @@ $(document).ready(function() {
 
       $searchBar.removeAttr("disabled");
 
-      /* sortRecipeMaster(); */
+      sortRecipeMasterNew();
     }
   });
 
   $sortBySelectNewRecipe.change(function() {
     if(touchDevice !== true) {
-      /* sortRecipeMaster(); */
+      sortRecipeMasterNew();
     }
   });
 

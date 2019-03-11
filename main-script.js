@@ -119,6 +119,7 @@ var $newRecipeSearchButton = $("#new-recipe-search-button");
 
 /* ________ NEW RECIPE LIST SCREEN ________ */
 var recipeListMasterNew = [];
+var recipeOrderAlphaNew = "ascending";
 
 var $newRecipeListTitle = $("#new-recipe-list-title");
 
