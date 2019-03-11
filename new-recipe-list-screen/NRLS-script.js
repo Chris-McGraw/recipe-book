@@ -127,9 +127,7 @@ function getNewRecipes() {
 
 
 function populateTilesNewRecipes() {
-  currentRecipeList = recipeListMasterNew;
-
-  if(tileCount < currentRecipeList.length) {
+  if(tileCount < recipeListMasterNew.length) {
     allowPopulate = true;
 
     $newTileHeader = $("<h3/>")
