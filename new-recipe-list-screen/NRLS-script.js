@@ -90,20 +90,23 @@ function getNewRecipes() {
     userInputTrimNewRecipes = newSearchResultArchiveNavbar;
   }
 
-  recipeListNew = [];
-  recipeListNewImg = [];
-  recipeListNewLink = [];
+  recipeListMasterNew = [];
 
   $.get("https://api.edamam.com/search?q=" + userInputTrimNewRecipes +
   "&app_id=dfccee37&app_key=d26c5e336c0a0000719208cb86e67ca4&from=0&to=15").done(function(data) {
     if(data.hits.length > 0) {
       for(i = 0; i < data.to; i++) {
-        recipeListNew.push(data.hits[i].recipe.label);
-        recipeListNewImg.push(data.hits[i].recipe.image);
-        recipeListNewLink.push(data.hits[i].recipe.url);
+        recipeListMasterNew[i] = {};
+        recipeListMasterNew[i].name = data.hits[i].recipe.label;
+        recipeListMasterNew[i].img = data.hits[i].recipe.image;
+        recipeListMasterNew[i].url = data.hits[i].recipe.url;
+
+        recipeListMasterNew = recipeListMasterNew.sort(function(a, b) {
+          return a.name.localeCompare(b.name);
+        });
       }
 
-      console.log(recipeListNew);
+      /* console.log(recipeListMasterNew); */
 
       $newRecipeSearchSpinner.addClass("fade-out-search-spinner");
 
@@ -126,7 +129,7 @@ function getNewRecipes() {
 function populateTilesNewRecipes() {
   /* console.log(tileCount); */
 
-  currentRecipeList = recipeListNew;
+  currentRecipeList = recipeListMasterNew;
 
   /* console.log(currentRecipeList.length);
   console.log(recipeListNew.length); */
@@ -153,13 +156,13 @@ function populateTilesNewRecipes() {
     $newTile.append($newTileHeader);
 
     $newTileLink[tileCount] = $("#tile-link" + tileCount);
-    $newTileLink[tileCount].attr("href", recipeListNewLink[tileCount]);
+    $newTileLink[tileCount].attr("href", recipeListMasterNew[tileCount].url);
 
     $tile[tileCount] = $("#tile-" + tileCount);
-    $tile[tileCount].css("background-image", "url(" + "'" + recipeListNewImg[tileCount] + "'" + ")");
+    $tile[tileCount].css("background-image", "url(" + "'" + recipeListMasterNew[tileCount].img + "'" + ")");
 
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
-    $tileHeader[tileCount].html(currentRecipeList[tileCount]);
+    $tileHeader[tileCount].html(recipeListMasterNew[tileCount].name);
 
     /* $newTile.on("click", function() {
     }); */
