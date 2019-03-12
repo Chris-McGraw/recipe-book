@@ -110,7 +110,7 @@ function getNewRecipes() {
         }
       }
 
-      /* console.log(recipeListMasterNew); */
+      console.log(recipeListMasterNew);
 
       $newRecipeSearchSpinner.addClass("fade-out-search-spinner");
 
