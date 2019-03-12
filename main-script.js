@@ -118,9 +118,8 @@ var $newRecipeSearchButton = $("#new-recipe-search-button");
 
 
 /* ________ NEW RECIPE LIST SCREEN ________ */
-var recipeListNew = [];
-var recipeListNewImg = [];
-var recipeListNewLink = [];
+var recipeListMasterNew = [];
+var recipeOrderAlphaNew = "ascending";
 
 var $newRecipeListTitle = $("#new-recipe-list-title");
 

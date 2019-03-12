@@ -90,20 +90,27 @@ function getNewRecipes() {
     userInputTrimNewRecipes = newSearchResultArchiveNavbar;
   }
 
-  recipeListNew = [];
-  recipeListNewImg = [];
-  recipeListNewLink = [];
+  recipeListMasterNew = [];
 
   $.get("https://api.edamam.com/search?q=" + userInputTrimNewRecipes +
   "&app_id=dfccee37&app_key=d26c5e336c0a0000719208cb86e67ca4&from=0&to=15").done(function(data) {
     if(data.hits.length > 0) {
       for(i = 0; i < data.to; i++) {
-        recipeListNew.push(data.hits[i].recipe.label);
-        recipeListNewImg.push(data.hits[i].recipe.image);
-        recipeListNewLink.push(data.hits[i].recipe.url);
+        recipeListMasterNew[i] = {};
+        recipeListMasterNew[i].name = data.hits[i].recipe.label;
+        recipeListMasterNew[i].img = data.hits[i].recipe.image;
+        recipeListMasterNew[i].url = data.hits[i].recipe.url;
+
+        recipeListMasterNew = recipeListMasterNew.sort(function(a, b) {
+          return a.name.localeCompare(b.name);
+        });
+
+        if(recipeOrderAlphaNew === "descending") {
+          recipeListMasterNew.reverse();
+        }
       }
 
-      console.log(recipeListNew);
+      /* console.log(recipeListMasterNew); */
 
       $newRecipeSearchSpinner.addClass("fade-out-search-spinner");
 
@@ -124,14 +131,7 @@ function getNewRecipes() {
 
 
 function populateTilesNewRecipes() {
-  /* console.log(tileCount); */
-
-  currentRecipeList = recipeListNew;
-
-  /* console.log(currentRecipeList.length);
-  console.log(recipeListNew.length); */
-
-  if(tileCount < currentRecipeList.length) {
+  if(tileCount < recipeListMasterNew.length) {
     allowPopulate = true;
 
     $newTileHeader = $("<h3/>")
@@ -153,16 +153,13 @@ function populateTilesNewRecipes() {
     $newTile.append($newTileHeader);
 
     $newTileLink[tileCount] = $("#tile-link" + tileCount);
-    $newTileLink[tileCount].attr("href", recipeListNewLink[tileCount]);
+    $newTileLink[tileCount].attr("href", recipeListMasterNew[tileCount].url);
 
     $tile[tileCount] = $("#tile-" + tileCount);
-    $tile[tileCount].css("background-image", "url(" + "'" + recipeListNewImg[tileCount] + "'" + ")");
+    $tile[tileCount].css("background-image", "url(" + "'" + recipeListMasterNew[tileCount].img + "'" + ")");
 
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
-    $tileHeader[tileCount].html(currentRecipeList[tileCount]);
-
-    /* $newTile.on("click", function() {
-    }); */
+    $tileHeader[tileCount].html(recipeListMasterNew[tileCount].name);
 
     setTimeout(function() {
       if(allowPopulate === true) {
@@ -177,6 +174,41 @@ function populateTilesNewRecipes() {
         populateTilesNewRecipes();
       }
     }, 200);
+  }
+}
+
+
+function sortRecipeMasterNew() {
+  if($sortBySelectNewRecipe.val() === "ascending") {
+    if(recipeOrderAlphaNew === "descending") {
+      if(recipeListMasterNew.length > 0) {
+        recipeListMasterNew.reverse();
+      }
+
+      clearTiles();
+
+      setTimeout(function() {
+        populateTilesNewRecipes();
+      }, 200);
+
+      recipeOrderAlphaNew = "ascending";
+    }
+  }
+
+  else if($sortBySelectNewRecipe.val() === "descending") {
+    if(recipeOrderAlphaNew === "ascending") {
+      if(recipeListMasterNew.length > 0) {
+        recipeListMasterNew.reverse();
+      }
+
+      clearTiles();
+
+      setTimeout(function() {
+        populateTilesNewRecipes();
+      }, 200);
+
+      recipeOrderAlphaNew = "descending";
+    }
   }
 }
 
@@ -250,13 +282,13 @@ $(document).ready(function() {
 
       $searchBar.removeAttr("disabled");
 
-      /* sortRecipeMaster(); */
+      sortRecipeMasterNew();
     }
   });
 
   $sortBySelectNewRecipe.change(function() {
     if(touchDevice !== true) {
-      /* sortRecipeMaster(); */
+      sortRecipeMasterNew();
     }
   });
 
