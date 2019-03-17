@@ -121,7 +121,6 @@ function getRecipeSteps() {
 
 
 function increaseFontSize() {
-  $bodyGridContainer.css("top", "114px");
   $bodyGridContainer.css("grid-row-gap", "24px");
 
   $recipeTitleContainer.css("font-size", "28px");
@@ -147,7 +146,6 @@ function increaseFontSize() {
 
 
 function decreaseFontSize() {
-  $bodyGridContainer.css("top", "110px");
   $bodyGridContainer.css("grid-row-gap", "20px");
 
   $recipeTitleContainer.css("font-size", "24px");
