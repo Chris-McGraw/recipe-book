@@ -59,7 +59,7 @@ var frittata = {
   ingredients: ["8 large eggs", "2 medium red potatoes", "1 medium red bell pepper",
   "1 clove garlic", "1/2 small red onion", "8 oz. shredded sharp cheddar", "8 oz. fresh mushrooms",
   "8 oz. fresh baby spinach", "1/3 cup milk", "1/3 cup grated parmesan", "2 tbsp. canola oil",
-  "1/2 tsp. salt", "1/4 tsp. ground black pepper"],
+  "1 tsp. salt", "1/4 tsp. ground black pepper"],
   recipe: ["1. Preheat oven to 350°F.",
   "2. Finely dice garlic. Cube onion, bell pepper, and potatoes. Slice mushrooms into thin pieces.",
   "3. Add 1 tbsp. canola oil with onion, bell pepper, and mushrooms to 10" + '"' + " cast iron skillet over medium-high heat and saute for 5-10 minutes or until soft.",
@@ -76,8 +76,14 @@ var hamburgers = {
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379558/recipe-book/hamburgers.jpg",
   tags: ["beef", "hamburgers", "hamburger", "burgers", "burger", "american"],
-  ingredients: [],
-  recipe: []
+  ingredients: ["1 lb. ground beef", "1 large egg", "1/2 cup bread crumbs",
+  "1 tsp. worcestershire sauce", "1 tsp. salt", "1/4 tsp. ground black pepper",
+  "1/4 tsp. garlic powder", "1/4 tsp. onion powder"],
+  recipe: ["1. Preheat grill to medium-high heat.",
+  "2. In large bowl, whisk together egg, worcestershire sauce, salt, pepper, garlic powder, and onion powder.",
+  "3. Add ground beef/bread crumbs and use hands to lightly combine.",
+  "4. Shape mixture into 4 equally-sized patties, pressing a shallow divet into center of each.",
+  "5. Grill patties 4-6 minutes on each side side or until internal temperature equals 165°F."]
 };
 
 var macAndCheese = {
