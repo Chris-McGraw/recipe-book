@@ -150,8 +150,17 @@
 
   padding-bottom: 20px;
 
-  cursor: text;
-  user-select: text;
+  /* cursor: text;
+  user-select: text; */
+
+  cursor: pointer;
+  user-select: none;
+
+  /* transition: color 200ms ease-in-out; */
+}
+
+.recipe-step-line-through {
+  /* color: rgba(255, 255, 255, 0.6); */
 }
 
 #bottom-option-bar {
