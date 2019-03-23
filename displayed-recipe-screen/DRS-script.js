@@ -117,6 +117,18 @@ function getRecipeSteps() {
   }
 
   $recipeStep = $(".recipe-step");
+
+  $recipeStep.on("click", function() {
+    if($(this).hasClass("recipe-step-line-through")) {
+      $(this).removeClass("recipe-step-line-through");
+      $(this).css("text-decoration", "none");
+    }
+
+    else {
+      $(this).addClass("recipe-step-line-through");
+      $(this).css("text-decoration", "line-through");
+    }
+  });
 }
 
 
