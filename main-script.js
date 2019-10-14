@@ -300,12 +300,13 @@ function hideScreenAll() {
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
 
-
-  populateTiles();
+  recipeListMaster.sort(function(a, b) {
+    return a.name.localeCompare(b.name);
+  });
 
   sortRecipeCategory();
 
-
+  populateTiles();
 
 
 
