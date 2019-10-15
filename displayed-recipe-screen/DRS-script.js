@@ -59,7 +59,12 @@ function showDisplayedRecipeScreen() {
     if(currentRecipeName === currentRecipeList[y].id) {
       $recipeTitleContainer.html(currentRecipeList[y].name);
 
-      $imageContainer.css("background-image", "url(" + "'" + currentRecipeList[y].img + "'" + ")");
+      if(currentRecipeList[y].img === "") {
+        $imageContainer.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1548967337/recipe-book/recipe-book-touch-icon-ios-color-2.0.png)");
+      }
+      else {
+        $imageContainer.css("background-image", "url(" + "'" + currentRecipeList[y].img + "'" + ")");
+      }
 
       getIngredientList();
 
@@ -74,7 +79,7 @@ function showDisplayedRecipeScreen() {
 
 
 function getSelectedRecipeName() {
-  var recipeNameDashed = currentURL.split("recipe-book/")[1].split(".jpg")[0];
+  var recipeNameDashed = currentLinkHash;
   var splitArray = recipeNameDashed.split("-");
 
   for(n = 0; n < splitArray.length; n++) {
@@ -84,7 +89,6 @@ function getSelectedRecipeName() {
   }
 
   currentRecipeName = splitArray.join("");
-  /* console.log(currentRecipeName); */
 }
 
 

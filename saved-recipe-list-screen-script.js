@@ -157,6 +157,83 @@ function sortRecipeMaster() {
 $(document).ready(function() {
 
 
+
+  $(document).keydown(function(event) {
+  /* ----- 1 Num Key Press ----- */
+    if(event.which === 49) {
+      var dingusPie = {
+        id: "dingusPie",
+        name: "Dingus Pie",
+        hash: "dingus-pie",
+        category: "seafood",
+        img: "",
+        tags: ["seafood", "dingus", "pie", "american"],
+        ingredients: ["1 dingus", "1 pie"],
+        recipe: ["1. Prepare your dingus.",
+        "2. Place dingus into pie.",
+        "3. Enjoy."]
+      };
+
+      localStorage.setItem( "dingusPie", JSON.stringify(dingusPie) );
+
+
+
+
+      var yummyYummyCampfireStew = {
+        id: "yummyYummyCampfireStew",
+        name: "Yummy Yummy Campfire Stew",
+        hash: "yummy-yummy-campfire-stew",
+        category: "seafood",
+        img: "",
+        tags: ["seafood", "yummy", "stew", "american"],
+        ingredients: ["1 campfire", "1 stew"],
+        recipe: ["1. Prepare fire.",
+        "2. Add stew.",
+        "3. Enjoy."]
+      };
+
+      localStorage.setItem( "yummyYummyCampfireStew", JSON.stringify(yummyYummyCampfireStew) );
+
+
+
+
+      console.log("object stored/pulled from local storage");
+    }
+  /* ----- 2 Num Key Press ----- */
+    if(event.which === 50) {
+      var addTest = JSON.parse( localStorage.getItem("dingusPie") );
+
+      recipeListMaster.push(addTest);
+
+
+      var addTest2 = JSON.parse( localStorage.getItem("yummyYummyCampfireStew") );
+
+      recipeListMaster.push(addTest2);
+
+
+      recipeListMaster.sort(function(a, b) {
+        return a.name.localeCompare(b.name);
+      });
+
+      clearRecipeLists();
+      clearTiles();
+
+      sortRecipeCategory();
+      populateTiles();
+    }
+
+  /* ----- 3 Num Key Press ----- */
+    if(event.which === 51) {
+      localStorage.clear();
+
+      console.log("local storage cleared");
+    }
+  });
+
+
+
+
+
   $catAll.on("click", function() {
     if(currentCatActive !== "all" && delayPopulate === false) {
       currentCatActive = "all";

@@ -75,7 +75,7 @@ var $searchResultNone = $("#search-result-none");
 
 /* ________ DISPLAYED RECIPE SCREEN ________ */
 var currentRecipeName = "";
-var currentURL = "";
+var currentLinkHash = "";
 var currentFontSize = "default";
 
 var $recipeTitleContainer = $("#recipe-title-container");
@@ -194,17 +194,23 @@ function populateTiles() {
                      .attr("id", "tile-header-" + tileCount)
                      .addClass("tile-header");
 
-    $newTile = $("<div/>")
+    $newTile = $("<a/>")
                      .attr("id", "tile-" + tileCount)
-                     .addClass("tile")
-                     .html("<div></div>");
+                     .attr("href", currentRecipeList[tileCount].hash)
+                     .addClass("tile");
 
     $bodyGridContainer.append($newTile);
 
     $newTile.append($newTileHeader);
 
     $tile[tileCount] = $("#tile-" + tileCount);
-    $tile[tileCount].css("background-image", "url(" + "'" + currentRecipeList[tileCount].img + "'" + ")");
+
+    if(currentRecipeList[tileCount].img === "") {
+      $tile[tileCount].css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1548967337/recipe-book/recipe-book-touch-icon-ios-color-2.0.png)");
+    }
+    else {
+      $tile[tileCount].css("background-image", "url(" + "'" + currentRecipeList[tileCount].img + "'" + ")");
+    }
 
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
     $tileHeader[tileCount].html(currentRecipeList[tileCount].name);
@@ -213,9 +219,11 @@ function populateTiles() {
 
     $newTile.on("click", function() {
       if(delayPopulate === false) {
+        event.preventDefault();
+
         delayPopulate = true;
 
-        currentURL = $(this).css("background-image");
+        currentLinkHash = $(this).attr("href");
 
         getSelectedRecipeName();
 
@@ -299,6 +307,17 @@ function hideScreenAll() {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
+  if(localStorage.length > 0) {
+    var addTest = JSON.parse( localStorage.getItem("dingusPie") );
+
+    recipeListMaster.push(addTest);
+
+
+
+    var addTest2 = JSON.parse( localStorage.getItem("yummyYummyCampfireStew") );
+
+    recipeListMaster.push(addTest2);
+  };
 
   recipeListMaster.sort(function(a, b) {
     return a.name.localeCompare(b.name);

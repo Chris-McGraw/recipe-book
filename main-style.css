@@ -473,6 +473,8 @@ ul {
   opacity: 0;
 
   cursor: pointer;
+
+  text-decoration: none;
 }
 
 .tile-link {
