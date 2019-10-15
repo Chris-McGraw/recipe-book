@@ -149,6 +149,9 @@ var $copyrightFooter = $("#copyright-footer");
 function clearTiles() {
   allowPopulate = false;
 
+  $addRecipeTile.css("display", "none");
+  $addRecipeTile.removeClass("tile-fade-in");
+
   var $currentTiles = $(".tile");
   var $currentTileLinks = $(".tile-link");
 
@@ -253,13 +256,21 @@ function populateTiles() {
 
 
 
+    $addRecipeTile.css("display", "flex");
+
+    setTimeout(function() {
+      if(allowPopulate === true) {
+        $addRecipeTile.addClass("tile-fade-in");
+      }
+    }, 100);
+
     setTimeout(function() {
       if(allowPopulate === true) {
         $tile[tileCount].addClass("tile-fade-in");
 
         tileCount++;
       }
-    }, 100);
+    }, 200);
 
     setTimeout(function() {
       if(allowPopulate === true) {
