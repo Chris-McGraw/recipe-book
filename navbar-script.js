@@ -212,7 +212,7 @@ function searchSavedRecipes() {
       clearTiles();
 
       $searchResultNone = $("<div>No Results Found</div>")
-                       .attr("id", "search-result-none")
+                       .attr("id", "search-result-none");
 
       $bodyGridContainer.append($searchResultNone);
 

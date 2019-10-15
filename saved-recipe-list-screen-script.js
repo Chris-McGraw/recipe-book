@@ -3,6 +3,7 @@ function hideSavedRecipeListScreen() {
   $savedRecipeListTitle.hide();
   $categoryContainer.hide();
   $sortBySelect.hide();
+  $addRecipeTile.hide();
 
   clearTiles();
 
@@ -43,6 +44,7 @@ function showSavedRecipeListScreen() {
   $savedRecipeListTitle.show();
   $categoryContainer.show();
   $sortBySelect.show();
+  $addRecipeTile.show();
 }
 
 
@@ -350,6 +352,16 @@ $(document).ready(function() {
     if(touchDevice !== true) {
       sortRecipeMaster();
     }
+  });
+
+
+
+
+
+  $addRecipeTile.on("click", function(event) {
+    event.preventDefault();
+
+    console.log("hello test");
   });
 
 

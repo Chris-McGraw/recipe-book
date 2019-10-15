@@ -460,6 +460,64 @@ ul {
   outline: none;
 }
 
+#add-recipe-tile {
+  position: relative;
+
+  grid-column: span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 150px;
+
+  border: 1px solid rgb(76, 211, 182);
+  background-color: rgb(0, 0, 0);
+
+  opacity: 1;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#add-recipe-tile-header {
+  position: absolute;
+
+  margin-top: -93px;
+
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+
+  pointer-events: none;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#add-recipe-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+
+  color: white;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 80px;
+
+  background-color: rgb(47, 106, 93);
+  border-radius: 100%;
+
+  cursor: pointer;
+}
+
 .tile {
   grid-column: span 1;
 

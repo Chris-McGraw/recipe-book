@@ -66,6 +66,8 @@ var $catVeg = $("#cat-veg");
 
 var $sortBySelect = $("#sort-by-select");
 
+var $addRecipeTile = $("#add-recipe-tile");
+
 var $tile = [];
 var $tileLink = [];
 var $tileHeader = [];
@@ -207,6 +209,10 @@ function populateTiles() {
 
     if(currentRecipeList[tileCount].img === "") {
       $tile[tileCount].css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1548967337/recipe-book/recipe-book-touch-icon-ios-color-2.0.png)");
+
+      $tile[tileCount].css("background-position", "center");
+      $tile[tileCount].css("background-size", "140px auto");
+      $tile[tileCount].css("background-repeat", "no-repeat");
     }
     else {
       $tile[tileCount].css("background-image", "url(" + "'" + currentRecipeList[tileCount].img + "'" + ")");
@@ -217,7 +223,7 @@ function populateTiles() {
 
 
 
-    $newTile.on("click", function() {
+    $newTile.on("click", function(event) {
       if(delayPopulate === false) {
         event.preventDefault();
 
