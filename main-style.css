@@ -460,6 +460,37 @@ ul {
   outline: none;
 }
 
+#add-recipe-form {
+  display: none;
+
+  z-index: 20;
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+
+  width: 600px;
+  height: 400px;
+  margin: auto;
+
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+
+  background-color: rgb(36, 38, 40);
+  border: 1px solid rgb(76, 211, 182);
+
+  opacity: 0;
+
+  transition: opacity 300ms ease-in-out;
+}
+
+.show-add-recipe-form {
+  opacity: 1 !important;
+}
+
 #add-recipe-tile {
   position: relative;
 

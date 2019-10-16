@@ -39,6 +39,11 @@ var $searchBar = $("#search-bar");
 var $searchIconDropdown = $("#search-icon-dropdown");
 
 
+/* __________ ADD NEW RECIPE FORM __________ */
+var $addRecipeForm = $("#add-recipe-form");
+var addRecipeFormActive = false;
+
+
 /* __________ BODY GRID CONTAINER __________ */
 var $bodyGridContainer = $("#body-grid-container");
 
@@ -316,6 +321,37 @@ function hideScreenAll() {
   hideNewRecipeListScreen();
 
   removeLoadSpinner();
+}
+
+
+function showBodyMask() {
+  document.ontouchmove = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  $(document.body).css("overflow", "hidden");
+
+  $bodySearchMask.removeClass("body-search-mask-retract");
+  $bodySearchMask.addClass("body-search-mask-expand");
+
+  $bodySearchMask.css("z-index", "10");
+}
+
+
+function hideBodyMask() {
+  document.ontouchmove = function(event) {
+    return true;
+  }
+
+  $(document.body).css("overflow", "auto");
+
+  $bodySearchMask.removeClass("body-search-mask-expand");
+  $bodySearchMask.addClass("body-search-mask-retract");
+
+  setTimeout(function() {
+    $bodySearchMask.css("z-index", "-10");
+  }, 300);
 }
 
 

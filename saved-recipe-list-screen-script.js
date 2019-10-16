@@ -152,6 +152,28 @@ function sortRecipeMaster() {
 }
 
 
+function showAddRecipeForm() {
+  addRecipeFormActive = true;
+
+  $addRecipeForm.css("display", "block");
+
+  setTimeout(function() {
+    $addRecipeForm.addClass("show-add-recipe-form");
+  }, 0);
+}
+
+
+function hideAddRecipeForm() {
+  addRecipeFormActive = false;
+
+  $addRecipeForm.removeClass("show-add-recipe-form");
+
+  setTimeout(function() {
+    $addRecipeForm.css("display", "none");
+  }, 300);
+}
+
+
 
 
 
@@ -361,7 +383,44 @@ $(document).ready(function() {
   $addRecipeTile.on("click", function(event) {
     event.preventDefault();
 
-    console.log("hello test");
+    window.scrollTo(0, 0);
+
+    if(navbarDropdownActive === true) {
+      navbarDropdownToggle();
+    }
+    else if(searchDropdownActive === true) {
+      searchDropdownToggle();
+    }
+
+    showBodyMask();
+
+    showAddRecipeForm();
+  });
+
+// ---
+
+  $bodySearchMask.on("click", function() {
+    if(addRecipeFormActive === true) {
+      hideBodyMask();
+
+      hideAddRecipeForm();
+    }
+  });
+
+  $navbar.on("click", function() {
+    if(addRecipeFormActive === true) {
+      hideBodyMask();
+
+      hideAddRecipeForm();
+    }
+  });
+
+  $searchDropdown.on("click", function() {
+    if(addRecipeFormActive === true) {
+      hideBodyMask();
+
+      hideAddRecipeForm();
+    }
   });
 
 

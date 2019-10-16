@@ -124,43 +124,21 @@ function searchDropdownToggle() {
 
 
 function userSearchFocused() {
-  savedScrollPosition = currentScrollPosition;
-
-  window.scrollTo(0, 0);
-
   allowLocalSearch = true;
 
-  document.ontouchmove = function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-  }
+  savedScrollPosition = currentScrollPosition;
+  window.scrollTo(0, 0);
 
-  $(document.body).css("overflow", "hidden");
-
-  $bodySearchMask.removeClass("body-search-mask-retract");
-  $bodySearchMask.addClass("body-search-mask-expand");
-
-  $bodySearchMask.css("z-index", "10");
+  showBodyMask();
 }
 
 
 function userSearchBlurred() {
-  window.scrollTo(0, savedScrollPosition);
-
   allowLocalSearch = false;
 
-  document.ontouchmove = function(event) {
-    return true;
-  }
+  window.scrollTo(0, savedScrollPosition);
 
-  $(document.body).css("overflow", "auto");
-
-  $bodySearchMask.removeClass("body-search-mask-expand");
-  $bodySearchMask.addClass("body-search-mask-retract");
-
-  setTimeout(function() {
-    $bodySearchMask.css("z-index", "-10");
-  }, 300);
+  hideBodyMask();
 }
 
 
