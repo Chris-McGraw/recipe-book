@@ -60,10 +60,15 @@ function showDisplayedRecipeScreen() {
       $recipeTitleContainer.html(currentRecipeList[y].name);
 
       if(currentRecipeList[y].img === "") {
-        $imageContainer.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1548967337/recipe-book/recipe-book-touch-icon-ios-color-2.0.png)");
+        $imageContainer.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1571232456/recipe-book/icon-main.png)");
+
+        $imageContainer.css("background-size", "20% auto");
+        $imageContainer.css("background-repeat", "no-repeat");
       }
       else {
         $imageContainer.css("background-image", "url(" + "'" + currentRecipeList[y].img + "'" + ")");
+
+        $imageContainer.css("background-size", "cover");
       }
 
       getIngredientList();

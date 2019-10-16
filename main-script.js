@@ -211,10 +211,10 @@ function populateTiles() {
     $tile[tileCount] = $("#tile-" + tileCount);
 
     if(currentRecipeList[tileCount].img === "") {
-      $tile[tileCount].css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1548967337/recipe-book/recipe-book-touch-icon-ios-color-2.0.png)");
+      $tile[tileCount].css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1571232456/recipe-book/icon-main.png)");
 
       $tile[tileCount].css("background-position", "center");
-      $tile[tileCount].css("background-size", "140px auto");
+      $tile[tileCount].css("background-size", "100px auto");
       $tile[tileCount].css("background-repeat", "no-repeat");
     }
     else {
