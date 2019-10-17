@@ -42,6 +42,10 @@ var $searchIconDropdown = $("#search-icon-dropdown");
 /* __________ ADD NEW RECIPE FORM __________ */
 var $addRecipeForm = $("#add-recipe-form");
 var addRecipeFormActive = false;
+var $nameInput = $("#name-input");
+
+var userSavedRecipes = [];
+var $addRecipeSubmit = $("#add-recipe-submit");
 
 
 /* __________ BODY GRID CONTAINER __________ */
@@ -361,15 +365,11 @@ function hideBodyMask() {
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
   if(localStorage.length > 0) {
-    var addTest = JSON.parse( localStorage.getItem("dingusPie") );
+    var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
 
-    recipeListMaster.push(addTest);
-
-
-
-    var addTest2 = JSON.parse( localStorage.getItem("yummyYummyCampfireStew") );
-
-    recipeListMaster.push(addTest2);
+    storedUserRecipeArray.forEach(function(object) {
+      recipeListMaster.push(object);
+    });
   };
 
   recipeListMaster.sort(function(a, b) {

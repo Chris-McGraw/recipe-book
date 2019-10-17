@@ -174,6 +174,89 @@ function hideAddRecipeForm() {
 }
 
 
+function customRecipe(id, name, hash, cat, img, tags, ings, recipe) {
+  this.id = idUserInput(id);
+  this.name = name.charAt(0).toUpperCase() + name.slice(1);
+  this.hash = hashUserInput(hash);
+  this.category = cat;
+  this.img = img;
+  this.tags = tags;
+  this.ingredients = ings;
+  this.recipe = recipe;
+}
+
+
+function idUserInput(input) {
+  var splitArray = input.toLowerCase().split(" ");
+
+  for(n = 0; n < splitArray.length; n++) {
+    if(n >= 1) {
+      splitArray[n] = splitArray[n].charAt(0).toUpperCase() + splitArray[n].slice(1);
+    }
+  }
+
+  return splitArray.join("");
+}
+
+
+function hashUserInput(input) {
+  var splitArray = input.toLowerCase().split(" ");
+
+  return splitArray.join("-");
+}
+
+
+function submitAddRecipeForm() {
+  var nameInput = $nameInput.val().replace(/\s+/g, " ").trim();
+  console.log(nameInput);
+
+  var userRecipeObject = new customRecipe(nameInput, nameInput, nameInput, "seafood", "", ["food"], [], []);
+  console.log(userRecipeObject);
+
+  setLocalStorage(userRecipeObject);
+  getLocalStorage();
+
+  $addRecipeForm[0].reset();
+
+  clearRecipeLists();
+  clearTiles();
+
+  recipeListMaster.sort(function(a, b) {
+    return a.name.localeCompare(b.name);
+  });
+
+  sortRecipeCategory();
+  populateTiles();
+}
+
+
+function setLocalStorage(data) {
+  userSavedRecipes.length = 0;
+  userSavedRecipes.push(data);
+
+  if(localStorage.length > 0) {
+    var archivedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
+
+    archivedUserRecipeArray.forEach(function(object) {
+      userSavedRecipes.push(object);
+    });
+  }
+
+  localStorage.setItem( "userSavedRecipes", JSON.stringify(userSavedRecipes) );
+}
+
+
+function getLocalStorage() {
+  var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
+
+  recipeListMaster = recipeListMasterOrigin.slice(0);
+
+  storedUserRecipeArray.forEach(function(object) {
+    recipeListMaster.push(object);
+  });
+}
+
+
 
 
 
@@ -183,69 +266,6 @@ $(document).ready(function() {
 
 
   $(document).keydown(function(event) {
-  /* ----- 1 Num Key Press ----- */
-    if(event.which === 49) {
-      var dingusPie = {
-        id: "dingusPie",
-        name: "Dingus Pie",
-        hash: "dingus-pie",
-        category: "seafood",
-        img: "",
-        tags: ["seafood", "dingus", "pie", "american"],
-        ingredients: ["1 dingus", "1 pie"],
-        recipe: ["1. Prepare your dingus.",
-        "2. Place dingus into pie.",
-        "3. Enjoy."]
-      };
-
-      localStorage.setItem( "dingusPie", JSON.stringify(dingusPie) );
-
-
-
-
-      var yummyYummyCampfireStew = {
-        id: "yummyYummyCampfireStew",
-        name: "Yummy Yummy Campfire Stew",
-        hash: "yummy-yummy-campfire-stew",
-        category: "seafood",
-        img: "",
-        tags: ["seafood", "yummy", "stew", "american"],
-        ingredients: ["1 campfire", "1 stew"],
-        recipe: ["1. Prepare fire.",
-        "2. Add stew.",
-        "3. Enjoy."]
-      };
-
-      localStorage.setItem( "yummyYummyCampfireStew", JSON.stringify(yummyYummyCampfireStew) );
-
-
-
-
-      console.log("object stored/pulled from local storage");
-    }
-  /* ----- 2 Num Key Press ----- */
-    if(event.which === 50) {
-      var addTest = JSON.parse( localStorage.getItem("dingusPie") );
-
-      recipeListMaster.push(addTest);
-
-
-      var addTest2 = JSON.parse( localStorage.getItem("yummyYummyCampfireStew") );
-
-      recipeListMaster.push(addTest2);
-
-
-      recipeListMaster.sort(function(a, b) {
-        return a.name.localeCompare(b.name);
-      });
-
-      clearRecipeLists();
-      clearTiles();
-
-      sortRecipeCategory();
-      populateTiles();
-    }
-
   /* ----- 3 Num Key Press ----- */
     if(event.which === 51) {
       localStorage.clear();
@@ -421,6 +441,16 @@ $(document).ready(function() {
 
       hideAddRecipeForm();
     }
+  });
+
+
+
+  $addRecipeSubmit.on("click", function() {
+    hideBodyMask();
+
+    hideAddRecipeForm();
+
+    submitAddRecipeForm();
   });
 
 

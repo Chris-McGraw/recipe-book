@@ -172,6 +172,9 @@ var tortelliniSoup = {
 var recipeListMaster = [bbqChicken, chili, fajitas, frittata, hamburgers, macAndCheese,
   potatoCasserole, pulledPork, spaghetti, springSalad, tortelliniSoup];
 
+var recipeListMasterOrigin = [bbqChicken, chili, fajitas, frittata, hamburgers, macAndCheese,
+  potatoCasserole, pulledPork, spaghetti, springSalad, tortelliniSoup];
+
 var recipeListBeef = [];
 
 var recipeListPork = [];
@@ -203,7 +206,7 @@ function sortRecipeCategory() {
         recipeListVegetarian.push(element);
         break;
       default:
-        recipeListAll.push(element);
+        break;
     }
   });
 }
