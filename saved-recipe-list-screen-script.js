@@ -181,7 +181,7 @@ function customRecipe(id, name, hash, cat, img, tags, ings, recipe) {
   this.category = cat;
   this.img = img;
   this.tags = tags;
-  this.ingredients = ings;
+  this.ingredients = ingredientUserInput(ings);
   this.recipe = recipe;
 }
 
@@ -206,11 +206,21 @@ function hashUserInput(input) {
 }
 
 
+function ingredientUserInput(input) {
+  var splitArray = input.toLowerCase().trim().split(",");
+
+  return splitArray;
+}
+
+
 function submitAddRecipeForm() {
   var nameInput = $nameInput.val().replace(/\s+/g, " ").trim();
   console.log(nameInput);
 
-  var userRecipeObject = new customRecipe(nameInput, nameInput, nameInput, "seafood", "", ["food"], [], []);
+  var ingredientInput = $ingredientInput.val().replace(/\s+/g, " ").trim();
+  console.log(ingredientInput);
+
+  var userRecipeObject = new customRecipe(nameInput, nameInput, nameInput, "seafood", "", ["food"], ingredientInput, []);
   console.log(userRecipeObject);
 
   setLocalStorage(userRecipeObject);
