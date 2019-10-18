@@ -213,7 +213,9 @@ function tagUserInput(input) {
     splitArray[i] = splitArray[i].trim();
   }
 
-  return splitArray;
+  return splitArray.filter(function(item) {
+    return item != "";
+  });
 }
 
 
@@ -224,7 +226,9 @@ function ingredientUserInput(input) {
     splitArray[i] = splitArray[i].trim();
   }
 
-  return splitArray;
+  return splitArray.filter(function(item) {
+    return item != "";
+  });
 }
 
 
