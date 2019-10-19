@@ -89,31 +89,35 @@
   <h2>Add New Recipe</h2>
 
   <br>
-  <br>
-  <label for="name-input">Name: </label>
-  <input type="text" name="name" id="name-input"></input>
-
-  <br>
-  <br>
   <fieldset>
-    <legend>Category: </legend>
-    <label><input type="radio" name="category" value="beef"> Beef</label>
-    <label><input type="radio" name="category" value="pork"> Pork</label>
-    <label><input type="radio" name="category" value="poultry"> Poultry</label>
-    <label><input type="radio" name="category" value="seafood"> Seafood</label>
-    <label><input type="radio" name="category" value="vegetarian"> Vegetarian</label>
+    <legend for="name-input">Name</legend>
+    <input type="text" name="name" id="name-input" placeholder="enter a name..."></input>
   </fieldset>
 
   <br>
-  <label for="tag-input">Search Tags (comma separated, five max): </label>
-  <input type="text" name="tags" id="tag-input"></input>
+  <fieldset id="category-field">
+    <legend>Category</legend>
+    <div id="radio-container">
+      <label class="radio-top"><input type="radio" name="category" value="beef"><br>Beef</label>
+      <label class="radio-top"><input type="radio" name="category" value="pork"><br>Pork</label>
+      <label class="radio-top"><input type="radio" name="category" value="poultry"><br>Poultry</label>
+      <label class="radio-bottom"><input type="radio" name="category" value="seafood"><br>Seafood</label>
+      <label class="radio-bottom"><input type="radio" name="category" value="vegetarian"><br>Vegetarian</label>
+    </div>
+  </fieldset>
 
   <br>
-  <br>
-  <label for="ingredient-input">Ingredients (comma separated): </label>
-  <input type="text" name="ingredients" id="ingredient-input"></input>
+  <fieldset>
+    <legend>Search Tags <span>(comma separated, five max)</span></legend>
+    <input type="text" name="tags" id="tag-input" placeholder="enter search tags..."></input>
+  </fieldset>
 
   <br>
+  <fieldset>
+    <legend>Ingredients <span>(comma separated)</span></legend>
+    <input type="text" name="ingredients" id="ingredient-input" placeholder="enter ingredients..."></input>
+  </fieldset>
+
   <br>
   <button type="submit" name="add-recipe-submit" id="add-recipe-submit"
   aria-label="submit new recipe">Add Recipe</button>
