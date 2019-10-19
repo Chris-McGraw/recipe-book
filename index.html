@@ -87,17 +87,33 @@
 <!-- ====================== ADD NEW RECIPE FORM START ====================== -->
 <form id="add-recipe-form" action="javascript:void(0);">
   <h2>Add New Recipe</h2>
-  <label for="name-input">Name</label>
+
+  <br>
+  <br>
+  <label for="name-input">Name: </label>
   <input type="text" name="name" id="name-input"></input>
 
   <br>
-  <label for="tag-input">Search Tags (comma separated, five max)</label>
+  <br>
+  <fieldset>
+    <legend>Category: </legend>
+    <label><input type="radio" name="category" value="beef"> Beef</label>
+    <label><input type="radio" name="category" value="pork"> Pork</label>
+    <label><input type="radio" name="category" value="poultry"> Poultry</label>
+    <label><input type="radio" name="category" value="seafood"> Seafood</label>
+    <label><input type="radio" name="category" value="vegetarian"> Vegetarian</label>
+  </fieldset>
+
+  <br>
+  <label for="tag-input">Search Tags (comma separated, five max): </label>
   <input type="text" name="tags" id="tag-input"></input>
 
   <br>
-  <label for="ingredient-input">Ingredients (comma separated)</label>
+  <br>
+  <label for="ingredient-input">Ingredients (comma separated): </label>
   <input type="text" name="ingredients" id="ingredient-input"></input>
 
+  <br>
   <br>
   <button type="submit" name="add-recipe-submit" id="add-recipe-submit"
   aria-label="submit new recipe">Add Recipe</button>

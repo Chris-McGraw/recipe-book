@@ -549,6 +549,11 @@ ul {
   cursor: pointer;
 }
 
+#add-recipe-submit {
+  width: 120px;
+  height: 40px;
+}
+
 .tile {
   grid-column: span 1;
 

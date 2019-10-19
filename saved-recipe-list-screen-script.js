@@ -236,13 +236,16 @@ function submitAddRecipeForm() {
   var nameInput = $nameInput.val().replace(/\s+/g, " ").trim();
   //console.log(nameInput);
 
+  var categoryInput = $("input[name=category]:checked").val();
+  //console.log(categoryInput);
+
   var tagInput = $tagInput.val().replace(/\s+/g, " ").trim();
   //console.log(tagInput);
 
   var ingredientInput = $ingredientInput.val().replace(/\s+/g, " ").trim();
   //console.log(ingredientInput);
 
-  var userRecipeObject = new customRecipe(nameInput, nameInput, nameInput, "seafood", "", tagInput, ingredientInput, []);
+  var userRecipeObject = new customRecipe(nameInput, nameInput, nameInput, categoryInput, "", tagInput, ingredientInput, []);
   console.log(userRecipeObject);
 
   setLocalStorage(userRecipeObject);
