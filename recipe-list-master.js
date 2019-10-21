@@ -1,6 +1,7 @@
 var bbqChicken = {
   id: "bbqChicken",
   name: "BBQ Chicken",
+  hash: "bbq-chicken",
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379016/recipe-book/bbq-chicken.jpg",
   tags: ["poultry", "bbq chicken", "bbq", "chicken", "american"],
@@ -14,6 +15,7 @@ var bbqChicken = {
 var chili = {
   id: "chiliConCarne",
   name: "Chili Con Carne",
+  hash: "chili-con-carne",
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118007/recipe-book/chili-con-carne.jpg",
   tags: ["beef", "chili con carne", "chili", "carne", "beans", "bean", "american", "tex-mex", "tex mex"],
@@ -32,6 +34,7 @@ var chili = {
 var fajitas = {
   id: "fajitas",
   name: "Fajitas",
+  hash: "fajitas",
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544117892/recipe-book/fajitas.jpg",
   tags: ["poultry", "fajitas", "fajita", "chicken", "mexican", "tex-mex", "tex mex"],
@@ -53,6 +56,7 @@ var fajitas = {
 var frittata = {
   id: "frittata",
   name: "Frittata",
+  hash: "frittata",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544402454/recipe-book/frittata.jpg",
   tags: ["vegetarian", "frittata", "egg", "eggs", "italian"],
@@ -73,6 +77,7 @@ var frittata = {
 var hamburgers = {
   id: "hamburgers",
   name: "Hamburgers",
+  hash: "hamburgers",
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379558/recipe-book/hamburgers.jpg",
   tags: ["beef", "hamburgers", "hamburger", "burgers", "burger", "american"],
@@ -89,6 +94,7 @@ var hamburgers = {
 var macAndCheese = {
   id: "macAndCheese",
   name: "Mac & Cheese",
+  hash: "mac-and-cheese",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/mac-and-cheese.jpg",
   tags: ["vegetarian", "mac and cheese", "mac & cheese", "pasta", "macaroni", "mac", "cheese",
@@ -100,6 +106,7 @@ var macAndCheese = {
 var potatoCasserole = {
   id: "potatoCasserole",
   name: "Potato Casserole",
+  hash: "potato-casserole",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379270/recipe-book/potato-casserole.jpg",
   tags: ["vegetarian", "potato casserole", "potato", "casserole", "french"],
@@ -110,6 +117,7 @@ var potatoCasserole = {
 var pulledPork = {
   id: "pulledPork",
   name: "Pulled Pork",
+  hash: "pulled-pork",
   category: "pork",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/pulled-pork.jpg",
   tags: ["pork", "pulled pork", "pulled", "bbq", "american"],
@@ -120,6 +128,7 @@ var pulledPork = {
 var spaghetti = {
   id: "spaghetti",
   name: "Spaghetti",
+  hash: "spaghetti",
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118748/recipe-book/spaghetti.jpg",
   tags: ["beef", "spaghetti", "pasta", "italian"],
@@ -130,6 +139,7 @@ var spaghetti = {
 var springSalad = {
   id: "springSalad",
   name: "Spring Salad",
+  hash: "spring-salad",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544121716/recipe-book/spring-salad.jpg",
   tags: ["vegetarian", "spring salad", "spring", "salad"],
@@ -140,6 +150,7 @@ var springSalad = {
 var tortelliniSoup = {
   id: "tortelliniSoup",
   name: "Tortellini Soup",
+  hash: "tortellini-soup",
   category: "poultry",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544380718/recipe-book/tortellini-soup.jpg",
   tags: ["poultry", "tortellini soup", "tortellini", "soup", "chicken", "pasta", "italian"],
@@ -159,6 +170,9 @@ var tortelliniSoup = {
 
 
 var recipeListMaster = [bbqChicken, chili, fajitas, frittata, hamburgers, macAndCheese,
+  potatoCasserole, pulledPork, spaghetti, springSalad, tortelliniSoup];
+
+var recipeListMasterOrigin = [bbqChicken, chili, fajitas, frittata, hamburgers, macAndCheese,
   potatoCasserole, pulledPork, spaghetti, springSalad, tortelliniSoup];
 
 var recipeListBeef = [];
@@ -192,7 +206,7 @@ function sortRecipeCategory() {
         recipeListVegetarian.push(element);
         break;
       default:
-        recipeListAll.push(element);
+        break;
     }
   });
 }

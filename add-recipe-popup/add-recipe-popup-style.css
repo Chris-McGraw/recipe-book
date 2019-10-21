@@ -1,0 +1,192 @@
+#add-recipe-form {
+  display: none;
+
+  z-index: 20;
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+
+  width: 600px;
+  height: auto;
+  margin: auto;
+  padding: 0 30px;
+
+  font-weight: 300;
+  color: white;
+  text-align: center;
+
+  background-color: rgb(36, 38, 40);
+  border: 1px solid rgb(76, 211, 182);
+
+  opacity: 0;
+
+  transition: opacity 300ms ease-in-out;
+}
+
+.show-add-recipe-form {
+  opacity: 1 !important;
+}
+
+#add-recipe-form > h2 {
+  margin-top: 10px;
+
+  font-family: "Roboto Slab", serif;
+  font-size: 27px;
+}
+
+#add-recipe-form > label {
+  position: absolute;
+  left: 0;
+}
+
+#add-recipe-form > fieldset {
+  background-color: black;
+  border: 1px solid rgb(76, 211, 182);
+}
+
+#add-recipe-form > fieldset > legend {
+  margin-left: 15px;
+  padding: 0 5px;
+
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  text-align: left;
+}
+
+#add-recipe-form > fieldset > legend > span {
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+}
+
+#add-recipe-form > fieldset > input {
+  width: 100%;
+  padding: 0 20px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: white;
+
+  background-color: black;
+  border: none;
+  outline: none;
+
+  cursor: text;
+}
+
+#add-recipe-form > fieldset > input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#add-recipe-form > fieldset > div {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+#add-recipe-form > fieldset > div > label {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+#radio-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  position: relative;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+#add-recipe-form > fieldset > div > label > input {
+  cursor: pointer;
+}
+
+.radio-top {
+  grid-column: span 1;
+}
+
+.radio-bottom {
+  grid-column: span 1;
+}
+
+#add-recipe-submit {
+  width: 20%;
+  height: 40px;
+  margin-bottom: 20px;
+
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: white;
+
+  border: 1px solid rgb(36, 38, 40);
+  border-radius: 10px;
+  background-color: rgb(47, 106, 93);
+  outline: none;
+
+  cursor: pointer;
+}
+
+#add-recipe-tile {
+  position: relative;
+
+  grid-column: span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 150px;
+
+  border: 1px solid rgb(76, 211, 182);
+  background-color: rgb(0, 0, 0);
+
+  opacity: 0;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#add-recipe-tile-header {
+  position: absolute;
+
+  margin-top: -93px;
+
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+
+  pointer-events: none;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#add-recipe-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+
+  color: white;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 80px;
+
+  background-color: rgb(47, 106, 93);
+  border-radius: 100%;
+
+  cursor: pointer;
+}

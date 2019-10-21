@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="main-style.css">
+  <link rel="stylesheet" type="text/css" href="navbar-style.css">
+  <link rel="stylesheet" type="text/css" href="add-recipe-popup/add-recipe-popup-style.css">
   <link rel="stylesheet" type="text/css" href="displayed-recipe-screen/DRS-style.css">
   <link rel="stylesheet" type="text/css" href="new-recipe-finder-screen/NRFS-style.css">
   <link rel="stylesheet" type="text/css" href="new-recipe-list-screen/NRLS-style.css">
@@ -33,6 +35,7 @@
   <script type="text/javascript" src="main-script.js" defer></script>
   <script type="text/javascript" src="navbar-script.js" defer></script>
   <script type="text/javascript" src="saved-recipe-list-screen-script.js" defer></script>
+  <script type="text/javascript" src="add-recipe-popup/add-recipe-popup-script.js" defer></script>
   <script type="text/javascript" src="displayed-recipe-screen/DRS-script.js" defer></script>
   <script type="text/javascript" src="new-recipe-finder-screen/NRFS-script.js" defer></script>
   <script type="text/javascript" src="new-recipe-list-screen/NRLS-script.js" defer></script>
@@ -84,6 +87,48 @@
 
 
 
+<!-- ====================== ADD NEW RECIPE FORM START ====================== -->
+<form id="add-recipe-form" action="javascript:void(0);">
+  <h2>Add New Recipe</h2>
+
+  <br>
+  <fieldset>
+    <legend for="name-input">Name</legend>
+    <input type="text" name="name" id="name-input" placeholder="enter a name..."></input>
+  </fieldset>
+
+  <br>
+  <fieldset id="category-field">
+    <legend>Category</legend>
+    <div id="radio-container">
+      <label class="radio-top"><input type="radio" name="category" value="beef"><br>Beef</label>
+      <label class="radio-top"><input type="radio" name="category" value="pork"><br>Pork</label>
+      <label class="radio-top"><input type="radio" name="category" value="poultry"><br>Poultry</label>
+      <label class="radio-bottom"><input type="radio" name="category" value="seafood"><br>Seafood</label>
+      <label class="radio-bottom"><input type="radio" name="category" value="vegetarian"><br>Vegetarian</label>
+    </div>
+  </fieldset>
+
+  <br>
+  <fieldset>
+    <legend>Search Tags <span>(comma separated, five max)</span></legend>
+    <input type="text" name="tags" id="tag-input" placeholder="enter search tags..."></input>
+  </fieldset>
+
+  <br>
+  <fieldset>
+    <legend>Ingredients <span>(comma separated)</span></legend>
+    <input type="text" name="ingredients" id="ingredient-input" placeholder="enter ingredients..."></input>
+  </fieldset>
+
+  <br>
+  <button type="submit" name="add-recipe-submit" id="add-recipe-submit"
+  aria-label="submit new recipe">Add Recipe</button>
+</form>
+<!-- _______________________ ADD NEW RECIPE FORM END _______________________ -->
+
+
+
 <!-- ====================== BODY GRID CONTAINER START ====================== -->
     <div id="body-grid-container">
 <!-- =================== SAVED RECIPE LIST SCREEN START =================== -->
@@ -109,6 +154,11 @@
         <option value="ascending">Alphabetical (A-Z)</option>
         <option value="descending">Alphabetical (Z-A)</option>
       </select>
+
+      <a id="add-recipe-tile" href="add-recipe">
+        <h3 id="add-recipe-tile-header">Add Recipe</h3>
+        <div id="add-recipe-icon">+</div>
+      </a>
 <!-- ____________________ SAVED RECIPE LIST SCREEN END ____________________ -->
 
 

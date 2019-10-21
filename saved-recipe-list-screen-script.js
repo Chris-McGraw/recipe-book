@@ -3,6 +3,7 @@ function hideSavedRecipeListScreen() {
   $savedRecipeListTitle.hide();
   $categoryContainer.hide();
   $sortBySelect.hide();
+  $addRecipeTile.hide();
 
   clearTiles();
 
@@ -43,6 +44,7 @@ function showSavedRecipeListScreen() {
   $savedRecipeListTitle.show();
   $categoryContainer.show();
   $sortBySelect.show();
+  $addRecipeTile.show();
 }
 
 
@@ -102,27 +104,26 @@ function clearRecipeLists() {
   recipeListPoultry = [];
   recipeListSeafood = [];
   recipeListVegetarian = [];
-
-  recipeListMaster.reverse();
-
-  sortRecipeCategory();
-
-  clearTiles();
-
-  setTimeout(function() {
-    populateTiles();
-  }, 200);
 }
 
 
 function sortRecipeMaster() {
   if($sortBySelect.val() === "ascending") {
     if(recipeOrderAlpha === "descending") {
+
+      clearRecipeLists();
+      clearTiles();
+
+      recipeListMaster.reverse();
+      sortRecipeCategory();
+
       if(recipeListSearch.length > 0) {
         recipeListSearch.reverse();
       }
 
-      clearRecipeLists();
+      setTimeout(function() {
+        populateTiles();
+      }, 200);
 
       recipeOrderAlpha = "ascending";
     }
@@ -130,11 +131,20 @@ function sortRecipeMaster() {
 
   else if($sortBySelect.val() === "descending") {
     if(recipeOrderAlpha === "ascending") {
+
+      clearRecipeLists();
+      clearTiles();
+
+      recipeListMaster.reverse();
+      sortRecipeCategory();
+
       if(recipeListSearch.length > 0) {
         recipeListSearch.reverse();
       }
 
-      clearRecipeLists();
+      setTimeout(function() {
+        populateTiles();
+      }, 200);
 
       recipeOrderAlpha = "descending";
     }
@@ -147,7 +157,6 @@ function sortRecipeMaster() {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
-
 
   $catAll.on("click", function() {
     if(currentCatActive !== "all" && delayPopulate === false) {

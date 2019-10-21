@@ -39,6 +39,17 @@ var $searchBar = $("#search-bar");
 var $searchIconDropdown = $("#search-icon-dropdown");
 
 
+/* __________ ADD NEW RECIPE FORM __________ */
+var $addRecipeForm = $("#add-recipe-form");
+var addRecipeFormActive = false;
+var $nameInput = $("#name-input");
+var $tagInput = $("#tag-input");
+var $ingredientInput = $("#ingredient-input");
+
+var userSavedRecipes = [];
+var $addRecipeSubmit = $("#add-recipe-submit");
+
+
 /* __________ BODY GRID CONTAINER __________ */
 var $bodyGridContainer = $("#body-grid-container");
 
@@ -66,6 +77,8 @@ var $catVeg = $("#cat-veg");
 
 var $sortBySelect = $("#sort-by-select");
 
+var $addRecipeTile = $("#add-recipe-tile");
+
 var $tile = [];
 var $tileLink = [];
 var $tileHeader = [];
@@ -75,7 +88,7 @@ var $searchResultNone = $("#search-result-none");
 
 /* ________ DISPLAYED RECIPE SCREEN ________ */
 var currentRecipeName = "";
-var currentURL = "";
+var currentLinkHash = "";
 var currentFontSize = "default";
 
 var $recipeTitleContainer = $("#recipe-title-container");
@@ -147,6 +160,9 @@ var $copyrightFooter = $("#copyright-footer");
 function clearTiles() {
   allowPopulate = false;
 
+  $addRecipeTile.css("display", "none");
+  $addRecipeTile.removeClass("tile-fade-in");
+
   var $currentTiles = $(".tile");
   var $currentTileLinks = $(".tile-link");
 
@@ -194,28 +210,40 @@ function populateTiles() {
                      .attr("id", "tile-header-" + tileCount)
                      .addClass("tile-header");
 
-    $newTile = $("<div/>")
+    $newTile = $("<a/>")
                      .attr("id", "tile-" + tileCount)
-                     .addClass("tile")
-                     .html("<div></div>");
+                     .attr("href", currentRecipeList[tileCount].hash)
+                     .addClass("tile");
 
     $bodyGridContainer.append($newTile);
 
     $newTile.append($newTileHeader);
 
     $tile[tileCount] = $("#tile-" + tileCount);
-    $tile[tileCount].css("background-image", "url(" + "'" + currentRecipeList[tileCount].img + "'" + ")");
+
+    if(currentRecipeList[tileCount].img === "") {
+      $tile[tileCount].css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1571232456/recipe-book/icon-main.png)");
+
+      $tile[tileCount].css("background-position", "center");
+      $tile[tileCount].css("background-size", "100px auto");
+      $tile[tileCount].css("background-repeat", "no-repeat");
+    }
+    else {
+      $tile[tileCount].css("background-image", "url(" + "'" + currentRecipeList[tileCount].img + "'" + ")");
+    }
 
     $tileHeader[tileCount] = $("#tile-header-" + tileCount);
     $tileHeader[tileCount].html(currentRecipeList[tileCount].name);
 
 
 
-    $newTile.on("click", function() {
+    $newTile.on("click", function(event) {
       if(delayPopulate === false) {
+        event.preventDefault();
+
         delayPopulate = true;
 
-        currentURL = $(this).css("background-image");
+        currentLinkHash = $(this).attr("href");
 
         getSelectedRecipeName();
 
@@ -239,13 +267,21 @@ function populateTiles() {
 
 
 
+    $addRecipeTile.css("display", "flex");
+
+    setTimeout(function() {
+      if(allowPopulate === true) {
+        $addRecipeTile.addClass("tile-fade-in");
+      }
+    }, 100);
+
     setTimeout(function() {
       if(allowPopulate === true) {
         $tile[tileCount].addClass("tile-fade-in");
 
         tileCount++;
       }
-    }, 100);
+    }, 200);
 
     setTimeout(function() {
       if(allowPopulate === true) {
@@ -294,18 +330,57 @@ function hideScreenAll() {
 }
 
 
+function showBodyMask() {
+  document.ontouchmove = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  $(document.body).css("overflow", "hidden");
+
+  $bodySearchMask.removeClass("body-search-mask-retract");
+  $bodySearchMask.addClass("body-search-mask-expand");
+
+  $bodySearchMask.css("z-index", "10");
+}
+
+
+function hideBodyMask() {
+  document.ontouchmove = function(event) {
+    return true;
+  }
+
+  $(document.body).css("overflow", "auto");
+
+  $bodySearchMask.removeClass("body-search-mask-expand");
+  $bodySearchMask.addClass("body-search-mask-retract");
+
+  setTimeout(function() {
+    $bodySearchMask.css("z-index", "-10");
+  }, 300);
+}
+
+
 
 
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
+  if(localStorage.length > 0) {
+    var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
 
+    storedUserRecipeArray.forEach(function(object) {
+      recipeListMaster.push(object);
+    });
+  };
 
-  populateTiles();
+  recipeListMaster.sort(function(a, b) {
+    return a.name.localeCompare(b.name);
+  });
 
   sortRecipeCategory();
 
-
+  populateTiles();
 
 
 
