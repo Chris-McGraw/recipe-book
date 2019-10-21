@@ -79,20 +79,20 @@ function ingredientUserInput(input) {
 }
 
 
-function submitAddRecipeForm() {
-  var nameInput = $nameInput.val().replace(/\s+/g, " ").trim();
-  //console.log(nameInput);
+function validateAddRecipeForm(name, category, tags, ingredients) {
+  if(name != "" && category != undefined && tags != "" && ingredients != "") {
+    console.log("no blanks");
 
-  var categoryInput = $("input[name=category]:checked").val();
-  //console.log(categoryInput);
+    addRecipeFormValid = true;
+  }
+  else {
+    addRecipeFormValid = false;
+  }
+}
 
-  var tagInput = $tagInput.val().replace(/\s+/g, " ").trim();
-  //console.log(tagInput);
 
-  var ingredientInput = $ingredientInput.val().replace(/\s+/g, " ").trim();
-  //console.log(ingredientInput);
-
-  var userRecipeObject = new customRecipe(nameInput, nameInput, nameInput, categoryInput, "", tagInput, ingredientInput, []);
+function submitAddRecipeForm(name, category, tags, ingredients) {
+  var userRecipeObject = new customRecipe(name, name, name, category, "", tags, ingredients, []);
   console.log(userRecipeObject);
 
   setLocalStorage(userRecipeObject);
@@ -206,11 +206,23 @@ $(document).ready(function() {
 
 
   $addRecipeSubmit.on("click", function() {
-    hideBodyMask();
+    var nameInput = $nameInput.val().replace(/\s+/g, " ").trim();
+    var categoryInput = $("input[name=category]:checked").val();
+    var tagInput = $tagInput.val().replace(/\s+/g, " ").trim();
+    var ingredientInput = $ingredientInput.val().replace(/\s+/g, " ").trim();
 
-    hideAddRecipeForm();
+    validateAddRecipeForm(nameInput, categoryInput, tagInput, ingredientInput);
 
-    submitAddRecipeForm();
+    if(addRecipeFormValid === true) {
+      hideBodyMask();
+
+      hideAddRecipeForm();
+
+      submitAddRecipeForm(nameInput, categoryInput, tagInput, ingredientInput);
+    }
+    else {
+      console.log("Invalid Form");
+    }
   });
 
 
