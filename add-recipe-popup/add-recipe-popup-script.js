@@ -29,7 +29,7 @@ function customRecipe(id, name, hash, cat, img, tags, ings, recipe) {
   this.img = img;
   this.tags = tagUserInput(tags);
   this.ingredients = ingredientUserInput(ings);
-  this.recipe = recipe;
+  this.recipe = recipeStepUserInput(recipe);
 }
 
 
@@ -79,8 +79,21 @@ function ingredientUserInput(input) {
 }
 
 
-function validateAddRecipeForm(name, category, tags, ingredients) {
-  if(name != "" && category != undefined && tags != "" && ingredients != "") {
+function recipeStepUserInput(input) {
+  var splitArray = input.split(",");
+
+  for(i = 0; i < splitArray.length; i++) {
+    splitArray[i] =  splitArray[i].trim().charAt(0).toUpperCase() + splitArray[i].trim().slice(1);
+  }
+
+  return splitArray.filter(function(item) {
+    return item != "";
+  });
+}
+
+
+function validateAddRecipeForm(name, category, tags, ingredients, recipe) {
+  if(name != "" && category != undefined && tags != "" && ingredients != "" && recipe != "") {
     console.log("no blanks");
 
     addRecipeFormValid = true;
@@ -91,8 +104,8 @@ function validateAddRecipeForm(name, category, tags, ingredients) {
 }
 
 
-function submitAddRecipeForm(name, category, tags, ingredients) {
-  var userRecipeObject = new customRecipe(name, name, name, category, "", tags, ingredients, []);
+function submitAddRecipeForm(name, category, tags, ingredients, recipe) {
+  var userRecipeObject = new customRecipe(name, name, name, category, "", tags, ingredients, recipe);
   console.log(userRecipeObject);
 
   setLocalStorage(userRecipeObject);
@@ -210,15 +223,16 @@ $(document).ready(function() {
     var categoryInput = $("input[name=category]:checked").val();
     var tagInput = $tagInput.val().replace(/\s+/g, " ").trim();
     var ingredientInput = $ingredientInput.val().replace(/\s+/g, " ").trim();
+    var recipeStepInput = $recipeStepInput.val().replace(/\s+/g, " ").trim();
 
-    validateAddRecipeForm(nameInput, categoryInput, tagInput, ingredientInput);
+    validateAddRecipeForm(nameInput, categoryInput, tagInput, ingredientInput, recipeStepInput);
 
     if(addRecipeFormValid === true) {
       hideBodyMask();
 
       hideAddRecipeForm();
 
-      submitAddRecipeForm(nameInput, categoryInput, tagInput, ingredientInput);
+      submitAddRecipeForm(nameInput, categoryInput, tagInput, ingredientInput, recipeStepInput);
     }
     else {
       console.log("Invalid Form");

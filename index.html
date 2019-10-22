@@ -88,43 +88,51 @@
 
 
 <!-- ====================== ADD NEW RECIPE FORM START ====================== -->
-<form id="add-recipe-form" action="javascript:void(0);">
-  <h2>Add New Recipe</h2>
+    <form id="add-recipe-form" action="javascript:void(0);">
+      <h2>Add New Recipe</h2>
 
-  <br>
-  <fieldset>
-    <legend for="name-input">Name</legend>
-    <input type="text" name="name" id="name-input" placeholder="enter a name..."></input>
-  </fieldset>
+      <div id="add-recipe-close-icon">
+        <div class="hamburger-bar" id="add-recipe-close-bar-top"></div>
+        <div class="hamburger-bar hide-bar-middle"></div>
+        <div class="hamburger-bar" id="add-recipe-close-bar-bottom"></div>
+      </div>
 
-  <br>
-  <fieldset id="category-field">
-    <legend>Category</legend>
-    <div id="radio-container">
-      <label class="radio-top"><input type="radio" name="category" value="beef"><br>Beef</label>
-      <label class="radio-top"><input type="radio" name="category" value="pork"><br>Pork</label>
-      <label class="radio-top"><input type="radio" name="category" value="poultry"><br>Poultry</label>
-      <label class="radio-bottom"><input type="radio" name="category" value="seafood"><br>Seafood</label>
-      <label class="radio-bottom"><input type="radio" name="category" value="vegetarian"><br>Vegetarian</label>
-    </div>
-  </fieldset>
+      <div id="add-recipe-form-grid">
+        <fieldset>
+          <legend for="name-input">Name</legend>
+          <input type="text" name="name" id="name-input" placeholder="enter a name..."></input>
+        </fieldset>
 
-  <br>
-  <fieldset>
-    <legend>Search Tags <span>(comma separated, five max)</span></legend>
-    <input type="text" name="tags" id="tag-input" placeholder="enter search tags..."></input>
-  </fieldset>
+        <fieldset id="category-field">
+          <legend>Category</legend>
+          <div id="radio-container">
+            <label class="radio-top"><input type="radio" name="category" value="beef"><br>Beef</label>
+            <label class="radio-top"><input type="radio" name="category" value="pork"><br>Pork</label>
+            <label class="radio-top"><input type="radio" name="category" value="poultry"><br>Poultry</label>
+            <label class="radio-bottom"><input type="radio" name="category" value="seafood"><br>Seafood</label>
+            <label class="radio-bottom"><input type="radio" name="category" value="vegetarian"><br>Vegetarian</label>
+          </div>
+        </fieldset>
 
-  <br>
-  <fieldset>
-    <legend>Ingredients <span>(comma separated)</span></legend>
-    <input type="text" name="ingredients" id="ingredient-input" placeholder="enter ingredients..."></input>
-  </fieldset>
+        <fieldset>
+          <legend>Search Tags <span>(comma separated, five max)</span></legend>
+          <input type="text" name="tags" id="tag-input" placeholder="enter search tags..."></input>
+        </fieldset>
 
-  <br>
-  <button type="submit" name="add-recipe-submit" id="add-recipe-submit"
-  aria-label="submit new recipe">Add Recipe</button>
-</form>
+        <fieldset>
+          <legend>Ingredients <span>(comma separated)</span></legend>
+          <input type="text" name="ingredients" id="ingredient-input" placeholder="enter ingredients..."></input>
+        </fieldset>
+
+        <fieldset>
+          <legend>Recipe Steps <span>(comma separated)</span></legend>
+          <input type="text" name="recipeStep" class="recipe-step-input" placeholder="enter recipe step..."></input>
+        </fieldset>
+      </div>
+
+      <button type="submit" name="add-recipe-submit" id="add-recipe-submit"
+      aria-label="submit new recipe">Add Recipe</button>
+    </form>
 <!-- _______________________ ADD NEW RECIPE FORM END _______________________ -->
 
 

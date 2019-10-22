@@ -122,7 +122,7 @@ function getIngredientList() {
 
 function getRecipeSteps() {
   for(recipeStepCount = 0; recipeStepCount < currentRecipeList[y].recipe.length; recipeStepCount++) {
-    $recipeStepList.append("<li class='recipe-step'>" + currentRecipeList[y].recipe[recipeStepCount] + "</li>");
+    $recipeStepList.append("<li class='recipe-step'>" + ([recipeStepCount + 1] + ". ") + currentRecipeList[y].recipe[recipeStepCount] + "</li>");
   }
 
   $recipeStep = $(".recipe-step");

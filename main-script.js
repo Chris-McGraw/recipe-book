@@ -43,9 +43,11 @@ var $searchIconDropdown = $("#search-icon-dropdown");
 var $addRecipeForm = $("#add-recipe-form");
 var addRecipeFormActive = false;
 var addRecipeFormValid = false;
+
 var $nameInput = $("#name-input");
 var $tagInput = $("#tag-input");
 var $ingredientInput = $("#ingredient-input");
+var $recipeStepInput = $(".recipe-step-input");
 
 var userSavedRecipes = [];
 var $addRecipeSubmit = $("#add-recipe-submit");

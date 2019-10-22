@@ -35,17 +35,47 @@
   font-size: 27px;
 }
 
-#add-recipe-form > label {
+#add-recipe-close-icon {
+  z-index: 30;
+  position: absolute;
+  top: 17px;
+  right: 19px;
+
+  width: 27px;
+
+  cursor: pointer;
+
+  transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
+}
+
+#add-recipe-close-bar-top {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#add-recipe-close-bar-bottom {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+#add-recipe-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+#add-recipe-form > div > label {
   position: absolute;
   left: 0;
 }
 
-#add-recipe-form > fieldset {
+#add-recipe-form > div > fieldset {
+  grid-column: span 2;
+
   background-color: black;
   border: 1px solid rgb(76, 211, 182);
 }
 
-#add-recipe-form > fieldset > legend {
+#add-recipe-form > div > fieldset > legend {
   margin-left: 15px;
   padding: 0 5px;
 
@@ -54,12 +84,12 @@
   text-align: left;
 }
 
-#add-recipe-form > fieldset > legend > span {
+#add-recipe-form > div > fieldset > legend > span {
   font-family: "Roboto Slab", serif;
   font-size: 14px;
 }
 
-#add-recipe-form > fieldset > input {
+#add-recipe-form > div > fieldset > input {
   width: 100%;
   padding: 0 20px;
   padding-top: 10px;
@@ -76,16 +106,16 @@
   cursor: text;
 }
 
-#add-recipe-form > fieldset > input::placeholder {
+#add-recipe-form > div > fieldset > input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-#add-recipe-form > fieldset > div {
+#add-recipe-form > div > fieldset > div {
   padding-top: 10px;
   padding-bottom: 5px;
 }
 
-#add-recipe-form > fieldset > div > label {
+#add-recipe-form > div > fieldset > div > label {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
@@ -103,7 +133,7 @@
   margin: auto;
 }
 
-#add-recipe-form > fieldset > div > label > input {
+#add-recipe-form > div > fieldset > div > label > input {
   cursor: pointer;
 }
 
