@@ -194,8 +194,10 @@ $(document).ready(function() {
       $navbarDropdown.hide();
       $searchDropdown.hide();
 
+      window.scrollTo(0, 0);
+
       $bodyGridContainer.css("top", "10px");
-      //$addRecipeForm.css("top", "30px");
+      $addRecipeForm.css("top", "30px");
     }
   });
 
