@@ -186,19 +186,31 @@ $(document).ready(function() {
     showBodyMask();
 
     showAddRecipeForm();
+  });
 
-
-  // Test
+  $addRecipeFormInput.on("focus", function(event) {
     if(touchDevice === true) {
       $navbar.hide();
       $navbarDropdown.hide();
       $searchDropdown.hide();
 
       $bodyGridContainer.css("top", "10px");
+      $addRecipeForm.css("top", "30px");
     }
   });
 
 // ---
+
+  $addRecipeFormInput.on("blur", function(event) {
+    if(touchDevice === true) {
+      $navbar.show();
+      $navbarDropdown.show();
+      $searchDropdown.show();
+
+      $bodyGridContainer.css("top", "80px");
+      $addRecipeForm.css("top", "100px");
+    }
+  });
 
   $addRecipeCloseIcon.on("click", function() {
     if(addRecipeFormActive === true) {
