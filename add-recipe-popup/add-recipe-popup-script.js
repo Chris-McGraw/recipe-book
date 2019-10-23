@@ -200,6 +200,12 @@ $(document).ready(function() {
         $bodyGridContainer.css("top", "10px");
         $addRecipeForm.css("top", "30px");
       }, 200);
+
+      var formTopOffset = $addRecipeFormGrid.scrollTop() + $nameInput.parent().offset().top;
+      var formScrollTo = ($addRecipeFormGrid.scrollTop() + $(this).parent().offset().top) - formTopOffset;
+
+      $addRecipeFormTouchSpacer.css("display", "block");
+      document.getElementById("add-recipe-form-grid").scroll(0, formScrollTo);
     }
   });
 
@@ -215,6 +221,8 @@ $(document).ready(function() {
 
       $bodyGridContainer.css("top", "80px");
       $addRecipeForm.css("top", "100px");
+
+      $addRecipeFormTouchSpacer.css("display", "none");
     }
   });
 
