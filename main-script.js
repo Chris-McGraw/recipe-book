@@ -335,10 +335,10 @@ function hideScreenAll() {
 
 
 function showBodyMask() {
-  /* document.ontouchmove = function(event) {
+  document.ontouchmove = function(event) {
     event.preventDefault();
     event.stopPropagation();
-  } */
+  }
 
   $(document.body).css("overflow", "hidden");
 
@@ -350,9 +350,9 @@ function showBodyMask() {
 
 
 function hideBodyMask() {
-  /* document.ontouchmove = function(event) {
+  document.ontouchmove = function(event) {
     return true;
-  } */
+  }
 
   $(document.body).css("overflow", "auto");
 
