@@ -207,6 +207,8 @@ $(document).ready(function() {
       $navbarDropdown.show();
       $searchDropdown.show();
 
+      window.scrollTo(0, 0);
+
       $bodyGridContainer.css("top", "80px");
       $addRecipeForm.css("top", "100px");
     }
