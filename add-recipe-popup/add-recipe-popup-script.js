@@ -190,6 +190,14 @@ $(document).ready(function() {
 
 // ---
 
+  $addRecipeCloseIcon.on("click", function() {
+    if(addRecipeFormActive === true) {
+      hideBodyMask();
+
+      hideAddRecipeForm();
+    }
+  });
+
   $bodySearchMask.on("click", function() {
     if(addRecipeFormActive === true) {
       hideBodyMask();

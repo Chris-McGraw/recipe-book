@@ -41,6 +41,7 @@ var $searchIconDropdown = $("#search-icon-dropdown");
 
 /* __________ ADD NEW RECIPE FORM __________ */
 var $addRecipeForm = $("#add-recipe-form");
+var $addRecipeCloseIcon = $("#add-recipe-close-icon");
 var addRecipeFormActive = false;
 var addRecipeFormValid = false;
 
