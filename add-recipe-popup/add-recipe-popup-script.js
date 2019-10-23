@@ -186,6 +186,16 @@ $(document).ready(function() {
     showBodyMask();
 
     showAddRecipeForm();
+
+
+  // Test
+    if(touchDevice === true) {
+      $navbar.hide();
+      $navbarDropdown.hide();
+      $searchDropdown.hide();
+
+      $bodyGridContainer.css("top", "10px");
+    }
   });
 
 // ---
