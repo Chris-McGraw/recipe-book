@@ -195,7 +195,7 @@ $(document).ready(function() {
       $searchDropdown.hide();
 
       $bodyGridContainer.css("top", "10px");
-      $addRecipeForm.css("top", "30px");
+      //$addRecipeForm.css("top", "30px");
     }
   });
 
