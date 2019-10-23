@@ -3,7 +3,7 @@
 
   z-index: 20;
   position: absolute;
-  top: 110px;
+  top: 100px;
   left: 0;
   right: 0;
 
@@ -29,7 +29,8 @@
 }
 
 #add-recipe-form > h2 {
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 
   font-family: "Roboto Slab", serif;
   font-size: 27px;
@@ -38,7 +39,7 @@
 #add-recipe-close-icon {
   z-index: 30;
   position: absolute;
-  top: 17px;
+  top: 27px;
   right: 19px;
 
   width: 27px;
@@ -60,6 +61,10 @@
 #add-recipe-form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  height: 315px;
+
+  overflow-y: auto;
 }
 
 
@@ -72,7 +77,7 @@
   grid-column: span 2;
 
   background-color: black;
-  border: 1px solid rgb(76, 211, 182);
+  border: 1px solid rgb(47, 106, 93);
 }
 
 #add-recipe-form > div > fieldset > legend {
@@ -148,7 +153,7 @@
 #add-recipe-submit {
   width: 20%;
   height: 40px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -219,4 +224,82 @@
   border-radius: 100%;
 
   cursor: pointer;
+}
+
+
+
+
+
+/* -------------------------- MEDIA QUERY <= 1000 -------------------------- */
+@media screen and (max-width: 1000px) {
+  #add-recipe-submit {
+    width: 25%;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 800 -------------------------- */
+@media screen and (max-width: 800px) {
+  #add-recipe-form {
+    width: auto;
+    margin: auto 20px;
+  }
+
+  #add-recipe-submit {
+    width: 30%;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 600 -------------------------- */
+@media screen and (max-width: 600px) {
+  #add-recipe-form {
+    padding: 0 0;
+  }
+
+  #add-recipe-form > h2 {
+    margin-bottom: 20px;
+  }
+
+  #add-recipe-form-grid {
+    padding: 0 30px;
+
+    border-top: 1px solid rgb(76, 211, 182);
+    border-bottom: 1px solid rgb(76, 211, 182);
+  }
+
+  #name-fieldset {
+    margin-top: 10px;
+  }
+
+  #add-recipe-form > div > fieldset {
+    margin-bottom: 20px;
+  }
+
+  #radio-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .radio-top {
+    grid-column: span 2;
+  }
+
+  .radio-bottom {
+    grid-column: span 3;
+  }
+
+  #add-recipe-submit {
+    width: 40%;
+  }
+}
+
+
+
+/* -------------------------- MEDIA QUERY <= 400 -------------------------- */
+@media screen and (max-width: 400px) {
+  #add-recipe-submit {
+    width: 45%;
+  }
 }
