@@ -190,14 +190,16 @@ $(document).ready(function() {
 
   $addRecipeFormInput.on("focus", function(event) {
     if(touchDevice === true) {
-      $navbar.hide();
-      $navbarDropdown.hide();
-      $searchDropdown.hide();
+      setTimeout(function() {
+        $navbar.hide();
+        $navbarDropdown.hide();
+        $searchDropdown.hide();
 
-      window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
 
-      $bodyGridContainer.css("top", "10px");
-      $addRecipeForm.css("top", "30px");
+        $bodyGridContainer.css("top", "10px");
+        $addRecipeForm.css("top", "30px");
+      }, 200);
     }
   });
 
