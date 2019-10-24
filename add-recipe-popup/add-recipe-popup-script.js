@@ -200,6 +200,11 @@ $(document).ready(function() {
 
   $addRecipeFormInput.on("focus", function(event) {
     if(touchDevice === true) {
+      document.ontouchmove = function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
       setTimeout(function() {
         $navbar.hide();
         $navbarDropdown.hide();
@@ -232,6 +237,10 @@ $(document).ready(function() {
 
   $addRecipeFormInput.on("blur", function(event) {
     if(touchDevice === true) {
+      document.ontouchmove = function(event) {
+        return true;
+      }
+
       $navbar.show();
       $navbarDropdown.show();
       $searchDropdown.show();
