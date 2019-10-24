@@ -186,10 +186,23 @@ $(document).ready(function() {
     showBodyMask();
 
     showAddRecipeForm();
+
+    if(touchDevice === true) {
+      document.ontouchmove = function(event) {
+        return true;
+      }
+
+      $bodySearchMask.css("touch-action", "none");
+    }
   });
 
   $addRecipeFormInput.on("focus", function(event) {
     if(touchDevice === true) {
+      document.ontouchmove = function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
       setTimeout(function() {
         $navbar.hide();
         $navbarDropdown.hide();
@@ -213,6 +226,12 @@ $(document).ready(function() {
 
   $addRecipeFormInput.on("blur", function(event) {
     if(touchDevice === true) {
+      document.ontouchmove = function(event) {
+        return true;
+      }
+
+      $bodySearchMask.css("touch-action", "none");
+
       $navbar.show();
       $navbarDropdown.show();
       $searchDropdown.show();
