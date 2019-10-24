@@ -192,19 +192,10 @@ $(document).ready(function() {
     document.ontouchmove = function(event) {
       return true;
     }
-
-    $(window).bind("scroll", function(event) {
-      event.preventDefault();
-    });
   }
 
   $addRecipeFormInput.on("focus", function(event) {
     if(touchDevice === true) {
-      document.ontouchmove = function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-
       setTimeout(function() {
         $navbar.hide();
         $navbarDropdown.hide();
@@ -227,8 +218,6 @@ $(document).ready(function() {
 // ---
 
   document.getElementById("add-recipe-form-grid").ontouchend = function() {
-    /* $(window).unbind("scroll"); */
-
     document.ontouchmove = function(event) {
       event.preventDefault();
       event.stopPropagation();
