@@ -189,6 +189,10 @@ $(document).ready(function() {
   });
 
   document.getElementById("add-recipe-form-grid").ontouchstart = function() {
+    $(window).bind("scroll", function(event) {
+      event.preventDefault();
+    });
+
     document.ontouchmove = function(event) {
       return true;
     }
@@ -218,6 +222,8 @@ $(document).ready(function() {
 // ---
 
   document.getElementById("add-recipe-form-grid").ontouchend = function() {
+    $(window).unbind("scroll");
+
     document.ontouchmove = function(event) {
       event.preventDefault();
       event.stopPropagation();
