@@ -206,20 +206,17 @@ $(document).ready(function() {
 
   $sortBySelect.on("focus", function() {
     if(touchDevice === true) {
-      /* document.ontouchmove = function(event) {
+      document.ontouchmove = function(event) {
         event.preventDefault();
         event.stopPropagation();
-      } */
-
-      $(document).on("ontouchmove", function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-      });
+      }
 
       setTimeout(function() {
+        /* newRecipeFinderSearchFocused(); */
+
         window.scrollTo(0, 0);
 
-        /* $(document.body).css("overflow", "hidden"); */
+        $(document.body).css("overflow", "hidden");
 
         $navbar.hide();
         $navbarDropdown.hide();

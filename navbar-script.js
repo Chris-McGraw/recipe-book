@@ -222,13 +222,6 @@ function searchSavedRecipes() {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
-  $navbar.on("ontouchstart", function() {
-    $(document).on("ontouchmove", function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-    });
-  });
-
 
 
   $hamburgerMenu.on("click", function() {
