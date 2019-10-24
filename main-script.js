@@ -395,10 +395,15 @@ $(document).ready(function() {
     touchDevice = true;
   }
 
-  document.ontouchmove = function(event) {
+  /* document.ontouchmove = function(event) {
     event.preventDefault();
     event.stopPropagation();
-  }
+  } */
+
+  $(document).on("ontouchmove", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  });
 
   $(document).on("scroll", function() {
     currentScrollPosition = window.pageYOffset;
