@@ -192,7 +192,10 @@ $(document).ready(function() {
         return true;
       }
 
-      $bodySearchMask.css("touch-action", "none");
+      $bodySearchMask.ontouchmove = function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
     }
   });
 
@@ -229,8 +232,6 @@ $(document).ready(function() {
       document.ontouchmove = function(event) {
         return true;
       }
-
-      $bodySearchMask.css("touch-action", "none");
 
       $navbar.show();
       $navbarDropdown.show();
