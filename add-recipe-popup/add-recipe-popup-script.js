@@ -189,13 +189,13 @@ $(document).ready(function() {
   });
 
   document.getElementById("add-recipe-form-grid").ontouchstart = function() {
-    document.ontouchmove = function(event) {
-      return true;
-    }
-
     $(window).bind("scroll", function(event) {
       event.preventDefault();
     });
+
+    document.ontouchmove = function(event) {
+      return true;
+    }
   }
 
   $addRecipeFormInput.on("focus", function(event) {
@@ -227,7 +227,7 @@ $(document).ready(function() {
 // ---
 
   document.getElementById("add-recipe-form-grid").ontouchend = function() {
-    /* $(window).unbind("scroll"); */
+    $(window).unbind("scroll");
 
     document.ontouchmove = function(event) {
       event.preventDefault();
@@ -237,6 +237,10 @@ $(document).ready(function() {
 
   $addRecipeFormInput.on("blur", function(event) {
     if(touchDevice === true) {
+      document.ontouchmove = function(event) {
+        return true;
+      }
+
       $navbar.show();
       $navbarDropdown.show();
       $searchDropdown.show();
