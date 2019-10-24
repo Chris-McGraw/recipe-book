@@ -222,26 +222,6 @@ function searchSavedRecipes() {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
-  /* $navbar.on("ontouchstart", function() {
-    $(document).on("ontouchmove", function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-    });
-  }); */
-
-  document.getElementById("navbar").ontouchstart = function() {
-    document.ontouchmove = function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  }
-
-  document.getElementById("navbar").ontouchend = function() {
-    document.ontouchmove = function(event) {
-      return true;
-    }
-  }
-
 
 
   $hamburgerMenu.on("click", function() {

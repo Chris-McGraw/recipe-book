@@ -188,6 +188,12 @@ $(document).ready(function() {
     showAddRecipeForm();
   });
 
+  document.getElementById("add-recipe-form-grid").ontouchstart = function() {
+    document.ontouchmove = function(event) {
+      return true;
+    }
+  }
+
   $addRecipeFormInput.on("focus", function(event) {
     if(touchDevice === true) {
       setTimeout(function() {
@@ -210,6 +216,13 @@ $(document).ready(function() {
   });
 
 // ---
+
+  document.getElementById("add-recipe-form-grid").ontouchend = function() {
+    document.ontouchmove = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }
 
   $addRecipeFormInput.on("blur", function(event) {
     if(touchDevice === true) {

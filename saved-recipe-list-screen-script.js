@@ -212,6 +212,8 @@ $(document).ready(function() {
       }
 
       setTimeout(function() {
+        /* newRecipeFinderSearchFocused(); */
+
         window.scrollTo(0, 0);
 
         $(document.body).css("overflow", "hidden");
@@ -240,6 +242,8 @@ $(document).ready(function() {
 
   $sortBySelect.on("blur", function() {
     if(touchDevice === true) {
+      /* newRecipeFinderSearchBlurred(); */
+
       document.ontouchmove = function(event) {
         return true;
       }
