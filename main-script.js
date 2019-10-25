@@ -297,6 +297,19 @@ function populateTiles() {
       }
     }, 200);
   }
+  else {
+    if(delayLocalSearch === false) {
+      allowPopulate = true;
+
+      $addRecipeTile.css("display", "flex");
+
+      setTimeout(function() {
+        if(allowPopulate === true) {
+          $addRecipeTile.addClass("tile-fade-in");
+        }
+      }, 100);
+    }  
+  }
 }
 
 
