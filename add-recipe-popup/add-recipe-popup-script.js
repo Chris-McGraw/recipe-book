@@ -190,8 +190,6 @@ $(document).ready(function() {
 
   document.getElementById("add-recipe-form-grid").ontouchstart = function() {
     if(addRecipeFormInputFocused === false) {
-      $(document.body).css("position", "fixed");
-
       document.ontouchmove = function(event) {
         return true;
       }
@@ -224,8 +222,6 @@ $(document).ready(function() {
 // ---
 
   document.getElementById("add-recipe-form-grid").ontouchend = function() {
-    $(document.body).css("position", "relative");
-
     document.ontouchmove = function(event) {
       event.preventDefault();
       event.stopPropagation();
