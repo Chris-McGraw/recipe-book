@@ -196,10 +196,6 @@ $(document).ready(function() {
     }
   }
 
-  document.getElementById("add-recipe-form-grid").ontouchmove = function() {
-    window.scrollTo(0, 0);
-  }
-
   $addRecipeFormInput.on("focus", function(event) {
     if(touchDevice === true) {
       addRecipeFormInputFocused = true;
@@ -226,6 +222,8 @@ $(document).ready(function() {
 // ---
 
   document.getElementById("add-recipe-form-grid").ontouchend = function() {
+    window.scrollTo(0, 0);
+
     document.ontouchmove = function(event) {
       event.preventDefault();
       event.stopPropagation();
