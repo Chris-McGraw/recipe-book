@@ -230,6 +230,12 @@ $(document).ready(function() {
     }
   }
 
+  document.getElementById("body-search-mask").ontouchend = function() {
+    if(addRecipeFormActive === true) {
+      window.scrollTo(0, 0);
+    }
+  }
+
   $addRecipeFormInput.on("blur", function(event) {
     if(touchDevice === true) {
       addRecipeFormInputFocused = false;
