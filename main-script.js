@@ -58,6 +58,14 @@ var userSavedRecipes = [];
 var $addRecipeSubmit = $("#add-recipe-submit");
 
 
+/* __________ DELETE RECIPE MODAL __________ */
+var $deleteRecipeModal = $("#delete-recipe-modal");
+var $deleteRecipeCloseIcon = $("#delete-recipe-close-icon");
+var $deleteRecipeNameSpan = $("#delete-recipe-name-span");
+var deleteRecipeModalActive = false;
+var bottomOptionBarClickCount = 0;
+
+
 /* __________ BODY GRID CONTAINER __________ */
 var $bodyGridContainer = $("#body-grid-container");
 
@@ -95,7 +103,7 @@ var $searchResultNone = $("#search-result-none");
 
 
 /* ________ DISPLAYED RECIPE SCREEN ________ */
-var currentRecipeName = "";
+var currentRecipeID = "";
 var currentLinkHash = "";
 var currentFontSize = "default";
 
@@ -117,6 +125,7 @@ var $bottomOptionBar = $("#bottom-option-bar");
 var $bottomOptionBarBackground = $("#bottom-option-bar-background");
 var $backButton = $("#back-button");
 var $fontSizeButton = $("#font-size-button");
+var $deleteRecipeIcon = $("#delete-recipe-icon");
 
 
 /* _______ NEW RECIPE FINDER SCREEN _______ */
@@ -253,7 +262,7 @@ function populateTiles() {
 
         currentLinkHash = $(this).attr("href");
 
-        getSelectedRecipeName();
+        getSelectedRecipeID();
 
         screenTransitionFadeOut();
 
@@ -296,6 +305,19 @@ function populateTiles() {
         populateTiles();
       }
     }, 200);
+  }
+  else {
+    if(delayLocalSearch === false) {
+      allowPopulate = true;
+
+      $addRecipeTile.css("display", "flex");
+
+      setTimeout(function() {
+        if(allowPopulate === true) {
+          $addRecipeTile.addClass("tile-fade-in");
+        }
+      }, 100);
+    }
   }
 }
 

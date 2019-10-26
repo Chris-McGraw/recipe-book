@@ -56,7 +56,7 @@ function showDisplayedRecipeScreen() {
   $bottomOptionBarBackground.show();
 
   for(y = 0; y < currentRecipeList.length; y++) {
-    if(currentRecipeName === currentRecipeList[y].id) {
+    if(currentRecipeID === currentRecipeList[y].id) {
       $recipeTitleContainer.html(currentRecipeList[y].name);
 
       if(currentRecipeList[y].img === "") {
@@ -83,7 +83,7 @@ function showDisplayedRecipeScreen() {
 }
 
 
-function getSelectedRecipeName() {
+function getSelectedRecipeID() {
   var recipeNameDashed = currentLinkHash;
   var splitArray = recipeNameDashed.split("-");
 
@@ -93,7 +93,7 @@ function getSelectedRecipeName() {
     }
   }
 
-  currentRecipeName = splitArray.join("");
+  currentRecipeID = splitArray.join("");
 }
 
 
@@ -201,6 +201,56 @@ function toggleFontSize() {
 }
 
 
+function toggleDeleteRecipeModal() {
+  if(deleteRecipeModalActive === false) {
+    if(navbarDropdownActive === true) {
+      navbarDropdownToggle();
+    }
+    else if(searchDropdownActive === true) {
+      searchDropdownToggle();
+    }
+
+    showBodyMask();
+    showDeleteRecipeModal();
+  }
+  else {
+    hideBodyMask();
+    hideDeleteRecipeModal();
+  }
+}
+
+
+function showDeleteRecipeModal() {
+  deleteRecipeModalActive = true;
+
+  $deleteRecipeModal.css("display", "block");
+
+  var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
+
+  for(i = 0; i < storedUserRecipeArray.length; i++) {
+    if(storedUserRecipeArray[i].id === currentRecipeID) {
+      $deleteRecipeNameSpan.html(storedUserRecipeArray[i].name);
+    }
+  }
+
+  setTimeout(function() {
+    $deleteRecipeModal.addClass("show-delete-recipe-modal");
+  }, 0);
+}
+
+
+function hideDeleteRecipeModal() {
+  deleteRecipeModalActive = false;
+  bottomOptionBarClickCount = 0;
+
+  $deleteRecipeModal.removeClass("show-delete-recipe-modal");
+
+  setTimeout(function() {
+    $deleteRecipeModal.css("display", "none");
+  }, 300);
+}
+
+
 
 
 
@@ -234,6 +284,109 @@ $(document).ready(function() {
   $fontSizeButton.on("click", function() {
     toggleFontSize();
   });
+
+  $deleteRecipeIcon.on("click", function() {
+    toggleDeleteRecipeModal();
+  });
+
+
+
+    /* for(i = 0; i < storedUserRecipeArray.length; i++) {
+      if(storedUserRecipeArray[i].id === currentRecipeID) {
+        console.log(storedUserRecipeArray);
+
+        storedUserRecipeArray.splice(i, 1);
+      }
+    }
+
+    console.log(storedUserRecipeArray);
+
+    userSavedRecipes.length = 0;
+
+    storedUserRecipeArray.forEach(function(object) {
+      userSavedRecipes.push(object);
+    });
+
+    localStorage.setItem( "userSavedRecipes", JSON.stringify(userSavedRecipes) );
+
+
+
+
+    recipeListMaster = recipeListMasterOrigin.slice(0);
+
+    storedUserRecipeArray.forEach(function(object) {
+      recipeListMaster.push(object);
+    });
+
+    recipeListMaster.sort(function(a, b) {
+      return a.name.localeCompare(b.name);
+    });
+
+    clearRecipeLists();
+
+    sortRecipeCategory();
+
+
+
+    console.log(recipeListMaster);
+
+
+
+    screenTransitionFadeOut();
+
+    setTimeout(function() {
+      hideScreenAll();
+
+      screenTransitionFadeIn();
+
+      showSavedRecipeListScreen();
+
+      setTimeout(function() {
+        delayPopulate = false;
+        populateTiles();
+      }, 200);
+    }, 500); */
+
+
+// ---
+
+  $deleteRecipeCloseIcon.on("click", function() {
+    if(deleteRecipeModalActive === true) {
+      hideBodyMask();
+
+      hideDeleteRecipeModal();
+    }
+  });
+
+  $navbar.on("click", function() {
+    if(deleteRecipeModalActive === true) {
+      hideBodyMask();
+
+      hideDeleteRecipeModal();
+    }
+  });
+
+  $bodySearchMask.on("click", function() {
+    if(deleteRecipeModalActive === true) {
+      hideBodyMask();
+
+      hideDeleteRecipeModal();
+    }
+  });
+
+  $bottomOptionBar.on("click", function() {
+    if(deleteRecipeModalActive === true) {
+      bottomOptionBarClickCount++;
+
+     if(bottomOptionBarClickCount > 1) {
+       hideBodyMask();
+
+       hideDeleteRecipeModal();
+     }
+    }
+  });
+
+
 
 
 });
