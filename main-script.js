@@ -62,6 +62,8 @@ var $addRecipeSubmit = $("#add-recipe-submit");
 var $deleteRecipeModal = $("#delete-recipe-modal");
 var $deleteRecipeCloseIcon = $("#delete-recipe-close-icon");
 var $deleteRecipeNameSpan = $("#delete-recipe-name-span");
+var $deleteRecipeConfirmButton = $("#delete-recipe-confirm-button");
+var $deleteRecipeCancelButton = $("#delete-recipe-cancel-button");
 var deleteRecipeModalActive = false;
 var bottomOptionBarClickCount = 0;
 

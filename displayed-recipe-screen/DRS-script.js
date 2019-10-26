@@ -289,9 +289,10 @@ $(document).ready(function() {
     toggleDeleteRecipeModal();
   });
 
+  $deleteRecipeConfirmButton.on("click", function() {
+    var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
 
-
-    /* for(i = 0; i < storedUserRecipeArray.length; i++) {
+    for(i = 0; i < storedUserRecipeArray.length; i++) {
       if(storedUserRecipeArray[i].id === currentRecipeID) {
         console.log(storedUserRecipeArray);
 
@@ -332,6 +333,10 @@ $(document).ready(function() {
 
 
 
+    hideBodyMask();
+
+    hideDeleteRecipeModal();
+
     screenTransitionFadeOut();
 
     setTimeout(function() {
@@ -345,12 +350,20 @@ $(document).ready(function() {
         delayPopulate = false;
         populateTiles();
       }, 200);
-    }, 500); */
-
+    }, 500);
+  });
 
 // ---
 
   $deleteRecipeCloseIcon.on("click", function() {
+    if(deleteRecipeModalActive === true) {
+      hideBodyMask();
+
+      hideDeleteRecipeModal();
+    }
+  });
+
+  $deleteRecipeCancelButton.on("click", function() {
     if(deleteRecipeModalActive === true) {
       hideBodyMask();
 
