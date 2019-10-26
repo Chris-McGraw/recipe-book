@@ -58,6 +58,14 @@ var userSavedRecipes = [];
 var $addRecipeSubmit = $("#add-recipe-submit");
 
 
+/* __________ DELETE RECIPE MODAL __________ */
+var $deleteRecipeModal = $("#delete-recipe-modal");
+var $deleteRecipeCloseIcon = $("#delete-recipe-close-icon");
+var $deleteRecipeNameSpan = $("#delete-recipe-name-span");
+var deleteRecipeModalActive = false;
+var bottomOptionBarClickCount = 0;
+
+
 /* __________ BODY GRID CONTAINER __________ */
 var $bodyGridContainer = $("#body-grid-container");
 

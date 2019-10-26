@@ -201,6 +201,56 @@ function toggleFontSize() {
 }
 
 
+function toggleDeleteRecipeModal() {
+  if(deleteRecipeModalActive === false) {
+    if(navbarDropdownActive === true) {
+      navbarDropdownToggle();
+    }
+    else if(searchDropdownActive === true) {
+      searchDropdownToggle();
+    }
+
+    showBodyMask();
+    showDeleteRecipeModal();
+  }
+  else {
+    hideBodyMask();
+    hideDeleteRecipeModal();
+  }
+}
+
+
+function showDeleteRecipeModal() {
+  deleteRecipeModalActive = true;
+
+  $deleteRecipeModal.css("display", "block");
+
+  var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
+
+  for(i = 0; i < storedUserRecipeArray.length; i++) {
+    if(storedUserRecipeArray[i].id === currentRecipeID) {
+      $deleteRecipeNameSpan.html(storedUserRecipeArray[i].name);
+    }
+  }
+
+  setTimeout(function() {
+    $deleteRecipeModal.addClass("show-delete-recipe-modal");
+  }, 0);
+}
+
+
+function hideDeleteRecipeModal() {
+  deleteRecipeModalActive = false;
+  bottomOptionBarClickCount = 0;
+
+  $deleteRecipeModal.removeClass("show-delete-recipe-modal");
+
+  setTimeout(function() {
+    $deleteRecipeModal.css("display", "none");
+  }, 300);
+}
+
+
 
 
 
@@ -236,11 +286,12 @@ $(document).ready(function() {
   });
 
   $deleteRecipeIcon.on("click", function() {
-    console.log(currentRecipeID);
+    toggleDeleteRecipeModal();
+  });
 
-    /* var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
 
-    for(i = 0; i < storedUserRecipeArray.length; i++) {
+
+    /* for(i = 0; i < storedUserRecipeArray.length; i++) {
       if(storedUserRecipeArray[i].id === currentRecipeID) {
         console.log(storedUserRecipeArray);
 
@@ -295,8 +346,45 @@ $(document).ready(function() {
         populateTiles();
       }, 200);
     }, 500); */
+
+
+// ---
+
+  $deleteRecipeCloseIcon.on("click", function() {
+    if(deleteRecipeModalActive === true) {
+      hideBodyMask();
+
+      hideDeleteRecipeModal();
+    }
   });
 
+  $navbar.on("click", function() {
+    if(deleteRecipeModalActive === true) {
+      hideBodyMask();
+
+      hideDeleteRecipeModal();
+    }
+  });
+
+  $bodySearchMask.on("click", function() {
+    if(deleteRecipeModalActive === true) {
+      hideBodyMask();
+
+      hideDeleteRecipeModal();
+    }
+  });
+
+  $bottomOptionBar.on("click", function() {
+    if(deleteRecipeModalActive === true) {
+      bottomOptionBarClickCount++;
+
+     if(bottomOptionBarClickCount > 1) {
+       hideBodyMask();
+
+       hideDeleteRecipeModal();
+     }
+    }
+  });
 
 
 

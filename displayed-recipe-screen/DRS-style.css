@@ -266,6 +266,100 @@
   cursor: pointer;
 }
 
+#delete-recipe-modal {
+  display: none;
+
+  z-index: 20;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+
+  width: 600px;
+  height: 300px;
+  margin: auto;
+
+  font-weight: 300;
+  color: white;
+  text-align: center;
+
+  background-color: rgb(36, 38, 40);
+  border: 1px solid rgb(76, 211, 182);
+
+  opacity: 0;
+
+  transition: opacity 300ms ease-in-out;
+}
+
+.show-delete-recipe-modal {
+  opacity: 1 !important;
+}
+
+#delete-recipe-modal > h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  font-family: "Roboto Slab", serif;
+  font-size: 27px;
+}
+
+#delete-recipe-close-icon {
+  z-index: 30;
+  position: absolute;
+  top: 27px;
+  right: 19px;
+
+  width: 27px;
+
+  cursor: pointer;
+
+  transition: transform 150ms ease-in-out, opacity 150ms ease-in-out;
+}
+
+#delete-recipe-close-bar-top {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#delete-recipe-close-bar-bottom {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+#delete-recipe-confirm {
+  width: 20%;
+  height: 40px;
+  margin: 20px 0;
+
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: white;
+
+  border: 1px solid rgb(36, 38, 40);
+  border-radius: 10px;
+  background-color: #cc3300;
+  outline: none;
+
+  cursor: pointer;
+}
+
+#delete-recipe-cancel {
+  width: 20%;
+  height: 40px;
+  margin: 20px 0;
+
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: white;
+
+  border: 1px solid rgb(36, 38, 40);
+  border-radius: 10px;
+  background-color: rgb(47, 106, 93);
+  outline: none;
+
+  cursor: pointer;
+}
+
 
 
 
