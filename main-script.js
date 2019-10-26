@@ -95,7 +95,7 @@ var $searchResultNone = $("#search-result-none");
 
 
 /* ________ DISPLAYED RECIPE SCREEN ________ */
-var currentRecipeName = "";
+var currentRecipeID = "";
 var currentLinkHash = "";
 var currentFontSize = "default";
 
@@ -117,6 +117,7 @@ var $bottomOptionBar = $("#bottom-option-bar");
 var $bottomOptionBarBackground = $("#bottom-option-bar-background");
 var $backButton = $("#back-button");
 var $fontSizeButton = $("#font-size-button");
+var $deleteRecipeIcon = $("#delete-recipe-icon");
 
 
 /* _______ NEW RECIPE FINDER SCREEN _______ */
@@ -253,7 +254,7 @@ function populateTiles() {
 
         currentLinkHash = $(this).attr("href");
 
-        getSelectedRecipeName();
+        getSelectedRecipeID();
 
         screenTransitionFadeOut();
 
@@ -308,7 +309,7 @@ function populateTiles() {
           $addRecipeTile.addClass("tile-fade-in");
         }
       }, 100);
-    }  
+    }
   }
 }
 

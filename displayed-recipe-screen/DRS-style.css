@@ -225,11 +225,13 @@
 #font-size-button {
   position: absolute;
   top: 11px;
-  right: 20px;
+  left: 0;
+  right: 0;
 
-  width: auto;
+  width: 28px;
   height: 21px;
   padding-top: 10px;
+  margin: auto;
 
   text-align: center;
   line-height: 0;
@@ -237,6 +239,7 @@
   color: white;
 
   cursor: pointer;
+  user-select: none;
 }
 
 #font-size-button-span {
@@ -244,6 +247,21 @@
   right: 1px;
 
   font-size: 17px;
+
+  cursor: pointer;
+}
+
+#delete-recipe-icon {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+
+  width: 24px;
+  margin: auto;
+
+  font-size: 1.55em;
+  text-align: center;
+  color: white;
 
   cursor: pointer;
 }
