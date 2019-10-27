@@ -67,6 +67,8 @@ var $deleteRecipeCancelButton = $("#delete-recipe-cancel-button");
 var deleteRecipeModalActive = false;
 var bottomOptionBarClickCount = 0;
 
+var deleteRecipeFail = false;
+
 
 /* __________ BODY GRID CONTAINER __________ */
 var $bodyGridContainer = $("#body-grid-container");

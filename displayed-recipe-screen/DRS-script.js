@@ -222,20 +222,44 @@ function toggleDeleteRecipeModal() {
 
 function showDeleteRecipeModal() {
   deleteRecipeModalActive = true;
+  deleteRecipeFail = false;
 
   $deleteRecipeModal.css("display", "block");
 
-  var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
+  checkMasterOriginForCurrent();
 
-  for(i = 0; i < storedUserRecipeArray.length; i++) {
-    if(storedUserRecipeArray[i].id === currentRecipeID) {
-      $deleteRecipeNameSpan.html(storedUserRecipeArray[i].name);
-    }
+  if(deleteRecipeFail === false) {
+    checkLocalStorageForCurrent();
   }
 
   setTimeout(function() {
     $deleteRecipeModal.addClass("show-delete-recipe-modal");
   }, 0);
+}
+
+
+function checkMasterOriginForCurrent() {
+  for(i = 0; i < recipeListMasterOrigin.length; i++) {
+    if(recipeListMasterOrigin[i].id === currentRecipeID) {
+      $deleteRecipeConfirmButton.css("display", "none");
+
+      $deleteRecipeNameSpan.html("CANNOT DELETE");
+
+      deleteRecipeFail = true;
+    }
+  }
+}
+
+
+function checkLocalStorageForCurrent() {
+  var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
+
+  for(i = 0; i < storedUserRecipeArray.length; i++) {
+    if(storedUserRecipeArray[i].id === currentRecipeID) {
+      $deleteRecipeConfirmButton.css("display", "inline");
+      $deleteRecipeNameSpan.html(storedUserRecipeArray[i].name);
+    }
+  }
 }
 
 
@@ -338,6 +362,15 @@ $(document).ready(function() {
     hideDeleteRecipeModal();
 
     screenTransitionFadeOut();
+
+
+
+    clearSearch();
+    $categoryItem.removeClass("category-active");
+    $catAll.addClass("category-active");
+    currentCatActive = "all";
+
+
 
     setTimeout(function() {
       hideScreenAll();
