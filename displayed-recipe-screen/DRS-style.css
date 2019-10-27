@@ -324,10 +324,16 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
-#delete-recipe-confirm {
+#delete-recipe-modal > p {
+  padding: 0 20px;
+  margin: 20px 0;
+}
+
+.delete-recipe-modal-button {
   width: 20%;
   height: 40px;
-  margin: 20px 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
 
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -336,28 +342,18 @@
 
   border: 1px solid rgb(36, 38, 40);
   border-radius: 10px;
-  background-color: #cc3300;
+
   outline: none;
 
   cursor: pointer;
 }
 
-#delete-recipe-cancel {
-  width: 20%;
-  height: 40px;
-  margin: 20px 0;
+#delete-recipe-confirm-button {
+  background-color: #cc3300;
+}
 
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  color: white;
-
-  border: 1px solid rgb(36, 38, 40);
-  border-radius: 10px;
+#delete-recipe-cancel-button {
   background-color: rgb(47, 106, 93);
-  outline: none;
-
-  cursor: pointer;
 }
 
 
@@ -366,6 +362,10 @@
 
 /* -------------------------- MEDIA QUERY <= 1000 -------------------------- */
 @media screen and (max-width: 1000px) {
+  .delete-recipe-modal-button {
+    width: 50%;
+  }
+
   #body-grid-container {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -405,6 +405,11 @@
 
 /* -------------------------- MEDIA QUERY <= 800 -------------------------- */
 @media screen and (max-width: 800px) {
+  #delete-recipe-modal {
+    width: auto;
+    margin: auto 20px;
+  }
+
   #body-grid-container {
     grid-template-columns: repeat(3, 1fr);
   }
