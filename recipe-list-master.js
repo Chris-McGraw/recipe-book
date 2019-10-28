@@ -172,9 +172,6 @@ var tortelliniSoup = {
 var recipeListMaster = [bbqChicken, chili, fajitas, frittata, hamburgers, macAndCheese,
   potatoCasserole, pulledPork, spaghetti, springSalad, tortelliniSoup];
 
-var recipeListMasterOrigin = [bbqChicken, chili, fajitas, frittata, hamburgers, macAndCheese,
-  potatoCasserole, pulledPork, spaghetti, springSalad, tortelliniSoup];
-
 var recipeListBeef = [];
 
 var recipeListPork = [];

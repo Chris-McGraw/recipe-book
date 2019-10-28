@@ -126,10 +126,12 @@ function submitAddRecipeForm(name, category, tags, ingredients, recipe) {
 
 
 function setLocalStorage(data) {
-  userSavedRecipes.length = 0;
-  userSavedRecipes.push(data);
+  if(localStorage.length === 0) {
+    userSavedRecipes = recipeListMaster;
+  }
+  else {
+    userSavedRecipes.length = 0;
 
-  if(localStorage.length > 0) {
     var archivedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
 
     archivedUserRecipeArray.forEach(function(object) {
@@ -137,14 +139,15 @@ function setLocalStorage(data) {
     });
   }
 
+  userSavedRecipes.push(data);
+
   localStorage.setItem( "userSavedRecipes", JSON.stringify(userSavedRecipes) );
 }
 
 
 function getLocalStorage() {
   var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
-
-  recipeListMaster = recipeListMasterOrigin.slice(0);
+  recipeListMaster.length = 0;
 
   storedUserRecipeArray.forEach(function(object) {
     recipeListMaster.push(object);

@@ -67,8 +67,6 @@ var $deleteRecipeCancelButton = $("#delete-recipe-cancel-button");
 var deleteRecipeModalActive = false;
 var bottomOptionBarClickCount = 0;
 
-var deleteRecipeFail = false;
-
 
 /* __________ BODY GRID CONTAINER __________ */
 var $bodyGridContainer = $("#body-grid-container");
@@ -400,8 +398,12 @@ function hideBodyMask() {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
-  if(localStorage.length > 0) {
+  if(localStorage.length === 0) {
+    console.log("local storage has not been defined");
+  }
+  else if(localStorage.length > 0) {
     var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
+    recipeListMaster.length = 0;
 
     storedUserRecipeArray.forEach(function(object) {
       recipeListMaster.push(object);
