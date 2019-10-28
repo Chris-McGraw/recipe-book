@@ -222,32 +222,18 @@ function toggleDeleteRecipeModal() {
 
 function showDeleteRecipeModal() {
   deleteRecipeModalActive = true;
-  deleteRecipeFail = false;
 
   $deleteRecipeModal.css("display", "block");
 
-  checkMasterOriginForCurrent();
-
-  if(deleteRecipeFail === false) {
-    checkLocalStorageForCurrent();
+  for(i = 0; i < recipeListMaster.length; i++) {
+    if(recipeListMaster[i].id === currentRecipeID) {
+      $deleteRecipeNameSpan.html(recipeListMaster[i].name);
+    }
   }
 
   setTimeout(function() {
     $deleteRecipeModal.addClass("show-delete-recipe-modal");
   }, 0);
-}
-
-
-function checkMasterOriginForCurrent() {
-  for(i = 0; i < recipeListMasterOrigin.length; i++) {
-    if(recipeListMasterOrigin[i].id === currentRecipeID) {
-      $deleteRecipeConfirmButton.css("display", "none");
-
-      $deleteRecipeNameSpan.html("CANNOT DELETE");
-
-      deleteRecipeFail = true;
-    }
-  }
 }
 
 
@@ -314,7 +300,14 @@ $(document).ready(function() {
   });
 
   $deleteRecipeConfirmButton.on("click", function() {
+    if(localStorage.length === 0) {
+      userSavedRecipes = recipeListMaster;
+
+      localStorage.setItem( "userSavedRecipes", JSON.stringify(userSavedRecipes) );
+    }
+
     var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
+
 
     for(i = 0; i < storedUserRecipeArray.length; i++) {
       if(storedUserRecipeArray[i].id === currentRecipeID) {
@@ -336,12 +329,13 @@ $(document).ready(function() {
 
 
 
-
-    recipeListMaster = recipeListMasterOrigin.slice(0);
+    recipeListMaster.length = 0;
 
     storedUserRecipeArray.forEach(function(object) {
       recipeListMaster.push(object);
     });
+
+
 
     recipeListMaster.sort(function(a, b) {
       return a.name.localeCompare(b.name);
@@ -353,7 +347,7 @@ $(document).ready(function() {
 
 
 
-    console.log(recipeListMaster);
+    //console.log(recipeListMaster);
 
 
 
