@@ -4,13 +4,14 @@
   z-index: 20;
   position: fixed;
   top: 100px;
+  bottom: 30px;
   left: 0;
   right: 0;
 
   width: 600px;
-  height: auto;
+  min-height: 400px;
+  padding: 0;
   margin: auto;
-  padding: 0 30px;
 
   font-weight: 300;
   color: white;
@@ -30,7 +31,6 @@
 
 #add-recipe-form > h2 {
   margin-top: 20px;
-  margin-bottom: 10px;
 
   font-family: "Roboto Slab", serif;
   font-size: 27px;
@@ -62,12 +62,19 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  height: 315px;
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
+
+  width: 100%;
+  padding: 0 30px;
 
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-}
 
+  border-top: 1px solid rgb(76, 211, 182);
+  border-bottom: 1px solid rgb(76, 211, 182);
+}
 
 #add-recipe-form > div > label {
   position: absolute;
@@ -77,8 +84,18 @@
 #add-recipe-form > div > fieldset {
   grid-column: span 2;
 
+  margin-bottom: 20px;
+
   background-color: black;
   border: 1px solid rgb(47, 106, 93);
+}
+
+#name-fieldset {
+  margin-top: 20px;
+}
+
+#recipe-step-fieldset {
+  margin-bottom: 30px !important;
 }
 
 #add-recipe-form > div > fieldset > legend {
@@ -152,9 +169,14 @@
 }
 
 #add-recipe-submit {
-  width: 20%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  width: 180px;
   height: 40px;
-  margin: 20px 0;
+  margin: 20px auto;
 
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -234,7 +256,7 @@
 /* -------------------------- MEDIA QUERY <= 1000 -------------------------- */
 @media screen and (max-width: 1000px) {
   #add-recipe-submit {
-    width: 25%;
+    width: 180px;
   }
 }
 
@@ -256,29 +278,6 @@
 
 /* -------------------------- MEDIA QUERY <= 600 -------------------------- */
 @media screen and (max-width: 600px) {
-  #add-recipe-form {
-    padding: 0 0;
-  }
-
-  #add-recipe-form > h2 {
-    margin-bottom: 20px;
-  }
-
-  #add-recipe-form-grid {
-    padding: 0 30px;
-
-    border-top: 1px solid rgb(76, 211, 182);
-    border-bottom: 1px solid rgb(76, 211, 182);
-  }
-
-  #name-fieldset {
-    margin-top: 10px;
-  }
-
-  #add-recipe-form > div > fieldset {
-    margin-bottom: 20px;
-  }
-
   #radio-container {
     grid-template-columns: repeat(6, 1fr);
   }
