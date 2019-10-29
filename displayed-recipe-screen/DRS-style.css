@@ -272,6 +272,7 @@
   z-index: 20;
   position: fixed;
   top: 100px;
+  bottom: 70px;
   left: 0;
   right: 0;
 
@@ -295,9 +296,22 @@
   opacity: 1 !important;
 }
 
-#delete-recipe-modal > h2 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+#delete-recipe-bar-top {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 80px;
+
+  border-bottom: 1px solid rgb(76, 211, 182);
+}
+
+#delete-recipe-modal > div > h2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  margin: auto;
 
   font-family: "Roboto Slab", serif;
   font-size: 27px;
@@ -306,7 +320,6 @@
 #delete-recipe-close-icon {
   z-index: 30;
   position: absolute;
-  top: 27px;
   right: 19px;
 
   width: 27px;
@@ -326,14 +339,19 @@
 
 #delete-recipe-modal > p {
   padding: 0 20px;
-  margin: 20px 0;
+  margin-top: 30px;
 }
 
 .delete-recipe-modal-button {
-  width: 20%;
+  display: block;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  width: 180px;
   height: 40px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin: auto;
 
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -349,10 +367,12 @@
 }
 
 #delete-recipe-confirm-button {
+  bottom: 80px;
   background-color: #cc3300;
 }
 
 #delete-recipe-cancel-button {
+  bottom: 20px;
   background-color: rgb(47, 106, 93);
 }
 
@@ -363,7 +383,7 @@
 /* -------------------------- MEDIA QUERY <= 1000 -------------------------- */
 @media screen and (max-width: 1000px) {
   .delete-recipe-modal-button {
-    width: 50%;
+    width: 180px;
   }
 
   #body-grid-container {
@@ -410,6 +430,10 @@
     margin: auto 20px;
   }
 
+  .delete-recipe-modal-button {
+    width: 30%;
+  }
+
   #body-grid-container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -437,6 +461,10 @@
 
 /* -------------------------- MEDIA QUERY <= 600 -------------------------- */
 @media screen and (max-width: 600px) {
+  .delete-recipe-modal-button {
+    width: 40%;
+  }
+
   #body-grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -476,6 +504,10 @@
 
 /* -------------------------- MEDIA QUERY <= 400 -------------------------- */
 @media screen and (max-width: 400px) {
+  .delete-recipe-modal-button {
+    width: 45%;
+  }
+
   #body-grid-container {
     grid-template-columns: repeat(1, 1fr);
   }

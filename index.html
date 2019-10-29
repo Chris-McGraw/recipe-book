@@ -89,12 +89,14 @@
 
 <!-- ====================== ADD NEW RECIPE FORM START ====================== -->
     <form id="add-recipe-form" action="javascript:void(0);">
-      <h2>Add New Recipe</h2>
+      <div id="add-recipe-bar-top">
+        <h2>Add New Recipe</h2>
 
-      <div id="add-recipe-close-icon">
-        <div class="hamburger-bar" id="add-recipe-close-bar-top"></div>
-        <div class="hamburger-bar hide-bar-middle"></div>
-        <div class="hamburger-bar" id="add-recipe-close-bar-bottom"></div>
+        <div id="add-recipe-close-icon">
+          <div class="hamburger-bar" id="add-recipe-close-bar-top"></div>
+          <div class="hamburger-bar hide-bar-middle"></div>
+          <div class="hamburger-bar" id="add-recipe-close-bar-bottom"></div>
+        </div>
       </div>
 
       <div id="add-recipe-form-grid">
@@ -136,8 +138,10 @@
         <div id="add-recipe-form-touch-spacer"></div>
       </div>
 
-      <button type="submit" name="add-recipe-submit" id="add-recipe-submit"
-      aria-label="submit new recipe">Add Recipe</button>
+      <div id="add-recipe-bar-bottom">
+        <button type="submit" name="add-recipe-submit" id="add-recipe-submit"
+        aria-label="submit new recipe">Add Recipe</button>
+      </div>
     </form>
 <!-- _______________________ ADD NEW RECIPE FORM END _______________________ -->
 
@@ -145,12 +149,14 @@
 
 <!-- ====================== DELETE RECIPE MODAL START ====================== -->
     <div id="delete-recipe-modal">
-      <h2>Delete Recipe</h2>
+      <div id="delete-recipe-bar-top">
+        <h2>Delete Recipe</h2>
 
-      <div id="delete-recipe-close-icon">
-        <div class="hamburger-bar" id="delete-recipe-close-bar-top"></div>
-        <div class="hamburger-bar hide-bar-middle"></div>
-        <div class="hamburger-bar" id="delete-recipe-close-bar-bottom"></div>
+        <div id="delete-recipe-close-icon">
+          <div class="hamburger-bar" id="delete-recipe-close-bar-top"></div>
+          <div class="hamburger-bar hide-bar-middle"></div>
+          <div class="hamburger-bar" id="delete-recipe-close-bar-bottom"></div>
+        </div>
       </div>
 
       <p>Are you sure you want to delete "<span id="delete-recipe-name-span"> </span>" from your saved recipes?</p>
