@@ -45,6 +45,10 @@ var $addRecipeFormGrid = $("#add-recipe-form-grid");
 var $addRecipeCloseIcon = $("#add-recipe-close-icon");
 var addRecipeFormActive = false;
 var addRecipeFormInputFocused = false;
+var validNameInput = false;
+var validTagInput = false;
+var validIngredientInput = false;
+var validRecipeStepInput = false;
 var addRecipeFormValid = false;
 
 var $addRecipeFormInput = $(".add-recipe-form-input");
