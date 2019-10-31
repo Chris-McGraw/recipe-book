@@ -105,6 +105,7 @@
           <input type="text" name="name" id="name-input" class="add-recipe-form-input"
           placeholder="enter a name..."></input>
         </fieldset>
+        <p id="recipe-name-error-message" class="form-error-message">Please enter a valid recipe name.</p>
 
         <fieldset id="category-field">
           <legend>Category</legend>
@@ -122,18 +123,21 @@
           <input type="text" name="tags" id="tag-input" class="add-recipe-form-input"
           placeholder="enter search tags..."></input>
         </fieldset>
+        <p id="search-tag-error-message" class="form-error-message">Please enter at least one valid search tag.</p>
 
         <fieldset>
           <legend>Ingredients <span>(comma separated)</span></legend>
           <input type="text" name="ingredients" id="ingredient-input" class="add-recipe-form-input"
           placeholder="enter ingredients..."></input>
         </fieldset>
+        <p id="ingredient-error-message" class="form-error-message">Please enter at least one valid recipe ingredient.</p>
 
         <fieldset id="recipe-step-fieldset">
           <legend>Recipe Steps <span>(comma separated)</span></legend>
           <input type="text" name="recipeStep" id="recipe-step-input" class="add-recipe-form-input"
           placeholder="enter recipe step..."></input>
         </fieldset>
+        <p id="recipe-step-error-message" class="form-error-message">Please enter at least one valid recipe step.</p>
 
         <div id="add-recipe-form-touch-spacer"></div>
       </div>
