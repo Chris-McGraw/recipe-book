@@ -86,6 +86,40 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.form-error-message {
+  grid-column: span 2;
+
+  position: relative;
+  top: -18px;
+
+  width: auto;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  text-align: left;
+  color: #cc3300;
+
+  margin-bottom: -18px;
+}
+
+#recipe-name-error-message {
+  display: none;
+}
+
+#search-tag-error-message {
+  display: none;
+}
+
+#ingredient-error-message {
+  display: none;
+}
+
+#recipe-step-error-message {
+  display: none;
+
+  top: -28px;
+}
+
 #add-recipe-form > div > label {
   position: absolute;
   left: 0;

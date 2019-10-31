@@ -61,6 +61,11 @@ var $addRecipeFormTouchSpacer = $("#add-recipe-form-touch-spacer");
 var userSavedRecipes = [];
 var $addRecipeSubmit = $("#add-recipe-submit");
 
+var $recipeNameErrorMessage = $("#recipe-name-error-message");
+var $searchTagErrorMessage = $("#search-tag-error-message");
+var $ingredientErrorMessage = $("#ingredient-error-message");
+var $recipeStepErrorMessage = $("#recipe-step-error-message");
+
 
 /* __________ DELETE RECIPE MODAL __________ */
 var $deleteRecipeModal = $("#delete-recipe-modal");

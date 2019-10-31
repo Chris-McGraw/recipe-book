@@ -100,21 +100,37 @@ function checkInputRegEx(input) {
 
     switch( input.attr("id") ) {
       case "name-input":
-        console.log("Please enter a valid recipe name.");
+        $recipeNameErrorMessage.html("Please enter a valid recipe name.");
+        $recipeNameErrorMessage.css("display", "block");
         break;
       case "tag-input":
-        console.log("Please enter at least one valid search tag.");
+        $searchTagErrorMessage.css("display", "block");
         break;
       case "ingredient-input":
-        console.log("Please enter at least one valid recipe ingredient.");
+        $ingredientErrorMessage.css("display", "block");
         break;
       case "recipe-step-input":
-        console.log("Please enter at least one valid recipe step.");
+        $recipeStepErrorMessage.css("display", "block");
         break;
     }
   }
   else {
     input.css("background-image", "none");
+
+    switch( input.attr("id") ) {
+      case "name-input":
+        $recipeNameErrorMessage.css("display", "none");
+        break;
+      case "tag-input":
+        $searchTagErrorMessage.css("display", "none");
+        break;
+      case "ingredient-input":
+        $ingredientErrorMessage.css("display", "none");
+        break;
+      case "recipe-step-input":
+        $recipeStepErrorMessage.css("display", "none");
+        break;
+    }
   }
 }
 
@@ -128,15 +144,19 @@ function validateAddRecipeInput(input) {
     switch( input.attr("id") ) {
       case "name-input":
         validNameInput = true;
+        $recipeNameErrorMessage.css("display", "none");
         break;
       case "tag-input":
         validTagInput = true;
+        $searchTagErrorMessage.css("display", "none");
         break;
       case "ingredient-input":
         validIngredientInput = true;
+        $ingredientErrorMessage.css("display", "none");
         break;
       case "recipe-step-input":
         validRecipeStepInput = true;
+        $recipeStepErrorMessage.css("display", "none");
         break;
     }
   }
@@ -146,19 +166,20 @@ function validateAddRecipeInput(input) {
     switch( input.attr("id") ) {
       case "name-input":
         validNameInput = false;
-        console.log("Please enter a valid recipe name.");
+        $recipeNameErrorMessage.html("Please enter a valid recipe name.");
+        $recipeNameErrorMessage.css("display", "block");
         break;
       case "tag-input":
         validTagInput = false;
-        console.log("Please enter at least one valid search tag.");
+        $searchTagErrorMessage.css("display", "block");
         break;
       case "ingredient-input":
         validIngredientInput = false;
-        console.log("Please enter at least one valid recipe ingredient.");
+        $ingredientErrorMessage.css("display", "block");
         break;
       case "recipe-step-input":
         validRecipeStepInput = false;
-        console.log("Please enter at least one valid recipe step.");
+        $recipeStepErrorMessage.css("display", "block");
         break;
     }
   }
@@ -187,8 +208,6 @@ function preventDuplicateRecipeID(val) {
 
   for(i = 0; i < recipeListMaster.length; i++) {
     if(newRecipeId === recipeListMaster[i].id) {
-      console.log("NO DUPLICATES ALLOWED!");
-
       duplicateFound = true;
     }
   }
@@ -197,9 +216,9 @@ function preventDuplicateRecipeID(val) {
     addRecipeFormValid = false;
 
     $nameInput.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1572454320/recipe-book/exclamation-triangle-red.png)");
-  }
-  else {
-    $nameInput.css("background-image", "none");
+
+    $recipeNameErrorMessage.html("This recipe name is already taken.");
+    $recipeNameErrorMessage.css("display", "block");
   }
 }
 
@@ -356,6 +375,8 @@ $(document).ready(function() {
     }
 
     checkInputRegEx( $(this) );
+
+    preventDuplicateRecipeID( $nameInput.val().replace(/\s+/g, " ").trim() );
   });
 
   $addRecipeCloseIcon.on("click", function() {
@@ -414,6 +435,7 @@ $(document).ready(function() {
     }
     else {
       console.log("Invalid Form");
+      console.log("");
     }
   });
 
