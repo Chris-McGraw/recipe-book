@@ -181,6 +181,29 @@ function validateAddRecipeForm() {
 }
 
 
+function preventDuplicateRecipeID(val) {
+  var newRecipeId = idUserInput(val);
+  var duplicateFound = false;
+
+  for(i = 0; i < recipeListMaster.length; i++) {
+    if(newRecipeId === recipeListMaster[i].id) {
+      console.log("NO DUPLICATES ALLOWED!");
+
+      duplicateFound = true;
+    }
+  }
+
+  if(duplicateFound === true) {
+    addRecipeFormValid = false;
+
+    $nameInput.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1572454320/recipe-book/exclamation-triangle-red.png)");
+  }
+  else {
+    $nameInput.css("background-image", "none");
+  }
+}
+
+
 function submitAddRecipeForm(name, category, tags, ingredients, recipe) {
   var userRecipeObject = new customRecipe(name, name, name, category, "", tags, ingredients, recipe);
   console.log(userRecipeObject);
@@ -379,6 +402,8 @@ $(document).ready(function() {
     var recipeStepInput = $recipeStepInput.val().replace(/\s+/g, " ").trim();
 
     validateAddRecipeForm();
+
+    preventDuplicateRecipeID(nameInput);
 
     if(addRecipeFormValid === true) {
       hideBodyMask();
