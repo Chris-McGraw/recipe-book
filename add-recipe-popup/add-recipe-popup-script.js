@@ -92,10 +92,87 @@ function recipeStepUserInput(input) {
 }
 
 
-function validateAddRecipeForm(name, category, tags, ingredients, recipe) {
-  if(name != "" && category != undefined && tags != "" && ingredients != "" && recipe != "") {
-    console.log("no blanks");
+function checkInputRegEx(input) {
+  inputVal = input.val().replace(/\s+/g, "").trim();
 
+  if( /[^a-zA-Z0-9\\,]/.test(inputVal) ) {
+    input.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1572454320/recipe-book/exclamation-triangle-red.png)");
+
+    switch( input.attr("id") ) {
+      case "name-input":
+        console.log("Please enter a valid recipe name.");
+        break;
+      case "tag-input":
+        console.log("Please enter at least one valid search tag.");
+        break;
+      case "ingredient-input":
+        console.log("Please enter at least one valid recipe ingredient.");
+        break;
+      case "recipe-step-input":
+        console.log("Please enter at least one valid recipe step.");
+        break;
+    }
+  }
+  else {
+    input.css("background-image", "none");
+  }
+}
+
+
+function validateAddRecipeInput(input) {
+  inputVal = input.val().replace(/\s+/g, "").trim();
+
+  if(/[^a-zA-Z0-9\\,]/.test(inputVal) === false && inputVal != "") {
+    input.css("background-image", "none");
+
+    switch( input.attr("id") ) {
+      case "name-input":
+        validNameInput = true;
+        break;
+      case "tag-input":
+        validTagInput = true;
+        break;
+      case "ingredient-input":
+        validIngredientInput = true;
+        break;
+      case "recipe-step-input":
+        validRecipeStepInput = true;
+        break;
+    }
+  }
+  else {
+    input.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1572454320/recipe-book/exclamation-triangle-red.png)");
+
+    switch( input.attr("id") ) {
+      case "name-input":
+        validNameInput = false;
+        console.log("Please enter a valid recipe name.");
+        break;
+      case "tag-input":
+        validTagInput = false;
+        console.log("Please enter at least one valid search tag.");
+        break;
+      case "ingredient-input":
+        validIngredientInput = false;
+        console.log("Please enter at least one valid recipe ingredient.");
+        break;
+      case "recipe-step-input":
+        validRecipeStepInput = false;
+        console.log("Please enter at least one valid recipe step.");
+        break;
+    }
+  }
+}
+
+
+function validateAddRecipeForm() {
+  validateAddRecipeInput($nameInput);
+  validateAddRecipeInput($tagInput);
+  validateAddRecipeInput($ingredientInput);
+  validateAddRecipeInput($recipeStepInput);
+
+  if(validNameInput === true && validTagInput === true
+  && validIngredientInput === true && validRecipeStepInput === true) {
     addRecipeFormValid = true;
   }
   else {
@@ -254,6 +331,8 @@ $(document).ready(function() {
 
       $addRecipeFormTouchSpacer.css("display", "none");
     }
+
+    checkInputRegEx( $(this) );
   });
 
   $addRecipeCloseIcon.on("click", function() {
@@ -299,7 +378,7 @@ $(document).ready(function() {
     var ingredientInput = $ingredientInput.val().replace(/\s+/g, " ").trim();
     var recipeStepInput = $recipeStepInput.val().replace(/\s+/g, " ").trim();
 
-    validateAddRecipeForm(nameInput, categoryInput, tagInput, ingredientInput, recipeStepInput);
+    validateAddRecipeForm();
 
     if(addRecipeFormValid === true) {
       hideBodyMask();
