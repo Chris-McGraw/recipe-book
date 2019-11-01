@@ -223,6 +223,22 @@ function preventDuplicateRecipeID(val) {
 }
 
 
+function scrollFormToError() {
+  if($nameInput.css("background-image") != "none") {
+    $addRecipeFormGrid.scrollTop(0);
+  }
+  else if($tagInput.css("background-image") != "none") {
+    $addRecipeFormGrid.scrollTop($tagInput.offset().top);
+  }
+  else if($ingredientInput.css("background-image") != "none") {
+    $addRecipeFormGrid.scrollTop($ingredientInput.offset().top);
+  }
+  else if($recipeStepInput.css("background-image") != "none") {
+    $addRecipeFormGrid.scrollTop($recipeStepInput.offset().top);
+  }
+}
+
+
 function submitAddRecipeForm(name, category, tags, ingredients, recipe) {
   var userRecipeObject = new customRecipe(name, name, name, category, "", tags, ingredients, recipe);
   console.log(userRecipeObject);
@@ -231,6 +247,7 @@ function submitAddRecipeForm(name, category, tags, ingredients, recipe) {
   getLocalStorage();
 
   $addRecipeForm[0].reset();
+  $addRecipeFormGrid.scrollTop(0);
 
   clearRecipeLists();
   clearTiles();
@@ -281,8 +298,8 @@ function getLocalStorage() {
 $(document).ready(function() {
 
   $(document).keydown(function(event) {
-  /* ----- 3 Num Key Press ----- */
-    if(event.which === 51) {
+  /* ----- Escape Key Press ----- */
+    if(event.which === 27) {
       localStorage.clear();
 
       console.log("local storage cleared");
@@ -423,19 +440,18 @@ $(document).ready(function() {
     var recipeStepInput = $recipeStepInput.val().replace(/\s+/g, " ").trim();
 
     validateAddRecipeForm();
-
     preventDuplicateRecipeID(nameInput);
+
+    scrollFormToError();
 
     if(addRecipeFormValid === true) {
       hideBodyMask();
-
       hideAddRecipeForm();
 
       submitAddRecipeForm(nameInput, categoryInput, tagInput, ingredientInput, recipeStepInput);
     }
     else {
       console.log("Invalid Form");
-      console.log("");
     }
   });
 
