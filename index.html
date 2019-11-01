@@ -17,7 +17,7 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="main-style.css">
   <link rel="stylesheet" type="text/css" href="navbar-style.css">
@@ -163,7 +163,10 @@
         </div>
       </div>
 
-      <p>Are you sure you want to delete "<span id="delete-recipe-name-span"> </span>" from your saved recipes?</p>
+      <div id="delete-recipe-message-container">
+        <p>Are you sure you want to delete: <span id="delete-recipe-name-span"> </span></p>
+      </div>
+
       <button id="delete-recipe-confirm-button" class="delete-recipe-modal-button">Yes, Delete</button>
       <button id="delete-recipe-cancel-button" class="delete-recipe-modal-button">Cancel</button>
     </div>

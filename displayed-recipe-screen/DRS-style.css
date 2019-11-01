@@ -15,6 +15,10 @@
 
   cursor: text;
   user-select: text;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #ingredient-container {
@@ -337,9 +341,35 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
-#delete-recipe-modal > p {
+#delete-recipe-message-container {
+  display: flex;
+  align-items: center;
+
+  height: 99px;
   padding: 0 20px;
-  margin-top: 30px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+#delete-recipe-modal > div > p {
+  display: block;
+
+  width: 100%;
+}
+
+#delete-recipe-name-span {
+  display: block;
+
+  width: 100%;
+  margin: 10px 0;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
 }
 
 .delete-recipe-modal-button {
@@ -355,6 +385,7 @@
 
   text-align: center;
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
   font-size: 18px;
   color: white;
 
