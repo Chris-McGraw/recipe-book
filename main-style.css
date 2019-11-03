@@ -42,6 +42,10 @@ ul {
   opacity: 1.0 !important;
 }
 
+.button-active {
+  opacity: 0.8 !important;
+}
+
 #ios-status-bar-background {
   z-index: 40;
   position: fixed;

@@ -431,6 +431,13 @@ $(document).ready(function() {
 
   document.ontouchstart = function(event) {
     touchDevice = true;
+
+    $addRecipeSubmit.off("mouseenter");
+
+    $deleteRecipeConfirmButton.off("mouseenter");
+    $deleteRecipeCancelButton.off("mouseenter");
+
+    $newRecipeSearchButton.off("mouseenter");
   }
 
   document.ontouchmove = function(event) {

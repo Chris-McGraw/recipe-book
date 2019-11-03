@@ -299,6 +299,24 @@ $(document).ready(function() {
     toggleDeleteRecipeModal();
   });
 
+// ---
+
+  $deleteRecipeConfirmButton.on("mouseenter", function(event) {
+    $(this).addClass("button-active");
+  });
+
+  $deleteRecipeConfirmButton.on("mouseleave", function(event) {
+    $(this).removeClass("button-active");
+  });
+
+  $deleteRecipeConfirmButton.on("touchstart", function() {
+    $(this).removeClass("button-active");
+  });
+
+  $deleteRecipeConfirmButton.on("touchend", function() {
+    $(this).removeClass("button-active");
+  });
+
   $deleteRecipeConfirmButton.on("click", function() {
     if(localStorage.length === 0) {
       userSavedRecipes = recipeListMaster;
@@ -390,6 +408,24 @@ $(document).ready(function() {
     }
   });
 
+// ---
+
+  $deleteRecipeCancelButton.on("mouseenter", function(event) {
+    $(this).addClass("button-active");
+  });
+
+  $deleteRecipeCancelButton.on("mouseleave", function(event) {
+    $(this).removeClass("button-active");
+  });
+
+  $deleteRecipeCancelButton.on("touchstart", function() {
+    $(this).removeClass("button-active");
+  });
+
+  $deleteRecipeCancelButton.on("touchend", function() {
+    $(this).removeClass("button-active");
+  });
+
   $deleteRecipeCancelButton.on("click", function() {
     if(deleteRecipeModalActive === true) {
       hideBodyMask();
@@ -397,6 +433,8 @@ $(document).ready(function() {
       hideDeleteRecipeModal();
     }
   });
+
+// ---
 
   $navbar.on("click", function() {
     if(deleteRecipeModalActive === true) {

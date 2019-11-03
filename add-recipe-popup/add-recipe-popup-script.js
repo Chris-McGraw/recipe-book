@@ -428,9 +428,25 @@ $(document).ready(function() {
     }
   });
 
+// ---
 
+  $addRecipeSubmit.on("mouseenter", function(event) {
+    $(this).addClass("button-active");
+  });
 
+  $addRecipeSubmit.on("mouseleave", function(event) {
+    $(this).removeClass("button-active");
+  });
 
+  $addRecipeSubmit.on("touchstart", function() {
+    $(this).removeClass("button-active");
+  });
+
+  $addRecipeSubmit.on("touchend", function() {
+    $(this).removeClass("button-active");
+  });
+
+// ---
 
   $addRecipeSubmit.on("click", function() {
     var nameInput = $nameInput.val().replace(/\s+/g, " ").trim();
