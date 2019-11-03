@@ -395,6 +395,8 @@
   outline: none;
 
   cursor: pointer;
+
+  transition: opacity 300ms ease-in-out;
 }
 
 #delete-recipe-confirm-button {

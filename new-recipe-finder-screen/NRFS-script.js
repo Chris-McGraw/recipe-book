@@ -168,9 +168,23 @@ $(document).ready(function() {
     }
   });
 
+// ---
 
+  $newRecipeSearchButton.on("mouseenter", function(event) {
+    $(this).addClass("button-active");
+  });
 
+  $newRecipeSearchButton.on("mouseleave", function(event) {
+    $(this).removeClass("button-active");
+  });
 
+  $newRecipeSearchButton.on("touchstart", function() {
+    $(this).removeClass("button-active");
+  });
+
+  $newRecipeSearchButton.on("touchend", function() {
+    $(this).removeClass("button-active");
+  });
 
   $newRecipeSearchButton.on("click", function() {
     if($newRecipeSearchBar.val() !== "" && delayRecipeSearchNew === false) {

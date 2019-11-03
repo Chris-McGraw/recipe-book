@@ -257,6 +257,8 @@
   outline: none;
 
   cursor: pointer;
+
+  transition: opacity 300ms ease-in-out;
 }
 
 #add-recipe-tile {
