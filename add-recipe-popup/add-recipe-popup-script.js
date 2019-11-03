@@ -439,7 +439,7 @@ $(document).ready(function() {
   });
 
   $addRecipeSubmit.on("touchstart", function() {
-    $(this).removeClass("button-active");
+    $(this).addClass("button-active");
   });
 
   $addRecipeSubmit.on("touchend", function() {

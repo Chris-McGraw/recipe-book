@@ -310,7 +310,7 @@ $(document).ready(function() {
   });
 
   $deleteRecipeConfirmButton.on("touchstart", function() {
-    $(this).removeClass("button-active");
+    $(this).addClass("button-active");
   });
 
   $deleteRecipeConfirmButton.on("touchend", function() {
@@ -419,7 +419,7 @@ $(document).ready(function() {
   });
 
   $deleteRecipeCancelButton.on("touchstart", function() {
-    $(this).removeClass("button-active");
+    $(this).addClass("button-active");
   });
 
   $deleteRecipeCancelButton.on("touchend", function() {
