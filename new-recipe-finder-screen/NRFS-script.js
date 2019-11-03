@@ -179,7 +179,7 @@ $(document).ready(function() {
   });
 
   $newRecipeSearchButton.on("touchstart", function() {
-    $(this).removeClass("button-active");
+    $(this).addClass("button-active");
   });
 
   $newRecipeSearchButton.on("touchend", function() {
