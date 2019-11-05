@@ -151,10 +151,16 @@
   color: white;
 
   cursor: pointer;
+
+  transition: background-color 300ms ease-in-out;
 }
 
-.dropdown-button:active {
-  box-shadow: inset 0 0 40px DarkSlateGray;
+.dropdown-button-active {
+  background-color: #2d6357 !important;
+}
+
+.dropdown-button-pressed {
+  box-shadow: inset 0 -10px 10px -10px rgb(36, 38, 40);
 }
 
 #dropdown-button-saved {

@@ -286,9 +286,9 @@ $(document).ready(function() {
     userSearchBlurred();
   });
 
+// ---
 
-
-
+  addDropdownButtonMouseTouchEvents($dropdownButtonSaved);
 
   $dropdownButtonSaved.on("click", function() {
     if(delayPopulate === false) {
@@ -320,6 +320,10 @@ $(document).ready(function() {
       }, 500);
     }
   });
+
+// ---
+
+  addDropdownButtonMouseTouchEvents($dropdownButtonFindNew);
 
   $dropdownButtonFindNew.on("click", function() {
     if(delayPopulate === false) {
