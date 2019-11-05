@@ -380,23 +380,11 @@
   right: 0;
 
   width: 180px;
-  height: 40px;
-  margin: auto;
 
-  text-align: center;
-  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 18px;
-  color: white;
 
   border: 1px solid rgb(36, 38, 40);
-  border-radius: 10px;
-
-  outline: none;
-
-  cursor: pointer;
-
-  transition: opacity 300ms ease-in-out;
 }
 
 #delete-recipe-confirm-button {
@@ -404,9 +392,12 @@
   background-color: #cc3300;
 }
 
+.delete-button-active {
+  background-color: #aa3007 !important;
+}
+
 #delete-recipe-cancel-button {
   bottom: 20px;
-  background-color: rgb(47, 106, 93);
 }
 
 

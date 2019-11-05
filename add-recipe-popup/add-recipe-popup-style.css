@@ -242,23 +242,12 @@
   right: 0;
 
   width: 180px;
-  height: 40px;
-  margin: auto;
 
-  text-align: center;
-  font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 300;
-  color: white;
 
   border: 1px solid rgb(36, 38, 40);
   border-radius: 10px;
-  background-color: rgb(47, 106, 93);
-  outline: none;
-
-  cursor: pointer;
-
-  transition: opacity 300ms ease-in-out;
 }
 
 #add-recipe-tile {
