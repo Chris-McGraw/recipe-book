@@ -301,21 +301,7 @@ $(document).ready(function() {
 
 // ---
 
-  $deleteRecipeConfirmButton.on("mouseenter", function(event) {
-    $(this).addClass("button-active");
-  });
-
-  $deleteRecipeConfirmButton.on("mouseleave", function(event) {
-    $(this).removeClass("button-active");
-  });
-
-  $deleteRecipeConfirmButton.on("touchstart", function() {
-    $(this).addClass("button-active");
-  });
-
-  $deleteRecipeConfirmButton.on("touchend", function() {
-    $(this).removeClass("button-active");
-  });
+  addButtonMouseTouchEvents($deleteRecipeConfirmButton);
 
   $deleteRecipeConfirmButton.on("click", function() {
     if(localStorage.length === 0) {
@@ -410,21 +396,7 @@ $(document).ready(function() {
 
 // ---
 
-  $deleteRecipeCancelButton.on("mouseenter", function(event) {
-    $(this).addClass("button-active");
-  });
-
-  $deleteRecipeCancelButton.on("mouseleave", function(event) {
-    $(this).removeClass("button-active");
-  });
-
-  $deleteRecipeCancelButton.on("touchstart", function() {
-    $(this).addClass("button-active");
-  });
-
-  $deleteRecipeCancelButton.on("touchend", function() {
-    $(this).removeClass("button-active");
-  });
+  addButtonMouseTouchEvents($deleteRecipeCancelButton);
 
   $deleteRecipeCancelButton.on("click", function() {
     if(deleteRecipeModalActive === true) {

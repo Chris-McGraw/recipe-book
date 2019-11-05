@@ -402,6 +402,49 @@ function hideBodyMask() {
 }
 
 
+function addButtonMouseTouchEvents(button) {
+  button.on("mouseenter", function() {
+    if(button.attr("id") === "delete-recipe-confirm-button") {
+      button.addClass("delete-button-active");
+    }
+    else {
+      button.addClass("button-active");
+    }
+  });
+
+  button.on("mouseleave", function() {
+    button.removeClass("button-pressed");
+    button.removeClass("button-active");
+    button.removeClass("delete-button-active");
+  });
+
+  button.on("mousedown", function() {
+    button.addClass("button-pressed");
+  });
+
+  button.on("mouseup", function() {
+    button.removeClass("button-pressed");
+  });
+
+  button.on("touchstart", function() {
+    if(button.attr("id") === "delete-recipe-confirm-button") {
+      button.addClass("delete-button-active");
+    }
+    else {
+      button.addClass("button-active");
+    }
+
+    button.addClass("button-pressed");
+  });
+
+  button.on("touchend", function() {
+    button.removeClass("button-pressed");
+    button.removeClass("button-active");
+    button.removeClass("delete-button-active");
+  });
+}
+
+
 
 
 
@@ -433,11 +476,15 @@ $(document).ready(function() {
     touchDevice = true;
 
     $addRecipeSubmit.off("mouseenter");
+    $addRecipeSubmit.css("transition-duration", "0s");
 
     $deleteRecipeConfirmButton.off("mouseenter");
+    $deleteRecipeConfirmButton.css("transition-duration", "0s");
     $deleteRecipeCancelButton.off("mouseenter");
+    $deleteRecipeCancelButton.css("transition-duration", "0s");
 
     $newRecipeSearchButton.off("mouseenter");
+    $newRecipeSearchButton.css("transition-duration", "0s");
   }
 
   document.ontouchmove = function(event) {
