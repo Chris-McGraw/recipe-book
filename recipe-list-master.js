@@ -115,10 +115,10 @@ var potatoCasserole = {
   hash: "potato-casserole",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379270/recipe-book/potato-casserole.jpg",
-  tags: ["vegetarian", "potato casserole", "potato", "casserole", "french"],
+  tags: ["vegetarian", "potato casserole", "potato", "casserole"],
   ingredients: ["3 large Russet potatoes", "3 cups fresh broccoli florets", "2 cups shredded cheddar cheese",
-  "1 1/2 cup sour cream", "2 tbsp. butter", "2 tbsp. chopped green onion", "1/2 tbsp. salt",
-  "1/4 tbsp. ground black pepper"],
+  "1 1/2 cup sour cream", "2 tbsp. butter", "2 tbsp. chopped green onion", "1/2 tsp. salt",
+  "1/4 tsp. ground black pepper"],
   recipe: ["Preheat oven to 375°F.",
   "Scrub potatoes under cold water. Dry and pierce each potato several times with a fork.",
   "Rub potatoes with olive oil and salt. Wrap each potato in foil and place on baking sheet. Bake for 1 hour.",
@@ -157,8 +157,13 @@ var springSalad = {
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544121716/recipe-book/spring-salad.jpg",
   tags: ["vegetarian", "spring salad", "spring", "salad"],
-  ingredients: [],
-  recipe: []
+  ingredients: ["3 slices swiss cheese", "1 clove garlic", "10 oz. lettuce/mixed greens",
+  "1/3 cup red onion", "1/4 cup canola oil", "3 tbsp. rice wine vinegar", "1 tbsp. mayonnaise",
+  "2 tsp. Dijon mustard", "1 tsp. dried oregano", "1/2 tsp. salt", "1/4 tsp. ground black pepper"],
+  recipe: ["Slice swiss cheese and red onion into thin strips. Finely dice garlic.",
+  "Toss together lettuce/greens, cheese, and red onion in a large mixing bowl.",
+  "In a seperate dish, whisk together garlic, oil, vinegar, mayo, mustard, oregano, salt, and pepper.",
+  "Pour dressing over salad and toss to combine."]
 };
 
 var tortelliniSoup = {
