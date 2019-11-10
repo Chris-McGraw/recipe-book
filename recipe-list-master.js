@@ -99,8 +99,14 @@ var macAndCheese = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/mac-and-cheese.jpg",
   tags: ["vegetarian", "mac and cheese", "mac & cheese", "pasta", "macaroni", "mac", "cheese",
   "italian", "american"],
-  ingredients: [],
-  recipe: []
+  ingredients: ["3 cups milk", "2 cups shredded cheddar cheese", "8 oz. dry elbow macaroni",
+  "1/4 cup butter", "2 tbsp. all-purpose flour", "1/4 tsp. ground black pepper"],
+  recipe: ["Boil macaroni noodles in large pot for 9-12 minutes or until pasta is al dente. Drain and set aside.",
+  "In a seperate saucepan, melt butter over medium heat. Mix flour into melted butter to form a roux.",
+  "Reduce heat to low. While stirring, slowly add milk to roux.",
+  "Stir in cheese and cook until sauce begins to thicken.",
+  "Pour sauce over pasta, add black pepper, and combine well.",
+  "If desired, bake in baking dish for 30 minutes at 350°F."]
 };
 
 var potatoCasserole = {
