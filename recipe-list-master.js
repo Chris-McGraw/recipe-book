@@ -116,8 +116,16 @@ var potatoCasserole = {
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379270/recipe-book/potato-casserole.jpg",
   tags: ["vegetarian", "potato casserole", "potato", "casserole", "french"],
-  ingredients: [],
-  recipe: []
+  ingredients: ["3 large Russet potatoes", "3 cups fresh broccoli florets", "2 cups shredded cheddar cheese",
+  "1 1/2 cup sour cream", "2 tbsp. butter", "2 tbsp. chopped green onion", "1/2 tbsp. salt",
+  "1/4 tbsp. ground black pepper"],
+  recipe: ["Preheat oven to 375°F.",
+  "Scrub potatoes under cold water. Dry and pierce each potato several times with a fork.",
+  "Rub potatoes with olive oil and salt. Wrap each potato in foil and place on baking sheet. Bake for 1 hour.",
+  "About 10 minutes before potatoes are done, bring a pot of water to boil. Gently boil broccoli for about 5 minutes. Drain and set aside.",
+  "Once potatoes are finished and slightly cooled, roughly chop and add to a large mixing bowl.",
+  "Add cooked broccoli and remaining ingredients to bowl and combine well.",
+  "Pour mixture into a greased casserole dish and cover with foil. Bake for 15 minutes or until cheese is melted."]
 };
 
 var pulledPork = {
