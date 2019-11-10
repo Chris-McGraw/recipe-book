@@ -99,7 +99,7 @@ var macAndCheese = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/mac-and-cheese.jpg",
   tags: ["vegetarian", "mac and cheese", "mac & cheese", "pasta", "macaroni", "mac", "cheese",
   "italian", "american"],
-  ingredients: ["3 cups milk", "2 cups shredded cheddar cheese", "8 oz. dry elbow macaroni",
+  ingredients: ["3 cups milk", "2 cups shredded cheddar cheese", "8 oz. dried elbow macaroni",
   "1/4 cup butter", "2 tbsp. all-purpose flour", "1/4 tsp. ground black pepper"],
   recipe: ["Boil macaroni noodles in large pot for 9-12 minutes or until pasta is al dente. Drain and set aside.",
   "In a seperate saucepan, melt butter over medium heat. Mix flour into melted butter to form a roux.",
@@ -146,8 +146,16 @@ var spaghetti = {
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118748/recipe-book/spaghetti.jpg",
   tags: ["beef", "spaghetti", "pasta", "italian"],
-  ingredients: [],
-  recipe: []
+  ingredients: ["1 lb. dried angel hair pasta", "1 lb. ground beef", "24 oz. jar pasta sauce",
+  "2 cloves garlic", "1/2 cup yellow onion", "2 tbsp. olive oil", "1/2 tsp. salt",
+  "1/4 tsp. cayenne pepper", "1/4 tsp. ground black pepper"],
+  recipe: ["Chop onion and finely dice garlic.",
+  "Bring olive oil to low heat in a large pot. Saute onion for 3-5 minutes or until slightly translucent.",
+  "Add garlic and continue cooking for another 3-5 minutes. Remove ingredients from pot and set aside in a seperate dish.",
+  "Increase heat to high and add ground beef to pot. Cook for 3-5 minutes or until browned while breaking beef apart into small pieces.",
+  "Drain excess fat from beef. Return onion/garlic to pot and add pasta sauce. Combine well and bring to boil.",
+  "Reduce heat to low and add remaining ingredients. Let simmer for 1-2 hours.",
+  "In a seperate pot, boil angel hair noodles for 3-5 minutes or until pasta is al dente. Drain and combine pasta with sauce."]
 };
 
 var springSalad = {
