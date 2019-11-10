@@ -99,8 +99,14 @@ var macAndCheese = {
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/mac-and-cheese.jpg",
   tags: ["vegetarian", "mac and cheese", "mac & cheese", "pasta", "macaroni", "mac", "cheese",
   "italian", "american"],
-  ingredients: [],
-  recipe: []
+  ingredients: ["3 cups milk", "2 cups shredded cheddar cheese", "8 oz. dried elbow macaroni",
+  "1/4 cup butter", "2 tbsp. all-purpose flour", "1/4 tsp. ground black pepper"],
+  recipe: ["Boil macaroni noodles in large pot for 9-12 minutes or until pasta is al dente. Drain and set aside.",
+  "In a seperate saucepan, melt butter over medium heat. Mix flour into melted butter to form a roux.",
+  "Reduce heat to low. While stirring, slowly add milk to roux.",
+  "Stir in cheese and cook until sauce begins to thicken.",
+  "Pour sauce over pasta, add black pepper, and combine well.",
+  "If desired, bake in baking dish for 30 minutes at 350°F."]
 };
 
 var potatoCasserole = {
@@ -109,9 +115,17 @@ var potatoCasserole = {
   hash: "potato-casserole",
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544379270/recipe-book/potato-casserole.jpg",
-  tags: ["vegetarian", "potato casserole", "potato", "casserole", "french"],
-  ingredients: [],
-  recipe: []
+  tags: ["vegetarian", "potato casserole", "potato", "casserole"],
+  ingredients: ["3 large Russet potatoes", "3 cups fresh broccoli florets", "2 cups shredded cheddar cheese",
+  "1 1/2 cup sour cream", "2 tbsp. butter", "2 tbsp. chopped green onion", "1/2 tsp. salt",
+  "1/4 tsp. ground black pepper"],
+  recipe: ["Preheat oven to 375°F.",
+  "Scrub potatoes under cold water. Dry and pierce each potato several times with a fork.",
+  "Rub potatoes with olive oil and salt. Wrap each potato in foil and place on baking sheet. Bake for 1 hour.",
+  "About 10 minutes before potatoes are done, bring a pot of water to boil. Gently boil broccoli for about 5 minutes. Drain and set aside.",
+  "Once potatoes are finished and slightly cooled, roughly chop and add to a large mixing bowl.",
+  "Add cooked broccoli and remaining ingredients to bowl and combine well.",
+  "Pour mixture into a greased casserole dish and cover with foil. Bake for 15 minutes or until cheese is melted."]
 };
 
 var pulledPork = {
@@ -121,8 +135,15 @@ var pulledPork = {
   category: "pork",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/pulled-pork.jpg",
   tags: ["pork", "pulled pork", "pulled", "bbq", "american"],
-  ingredients: [],
-  recipe: []
+  ingredients: ["3 lb. boneless pork shoulder", "1 cup BBQ sauce", "1/4 cup water",
+  "1 tbsp. paprika", "1 tsp. brown sugar", "1 tsp. garlic powder", "1 tsp. salt",
+  "1/4 tsp. ground black pepper"],
+  recipe: ["In small bowl, mix together paprika, brown sugar, garlic powder, salt, and pepper.",
+  "Coat pork with spice mixture. Place in 6-quart slow cooker and pour water around pork.",
+  "Cover and cook on low for 7-8 hours or until pork reaches at least 145°F.",
+  "Transfer pork to cutting board and let cool. Shred using two forks.",
+  "Discard excess liquid from slow cooker. Return pork to slow cooker and combine with BBQ sauce.",
+  "Cover and cook an additional 10-15 minutes on high or until shredded pork is warmed through."]
 };
 
 var spaghetti = {
@@ -132,8 +153,16 @@ var spaghetti = {
   category: "beef",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544118748/recipe-book/spaghetti.jpg",
   tags: ["beef", "spaghetti", "pasta", "italian"],
-  ingredients: [],
-  recipe: []
+  ingredients: ["1 lb. dried angel hair pasta", "1 lb. ground beef", "24 oz. jar pasta sauce",
+  "2 cloves garlic", "1/2 cup yellow onion", "2 tbsp. olive oil", "1/2 tsp. salt",
+  "1/4 tsp. cayenne pepper", "1/4 tsp. ground black pepper"],
+  recipe: ["Chop onion and finely dice garlic.",
+  "Bring olive oil to low heat in a large pot. Saute onion for 3-5 minutes or until slightly translucent.",
+  "Add garlic and continue cooking for another 3-5 minutes. Remove ingredients from pot and set aside in a seperate dish.",
+  "Increase heat to high and add ground beef to pot. Cook for 3-5 minutes or until browned while breaking beef apart into small pieces.",
+  "Drain excess fat from beef. Return onion/garlic to pot and add pasta sauce. Combine well and bring to boil.",
+  "Reduce heat to low and add remaining ingredients. Let simmer for 1-2 hours.",
+  "In a seperate pot, boil angel hair noodles for 3-5 minutes or until pasta is al dente. Drain and combine pasta with sauce."]
 };
 
 var springSalad = {
@@ -143,8 +172,13 @@ var springSalad = {
   category: "vegetarian",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544121716/recipe-book/spring-salad.jpg",
   tags: ["vegetarian", "spring salad", "spring", "salad"],
-  ingredients: [],
-  recipe: []
+  ingredients: ["3 slices swiss cheese", "1 clove garlic", "10 oz. lettuce/mixed greens",
+  "1/3 cup red onion", "1/4 cup canola oil", "3 tbsp. rice wine vinegar", "1 tbsp. mayonnaise",
+  "2 tsp. Dijon mustard", "1 tsp. dried oregano", "1/2 tsp. salt", "1/4 tsp. ground black pepper"],
+  recipe: ["Slice swiss cheese and red onion into thin strips. Finely dice garlic.",
+  "Toss together lettuce/greens, cheese, and red onion in a large mixing bowl.",
+  "In a seperate dish, whisk together garlic, oil, vinegar, mayo, mustard, oregano, salt, and pepper.",
+  "Pour dressing over salad and toss to combine."]
 };
 
 var tortelliniSoup = {
