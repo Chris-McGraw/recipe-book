@@ -135,8 +135,15 @@ var pulledPork = {
   category: "pork",
   img: "https://res.cloudinary.com/dtwyohvli/image/upload/v1544747322/recipe-book/pulled-pork.jpg",
   tags: ["pork", "pulled pork", "pulled", "bbq", "american"],
-  ingredients: [],
-  recipe: []
+  ingredients: ["3 lb. boneless pork shoulder", "1 cup BBQ sauce", "1/4 cup water",
+  "1 tbsp. paprika", "1 tsp. brown sugar", "1 tsp. garlic powder", "1 tsp. salt",
+  "1/4 tsp. ground black pepper"],
+  recipe: ["In small bowl, mix together paprika, brown sugar, garlic powder, salt, and pepper.",
+  "Coat pork with spice mixture. Place in 6-quart slow cooker and pour water around pork.",
+  "Cover and cook on low for 7-8 hours or until pork reaches at least 145°F.",
+  "Transfer pork to cutting board and let cool. Shred using two forks.",
+  "Discard excess liquid from slow cooker. Return pork to slow cooker and combine with BBQ sauce.",
+  "Cover and cook an additional 10-15 minutes on high or until shredded pork is warmed through."]
 };
 
 var spaghetti = {
