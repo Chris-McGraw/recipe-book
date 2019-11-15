@@ -104,6 +104,7 @@ function checkInputRegEx(input) {
         $recipeNameErrorMessage.css("display", "block");
         break;
       case "tag-input":
+        $searchTagErrorMessage.html("Please enter at least one valid search tag.");
         $searchTagErrorMessage.css("display", "block");
         break;
       case "ingredient-input":
@@ -171,6 +172,7 @@ function validateAddRecipeInput(input) {
         break;
       case "tag-input":
         validTagInput = false;
+        $searchTagErrorMessage.html("Please enter at least one valid search tag.");
         $searchTagErrorMessage.css("display", "block");
         break;
       case "ingredient-input":
@@ -219,6 +221,28 @@ function preventDuplicateRecipeID(val) {
 
     $recipeNameErrorMessage.html("This recipe name is already taken.");
     $recipeNameErrorMessage.css("display", "block");
+  }
+}
+
+
+function limitMaxInputValues(val) {
+  var splitArray = val.toLowerCase().split(",");
+
+  for(i = 0; i < splitArray.length; i++) {
+    splitArray[i] = splitArray[i].trim();
+  }
+
+  var newArray = splitArray.filter(function(item) {
+    return item != "";
+  });
+
+  if(newArray.length > 5) {
+    addRecipeFormValid = false;
+
+    $tagInput.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1572454320/recipe-book/exclamation-triangle-red.png)");
+
+    $searchTagErrorMessage.html("Please do not enter more than 5 tags.");
+    $searchTagErrorMessage.css("display", "block");
   }
 }
 
@@ -391,9 +415,22 @@ $(document).ready(function() {
       $addRecipeFormTouchSpacer.css("display", "none");
     }
 
-    checkInputRegEx( $(this) );
+  // Check for Previous Input Error
+    if($(this).css("background-image") === "none") {
+      checkInputRegEx( $(this) );
+    }
+    else {
+      validateAddRecipeInput( $(this) );
+    }
 
-    preventDuplicateRecipeID( $nameInput.val().replace(/\s+/g, " ").trim() );
+  // Check for Duplicate Recipe Names
+    if($(this).attr("id") === "name-input") {
+      preventDuplicateRecipeID( $nameInput.val().replace(/\s+/g, " ").trim() );
+    }
+  // Check for Maximum Number of Search Tags
+    else if($(this).attr("id") === "tag-input") {
+      limitMaxInputValues( $tagInput.val().replace(/\s+/g, " ").trim() );
+    }
   });
 
   $addRecipeCloseIcon.on("click", function() {
@@ -441,6 +478,7 @@ $(document).ready(function() {
 
     validateAddRecipeForm();
     preventDuplicateRecipeID(nameInput);
+    limitMaxInputValues(tagInput);
 
     scrollFormToError();
 
