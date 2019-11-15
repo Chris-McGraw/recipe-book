@@ -391,7 +391,12 @@ $(document).ready(function() {
       $addRecipeFormTouchSpacer.css("display", "none");
     }
 
-    checkInputRegEx( $(this) );
+    if($(this).css("background-image") === "none") {
+      checkInputRegEx( $(this) );
+    }
+    else {
+      validateAddRecipeInput( $(this) );
+    }
 
     preventDuplicateRecipeID( $nameInput.val().replace(/\s+/g, " ").trim() );
   });
