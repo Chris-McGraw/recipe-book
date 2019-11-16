@@ -93,43 +93,95 @@ function recipeStepUserInput(input) {
 
 
 function checkInputRegEx(input) {
-  inputVal = input.val().replace(/\s+/g, "").trim();
+  var inputVal = input.val().replace(/\s+/g, "").trim();
 
   if( /[^a-zA-Z0-9\\,]/.test(inputVal) ) {
     input.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1572454320/recipe-book/exclamation-triangle-red.png)");
 
     switch( input.attr("id") ) {
       case "name-input":
-        $recipeNameErrorMessage.html("Please enter a valid recipe name.");
+        validNameInputRegEx = false;
+        $recipeNameErrorMessage.html("Recipe names cannot contain special characters.");
         $recipeNameErrorMessage.css("display", "block");
         break;
       case "tag-input":
-        $searchTagErrorMessage.html("Please enter at least one valid search tag.");
+        validTagInputRegEx = false;
+        $searchTagErrorMessage.html("Search tags cannot contain special characters.");
         $searchTagErrorMessage.css("display", "block");
         break;
       case "ingredient-input":
+        validIngredientInputRegEx = false;
+        $ingredientErrorMessage.html("Ingredients cannot contain special characters.");
         $ingredientErrorMessage.css("display", "block");
         break;
       case "recipe-step-input":
+        validRecipeStepInputRegEx = false;
+        $recipeStepErrorMessage.html("Recipe Steps cannot contain special characters.");
         $recipeStepErrorMessage.css("display", "block");
         break;
     }
   }
   else {
-    input.css("background-image", "none");
+    switch( input.attr("id") ) {
+      case "name-input":
+        validNameInputRegEx = true;
+        break;
+      case "tag-input":
+        validTagInputRegEx = true;
+        break;
+      case "ingredient-input":
+        validIngredientInputRegEx = true;
+        break;
+      case "recipe-step-input":
+        validRecipeStepInputRegEx = true;
+        break;
+    }
+  }
+}
+
+
+function checkBlankInput(input) {
+  var inputVal = input.val().replace(/\s+/g, "").trim();
+
+  if(inputVal != "") {
+    switch( input.attr("id") ) {
+      case "name-input":
+        validNameInputBlank = true;
+        break;
+      case "tag-input":
+        validTagInputBlank = true;
+        break;
+      case "ingredient-input":
+        validIngredientInputBlank = true;
+        break;
+      case "recipe-step-input":
+        validRecipeStepInputBlank = true;
+        break;
+    }
+  }
+  else {
+    input.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1572454320/recipe-book/exclamation-triangle-red.png)");
 
     switch( input.attr("id") ) {
       case "name-input":
-        $recipeNameErrorMessage.css("display", "none");
+        validNameInputBlank = false;
+        $recipeNameErrorMessage.html("Please enter a valid recipe name.");
+        $recipeNameErrorMessage.css("display", "block");
         break;
       case "tag-input":
-        $searchTagErrorMessage.css("display", "none");
+        validTagInputBlank = false;
+        $searchTagErrorMessage.html("Please enter at least one valid search tag.");
+        $searchTagErrorMessage.css("display", "block");
         break;
       case "ingredient-input":
-        $ingredientErrorMessage.css("display", "none");
+        validIngredientInputBlank = false;
+        $ingredientErrorMessage.html("Please enter at least one valid recipe ingredient.");
+        $ingredientErrorMessage.css("display", "block");
         break;
       case "recipe-step-input":
-        $recipeStepErrorMessage.css("display", "none");
+        validRecipeStepInputBlank = false;
+        $recipeStepErrorMessage.html("Please enter at least one valid recipe step.");
+        $recipeStepErrorMessage.css("display", "block");
         break;
     }
   }
@@ -137,53 +189,54 @@ function checkInputRegEx(input) {
 
 
 function validateAddRecipeInput(input) {
-  inputVal = input.val().replace(/\s+/g, "").trim();
+  checkBlankInput(input);
+  checkInputRegEx(input);
 
-  if(/[^a-zA-Z0-9\\,]/.test(inputVal) === false && inputVal != "") {
-    input.css("background-image", "none");
-
-    switch( input.attr("id") ) {
-      case "name-input":
+  switch( input.attr("id") ) {
+    case "name-input":
+      if(validNameInputRegEx === true && validNameInputBlank === true) {
         validNameInput = true;
-        $recipeNameErrorMessage.css("display", "none");
-        break;
-      case "tag-input":
-        validTagInput = true;
-        $searchTagErrorMessage.css("display", "none");
-        break;
-      case "ingredient-input":
-        validIngredientInput = true;
-        $ingredientErrorMessage.css("display", "none");
-        break;
-      case "recipe-step-input":
-        validRecipeStepInput = true;
-        $recipeStepErrorMessage.css("display", "none");
-        break;
-    }
-  }
-  else {
-    input.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1572454320/recipe-book/exclamation-triangle-red.png)");
 
-    switch( input.attr("id") ) {
-      case "name-input":
+        input.css("background-image", "none");
+        $recipeNameErrorMessage.css("display", "none");
+      }
+      else {
         validNameInput = false;
-        $recipeNameErrorMessage.html("Please enter a valid recipe name.");
-        $recipeNameErrorMessage.css("display", "block");
-        break;
-      case "tag-input":
+      }
+      break;
+    case "tag-input":
+      if(validTagInputRegEx === true && validTagInputBlank === true) {
+        validTagInput = true;
+
+        input.css("background-image", "none");
+        $searchTagErrorMessage.css("display", "none");
+      }
+      else {
         validTagInput = false;
-        $searchTagErrorMessage.html("Please enter at least one valid search tag.");
-        $searchTagErrorMessage.css("display", "block");
-        break;
-      case "ingredient-input":
+      }
+      break;
+    case "ingredient-input":
+      if(validIngredientInputRegEx === true && validIngredientInputBlank === true) {
+        validIngredientInput = true;
+
+        input.css("background-image", "none");
+        $ingredientErrorMessage.css("display", "none");
+      }
+      else {
         validIngredientInput = false;
-        $ingredientErrorMessage.css("display", "block");
-        break;
-      case "recipe-step-input":
+      }
+      break;
+    case "recipe-step-input":
+      if(validRecipeStepInputRegEx === true && validRecipeStepInputBlank === true) {
+        validRecipeStepInput = true;
+
+        input.css("background-image", "none");
+        $recipeStepErrorMessage.css("display", "none");
+      }
+      else {
         validRecipeStepInput = false;
-        $recipeStepErrorMessage.css("display", "block");
-        break;
-    }
+      }
+      break;
   }
 }
 
@@ -241,7 +294,7 @@ function limitMaxInputValues(val) {
 
     $tagInput.css("background-image", "url(https://res.cloudinary.com/dtwyohvli/image/upload/v1572454320/recipe-book/exclamation-triangle-red.png)");
 
-    $searchTagErrorMessage.html("Please do not enter more than 5 tags.");
+    $searchTagErrorMessage.html("Please do not enter more than five search tags.");
     $searchTagErrorMessage.css("display", "block");
   }
 }
@@ -415,11 +468,8 @@ $(document).ready(function() {
       $addRecipeFormTouchSpacer.css("display", "none");
     }
 
-  // Check for Previous Input Error
-    if($(this).css("background-image") === "none") {
-      checkInputRegEx( $(this) );
-    }
-    else {
+  // Check for Blank Input or Visible Error Icon
+    if($(this).val().length !== 0 || $(this).css("background-image") !== "none") {
       validateAddRecipeInput( $(this) );
     }
 
