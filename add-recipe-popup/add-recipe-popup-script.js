@@ -374,14 +374,14 @@ function getLocalStorage() {
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
 
-  $(document).keydown(function(event) {
-  /* ----- Escape Key Press ----- */
+  /* $(document).keydown(function(event) {
+  // ----- Escape Key Press -----
     if(event.which === 27) {
       localStorage.clear();
 
       console.log("local storage cleared");
     }
-  });
+  }); */
 
 
 
