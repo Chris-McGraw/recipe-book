@@ -492,10 +492,10 @@ function addButtonMouseTouchEvents(button) {
 
 /* ---------------------------- EVENT HANDLERS ---------------------------- */
 $(document).ready(function() {
-  if(localStorage.length === 0) {
+  if(localStorage.length === 0 || localStorage.getItem("userSavedRecipes") === null) {
     console.log("local storage has not been defined");
   }
-  else if(localStorage.length > 0) {
+  else if(localStorage.length > 0 && localStorage.getItem("userSavedRecipes") === null) {
     var storedUserRecipeArray = JSON.parse( localStorage.getItem("userSavedRecipes") );
     recipeListMaster.length = 0;
 
